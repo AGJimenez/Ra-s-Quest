@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://0himwulqt02r"]
+
+[ext_resource type="Texture2D" uid="uid://8ub71yl5ixfl" path="res://Assets/Sample Maps (RPG Maker MV-MZ)/img/characters/Actor1.png" id="1_0n2r0"]
+[ext_resource type="Script" path="res://Script/character_body_2d.gd" id="1_1jy50"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8013y"]
+atlas = ExtResource("1_0n2r0")
+region = Rect2(0, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g3sw"]
+atlas = ExtResource("1_0n2r0")
+region = Rect2(48, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl3km"]
+atlas = ExtResource("1_0n2r0")
+region = Rect2(96, 336, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmdeu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8013y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g3sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl3km")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_av4k2"]
+radius = 11.0454
+
+[sub_resource type="GDScript" id="GDScript_qskjf"]
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_1jy50")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(266, 693)
+scale = Vector2(0.833333, 0.875)
+sprite_frames = SubResource("SpriteFrames_tmdeu")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(266, 703)
+shape = SubResource("CircleShape2D_av4k2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(260, 702)
+zoom = Vector2(1.8, 1.8)
+limit_smoothed = true
+script = SubResource("GDScript_qskjf")

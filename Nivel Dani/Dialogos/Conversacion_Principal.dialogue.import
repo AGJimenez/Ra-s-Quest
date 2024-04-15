@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://27in6ptd8b88"
+path="res://.godot/imported/Conversacion_Principal.dialogue-de5d797f3f24a73ea77a0d819155f0b1.tres"
+
+[deps]
+
+source_file="res://Dialogos/Conversacion_Principal.dialogue"
+dest_files=["res://.godot/imported/Conversacion_Principal.dialogue-de5d797f3f24a73ea77a0d819155f0b1.tres"]
+
+[params]
+
+defaults=true

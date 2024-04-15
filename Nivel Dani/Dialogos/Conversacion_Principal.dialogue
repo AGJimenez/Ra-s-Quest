@@ -1,0 +1,13 @@
+~ main
+
+Maat: [[Hola|Buenas|Ey]], parece que eres el aventurero del que todos hablan...
+- Ser directo
+	Jack: Si y voy a conseguir mi objetivo
+- Ser precavido
+	Jack: Ehhh si, parece que si.
+Maat: Bueno, para pasar este nivel blablablablablablablablablablablabla
+- Insultarla 
+	Jack: Chupamela guarra
+- Tirarle la caña
+	Jack: Quieres chuparmela, guarra?
+=> END
