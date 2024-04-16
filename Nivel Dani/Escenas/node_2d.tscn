@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://2j2y4f5wxlxu"]
+[gd_scene load_steps=26 format=3 uid="uid://2j2y4f5wxlxu"]
 
 [ext_resource type="Script" path="res://Script/node_2d.gd" id="1_ftdwg"]
 [ext_resource type="Texture2D" uid="uid://d15guny4aebm1" path="res://Assets/Egyptian_A2.png" id="1_sld68"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dhnn7oq7bwon5" path="res://Assets/non-rm-a3.png" id="9_sp2ii"]
 [ext_resource type="Texture2D" uid="uid://xcbqc6espdmu" path="res://Assets/non-rm-a4-square.png" id="10_2o8f1"]
 [ext_resource type="PackedScene" uid="uid://0himwulqt02r" path="res://Escenas/character_body_2d.tscn" id="12_k7e1h"]
+[ext_resource type="PackedScene" uid="uid://c1h1gywnkr35a" path="res://Escenas/area_cofres.tscn" id="13_vh4bp"]
+[ext_resource type="PackedScene" uid="uid://dycvn2u110ytr" path="res://Escenas/balanza_maat.tscn" id="14_5y6kt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2wc1"]
 texture = ExtResource("1_sld68")
@@ -96020,3 +96022,40 @@ layer_2/tile_data = PackedInt32Array(1114118, 2490373, 44, 1048582, 2490373, 43,
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(4, -108)
+
+[node name="Cofres" type="Node" parent="."]
+
+[node name="area_cofres" parent="Cofres" instance=ExtResource("13_vh4bp")]
+position = Vector2(137, 197)
+
+[node name="area_cofres2" parent="Cofres" instance=ExtResource("13_vh4bp")]
+position = Vector2(440, 275)
+
+[node name="area_cofres3" parent="Cofres" instance=ExtResource("13_vh4bp")]
+position = Vector2(393, 196)
+
+[node name="area_cofres4" parent="Cofres" instance=ExtResource("13_vh4bp")]
+position = Vector2(872, 149)
+
+[node name="area_cofres5" parent="Cofres" instance=ExtResource("13_vh4bp")]
+position = Vector2(1289, 51)
+
+[node name="area_cofres6" parent="Cofres" instance=ExtResource("13_vh4bp")]
+position = Vector2(1280, 649)
+
+[node name="Balanza_Maat" parent="." instance=ExtResource("14_5y6kt")]
+
+[connection signal="body_entered" from="Cofres/area_cofres" to="CharacterBody2D" method="_on_area_cofres_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres" to="CharacterBody2D" method="_on_area_cofres_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres2" to="CharacterBody2D" method="_on_area_cofres_2_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres2" to="CharacterBody2D" method="_on_area_cofres_2_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres3" to="CharacterBody2D" method="_on_area_cofres_3_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres3" to="CharacterBody2D" method="_on_area_cofres_3_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres4" to="CharacterBody2D" method="_on_area_cofres_4_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres4" to="CharacterBody2D" method="_on_area_cofres_4_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres5" to="CharacterBody2D" method="_on_area_cofres_5_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres5" to="CharacterBody2D" method="_on_area_cofres_5_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres6" to="CharacterBody2D" method="_on_area_cofres_6_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres6" to="CharacterBody2D" method="_on_area_cofres_6_body_exited"]
+[connection signal="body_entered" from="Balanza_Maat" to="CharacterBody2D" method="_on_balanza_maat_body_entered"]
+[connection signal="body_exited" from="Balanza_Maat" to="CharacterBody2D" method="_on_balanza_maat_body_exited"]

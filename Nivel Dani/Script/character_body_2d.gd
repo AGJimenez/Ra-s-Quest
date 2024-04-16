@@ -3,10 +3,16 @@ extends CharacterBody2D
 const SPEED = 100
 var currentDirection = "none"
 var lastDirection ="none"
+var on_area_cofre=false
+var on_area_balanza=false
 
 
 func _physics_process(delta):
 	movimiento(delta)
+	if on_area_cofre ==true and Input.is_action_just_pressed("Interactuar"):
+		interaccion_con_cofre()
+	elif on_area_balanza==true and Input.is_action_just_pressed("Interactuar"):
+		interaccion_con_balanza()
 
 func movimiento(delta):
 	if Input.is_action_pressed("Left"):
@@ -44,7 +50,12 @@ func movimiento(delta):
 	else:
 		lastDirection=lastDirection
 	move_and_slide()
+
+func interaccion_con_cofre():
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Interacción_Con_Cofre.dialogue"),"main")
 	
+func interaccion_con_balanza():
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/interaccion_con_balanza.dialogue"),"main")
 
 func animacion():
 	var dir=currentDirection
@@ -71,3 +82,50 @@ func animacion():
 			anim.play("default_back")
 		else:
 			anim.play("default")
+
+func _on_area_cofres_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_2_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_2_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_3_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_3_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_4_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_4_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_5_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_5_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_6_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_6_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+
+
+func _on_balanza_maat_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_balanza=true
+
+
+func _on_balanza_maat_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_balanza=false
