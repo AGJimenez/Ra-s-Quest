@@ -15,6 +15,11 @@ run/main_scene="res://Rooms/chest_room.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LoadManager="*res://Scripts/load_manager.gd"
+Global="*res://Player/Global.gd"
+
 [display]
 
 window/stretch/mode="viewport"

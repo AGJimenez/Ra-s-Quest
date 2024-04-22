@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci2t7q2plpyvs"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_256pc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ygajp"]
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 7
+position = Vector2(144, 169)
+scale = Vector2(1, 1.11559)
+script = ExtResource("1_256pc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(22.5, 50.5)
+texture = SubResource("CanvasTexture_ygajp")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, 20.6169)
+scale = Vector2(0.155782, 0.0549311)
+polygon = PackedVector2Array(-70.6114, -146.865, 70.6113, -146.865, 70.6113, 81.592, -70.6114, 81.592)
