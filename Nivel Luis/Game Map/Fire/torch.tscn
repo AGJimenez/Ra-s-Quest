@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cigv1f3ojwqum"]
 
-[ext_resource type="Script" path="res://Fire/torch.gd" id="1_0snme"]
+[ext_resource type="Script" path="res://Scripts/torch.gd" id="1_0snme"]
 [ext_resource type="Texture2D" uid="uid://cwxved7hwbvyd" path="res://Fire/!$Fire_Animation - copia.png" id="1_ao2f4"]
 [ext_resource type="Texture2D" uid="uid://d1qvhb1nyij3m" path="res://Fire/torch.png" id="2_1qrwh"]
 
