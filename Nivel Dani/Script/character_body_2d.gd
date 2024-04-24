@@ -59,16 +59,6 @@ func interaccion_con_cofre():
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta.dialogue"),"main")
 		
 
-func _on_option_selected(option_index):
-	if option_index == 0:  # Si el jugador selecciona "Escribir mensaje"
-		DialogueManager.show_input_box("Escribe tu mensaje:")
-
-
-
-# Esta función maneja la entrada de texto del jugador
-func _on_input_text_entered(text):
-	print("Mensaje del jugador:", text)
-	DialogueManager.hide_input_box()
 
 func interaccion_con_balanza():
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/interaccion_con_balanza.dialogue"),"main")
