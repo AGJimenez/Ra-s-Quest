@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://youdt3f7onux"]
+[gd_scene load_steps=75 format=3 uid="uid://b5vs02e4aqqbu"]
 
 [ext_resource type="Script" path="res://personaje.gd" id="1_5i55p"]
 [ext_resource type="Texture2D" uid="uid://cfqoqfp1poopx" path="res://Full Spritesheet (normal).png" id="2_3iukn"]
@@ -604,13 +604,14 @@ size = Vector2(60, 80)
 [node name="Personaje" type="Node"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = 11
 script = ExtResource("1_5i55p")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_fe67u")
-animation = &"moveDown"
+animation = &"interactLeft"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_ixbdv")
