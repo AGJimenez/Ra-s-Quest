@@ -610,7 +610,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_fe67u")
-animation = &"interactLeft"
+animation = &"moveDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_ixbdv")

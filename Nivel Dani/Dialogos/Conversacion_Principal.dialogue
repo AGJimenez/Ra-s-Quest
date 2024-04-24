@@ -2,12 +2,10 @@
 
 Maat: [[Hola|Buenas]], parece que eres el aventurero del que todos hablan...
 - Ser directo
-	Jack: Boooof... Vaya putisima cerda eres tu
+	Jack: Si, soy yo, y voy a encontrar el tesoro que tanto escondéis
 - Ser precavido
 	Jack: Ehhh si, parece que si.
-Maat: Bueno, para pasar este nivel blablablablablablablablablablablabla
-- Insultarla 
-	Jack: Chupamela guarra
-- Tirarle la caña
-	Jack: Quieres chuparmela, guarra?
+Maat: Bueno, para conseguir tu objetivo, primero tendrás que superar esta sala. Me presento, soy Maat, diosa de la justicia y el orden. Para poder superar las pruebas tendrás que tener el conocimeinto adecuado y, bueno, ser justo... Asi que, no te distraigo más. ¡Suerte con tu aventura!
+- Aceptar reto 
+	Jack: ¡Estoy listo para todo lo que me propongas!
 => END

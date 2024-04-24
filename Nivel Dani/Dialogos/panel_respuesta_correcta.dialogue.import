@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://fqx0whywg3cv"
+path="res://.godot/imported/panel_respuesta_correcta.dialogue-e20cf1cb1945b5b549ce2ff3b511a843.tres"
+
+[deps]
+
+source_file="res://Dialogos/panel_respuesta_correcta.dialogue"
+dest_files=["res://.godot/imported/panel_respuesta_correcta.dialogue-e20cf1cb1945b5b549ce2ff3b511a843.tres"]
+
+[params]
+
+defaults=true

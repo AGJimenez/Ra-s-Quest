@@ -99,15 +99,14 @@ animations = [{
 size = Vector2(8, 4)
 
 [node name="player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_l20ov")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_c3ajm")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_nomi1")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)

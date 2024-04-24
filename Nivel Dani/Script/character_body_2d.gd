@@ -6,7 +6,6 @@ var lastDirection ="none"
 var on_area_cofre=false
 var on_area_balanza=false
 
-
 func _physics_process(delta):
 	movimiento(delta)
 	if on_area_cofre ==true and Input.is_action_just_pressed("Interactuar"):
@@ -52,8 +51,25 @@ func movimiento(delta):
 	move_and_slide()
 
 func interaccion_con_cofre():
-	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Interacción_Con_Cofre.dialogue"),"main")
-	
+	var panel_visible : Panel = $Camera2D/Panel
+	if panel_visible.visible:
+		panel_visible.visible = false
+	else:
+		panel_visible.visible = true
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta.dialogue"),"main")
+		
+
+func _on_option_selected(option_index):
+	if option_index == 0:  # Si el jugador selecciona "Escribir mensaje"
+		DialogueManager.show_input_box("Escribe tu mensaje:")
+
+
+
+# Esta función maneja la entrada de texto del jugador
+func _on_input_text_entered(text):
+	print("Mensaje del jugador:", text)
+	DialogueManager.hide_input_box()
+
 func interaccion_con_balanza():
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/interaccion_con_balanza.dialogue"),"main")
 
@@ -119,13 +135,57 @@ func _on_area_cofres_6_body_entered(body):
 func _on_area_cofres_6_body_exited(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=false
-
-
 func _on_balanza_maat_body_entered(body):
 	if body.name=="CharacterBody2D":
 		on_area_balanza=true
-
-
 func _on_balanza_maat_body_exited(body):
 	if body.name=="CharacterBody2D":
 		on_area_balanza=false
+func _on_area_cofres_vertical_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_vertical_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_2_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_vertical_2_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_3_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_vertical_3_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_4_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_vertical_4_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_5_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_vertical_5_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_6_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_vertical_6_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_7_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_vertical_7_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_8_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+func _on_area_cofres_vertical_8_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
