@@ -604,7 +604,7 @@ size = Vector2(60, 80)
 [node name="Personaje" type="Node"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-z_index = 11
+z_index = 9
 script = ExtResource("1_5i55p")
 metadata/_edit_group_ = true
 
