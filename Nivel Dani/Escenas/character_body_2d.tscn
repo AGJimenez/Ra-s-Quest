@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://0himwulqt02r"]
+[gd_scene load_steps=10 format=3 uid="uid://0himwulqt02r"]
 
 [ext_resource type="Texture2D" uid="uid://8ub71yl5ixfl" path="res://Assets/Sample Maps (RPG Maker MV-MZ)/img/characters/Actor1.png" id="1_0n2r0"]
 [ext_resource type="Script" path="res://Script/character_body_2d.gd" id="1_1jy50"]
+[ext_resource type="PackedScene" uid="uid://irpot6b873ed" path="res://Escenas/panel.tscn" id="3_055qn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8013y"]
 atlas = ExtResource("1_0n2r0")
@@ -33,7 +34,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_av4k2"]
-radius = 11.0454
+radius = 9.0
 
 [sub_resource type="GDScript" id="GDScript_qskjf"]
 script/source = "extends Camera2D
@@ -53,17 +54,23 @@ func _process(delta):
 script = ExtResource("1_1jy50")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(266, 693)
-scale = Vector2(0.833333, 0.875)
+position = Vector2(310, 567)
 sprite_frames = SubResource("SpriteFrames_tmdeu")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(266, 688)
+position = Vector2(310, 582)
 shape = SubResource("CircleShape2D_av4k2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(260, 702)
-zoom = Vector2(1.8, 1.8)
+position = Vector2(308, 579)
+zoom = Vector2(1.5, 1.5)
 limit_smoothed = true
 script = SubResource("GDScript_qskjf")
+
+[node name="Panel" parent="Camera2D" instance=ExtResource("3_055qn")]
+visible = false
+offset_left = -338.0
+offset_top = -204.0
+offset_right = 335.0
+offset_bottom = 201.0

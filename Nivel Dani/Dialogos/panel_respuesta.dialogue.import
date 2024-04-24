@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://ckfw8mqhmmhah"
+path="res://.godot/imported/panel_respuesta.dialogue-b73918615ccad8644920b2f193846c09.tres"
+
+[deps]
+
+source_file="res://Dialogos/panel_respuesta.dialogue"
+dest_files=["res://.godot/imported/panel_respuesta.dialogue-b73918615ccad8644920b2f193846c09.tres"]
+
+[params]
+
+defaults=true
