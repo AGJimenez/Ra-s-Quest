@@ -364,6 +364,7 @@ offset_bottom = 405.0
 script = ExtResource("1_jheh2")
 
 [node name="Panel" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 288.0
 offset_right = 672.0
@@ -401,9 +402,9 @@ offset_bottom = 90.0
 theme_override_font_sizes/font_size = 10
 text = "Responder"
 
-[node name="Ecuaciones" type="Node" parent="."]
-
-[node name="Ecuacion 1" type="TileMap" parent="Ecuaciones"]
+[node name="Ecuacion 1" type="TileMap" parent="Panel"]
+visible = false
+position = Vector2(-1, -288)
 tile_set = SubResource("TileSet_lfs4p")
 format = 2
 layer_0/name = "Capa 0"
@@ -411,8 +412,8 @@ layer_0/tile_data = PackedInt32Array(0, 1441800, 8, 65536, 1441800, 8, 131072, 1
 layer_1/name = "Capa 1"
 layer_1/tile_data = PackedInt32Array(131075, 524293, 12, 131081, 983045, 11, 393225, 524293, 12, 393219, 983045, 11, 131078, 393223, 71, 393222, 327687, 71, 131084, 327687, 71, 196620, 327687, 71, 65551, 131079, 69, 65552, 131079, 69, 65553, 196615, 69, 131089, 196615, 70, 196625, 589831, 68, 196624, 327687, 70, 262161, 196615, 71, 262159, 131079, 71, 262160, 131079, 71, 327695, 131079, 69, 327696, 131079, 69, 327697, 196615, 69, 393233, 196615, 70, 458769, 196615, 71, 458768, 131079, 71, 458767, 65543, 69, 524303, 65543, 71, 524304, 131079, 71, 524305, 131079, 71, 393228, 131079, 71, 458764, 131079, 71)
 
-[node name="Ecuacion 2" type="TileMap" parent="Ecuaciones"]
-visible = false
+[node name="Ecuacion 2" type="TileMap" parent="Panel"]
+position = Vector2(-1, -288)
 tile_set = SubResource("TileSet_lfs4p")
 format = 2
 layer_0/name = "Capa 0"
