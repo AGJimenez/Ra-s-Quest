@@ -22,7 +22,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Down"):
 		direccion.y += 1
 		lastDirection = "Down"
-
 	velocity = direccion * speed
 
 	update_animation()
@@ -34,3 +33,8 @@ func update_animation():
 		anim.play("move" + lastDirection)
 	else:
 		anim.play("stop" + lastDirection)
+	#else:
+		#if Input.is_action_pressed("Interact"):
+			#anim.play("interact" + lastDirection)
+		#else:
+			#anim.play("stop" + lastDirection)

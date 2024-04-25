@@ -599,25 +599,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixbdv"]
-size = Vector2(45.7142, 25)
+size = Vector2(50.0001, 30)
 
-[node name="Personaje" type="Node"]
+[node name="Personaje" type="Node2D"]
+y_sort_enabled = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-z_index = 1
 y_sort_enabled = true
-position = Vector2(1943, 3939)
+position = Vector2(2037, 3816)
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_5i55p")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(1.42857, -24.2857)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_fe67u")
-animation = &"stopDown"
+animation = &"moveDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 27.5)
+position = Vector2(0.71446, 0.714285)
 shape = SubResource("RectangleShape2D_ixbdv")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1.42857, -24.2857)
