@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://1clirh8ge62x"
+path="res://.godot/imported/panel_respuesta_incorrecta.dialogue-cb3b80f6d8c33df11998318548e6f3d0.tres"
+
+[deps]
+
+source_file="res://Dialogos/panel_respuesta_incorrecta.dialogue"
+dest_files=["res://.godot/imported/panel_respuesta_incorrecta.dialogue-cb3b80f6d8c33df11998318548e6f3d0.tres"]
+
+[params]
+
+defaults=true

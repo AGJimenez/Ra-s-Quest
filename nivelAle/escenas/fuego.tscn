@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://b20eu864hbfkc"]
+
+[ext_resource type="Texture2D" uid="uid://crc768wnxskdn" path="res://32px+VXACE/!$Fire_Animation.png" id="1_amqyp"]
+[ext_resource type="Script" path="res://escenas/fuego.gd" id="2_j6qu5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv7s8"]
+atlas = ExtResource("1_amqyp")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3ri8"]
+atlas = ExtResource("1_amqyp")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxagx"]
+atlas = ExtResource("1_amqyp")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_golur"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv7s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3ri8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxagx")
+}],
+"loop": true,
+"name": &"llama",
+"speed": 6.0
+}]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("2_j6qu5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_golur")
+animation = &"llama"
+frame_progress = 0.624489
