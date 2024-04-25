@@ -598,10 +598,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixbdv"]
-size = Vector2(60, 80)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2yson"]
+radius = 13.0
+height = 63.0
 
-[node name="Personaje" type="Node"]
+[node name="Personaje" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 9
@@ -609,11 +610,13 @@ script = ExtResource("1_5i55p")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-scale = Vector2(5, 5)
+position = Vector2(0.499997, 0.999996)
+scale = Vector2(3.125, 2.75)
 sprite_frames = SubResource("SpriteFrames_fe67u")
 animation = &"interactLeft"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_ixbdv")
+position = Vector2(1, 11.5)
+shape = SubResource("CapsuleShape2D_2yson")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
