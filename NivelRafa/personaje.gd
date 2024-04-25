@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Personaje
 
-var speed = 120
+var speed = 200
 var direccion = Vector2.ZERO
 var lastDirection = ""
 @onready var anim = $AnimatedSprite2D
