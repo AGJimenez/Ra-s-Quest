@@ -14,11 +14,11 @@ func _process(delta):
 func comprobarDatos():
 	var texto=$Panel/Label/TextEdit.get_text()
 	if texto=="1":
-		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
 		hide()
 		numeroDePanelesSuperados=numeroDePanelesSuperados+1
-	#else:
-		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
+	else:
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
 
 
 func _on_button_pressed():
