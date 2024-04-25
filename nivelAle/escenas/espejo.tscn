@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://qgn2x52n0pq1"]
+
+[ext_resource type="Script" path="res://espejo.gd" id="1_io16a"]
+[ext_resource type="Texture2D" uid="uid://dc0qwfi24aln" path="res://32px+VXACE/espejo.png" id="2_5erut"]
+[ext_resource type="Resource" uid="uid://ct13honx2jong" path="res://inventario/item/espejo.tres" id="2_er1a1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pr3lv"]
+radius = 25.0799
+
+[node name="espejo" type="StaticBody2D"]
+script = ExtResource("1_io16a")
+item = ExtResource("2_er1a1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5erut")
+
+[node name="arearecogida" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arearecogida"]
+shape = SubResource("CircleShape2D_pr3lv")
+
+[connection signal="body_entered" from="arearecogida" to="." method="_on_arearecogida_body_entered"]
