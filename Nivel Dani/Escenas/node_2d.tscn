@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c1h1gywnkr35a" path="res://Escenas/area_cofres.tscn" id="13_vh4bp"]
 [ext_resource type="PackedScene" uid="uid://dycvn2u110ytr" path="res://Escenas/balanza_maat.tscn" id="14_5y6kt"]
 [ext_resource type="PackedScene" uid="uid://ya58j8lojb06" path="res://Escenas/area_cofres_vertical.tscn" id="15_ahc0e"]
-[ext_resource type="PackedScene" uid="uid://bajavkkxj3quo" path="res://Escenas/personaje.tscn" id="16_omvwe"]
+[ext_resource type="PackedScene" uid="uid://dt7dlvowdnpis" path="res://Escenas/character_body_2d_MARIO.tscn" id="15_k5vhl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtdwe"]
 texture = ExtResource("1_sld68")
@@ -11513,5 +11513,31 @@ layer_1/tile_data = PackedInt32Array(-131056, 393235, 11, -65520, 393235, 12, 16
 layer_2/name = "Capa 2"
 layer_2/tile_data = PackedInt32Array(-65530, 917522, 9, 6, 917522, 10, -65522, 983058, 9, 14, 983058, 10, -589786, 983058, 13, -589789, 983058, 13, -524240, 851986, 14, 262178, 917522, 14, 327714, 917522, 15, -458704, 851986, 15, -65494, 917522, 14, 42, 917522, 15, 1310754, 917522, 14, 1376290, 917522, 15, 1310768, 851986, 14, 1376304, 851986, 15, 1572898, 917522, 14, 1638434, 917522, 15, 1572912, 851986, 14, 1638448, 851986, 15, -65502, 18, 7, 34, 18, 8, -65501, 65554, 7, 35, 65554, 8, 262192, 851986, 7, 327728, 851986, 8, 131120, 851986, 7, 196656, 851986, 8, 393264, 851986, 7, 458800, 851986, 8, 48, 851986, 7, 65584, 851986, 8, -720855, 524306, 3, -655319, 524306, 4, -720854, 589842, 3, -655318, 589842, 4)
 
-[node name="Personaje" parent="." instance=ExtResource("16_omvwe")]
-position = Vector2(91, 27)
+[node name="CharacterBody2D" parent="." instance=ExtResource("15_k5vhl")]
+
+[connection signal="body_entered" from="Cofres/area_cofres" to="CharacterBody2D" method="_on_area_cofres_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres" to="CharacterBody2D" method="_on_area_cofres_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres2" to="CharacterBody2D" method="_on_area_cofres_2_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres2" to="CharacterBody2D" method="_on_area_cofres_2_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres3" to="CharacterBody2D" method="_on_area_cofres_3_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres3" to="CharacterBody2D" method="_on_area_cofres_3_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres4" to="CharacterBody2D" method="_on_area_cofres_4_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres4" to="CharacterBody2D" method="_on_area_cofres_4_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres_vertical" to="CharacterBody2D" method="_on_area_cofres_vertical_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres_vertical" to="CharacterBody2D" method="_on_area_cofres_vertical_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres_vertical2" to="CharacterBody2D" method="_on_area_cofres_vertical_2_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres_vertical2" to="CharacterBody2D" method="_on_area_cofres_vertical_2_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres_vertical3" to="CharacterBody2D" method="_on_area_cofres_vertical_3_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres_vertical3" to="CharacterBody2D" method="_on_area_cofres_vertical_3_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres_vertical4" to="CharacterBody2D" method="_on_area_cofres_vertical_4_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres_vertical4" to="CharacterBody2D" method="_on_area_cofres_vertical_4_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres_vertical5" to="CharacterBody2D" method="_on_area_cofres_vertical_5_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres_vertical5" to="CharacterBody2D" method="_on_area_cofres_vertical_5_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres_vertical6" to="CharacterBody2D" method="_on_area_cofres_vertical_6_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres_vertical6" to="CharacterBody2D" method="_on_area_cofres_vertical_6_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres_vertical7" to="CharacterBody2D" method="_on_area_cofres_vertical_7_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres_vertical7" to="CharacterBody2D" method="_on_area_cofres_vertical_7_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres_vertical8" to="CharacterBody2D" method="_on_area_cofres_vertical_8_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres_vertical8" to="CharacterBody2D" method="_on_area_cofres_vertical_8_body_exited"]
+[connection signal="body_entered" from="Cofres/area_cofres_vertical9" to="CharacterBody2D" method="_on_area_cofres_vertical_9_body_entered"]
+[connection signal="body_exited" from="Cofres/area_cofres_vertical9" to="CharacterBody2D" method="_on_area_cofres_vertical_9_body_exited"]
