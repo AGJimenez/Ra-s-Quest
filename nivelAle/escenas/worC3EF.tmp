@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://276uutptuj65"]
+[gd_scene load_steps=26 format=3 uid="uid://276uutptuj65"]
 
+[ext_resource type="Script" path="res://escenas/world.gd" id="1_augl7"]
 [ext_resource type="Texture2D" uid="uid://dypargoi3uoq3" path="res://32px+VXACE/Egyptian_A4.png" id="1_ue6xu"]
 [ext_resource type="Texture2D" uid="uid://cawg7rdkiu673" path="res://32px+VXACE/Egyptian_A3.png" id="2_m47o2"]
 [ext_resource type="Texture2D" uid="uid://b2jfkj4rh6o5n" path="res://32px+VXACE/Egyptian_A2.png" id="3_jty2i"]
@@ -12,9 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://crc768wnxskdn" path="res://32px+VXACE/!$Fire_Animation.png" id="10_p4rfy"]
 [ext_resource type="PackedScene" uid="uid://dre4i7y6xwyeo" path="res://escenas/player.tscn" id="11_tn2yn"]
 [ext_resource type="PackedScene" uid="uid://b20eu864hbfkc" path="res://escenas/fuego.tscn" id="12_4008t"]
-[ext_resource type="PackedScene" uid="uid://qgn2x52n0pq1" path="res://escenas/espejo.tscn" id="13_0uwbl"]
-
-[sub_resource type="GDScript" id="GDScript_pqws4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7obs0"]
 texture = ExtResource("1_ue6xu")
@@ -10709,7 +10707,7 @@ sources/9 = SubResource("TileSetAtlasSource_yajf1")
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
-script = SubResource("GDScript_pqws4")
+script = ExtResource("1_augl7")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -10754,31 +10752,34 @@ polygon = PackedVector2Array(-283, -283, -83, -283, -85, -281, -85, -279, -83, -
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-112, -177)
+frame_progress = 0.168097
 
 [node name="AnimatedSprite2D2" parent="." instance=ExtResource("12_4008t")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(112, -177)
+frame_progress = 0.0858311
 
 [node name="AnimatedSprite2D3" parent="." instance=ExtResource("12_4008t")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-112, -17)
+frame_progress = 0.231351
 
 [node name="AnimatedSprite2D4" parent="." instance=ExtResource("12_4008t")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(112, -17)
+frame_progress = 0.847563
 
 [node name="AnimatedSprite2D5" parent="." instance=ExtResource("12_4008t")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(-112, 207)
+frame_progress = 0.328967
 
 [node name="AnimatedSprite2D6" parent="." instance=ExtResource("12_4008t")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(112, 207)
-
-[node name="espejo" parent="." instance=ExtResource("13_0uwbl")]
-position = Vector2(-122, -222)
+frame_progress = 0.987866

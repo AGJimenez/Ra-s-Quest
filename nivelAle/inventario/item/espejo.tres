@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://ct13honx2jong"]
+
+[ext_resource type="Script" path="res://inventario/inventory_item.gd" id="1_pg5lg"]
+[ext_resource type="Texture2D" uid="uid://bvpdpm1a540o5" path="res://32px+VXACE/espejoInv.png" id="2_70e7n"]
+
+[resource]
+script = ExtResource("1_pg5lg")
+name = "Cruz solar"
+texture = ExtResource("2_70e7n")
