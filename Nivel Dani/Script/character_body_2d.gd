@@ -10,8 +10,8 @@ func _physics_process(delta):
 	movimiento(delta)
 	if on_area_cofre ==true and Input.is_action_just_pressed("Interactuar"):
 		interaccion_con_cofre()
-	elif on_area_balanza==true and Input.is_action_just_pressed("Interactuar"):
-		interaccion_con_balanza()
+	#elif on_area_balanza==true and Input.is_action_just_pressed("Interactuar"):
+		#interaccion_con_balanza()
 
 func movimiento(delta):
 	if Input.is_action_pressed("Left"):
@@ -56,12 +56,12 @@ func interaccion_con_cofre():
 		panel_visible.visible = false
 	else:
 		panel_visible.visible = true
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta.dialogue"),"main")
+		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta.dialogue"),"main")
 		
 
 
-func interaccion_con_balanza():
-	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/interaccion_con_balanza.dialogue"),"main")
+#func interaccion_con_balanza():
+	#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/interaccion_con_balanza.dialogue"),"main")
 
 func animacion():
 	var dir=currentDirection
