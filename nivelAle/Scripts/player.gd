@@ -2,12 +2,16 @@ extends CharacterBody2D
 var on_area_ojo = false
 var speed = 100
 var player_state
+
+
 @export var inv: Inv
 
 func _physics_process(delta):
 	if on_area_ojo ==true and Input.is_action_just_pressed("Interactuar"):
 		print("aña")
-		
+		showProblem()
+
+
 	var direction = Input.get_vector("left", "right", "up", "down")
 	
 	if direction.length() == 0:
@@ -20,10 +24,8 @@ func _physics_process(delta):
 	playAnim(direction)
 
 func showProblem():
-	$Control2.visible = true
+	DialogueManager.show_dialogue_balloon(load("res://dialog/LeerJero.dialogue"),"start")
 
-func hideProblem():
-	$Control2.visible = false
 
 func playAnim(dir):
 	if player_state == "idle":

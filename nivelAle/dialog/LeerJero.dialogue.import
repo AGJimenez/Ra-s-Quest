@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://byvryae36i1x1"
+path="res://.godot/imported/LeerJero.dialogue-8ddcf7726183852f7a184df6238e2e64.tres"
+
+[deps]
+
+source_file="res://dialog/LeerJero.dialogue"
+dest_files=["res://.godot/imported/LeerJero.dialogue-8ddcf7726183852f7a184df6238e2e64.tres"]
+
+[params]
+
+defaults=true
