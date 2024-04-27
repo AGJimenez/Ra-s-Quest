@@ -150,3 +150,13 @@ func _on_area_cofres_vertical_9_body_entered(body):
 func _on_area_cofres_vertical_9_body_exited(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=false
+func _on_balanza_maat_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_balanza=true
+func _on_balanza_maat_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_balanza=false
+func _on_introduccion_area_body_entered(body):
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/interaccion_con_Anubis.dialogue"),"main")
+func _on_introduccion_area_body_exited(body):
+	$"../introduccion_area".queue_free()
