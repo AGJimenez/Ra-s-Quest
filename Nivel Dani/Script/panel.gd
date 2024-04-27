@@ -1,6 +1,8 @@
 extends Panel
 
 var numeroDePanelesSuperados=0
+signal panel_interaction_success
+var ultima_Area=null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -23,6 +25,7 @@ func comprobarDatos():
 				$"Panel/Ecuacion 1".hide()
 				hide()
 				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
 			else:
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
 		1:
@@ -31,6 +34,7 @@ func comprobarDatos():
 				$"Panel/Ecuacion 2".hide()
 				hide()
 				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
 			else:
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
 		_:
