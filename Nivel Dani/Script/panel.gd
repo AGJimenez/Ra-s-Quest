@@ -15,12 +15,18 @@ func showTileMap():
 			$"Panel/Ecuacion 1".show()
 		1:
 			$"Panel/Ecuacion 2".show()
+		2:
+			$"Panel/Ecuacion 3".show()
+		3:
+			$"Panel/Ecuacion 4".show()
+		4: 
+			$"Panel/Ecuacion 5".show()
 
 func comprobarDatos():
 	var texto=$Panel/Label/TextEdit.get_text()
 	match numeroDePanelesSuperados:
 		0:
-			if texto=="1":
+			if texto=="2":
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
 				$"Panel/Ecuacion 1".hide()
 				hide()
@@ -32,6 +38,33 @@ func comprobarDatos():
 			if texto=="7":
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
 				$"Panel/Ecuacion 2".hide()
+				hide()
+				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
+		2:
+			if texto=="-1":
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
+				$"Panel/Ecuacion 3".hide()
+				hide()
+				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
+		3:
+			if texto=="1":
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
+				$"Panel/Ecuacion 4".hide()
+				hide()
+				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
+		4:
+			if texto=="7":
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
+				$"Panel/Ecuacion 5".hide()
 				hide()
 				numeroDePanelesSuperados=numeroDePanelesSuperados+1
 				ultima_Area.queue_free()
