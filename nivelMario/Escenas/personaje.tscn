@@ -1,6 +1,6 @@
 [gd_scene load_steps=75 format=3 uid="uid://youdt3f7onux"]
 
-[ext_resource type="Script" path="res://personaje.gd" id="1_5i55p"]
+[ext_resource type="Script" path="res://Scripts/personaje.gd" id="1_5i55p"]
 [ext_resource type="Texture2D" uid="uid://b3t66ppq6wmha" path="res://32px+VXACE/Full Spritesheet (normal).png" id="2_3iukn"]
 [ext_resource type="Texture2D" uid="uid://c2vetr3fqh0su" path="res://32px+VXACE/Full Spritesheet (inverted).png" id="2_5p5nv"]
 

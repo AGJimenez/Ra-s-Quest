@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b8a1h4xafe2jp"]
 
-[ext_resource type="PackedScene" uid="uid://cwqd7o7cxh88e" path="res://escenario.tscn" id="2_ou1fc"]
+[ext_resource type="PackedScene" uid="uid://cwqd7o7cxh88e" path="res://Escenas/escenario.tscn" id="2_ou1fc"]
 
 [node name="nivelMario" type="Node"]
 
