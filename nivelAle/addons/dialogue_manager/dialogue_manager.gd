@@ -10,7 +10,7 @@ const DialogueResponse = preload("./dialogue_response.gd")
 const DialogueManagerParser = preload("./components/parser.gd")
 const DialogueManagerParseResult = preload("./components/parse_result.gd")
 const ResolvedLineData = preload("./components/resolved_line_data.gd")
-
+var desactivarMov = preload("res://Scripts/player.gd").new()
 
 ## Emitted when a title is encountered while traversing dialogue, usually when jumping from a
 ## goto line
