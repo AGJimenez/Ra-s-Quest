@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://youdt3f7onux"]
+[gd_scene load_steps=76 format=3 uid="uid://youdt3f7onux"]
 
 [ext_resource type="Script" path="res://Scripts/personaje.gd" id="1_5i55p"]
 [ext_resource type="Texture2D" uid="uid://b3t66ppq6wmha" path="res://32px+VXACE/Full Spritesheet (normal).png" id="2_3iukn"]
@@ -601,15 +601,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixbdv"]
 size = Vector2(50.0001, 30)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ipng"]
+radius = 31.6667
+height = 83.334
+
 [node name="Personaje" type="Node2D"]
 y_sort_enabled = true
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
-position = Vector2(2037, 3816)
+position = Vector2(2040, 3811)
 scale = Vector2(0.6, 0.6)
 script = ExtResource("1_5i55p")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 y_sort_enabled = true
@@ -624,3 +627,12 @@ shape = SubResource("RectangleShape2D_ixbdv")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(1.42857, -24.2857)
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(1.66646, -23.3337)
+shape = SubResource("CapsuleShape2D_0ipng")
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]

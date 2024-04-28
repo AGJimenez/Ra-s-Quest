@@ -3,7 +3,7 @@ class_name Personaje
 
 var speed = 180
 var direccion = Vector2.ZERO
-var lastDirection = ""
+var lastDirection = "Up"
 @onready var anim = $AnimatedSprite2D
 
 # MÉTODO ASIGNACIÓN DIRECCIONES
@@ -31,10 +31,21 @@ func _physics_process(delta):
 func update_animation():
 	if direccion != Vector2.ZERO:
 		anim.play("move" + lastDirection)
-	else:
-		anim.play("stop" + lastDirection)
 	#else:
-		#if Input.is_action_pressed("Interact"):
-			#anim.play("interact" + lastDirection)
-		#else:
-			#anim.play("stop" + lastDirection)
+		#anim.play("stop" + lastDirection)
+	else:
+		if Input.is_action_pressed("Interact"):
+			anim.play("interact" + lastDirection)
+		else:
+			anim.play("stop" + lastDirection)
+
+
+# MÉTODOS INTERACCIÓN
+func _on_area_2d_body_entered(body):
+	if body is Papiro1:
+		body.label.show()
+
+
+func _on_area_2d_body_exited(body):
+	if body is Papiro1:
+		body.label.hide()

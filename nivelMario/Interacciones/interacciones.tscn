@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3icwgvb0l2e3"]
+
+[ext_resource type="PackedScene" uid="uid://cl6ifn75nogh8" path="res://Interacciones/papiro_1.tscn" id="1_i6f42"]
+
+[node name="Interacciones" type="Node2D"]
+
+[node name="Papiro1" parent="." instance=ExtResource("1_i6f42")]

@@ -1,23 +1,25 @@
 ~ dialogo_inicial
 
-#Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-#Nathan: Here are some choices.
-#- First one
-#	Nathan: You picked the first one.
-#- Second one
-#	Nathan: You picked the second one.
-#- Start again => dialogo_inicial
-#- End the conversation => END
-#Nathan: For more information see the online documentation.
-
 ???: ¿¿QUIÉN OSA A ENTRAR EN ESTE TEMPLO??
-Jack: *se asusta* ¿Qui-quién ha dicho e-eso?
+Jack: ¿Qui-quién ha dicho e-eso?
 ???: Ah, con que eres tu, aventurero.
 Jack: ¿Quién eres y por qué me conoces? ¡Muéstrate!
 Isis: Yo soy Isis, diosa de la magia y la protección, y tú no deberías de estar aquí. Profanar la tumba de uno de los dioses más importantes de la historia podría traerte desgracias inimaginables.
 Jack: Pero, ¿cómo sabes...?
 Isis: Todos sabemos quién eres y cuáles son tus intenciones.
-Jack: ¿Cómo que todos? Bueno, no importa. Si sabes quién soy, sabrás que tengo que llegar hasta la cámara del sarcófago de Ra sea como sea. Ese es mo objetivo. Así que no me atormentes más y déjame seguir adelante.
-Isis: Bueno, allá tú, pero no lo vas a tener nada fácil. "continuar explicando q ra los tiene encerrados y explicar puzzles sala"
+Jack: ¿Cómo que todos? Bueno, no importa. Si sabes quién soy, sabrás que tengo que llegar hasta la cámara del sarcófago de Ra sea como sea. Ese es mi objetivo. Así que no me atormentes más y déjame seguir adelante.
+Isis: Bueno, allá tú, pero no lo vas a tener nada fácil.
+Isis: Esta pirámide está maldita, y nuestras almas están atrapadas aquí. Ra me encerró aquí cuando se enteró que fui yo quien lo envenenó, simplemente para poder aprovecharme de su poder.
+Jack: Es decir, que esta sala y las siguientes están bloqueadas y tienen truco. Que bien... ¿Y cómo supero esta sala?
+Isis: Si quieres salir de aquí, tendrás que hacer igual que hize yo cuando Seth asesinó a mi marido.
+Jack: ¿¡El mito de Osiris es cierto!?
+Isis: En efecto.
+Jack: Seth se quiso hacer con el trono de su hermano Osiris, por lo que lo asesinó y repartió sus miembros por distintas zonas. Luego Isis los buscó, y al encontrarlos consiguió agruparlos y revivir a Osiris.
+Isis: Eso es lo que ocurrió. Y en consecuencia, tendrás que vivir esa sensación en tu propia piel.
+Isis: Esta sala esta sellada, y la única salida es una puerta sellada con uno de mis conjuros de protección. Para poder abrirla, tendrás que buscar [b]4 papiros[/b], cada uno con un número, que desbloquearán la puerta cuando los coloques sobre los pilares que encontrarás en el centro de la sala.
+Isis: ¿Aceptas el reto?
+- ¡Por supuesto!
+- Si no queda otra...
+Isis: Perfecto. Para encontrar el [b]primer pergamino[/b], deberás buscar el monumento en omenaje a Khepri, el dios escarabajo.
 
 => END
