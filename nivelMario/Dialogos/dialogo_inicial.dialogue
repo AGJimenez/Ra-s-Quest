@@ -1,13 +1,23 @@
-~ this_is_a_node_title
+~ dialogo_inicial
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
-- End the conversation => END
-Nathan: For more information see the online documentation.
+#Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+#Nathan: Here are some choices.
+#- First one
+#	Nathan: You picked the first one.
+#- Second one
+#	Nathan: You picked the second one.
+#- Start again => dialogo_inicial
+#- End the conversation => END
+#Nathan: For more information see the online documentation.
+
+???: ¿¿QUIÉN OSA A ENTRAR EN ESTE TEMPLO??
+Jack: *se asusta* ¿Qui-quién ha dicho e-eso?
+???: Ah, con que eres tu, aventurero.
+Jack: ¿Quién eres y por qué me conoces? ¡Muéstrate!
+Isis: Yo soy Isis, diosa de la magia y la protección, y tú no deberías de estar aquí. Profanar la tumba de uno de los dioses más importantes de la historia podría traerte desgracias inimaginables.
+Jack: Pero, ¿cómo sabes...?
+Isis: Todos sabemos quién eres y cuáles son tus intenciones.
+Jack: ¿Cómo que todos? Bueno, no importa. Si sabes quién soy, sabrás que tengo que llegar hasta la cámara del sarcófago de Ra sea como sea. Ese es mo objetivo. Así que no me atormentes más y déjame seguir adelante.
+Isis: Bueno, allá tú, pero no lo vas a tener nada fácil. "continuar explicando q ra los tiene encerrados y explicar puzzles sala"
 
 => END
