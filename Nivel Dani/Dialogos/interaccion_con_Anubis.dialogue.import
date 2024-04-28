@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cu5dsfg8swq5q"
+path="res://.godot/imported/interaccion_con_Anubis.dialogue-56fbaa163d94271675c18ee5556888d8.tres"
+
+[deps]
+
+source_file="res://Dialogos/interaccion_con_Anubis.dialogue"
+dest_files=["res://.godot/imported/interaccion_con_Anubis.dialogue-56fbaa163d94271675c18ee5556888d8.tres"]
+
+[params]
+
+defaults=true

@@ -62,18 +62,21 @@ func interaccion_con_balanza():
 func _on_area_cofres_body_entered(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres"
 func _on_area_cofres_body_exited(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=false
 func _on_area_cofres_2_body_entered(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres2"
 func _on_area_cofres_2_body_exited(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=false
 func _on_area_cofres_3_body_entered(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres3"
 func _on_area_cofres_3_body_exited(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=false
@@ -83,16 +86,68 @@ func _on_area_cofres_4_body_exited(body):
 func _on_area_cofres_4_body_entered(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=true
-func _on_area_cofres_5_body_entered(body):
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres4"
+func _on_area_cofres_vertical_body_entered(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=true
-func _on_area_cofres_5_body_exited(body):
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres_vertical"
+func _on_area_cofres_vertical_body_exited(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=false
-func _on_area_cofres_6_body_entered(body):
+func _on_area_cofres_vertical_2_body_entered(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=true
-func _on_area_cofres_6_body_exited(body):
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres_vertical2"
+func _on_area_cofres_vertical_2_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_3_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres_vertical3"
+func _on_area_cofres_vertical_3_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_4_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres_vertical4"
+func _on_area_cofres_vertical_4_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_5_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres_vertical5"
+func _on_area_cofres_vertical_5_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_6_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres_vertical6"
+func _on_area_cofres_vertical_6_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_7_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres_vertical7"
+func _on_area_cofres_vertical_7_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_8_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres_vertical8"
+func _on_area_cofres_vertical_8_body_exited(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=false
+func _on_area_cofres_vertical_9_body_entered(body):
+	if body.name=="CharacterBody2D":
+		on_area_cofre=true
+		$Camera2D/Panel.ultima_Area=$"../Cofres/area_cofres_vertical9"
+func _on_area_cofres_vertical_9_body_exited(body):
 	if body.name=="CharacterBody2D":
 		on_area_cofre=false
 func _on_balanza_maat_body_entered(body):
@@ -101,57 +156,7 @@ func _on_balanza_maat_body_entered(body):
 func _on_balanza_maat_body_exited(body):
 	if body.name=="CharacterBody2D":
 		on_area_balanza=false
-func _on_area_cofres_vertical_body_entered(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=true
-func _on_area_cofres_vertical_body_exited(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=false
-func _on_area_cofres_vertical_2_body_entered(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=true
-func _on_area_cofres_vertical_2_body_exited(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=false
-func _on_area_cofres_vertical_3_body_entered(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=true
-func _on_area_cofres_vertical_3_body_exited(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=false
-func _on_area_cofres_vertical_4_body_entered(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=true
-func _on_area_cofres_vertical_4_body_exited(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=false
-func _on_area_cofres_vertical_5_body_entered(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=true
-func _on_area_cofres_vertical_5_body_exited(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=false
-func _on_area_cofres_vertical_6_body_entered(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=true
-func _on_area_cofres_vertical_6_body_exited(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=false
-func _on_area_cofres_vertical_7_body_entered(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=true
-func _on_area_cofres_vertical_7_body_exited(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=false
-func _on_area_cofres_vertical_8_body_entered(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=true
-func _on_area_cofres_vertical_8_body_exited(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=false
-func _on_area_cofres_vertical_9_body_entered(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=true
-func _on_area_cofres_vertical_9_body_exited(body):
-	if body.name=="CharacterBody2D":
-		on_area_cofre=false
+func _on_introduccion_area_body_entered(body):
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/interaccion_con_Anubis.dialogue"),"main")
+func _on_introduccion_area_body_exited(body):
+	$"../introduccion_area".queue_free()
