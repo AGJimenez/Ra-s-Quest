@@ -1,45 +1,44 @@
 extends CharacterBody2D
-class_name Personaje
 
-var speed = 180
-var direccion = Vector2.ZERO
-var lastDirection = "Up"
-@onready var anim = $AnimatedSprite2D
 
-# MÉTODO ASIGNACIÓN DIRECCIONES
-func _physics_process(delta):
-	direccion = Vector2.ZERO
+@export var speed = 180
+@onready var animTree: AnimationTree = $AnimationTree
+var direction: Vector2 = Vector2.ZERO
 
-	if Input.is_action_pressed("Left"):
-		direccion.x -= 1
-		lastDirection = "Left"
-	if Input.is_action_pressed("Right"):
-		direccion.x += 1
-		lastDirection = "Right"
-	if Input.is_action_pressed("Up"):
-		direccion.y -= 1
-		lastDirection = "Up"
-	if Input.is_action_pressed("Down"):
-		direccion.y += 1
-		lastDirection = "Down"
-	velocity = direccion * speed
-
+func _ready():
+	animTree.active = true
+	
+func _process(delta):
 	update_animation()
-	move_and_slide()
 
-# MÉTODO MOVIMIENTO
-func update_animation():
-	if direccion != Vector2.ZERO:
-		anim.play("move" + lastDirection)
-	#else:
-		#anim.play("stop" + lastDirection)
+# MÉTODO MOVILIDAD
+func _physics_process(delta):
+	direction = Input.get_vector("Left", "Right", "Up", "Down").normalized()
+	if direction:
+		velocity = direction * speed
 	else:
-		if Input.is_action_pressed("Interact"):
-			anim.play("interact" + lastDirection)
-		else:
-			anim.play("stop" + lastDirection)
+		velocity = Vector2.ZERO
 
+	move_and_slide()
+	
+func update_animation():
+	if (velocity == Vector2.ZERO):
+		animTree["parameters/conditions/idle"] = true
+		animTree["parameters/conditions/is_moving"] = false
+	else:
+		animTree["parameters/conditions/idle"] = false
+		animTree["parameters/conditions/is_moving"] = true
+	if (Input.is_action_pressed("Interact")):
+		animTree["parameters/conditions/interact"] = true
+	else:
+		animTree["parameters/conditions/interact"] = false
+	
+	if (direction != Vector2.ZERO):
+		animTree["parameters/stop/blend_position"] = direction
+		animTree["parameters/move/blend_position"] = direction
+		animTree["parameters/interact/blend_position"] = direction
 
+		
 # MÉTODOS INTERACCIÓN
 func _on_area_2d_body_entered(body):
 	if body is Papiro1:
