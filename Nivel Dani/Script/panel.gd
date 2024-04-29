@@ -27,9 +27,15 @@ func showTileMap():
 			$"Panel/Ecuacion 7".show()
 		7:
 			$"Panel/Ecuacion 8".show()
+		8:
+			$Panel/Label.hide()
+			$Panel/Label2.show()
+			$"Panel/Ecuacion 9".show()
 
 func comprobarDatos():
 	var texto=$Panel/Label/TextEdit.get_text()
+	var textoLabel2=$Panel/Label2/TextEdit.get_text()
+	var texto2Label2=$Panel/Label2/TextEdit2.get_text()
 	match numeroDePanelesSuperados:
 		0:
 			if texto=="2":
@@ -103,6 +109,16 @@ func comprobarDatos():
 				ultima_Area.queue_free()
 			else:
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
+		8:
+			if (textoLabel2=="14" || texto2Label2=="-14"):
+				if(texto2Label2=="14" || textoLabel2=="-14"):
+					DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
+					$"Panel/Ecuacion 9".hide()
+					hide()
+					numeroDePanelesSuperados=numeroDePanelesSuperados+1
+					ultima_Area.queue_free()
+				else:
+					DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
 		_:
 			hide()
 			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Go_To_FinalPuzzle.dialogue"),"main")
