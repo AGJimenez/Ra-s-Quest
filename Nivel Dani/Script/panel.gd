@@ -21,6 +21,12 @@ func showTileMap():
 			$"Panel/Ecuacion 4".show()
 		4: 
 			$"Panel/Ecuacion 5".show()
+		5:
+			$"Panel/Ecuacion 6".show()
+		6:
+			$"Panel/Ecuacion 7".show()
+		7:
+			$"Panel/Ecuacion 8".show()
 
 func comprobarDatos():
 	var texto=$Panel/Label/TextEdit.get_text()
@@ -65,6 +71,33 @@ func comprobarDatos():
 			if texto=="7":
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
 				$"Panel/Ecuacion 5".hide()
+				hide()
+				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
+		5:
+			if texto=="2":
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
+				$"Panel/Ecuacion 6".hide()
+				hide()
+				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
+		6:
+			if texto=="3":
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
+				$"Panel/Ecuacion 7".hide()
+				hide()
+				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_incorrecta.dialogue"),"main")
+		7:
+			if texto=="2":
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/panel_respuesta_correcta.dialogue"),"main")
+				$"Panel/Ecuacion 8".hide()
 				hide()
 				numeroDePanelesSuperados=numeroDePanelesSuperados+1
 				ultima_Area.queue_free()

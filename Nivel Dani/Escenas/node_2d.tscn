@@ -11546,6 +11546,7 @@ shape = SubResource("RectangleShape2D_ircx3")
 
 [node name="Node" type="Node" parent="."]
 
+[connection signal="body_entered" from="Cofres/area_cofres" to="." method="_on_area_cofres_body_entered"]
 [connection signal="body_entered" from="Cofres/area_cofres" to="CharacterBody2D" method="_on_area_cofres_body_entered"]
 [connection signal="body_exited" from="Cofres/area_cofres" to="CharacterBody2D" method="_on_area_cofres_body_exited"]
 [connection signal="body_entered" from="Cofres/area_cofres2" to="CharacterBody2D" method="_on_area_cofres_2_body_entered"]
