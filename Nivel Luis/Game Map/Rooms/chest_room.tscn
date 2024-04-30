@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cfgpctstjmt0h"]
+[gd_scene load_steps=21 format=3 uid="uid://cfgpctstjmt0h"]
 
 [ext_resource type="Script" path="res://Scripts/chest_room.gd" id="1_e1gyu"]
 [ext_resource type="Texture2D" uid="uid://dlpjrfaiyxd1q" path="res://Tilesets/non-rm-a2-square.png" id="1_ua8wt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://crrmwov80imkt" path="res://Tilesets/non-rm-a3.png" id="5_m65vy"]
 [ext_resource type="Texture2D" uid="uid://dvot0n6824cdd" path="res://Tilesets/Egyptian_D.png" id="7_kkkem"]
 [ext_resource type="PackedScene" uid="uid://ci2t7q2plpyvs" path="res://Player/player.tscn" id="8_uaxlb"]
+[ext_resource type="PackedScene" uid="uid://dsbdik5i5hic1" path="res://dialogue_windows/interact.tscn" id="10_f7bmy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avwf6"]
 texture = ExtResource("5_m65vy")
@@ -11510,6 +11511,9 @@ sources/6 = SubResource("TileSetAtlasSource_mpib0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcdvo"]
 size = Vector2(40.0082, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wleei"]
+size = Vector2(45, 20)
+
 [node name="chest_room" type="Node2D"]
 script = ExtResource("1_e1gyu")
 
@@ -11540,8 +11544,17 @@ layer_5/tile_data = PackedInt32Array(7, 917508, 13, 131073, 786436, 13)
 [node name="Player" parent="room" instance=ExtResource("8_uaxlb")]
 position = Vector2(158, 177)
 
+[node name="interact" parent="room/Player" instance=ExtResource("10_f7bmy")]
+visible = false
+offset_left = -41.0
+offset_top = -64.5398
+offset_right = -41.0
+offset_bottom = -64.5398
+scale = Vector2(0.279214, 0.350542)
+
 [node name="Camera_chest" type="Camera2D" parent="."]
 position = Vector2(130, 76)
+position_smoothing_enabled = true
 
 [node name="chest_area_night" type="Area2D" parent="."]
 position = Vector2(113, -13)
@@ -11556,4 +11569,17 @@ shape = SubResource("RectangleShape2D_jcdvo")
 [node name="night-chest" type="Marker2D" parent="Spawn_points"]
 position = Vector2(112, 21)
 
+[node name="chest_puzzle-chest" type="Marker2D" parent="Spawn_points"]
+position = Vector2(231, 110)
+
+[node name="chest_puzzle" type="Area2D" parent="."]
+position = Vector2(268, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest_puzzle"]
+position = Vector2(-12.5, 0)
+scale = Vector2(1.38241, 2.02023)
+shape = SubResource("RectangleShape2D_wleei")
+
 [connection signal="body_entered" from="chest_area_night" to="." method="_on_chest_area_night_body_entered"]
+[connection signal="body_entered" from="chest_puzzle" to="." method="_on_chest_puzzle_body_entered"]
+[connection signal="body_exited" from="chest_puzzle" to="." method="_on_chest_puzzle_body_exited"]

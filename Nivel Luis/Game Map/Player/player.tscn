@@ -1,19 +1,78 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci2t7q2plpyvs"]
+[gd_scene load_steps=10 format=3 uid="uid://ci2t7q2plpyvs"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterBody2D.gd" id="1_256pc"]
+[ext_resource type="Texture2D" uid="uid://k8u3xfcxqocv" path="res://Sprites/Skeleton.png" id="2_xv3ad"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ygajp"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwioe"]
+atlas = ExtResource("2_xv3ad")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfst8"]
+atlas = ExtResource("2_xv3ad")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kss6n"]
+atlas = ExtResource("2_xv3ad")
+region = Rect2(32, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3d7f"]
+atlas = ExtResource("2_xv3ad")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_evpib"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwioe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfst8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kss6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3d7f")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yakkp"]
+polygon = PackedVector2Array(-12, -48.4049, 11, -48.4049, 11, 4.48193, -12, 4.48193)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+light_mask = 4
 y_sort_enabled = true
 scale = Vector2(1, 1.11559)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_256pc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 scale = Vector2(22.5, 50.5)
 texture = SubResource("CanvasTexture_ygajp")
 offset = Vector2(0, -0.45)
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(1, -19.7205)
+scale = Vector2(2.05626, 2.52494)
+sprite_frames = SubResource("SpriteFrames_evpib")
+animation = &"dead"
+
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -1.79277)
 scale = Vector2(0.155782, 0.0549311)
 polygon = PackedVector2Array(-70.6114, -146.865, 70.6113, -146.865, 70.6113, 81.592, -70.6114, 81.592)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+light_mask = 4
+position = Vector2(1, 1.79277)
+scale = Vector2(1.00015, 0.270968)
+occluder = SubResource("OccluderPolygon2D_yakkp")
+occluder_light_mask = 4
