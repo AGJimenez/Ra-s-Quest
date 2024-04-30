@@ -710,6 +710,8 @@ position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_0ipng")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
+zoom = Vector2(1.75, 1.75)
+position_smoothing_enabled = true
 
 [connection signal="body_entered" from="CharacterBody2D2/Area2D" to="CharacterBody2D2" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D2/Area2D" to="CharacterBody2D2" method="_on_area_2d_body_exited"]
