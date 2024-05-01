@@ -1,18 +1,21 @@
 extends CharacterBody2D
-
+class_name Personaje
 
 @export var speed = 100
 @onready var animTree: AnimationTree = $AnimationTree
 var direction: Vector2 = Vector2.ZERO
+@onready var has_interacted = false
+
+
 
 func _ready():
 	animTree.active = true
 	
-func _process(delta):
+func _process(_delta):
 	update_animation()
 
 # MÉTODO MOVILIDAD
-func _physics_process(delta):
+func _physics_process(_delta):
 	direction = Input.get_vector("Left", "Right", "Up", "Down").normalized()
 	if direction:
 		velocity = direction * speed
@@ -30,6 +33,7 @@ func update_animation():
 		animTree["parameters/conditions/is_moving"] = true
 	if (Input.is_action_pressed("Interact")):
 		animTree["parameters/conditions/interact"] = true
+		has_interacted = true
 	else:
 		animTree["parameters/conditions/interact"] = false
 	
@@ -37,14 +41,3 @@ func update_animation():
 		animTree["parameters/stop/blend_position"] = direction
 		animTree["parameters/move/blend_position"] = direction
 		animTree["parameters/interact/blend_position"] = direction
-
-		
-# MÉTODOS INTERACCIÓN
-func _on_area_2d_body_entered(body):
-	if body is Papiro1:
-		body.label.show()
-
-
-func _on_area_2d_body_exited(body):
-	if body is Papiro1:
-		body.label.hide()

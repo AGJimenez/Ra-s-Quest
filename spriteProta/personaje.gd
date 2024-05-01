@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Personaje
 
 @export var speed = 100
 @onready var animTree: AnimationTree = $AnimationTree
@@ -37,12 +37,3 @@ func update_animation():
 		animTree["parameters/stop/blend_position"] = direction
 		animTree["parameters/move/blend_position"] = direction
 		animTree["parameters/interact/blend_position"] = direction
-
-		
-# MÉTODOS INTERACCIÓN
-func _on_area_2d_body_entered(body):
-	pass
-
-
-func _on_area_2d_body_exited(body):
-	pass

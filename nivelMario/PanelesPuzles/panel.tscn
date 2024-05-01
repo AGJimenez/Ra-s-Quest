@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsm02wxkpslo1"]
+
+[ext_resource type="Script" path="res://PanelesPuzles/panel.gd" id="1_4un72"]
+
+[node name="Panel" type="Panel"]
+offset_right = 659.0
+offset_bottom = 375.0
+script = ExtResource("1_4un72")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 659.0
+offset_bottom = 373.0

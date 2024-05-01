@@ -1,8 +1,8 @@
-[gd_scene load_steps=43 format=3 uid="uid://youdt3f7onux"]
+[gd_scene load_steps=42 format=3 uid="uid://youdt3f7onux"]
 
-[ext_resource type="Texture2D" uid="uid://cfqoqfp1poopx" path="res://Full Spritesheet (normal).png" id="2_3iukn"]
-[ext_resource type="Texture2D" uid="uid://c5ymjyxfv7igl" path="res://Full Spritesheet (inverted).png" id="2_5p5nv"]
-[ext_resource type="Script" path="res://personaje.gd" id="4_hqpn0"]
+[ext_resource type="Texture2D" uid="uid://b3t66ppq6wmha" path="res://32px+VXACE/Full Spritesheet (normal).png" id="2_3iukn"]
+[ext_resource type="Texture2D" uid="uid://c2vetr3fqh0su" path="res://32px+VXACE/Full Spritesheet (inverted).png" id="2_5p5nv"]
+[ext_resource type="Script" path="res://Scripts/personaje.gd" id="4_hqpn0"]
 
 [sub_resource type="Animation" id="Animation_0xip3"]
 length = 0.001
@@ -663,10 +663,6 @@ transitions = ["Start", "stop", SubResource("AnimationNodeStateMachineTransition
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixbdv"]
 size = Vector2(34, 19)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ipng"]
-radius = 19.0
-height = 52.0
-
 [node name="Personaje" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(576, 324)
@@ -703,15 +699,6 @@ parameters/stop/blend_position = Vector2(-0.3232, -0.89418)
 position = Vector2(0, 15.5)
 shape = SubResource("RectangleShape2D_ixbdv")
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2/Area2D"]
-position = Vector2(0, -1)
-shape = SubResource("CapsuleShape2D_0ipng")
-
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
 zoom = Vector2(1.75, 1.75)
 position_smoothing_enabled = true
-
-[connection signal="body_entered" from="CharacterBody2D2/Area2D" to="CharacterBody2D2" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="CharacterBody2D2/Area2D" to="CharacterBody2D2" method="_on_area_2d_body_exited"]
