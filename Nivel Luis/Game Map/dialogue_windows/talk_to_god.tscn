@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpr8emerbq5gc"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0waaj"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yd3d2"]
+light_mode = 1
+
+[node name="talk_to_god" type="Control"]
+light_mask = 0
+z_index = 20
+material = SubResource("CanvasItemMaterial_0waaj")
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+light_mask = 0
+material = SubResource("CanvasItemMaterial_yd3d2")
+layout_mode = 1
+offset_right = 52.0
+offset_bottom = 32.0
+bbcode_enabled = true
+text = "[shake]TALK"

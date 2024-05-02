@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://h5bx8q3des28"]
+
+[ext_resource type="Texture2D" uid="uid://cd2h6pj1jh42c" path="res://Tilesets/Egyptian_C.png" id="1_p0dvw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gxsx"]
+size = Vector2(20, 17.8551)
+
+[node name="chest_flip_h" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p0dvw")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(416, 454, 32, 54)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.6383)
+scale = Vector2(1.56826, 1.52767)
+shape = SubResource("RectangleShape2D_3gxsx")
