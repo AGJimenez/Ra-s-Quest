@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc4e1genctsv0"]
+
+[ext_resource type="Texture2D" uid="uid://dv7f0vk31uyr0" path="res://Assets/ras.png" id="1_0wgld"]
+[ext_resource type="FontFile" uid="uid://df7wawb1o2m51" path="res://Assets/fuentes/papyrus.ttf" id="2_miai6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_olrmd"]
+font = ExtResource("2_miai6")
+font_size = 56
+font_color = Color(1, 0.823529, 0.513726, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 31
+
+[sub_resource type="Theme" id="Theme_n6mot"]
+
+[node name="MenuPpal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -188.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0wgld")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0, 0.176471, 0.933333)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -46.0
+offset_top = 83.0
+offset_right = 43.0
+offset_bottom = 106.0
+grow_horizontal = 2
+text = "RA'S QUEST"
+label_settings = SubResource("LabelSettings_olrmd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_n6mot")
+text = "START GAME"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
