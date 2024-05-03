@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8a1h4xafe2jp"]
+
+[ext_resource type="Script" path="res://Escenas/nivel_mario.gd" id="1_ghghm"]
+[ext_resource type="PackedScene" uid="uid://cwqd7o7cxh88e" path="res://Escenas/escenario.tscn" id="2_ou1fc"]
+[ext_resource type="PackedScene" uid="uid://c3icwgvb0l2e3" path="res://Interacciones/interacciones.tscn" id="3_p6jtr"]
+
+[node name="nivelMario" type="Node"]
+script = ExtResource("1_ghghm")
+
+[node name="Escenario" parent="." instance=ExtResource("2_ou1fc")]
+
+[node name="Interacciones" parent="." instance=ExtResource("3_p6jtr")]
+position = Vector2(3120, 2454)

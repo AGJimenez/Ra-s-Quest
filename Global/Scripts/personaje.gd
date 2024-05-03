@@ -4,6 +4,9 @@ class_name Personaje
 @export var speed = 100
 @onready var animTree: AnimationTree = $AnimationTree
 var direction: Vector2 = Vector2.ZERO
+@onready var has_interacted = false
+
+
 
 func _ready():
 	animTree.active = true
@@ -30,6 +33,7 @@ func update_animation():
 		animTree["parameters/conditions/is_moving"] = true
 	if (Input.is_action_pressed("Interact")):
 		animTree["parameters/conditions/interact"] = true
+		has_interacted = true
 	else:
 		animTree["parameters/conditions/interact"] = false
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=42 format=3 uid="uid://youdt3f7onux"]
+[gd_scene load_steps=43 format=3 uid="uid://youdt3f7onux"]
 
 [ext_resource type="Texture2D" uid="uid://cfqoqfp1poopx" path="res://Assets/Full Spritesheet (normal).png" id="2_3iukn"]
 [ext_resource type="Texture2D" uid="uid://c5ymjyxfv7igl" path="res://Assets/Full Spritesheet (inverted).png" id="2_5p5nv"]
+[ext_resource type="PackedScene" uid="uid://dsm02wxkpslo1" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel.tscn" id="4_fs3wc"]
 [ext_resource type="Script" path="res://Scripts/personaje.gd" id="4_hqpn0"]
 
 [sub_resource type="Animation" id="Animation_0xip3"]
@@ -445,7 +446,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [36]
+"values": [41]
 }
 
 [sub_resource type="Animation" id="Animation_mhuyl"]
@@ -667,22 +668,22 @@ size = Vector2(34, 19)
 y_sort_enabled = true
 position = Vector2(576, 324)
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 motion_mode = 1
 script = ExtResource("4_hqpn0")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 scale = Vector2(3, 3)
 texture = ExtResource("2_3iukn")
 hframes = 12
 vframes = 15
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 libraries = {
 "": SubResource("AnimationLibrary_gxl3e")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D2"]
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
 libraries = {
 "": SubResource("AnimationLibrary_gxl3e")
 }
@@ -695,10 +696,17 @@ parameters/interact/blend_position = Vector2(0, 0)
 parameters/move/blend_position = Vector2(0, 0)
 parameters/stop/blend_position = Vector2(-0.3232, -0.89418)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, 15.5)
 shape = SubResource("RectangleShape2D_ixbdv")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(1.75, 1.75)
 position_smoothing_enabled = true
+
+[node name="Panel" parent="CharacterBody2D/Camera2D" instance=ExtResource("4_fs3wc")]
+visible = false
+offset_left = -329.0
+offset_top = -185.0
+offset_right = 330.0
+offset_bottom = 188.0
