@@ -36,6 +36,10 @@ func showTileMap():
 			$"Panel/Ecuacion 9".show()
 		9:
 			$"Panel/Ecuacion 10".show()
+		10:
+			$"Panel/Ecuacion 11".show()
+		11:
+			$"Panel/Ecuacion 12".show()
 
 func comprobarDatos():
 	var texto=$Panel/Label/TextEdit.get_text()
@@ -132,6 +136,24 @@ func comprobarDatos():
 				ultima_Area.queue_free()
 			else:
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_incorrecta.dialogue"),"main")
+		10:
+			if (textoLabel2=="-5" && texto2Label2=="-10") || (textoLabel2=="-10" && texto2Label2=="-5"):
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_correcta.dialogue"),"main")
+				$"Panel/Ecuacion 11".hide()
+				hide()
+				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_incorrecta.dialogue"),"main")
+		11:
+			if (textoLabel2=="-49" && texto2Label2=="49") || (textoLabel2=="49" && texto2Label2=="-49"):
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_correcta.dialogue"),"main")
+				$"Panel/Ecuacion 12".hide()
+				hide()
+				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_incorrecta.dialogue"),"main")
 		_:
 			hide()
 			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Go_To_FinalPuzzle.dialogue"),"main")
@@ -149,3 +171,7 @@ func _on_button_pressed():
 func _on_button_pressed_2():
 	print(numeroDePanelesSuperados)
 	comprobarDatos()
+
+
+func _on_button_pressed_3():
+	pass # Replace with function body.
