@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://fqx0whywg3cv"
+path="res://.godot/imported/panel_respuesta_correcta.dialogue-41360d1a700518218e08b31093407107.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dani/panel_respuesta_correcta.dialogue"
+dest_files=["res://.godot/imported/panel_respuesta_correcta.dialogue-41360d1a700518218e08b31093407107.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,7 @@
+~ main
+Jack: Que extraño... Parece que hay algo en este cofre.
+- Abrir
+	Jack: Voy a ver que hay dentro
+- No abrir
+	Jack: En otro momento veré que hago con él
+=> END

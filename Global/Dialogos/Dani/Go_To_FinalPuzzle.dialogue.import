@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bx66gc5apga2w"
+path="res://.godot/imported/Go_To_FinalPuzzle.dialogue-41e8ca83f5a6b35eb409bd8cf3d8e685.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dani/Go_To_FinalPuzzle.dialogue"
+dest_files=["res://.godot/imported/Go_To_FinalPuzzle.dialogue-41e8ca83f5a6b35eb409bd8cf3d8e685.tres"]
+
+[params]
+
+defaults=true

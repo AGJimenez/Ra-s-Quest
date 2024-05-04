@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bkc7l4pq6fxwh"
+path="res://.godot/imported/interaccion_con_balanza.dialogue-19d75aa5cbd350ad24f36510aa9659ec.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dani/interaccion_con_balanza.dialogue"
+dest_files=["res://.godot/imported/interaccion_con_balanza.dialogue-19d75aa5cbd350ad24f36510aa9659ec.tres"]
+
+[params]
+
+defaults=true

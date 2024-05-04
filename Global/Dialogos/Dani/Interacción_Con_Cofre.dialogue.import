@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://2id5wccixgp0"
+path="res://.godot/imported/Interacción_Con_Cofre.dialogue-9fca4df479f7a35604e4e74156bce898.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dani/Interacción_Con_Cofre.dialogue"
+dest_files=["res://.godot/imported/Interacción_Con_Cofre.dialogue-9fca4df479f7a35604e4e74156bce898.tres"]
+
+[params]
+
+defaults=true
