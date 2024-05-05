@@ -306,6 +306,31 @@ animations = [{
 scale = Vector2(2.04173, 2.34881)
 script = ExtResource("1_63inp")
 
+[node name="colliders" type="Node2D" parent="."]
+
+[node name="ray(0,1)" type="RayCast2D" parent="colliders"]
+position = Vector2(0, 5.6)
+scale = Vector2(1.4593, 0.818656)
+target_position = Vector2(0, 10.2179)
+
+[node name="ray(-1,0)" type="RayCast2D" parent="colliders"]
+position = Vector2(0, 5.6)
+rotation = 1.57078
+scale = Vector2(1.22006, 1.02726)
+target_position = Vector2(0, 10.2179)
+
+[node name="ray(0,-1)" type="RayCast2D" parent="colliders"]
+position = Vector2(0, 5.6)
+rotation = 3.14159
+scale = Vector2(1.45936, 0.914412)
+target_position = Vector2(0, 10.2179)
+
+[node name="ray(1,0)" type="RayCast2D" parent="colliders"]
+position = Vector2(0, 5.6)
+rotation = 4.71238
+scale = Vector2(1.26689, 1.06152)
+target_position = Vector2(0, 10.2179)
+
 [node name="skelyboy" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_64qjj")
@@ -315,7 +340,7 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.53472)
 rotation = 3.14159
-scale = Vector2(0.627869, 0.20627)
+scale = Vector2(0.478899, 0.321719)
 shape = SubResource("CircleShape2D_ejy50")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -16888,6 +16888,7 @@ script = ExtResource("1_40c50")
 metadata/_edit_vertical_guides_ = [687.0]
 
 [node name="dark" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="room" type="TileMap" parent="."]
