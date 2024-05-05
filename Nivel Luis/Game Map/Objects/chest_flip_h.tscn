@@ -6,9 +6,11 @@
 size = Vector2(20, 17.8551)
 
 [node name="chest_flip_h" type="StaticBody2D"]
+light_mask = 3
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
 texture = ExtResource("1_p0dvw")
 flip_h = true
 region_enabled = true

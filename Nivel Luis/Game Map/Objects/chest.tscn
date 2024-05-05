@@ -6,8 +6,10 @@
 size = Vector2(20, 10.7177)
 
 [node name="chest" type="StaticBody2D"]
+light_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
 texture = ExtResource("1_n5wld")
 region_enabled = true
 region_rect = Rect2(480, 416, 32, 28)

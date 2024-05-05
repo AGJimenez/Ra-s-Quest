@@ -17,18 +17,20 @@ var chest_flip_h_complete = false
 var chest_flip_h2 = false
 var chest_flip_h2_complete = false
 var talk = false
-var smth = false
+var pickable = false
 
 @onready var shadow_red = $"God Statue"/objective/Shadow/AnimationPlayer
 @onready var light_red = $"God Statue"/objective/light_floor/AnimationPlayer
 
+
 func _process(delta):
 	if((area_1_movable && area_2_movable && area_3_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_2_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_2_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player))):
-		if(!talk && !smth):
+		if(!talk):
 			$room/Player.set_physics_process(false)
+			$room/Player.set_process(false)
 			await get_tree().create_timer(1).timeout
 			$room/Player.set_physics_process(true)
-			smth = true
+			$room/Player.set_process(true)
 		Global.activated = true
 		if(Global.activated):
 			light_red.play("red")
@@ -211,3 +213,4 @@ func _on_area_talk_body_exited(body):
 	if(body.is_in_group("Player") && Global.activated):
 		$room/Player/talk_to_god.visible = false
 		talk = false
+

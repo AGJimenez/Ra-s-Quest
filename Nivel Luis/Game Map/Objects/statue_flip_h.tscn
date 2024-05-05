@@ -9,12 +9,15 @@ polygon = PackedVector2Array(14, 17, -12, 17, -12, 40, 14, 40)
 size = Vector2(28, 20)
 
 [node name="Statue_flip_h" type="Node2D"]
+light_mask = 3
 y_sort_enabled = true
 
 [node name="body" type="StaticBody2D" parent="."]
+light_mask = 3
 y_sort_enabled = true
 
 [node name="statue" type="Sprite2D" parent="body"]
+light_mask = 3
 y_sort_enabled = true
 texture = ExtResource("1_maowv")
 flip_h = true
