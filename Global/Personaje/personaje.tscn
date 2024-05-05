@@ -705,8 +705,9 @@ shape = SubResource("RectangleShape2D_ixbdv")
 zoom = Vector2(1.75, 1.75)
 position_smoothing_enabled = true
 
-[node name="Panel" parent="CharacterBody2D/Camera2D" instance=ExtResource("4_fs3wc")]
+[node name="Panel_Mario" parent="CharacterBody2D/Camera2D" instance=ExtResource("4_fs3wc")]
 visible = false
+z_index = 5
 offset_left = -329.0
 offset_top = -185.0
 offset_right = 330.0

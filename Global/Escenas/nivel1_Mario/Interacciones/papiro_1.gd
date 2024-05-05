@@ -2,7 +2,7 @@ extends StaticBody2D
 class_name Papiro1
 
 @onready var label = $Label
-@onready var panel = get_node("../../Escenario/TileMap/Personaje/CharacterBody2D/Camera2D/Panel")
+@onready var panel = get_node("../../Escenario/TileMap/Personaje/CharacterBody2D/Camera2D/Panel_Mario")
 @onready var areaEntered: bool = false
 
 func _on_area_2d_body_entered(body):
