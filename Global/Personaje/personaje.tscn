@@ -685,6 +685,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
+libraries = {
+"": SubResource("AnimationLibrary_gxl3e")
+}
 tree_root = SubResource("AnimationNodeStateMachine_gcyys")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false

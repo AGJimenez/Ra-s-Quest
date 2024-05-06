@@ -9,9 +9,10 @@ class_name nivelMario
 @onready var botonPuzle1 = get_node("Escenario/TileMap/Personaje/CharacterBody2D/Camera2D/Panel_Mario/Puzle1/Button")
 
 signal signal_button_pressed
+var botonpulsado1 = false
 
 func _ready():
-	#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_inicial.dialogue"))
+	#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_inicial.dialogue"), "dialogo_inicial")
 	return
 	
 func _process(_delta):
@@ -23,16 +24,15 @@ func interacciones():
 	if (papiro1.areaEntered == true && player.has_interacted == true):
 		player.speed = 0
 		panel.show()
-		if (resultadoPuzle1.get_text() == "2"):
-			#panel.hide()
-			print("bien")
+		if (resultadoPuzle1.get_text() == "2" && botonpulsado1 == true):
+			panel.hide()
+		elif  (resultadoPuzle1.get_text() != "2" && botonpulsado1 == true):
+			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_error_puzle1.dialogue"), 			"dialogo_error_puzle1");
 		else:
 			pass
-		
-
-func _on_button_pressed():
-	print("hello")
 
 
-func _on_signal_button_pressed():
+
+func _on_signal_button_puzle1_pressed():
+	botonpulsado1 = true
 	print("boton funcionaa")
