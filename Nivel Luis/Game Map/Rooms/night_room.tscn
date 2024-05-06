@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d31bvrjh6ekq8"]
+[gd_scene load_steps=31 format=3 uid="uid://d31bvrjh6ekq8"]
 
 [ext_resource type="Texture2D" uid="uid://c5mw4vjvmhmpx" path="res://Tilesets/non-rm-a4-square.png" id="1_0y8jt"]
 [ext_resource type="Script" path="res://Scripts/night_room.gd" id="1_40c50"]
@@ -16874,10 +16874,49 @@ sources/10 = SubResource("TileSetAtlasSource_ryg2j")
 sources/2 = SubResource("TileSetAtlasSource_jqfh8")
 sources/3 = SubResource("TileSetAtlasSource_rqow3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ftmm"]
+size = Vector2(60.5, 20)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5jpm"]
 size = Vector2(20, 35.6937)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuk47"]
+
+[sub_resource type="Animation" id="Animation_eojeg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rx8fi"]
+resource_name = "change"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hg22t"]
+_data = {
+"RESET": SubResource("Animation_eojeg"),
+"change": SubResource("Animation_rx8fi")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxk6f"]
 size = Vector2(23, 42)
@@ -16888,7 +16927,6 @@ script = ExtResource("1_40c50")
 metadata/_edit_vertical_guides_ = [687.0]
 
 [node name="dark" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="room" type="TileMap" parent="."]
@@ -16920,7 +16958,7 @@ layer_6/y_sort_enabled = true
 layer_6/tile_data = PackedInt32Array(131075, 851969, 5, 196611, 851969, 6, 65555, 393223, 11, 131091, 393223, 12, 196627, 393223, 13, 262163, 393223, 14, 327699, 393223, 15, 65559, 393223, 11, 131095, 393223, 12, 196631, 393223, 13, 262167, 393223, 14, 327703, 393223, 15, 1245224, 655361, 12, 1310760, 655361, 13, 1376296, 655361, 12, 1441832, 655361, 13, 1245231, 851969, 7, 1310767, 851969, 8, 1441839, 720897, 10, 1376298, 786433, 13, 1507371, 720897, 5, 1572907, 720897, 6, 1507372, 786433, 5, 1572908, 786433, 6, 1114159, 786433, 14, 1179695, 786433, 15, 1114160, 786433, 14, 1179696, 786433, 15, 1114158, 786433, 14, 1179694, 786433, 15)
 
 [node name="Player" parent="room" instance=ExtResource("10_gjakg")]
-position = Vector2(687, 652)
+position = Vector2(707, 80)
 
 [node name="Camera_night" type="Camera2D" parent="room/Player"]
 position = Vector2(1, 1.79276)
@@ -16948,6 +16986,21 @@ scale = Vector2(0.272401, 0.26056)
 
 [node name="little torch" parent="room/Player" instance=ExtResource("11_x4lfw")]
 position = Vector2(-19, -11.653)
+
+[node name="door" type="StaticBody2D" parent="."]
+position = Vector2(687, -19)
+
+[node name="Sprite2D" type="Sprite2D" parent="door"]
+light_mask = 2
+position = Vector2(1.00003, -0.999996)
+scale = Vector2(1.31915, 1.1875)
+texture = ExtResource("5_e7prg")
+region_enabled = true
+region_rect = Rect2(263.918, 95.9997, 47.968, 64.1878)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(0.75, 25)
+shape = SubResource("RectangleShape2D_5ftmm")
 
 [node name="night_area_chest" type="Area2D" parent="."]
 position = Vector2(688, 778)
@@ -16983,6 +17036,11 @@ position = Vector2(5.5935, -109.774)
 rotation = 3.12978
 scale = Vector2(0.254969, 0.35135)
 texture = ExtResource("13_43yrx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wall_puzzle/PointLight2D"]
+libraries = {
+"": SubResource("AnimationLibrary_hg22t")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_puzzle"]
 position = Vector2(1.5, 11)

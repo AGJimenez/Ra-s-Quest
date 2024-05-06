@@ -61,97 +61,177 @@ func _on_torch_area_night_body_entered(body):
 func _on_area_1_movable_body_entered(body):
 	if(body.is_in_group("movable") && !Global.activated):
 		area_1_movable = true
-		$Statues/Statue/ray/AnimationPlayer.play("fade_in")
+		if($Statues/Statue/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue/ray/AnimationPlayer.play("fade_in")
+			$Statues/Statue/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue/ray/AnimationPlayer.play("fade_in")
 
 
 func _on_area_1_movable_body_exited(body):
 	if(body.is_in_group("movable") && !Global.activated):
 		area_1_movable = false
-		$Statues/Statue/ray/AnimationPlayer.play("fade_out")
+		if($Statues/Statue/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue/ray/AnimationPlayer.play("fade_out")
+			$Statues/Statue/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue/ray/AnimationPlayer.play("fade_out")
 
 
 func _on_area_2_movable_body_entered(body):
 	if(body.is_in_group("movable") && !Global.activated):
 		area_2_movable = true
-		$Statues/Statue2/ray/AnimationPlayer.play("fade_in")
+		if($Statues/Statue2/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue2/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue2/ray/AnimationPlayer.play("fade_in")
+			$Statues/Statue2/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue2/ray/AnimationPlayer.play("fade_in")
 
 
 func _on_area_2_movable_body_exited(body):
 	if(body.is_in_group("movable") && !Global.activated):
 		area_2_movable = false
-		$Statues/Statue2/ray/AnimationPlayer.play("fade_out")
+		if($Statues/Statue2/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue2/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue2/ray/AnimationPlayer.play("fade_out")
+			$Statues/Statue2/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue2/ray/AnimationPlayer.play("fade_out")
 
 
 func _on_area_3_movable_body_entered(body):
 	if(body.is_in_group("movable") && !Global.activated):
 		area_3_movable = true
-		$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_in")
+		if($Statues/Statue_flip_h/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue_flip_h/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_in")
+			$Statues/Statue_flip_h/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_in")
 
 
 func _on_area_3_movable_body_exited(body):
 	if(body.is_in_group("movable") && !Global.activated):
 		area_3_movable = false
-		$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_out")
+		if($Statues/Statue_flip_h/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue_flip_h/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_out")
+			$Statues/Statue_flip_h/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_out")
 
 
 func _on_area_4_movable_body_entered(body):
 	if(body.is_in_group("movable") && !Global.activated):
 		area_4_movable = true
-		$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_in")
+		if($Statues/Statue_flip_h2/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue_flip_h2/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_in")
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_in")
 
 
 func _on_area_4_movable_body_exited(body):
 	if(body.is_in_group("movable") && !Global.activated):
 		area_4_movable = false
-		$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_out")
+		if($Statues/Statue_flip_h2/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue_flip_h2/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_out")
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_out")
 
 
 func _on_area_1_player_body_entered(body):
 	if(body.is_in_group("Player") && !area_1_movable && !Global.activated):
 		area_1_player = true
-		$Statues/Statue/ray/AnimationPlayer.play("fade_in")
+		if($Statues/Statue/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue/ray/AnimationPlayer.play("fade_in")
+			$Statues/Statue/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue/ray/AnimationPlayer.play("fade_in")
 
 
 func _on_area_1_player_body_exited(body):
 	if(body.is_in_group("Player") && !area_1_movable && !Global.activated):
 		area_1_player = false
-		$Statues/Statue/ray/AnimationPlayer.play("fade_out")
+		if($Statues/Statue/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue/ray/AnimationPlayer.play("fade_out")
+			$Statues/Statue/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue/ray/AnimationPlayer.play("fade_out")
 
 
 func _on_area_2_player_body_entered(body):
 	if(body.is_in_group("Player") && !area_2_movable && !Global.activated):
 		area_2_player = true
-		$Statues/Statue2/ray/AnimationPlayer.play("fade_in")
+		if($Statues/Statue2/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue2/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue2/ray/AnimationPlayer.play("fade_in")
+			$Statues/Statue2/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue2/ray/AnimationPlayer.play("fade_in")
 
 
 func _on_area_2_player_body_exited(body):
 	if(body.is_in_group("Player") && !area_2_movable && !Global.activated):
 		area_2_player = false
-		$Statues/Statue2/ray/AnimationPlayer.play("fade_out")
+		if($Statues/Statue2/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue2/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue2/ray/AnimationPlayer.play("fade_out")
+			$Statues/Statue2/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue2/ray/AnimationPlayer.play("fade_out")
 
 
 func _on_area_3_player_body_entered(body):
 	if(body.is_in_group("Player") && !area_3_movable && !Global.activated):
 		area_3_player = true
-		$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_in")
+		if($Statues/Statue_flip_h/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue_flip_h/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_in")
+			$Statues/Statue_flip_h/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_in")
 
 
 func _on_area_3_player_body_exited(body):
 	if(body.is_in_group("Player") && !area_3_movable && !Global.activated):
 		area_3_player = false
-		$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_out")
+		if($Statues/Statue_flip_h/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue_flip_h/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_out")
+			$Statues/Statue_flip_h/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue_flip_h/ray/AnimationPlayer.play("fade_out")
 
 
 func _on_area_4_player_body_entered(body):
 	if(body.is_in_group("Player") && !area_4_movable && !Global.activated):
 		area_4_player = true
-		$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_in")
+		if($Statues/Statue_flip_h2/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue_flip_h2/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_in")
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_in")
 
 
 func _on_area_4_player_body_exited(body):
 	if(body.is_in_group("Player") && !area_4_movable && !Global.activated):
 		area_4_player = false
-		$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_out")
+		if($Statues/Statue_flip_h2/ray/AnimationPlayer.is_playing()):
+			var anim_seconds = $Statues/Statue_flip_h2/ray/AnimationPlayer.get_current_animation_position()
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_out")
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.advance(1 - anim_seconds)
+		else:
+			$Statues/Statue_flip_h2/ray/AnimationPlayer.play("fade_out")
 
 
 func _on_area_chest_body_entered(body):
