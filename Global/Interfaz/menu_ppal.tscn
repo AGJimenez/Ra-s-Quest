@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc4e1genctsv0"]
+[gd_scene load_steps=6 format=3 uid="uid://bc4e1genctsv0"]
 
 [ext_resource type="Texture2D" uid="uid://dv7f0vk31uyr0" path="res://Assets/ras.png" id="1_0wgld"]
+[ext_resource type="Script" path="res://Interfaz/menu_ppal.gd" id="1_hhmsd"]
 [ext_resource type="FontFile" uid="uid://df7wawb1o2m51" path="res://Assets/fuentes/papyrus.ttf" id="2_miai6"]
 [ext_resource type="Theme" uid="uid://dtngmjro2nr1c" path="res://Assets/defaultButton.tres" id="3_vs2ip"]
 
@@ -19,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hhmsd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -84,3 +86,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_vs2ip")
 text = "EXIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
