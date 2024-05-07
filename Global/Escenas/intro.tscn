@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://csjnejeofyv8y"]
+[gd_scene load_steps=34 format=3 uid="uid://csjnejeofyv8y"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_bnsu1"]
 [ext_resource type="Script" path="res://Escenas/intro.gd" id="1_x8x6h"]
@@ -10608,6 +10608,21 @@ size = Vector2(515, 673)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifm2b"]
 size = Vector2(115.5, 20)
 
+[sub_resource type="Animation" id="Animation_16nwd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_ry5yg"]
 resource_name = "new_animation"
 length = 2.0
@@ -10624,25 +10639,47 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_16nwd"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m64uu"]
+_data = {
+"RESET": SubResource("Animation_16nwd"),
+"new_animation": SubResource("Animation_ry5yg")
+}
+
+[sub_resource type="Animation" id="Animation_o6heh"]
+resource_name = "camara"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(563, -29), Vector2(613, 790)]
+}
+
+[sub_resource type="Animation" id="Animation_1pnhg"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("Camera2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0, 0, 1)]
+"values": [Vector2(563, -29)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m64uu"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w8ry1"]
 _data = {
-"RESET": SubResource("Animation_16nwd"),
-"new_animation": SubResource("Animation_ry5yg")
+"RESET": SubResource("Animation_1pnhg"),
+"camara": SubResource("Animation_o6heh")
 }
 
 [node name="Intro" type="Node2D"]
@@ -10680,6 +10717,12 @@ layer_6/tile_data = PackedInt32Array(720930, 524295, 4, 655394, 524295, 4, 58985
 z_index = 1
 position = Vector2(612, 812)
 
+[node name="Inventory_UI" parent="Personaje" index="4"]
+offset_left = -110.0
+offset_top = -182.0
+offset_right = -110.0
+offset_bottom = -182.0
+
 [node name="Camera2D" type="Camera2D" parent="Personaje"]
 limit_left = -390
 limit_top = -351
@@ -10688,6 +10731,7 @@ limit_bottom = 1088
 limit_smoothed = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(255.5, 139.5)
@@ -10716,9 +10760,22 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_left = -271.0
 offset_top = -439.0
 offset_right = 1546.0
 offset_bottom = 1180.0
 color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w8ry1")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(563, -29)
+limit_bottom = 1180
+limit_smoothed = true
+
+[editable path="Personaje"]
