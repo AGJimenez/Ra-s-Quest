@@ -1,8 +1,14 @@
 extends Node2D
 
 var wall = false
+var change = false
 
 func _ready():
+	if(Global.complete && !change):
+		$wall_puzzle/PointLight2D/AnimationPlayer.play("change")
+		$door.visible = false
+		$door/CollisionShape2D.disabled = true
+		change = true
 	if Global.change == "chest-night":
 		$room/Player.global_position = $"Spawn_points/chest-night".global_position
 	
