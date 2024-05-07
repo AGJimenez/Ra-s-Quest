@@ -3,6 +3,8 @@ extends Node2D
 var on_area_cofre=false
 var on_area_balanza=false
 @onready var panel = get_node("Personaje/Camera2D/Panel")
+@onready var camera = get_node("Personaje/Camera2D")
+@onready var player = get_node("Personaje")
 @onready var Sprite = get_node("StaticBody2D")
 @onready var SpriteCollision = get_node("StaticBody2D/CollisionShape2D")
 # Called when the node enters the scene tree for the first time.
@@ -19,8 +21,10 @@ func _process(delta):
 func interaccion_con_cofre():
 	if panel.visible:
 		panel.visible = false
+		player.speed = 100
 	else:
 		panel.visible = true
+		player.speed = 0
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta.dialogue"),"main")
 
 func interaccion():
