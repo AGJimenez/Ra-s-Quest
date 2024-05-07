@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://2j2y4f5wxlxu"]
+[gd_scene load_steps=30 format=3 uid="uid://2j2y4f5wxlxu"]
 
 [ext_resource type="Script" path="res://Scripts/node_2d.gd" id="1_ftdwg"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="1_sld68"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="15_2j1o6"]
 [ext_resource type="PackedScene" path="res://Escenas/area_cofres_vertical.tscn" id="15_ahc0e"]
 [ext_resource type="PackedScene" uid="uid://irpot6b873ed" path="res://Escenas/panel.tscn" id="16_ortta"]
+[ext_resource type="PackedScene" uid="uid://cm1grxk6de8lv" path="res://Escenas/static_body_2d.tscn" id="17_fc726"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtdwe"]
 texture = ExtResource("1_sld68")
@@ -11555,13 +11556,17 @@ limit_bottom = 2560
 limit_smoothed = true
 
 [node name="Panel" parent="Personaje/Camera2D" instance=ExtResource("16_ortta")]
-visible = false
 z_index = 99
-offset_left = -251.0
-offset_top = -150.0
-offset_right = 421.0
-offset_bottom = 254.0
+offset_left = -197.0
+offset_top = -148.0
+offset_right = 475.0
+offset_bottom = 256.0
 scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" parent="." instance=ExtResource("17_fc726")]
+position = Vector2(2383, 1148)
 
 [connection signal="body_entered" from="Cofres/area_cofres" to="." method="_on_area_cofres_body_entered"]
 [connection signal="body_exited" from="Cofres/area_cofres" to="." method="_on_area_cofres_body_exited"]
