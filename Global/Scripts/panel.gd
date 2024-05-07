@@ -1,6 +1,6 @@
 extends Panel
 
-var numeroDePanelesSuperados=8
+var numeroDePanelesSuperados=0
 signal panel_interaction_success
 var ultima_Area=null
 
@@ -40,11 +40,18 @@ func showTileMap():
 			$"Panel/Ecuacion 11".show()
 		11:
 			$"Panel/Ecuacion 12".show()
+		12:
+			$Panel/Label2.hide()
+			$Panel/Label3.show()
+			$"Panel/Ecuacion 13".show()
 
 func comprobarDatos():
 	var texto=$Panel/Label/TextEdit.get_text()
 	var textoLabel2=$Panel/Label2/TextEdit.get_text()
 	var texto2Label2=$Panel/Label2/TextEdit2.get_text()
+	var textoLabel3=$Panel/Label3/TextEdit.get_text()
+	var texto2Label3=$Panel/Label3/TextEdit2.get_text()
+	var texto3Label3=$Panel/Label3/TextEdit3.get_text()
 	match numeroDePanelesSuperados:
 		0:
 			if texto=="2":
@@ -154,6 +161,15 @@ func comprobarDatos():
 				ultima_Area.queue_free()
 			else:
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_incorrecta.dialogue"),"main")
+		12:
+			if (textoLabel3=="0" && texto2Label3=="7" && texto3Label3=="-7")||(textoLabel3=="0" && texto2Label3=="-7" && texto3Label3=="7")||(textoLabel3=="7" && texto2Label3=="0" && texto3Label3=="-7")||(textoLabel3=="7" && texto2Label3=="-7" && texto3Label3=="0")||(textoLabel3=="-7" && texto2Label3=="7" && texto3Label3=="0")||(textoLabel3=="-7" && texto2Label3=="0" && texto3Label3=="7"):
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_correcta.dialogue"),"main")
+				$"Panel/Ecuacion 13".hide()
+				hide()
+				numeroDePanelesSuperados=numeroDePanelesSuperados+1
+				ultima_Area.queue_free()
+			else:
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_incorrecta.dialogue"),"main")
 		_:
 			hide()
 			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Go_To_FinalPuzzle.dialogue"),"main")
@@ -174,4 +190,5 @@ func _on_button_pressed_2():
 
 
 func _on_button_pressed_3():
-	pass # Replace with function body.
+	print(numeroDePanelesSuperados)
+	comprobarDatos()

@@ -1,14 +1,204 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjwaur5qv0j6v"]
+[gd_scene load_steps=15 format=3 uid="uid://bjwaur5qv0j6v"]
 
 [ext_resource type="Script" path="res://Scripts/chest_puzzle.gd" id="1_f07qv"]
+[ext_resource type="Texture2D" uid="uid://crrmwov80imkt" path="res://Tilesets/non-rm-a3.png" id="2_0lkkx"]
+[ext_resource type="Texture2D" uid="uid://cd2h6pj1jh42c" path="res://Tilesets/Egyptian_C.png" id="2_1kd5x"]
+[ext_resource type="Texture2D" uid="uid://bfjib41qumsbp" path="res://Sprites/circlue.png" id="2_a51jv"]
+[ext_resource type="Texture2D" uid="uid://cr5tid3tgxk13" path="res://icon.svg" id="3_gpqsv"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cr6mv"]
+b = Vector2(6.51848e-05, 13.9089)
+
+[sub_resource type="Animation" id="Animation_qf417"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.580392, 0.580392, 0.580392, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vxym8"]
+resource_name = "activated"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.580392, 0.580392, 0.580392, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ika66"]
+_data = {
+"RESET": SubResource("Animation_qf417"),
+"activated": SubResource("Animation_vxym8")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vv68e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttskj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_588a5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifx8g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qo5c4"]
 
 [node name="chest_puzzle" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_f07qv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="darker" type="CanvasModulate" parent="."]
+color = Color(0.772549, 0.772549, 0.772549, 1)
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(577, -51)
+scale = Vector2(14.5955, 14.5955)
+texture = ExtResource("2_0lkkx")
+region_enabled = true
+region_rect = Rect2(1263.87, 223.54, 79.8716, 96.4088)
+
+[node name="frontground" type="Sprite2D" parent="."]
+position = Vector2(552, 395)
+scale = Vector2(19.5893, 19.5893)
+texture = ExtResource("2_1kd5x")
+region_enabled = true
+region_rect = Rect2(479.836, 416.053, 32.5664, 28.3774)
+
+[node name="player_check" type="CharacterBody2D" parent="." groups=["Player"]]
+z_index = 1
+position = Vector2(426, 327)
+scale = Vector2(0.776483, 1.10769)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_check"]
+rotation = -1.57079
+scale = Vector2(5.97755, 0.614587)
+shape = SubResource("SegmentShape2D_cr6mv")
+
+[node name="Sprite2D" type="Sprite2D" parent="player_check"]
+position = Vector2(4.50751, -1.86563e-05)
+scale = Vector2(0.0704296, 0.141059)
+texture = ExtResource("3_gpqsv")
+
+[node name="skill_checks" type="Node2D" parent="."]
+position = Vector2(553, 238)
+
+[node name="reference circle" type="Sprite2D" parent="skill_checks"]
+z_index = -22
+scale = Vector2(0.74, 0.74)
+texture = ExtResource("2_a51jv")
+
+[node name="Polygon2D" type="Polygon2D" parent="skill_checks"]
+position = Vector2(121, -7.75215)
+rotation = 3.01256
+color = Color(0.580392, 0.580392, 0.580392, 1)
+polygon = PackedVector2Array(0, -47, 19, -38, 16, -32, 13, -21, 10, -5, 9, 5, 9, 16, 11, 29, 14, 40, 18, 51, -2, 58, -10, 32, -12, 17, -12, 1, -9, -18, -7, -26)
+
+[node name="skill_check_zone" type="Area2D" parent="skill_checks/Polygon2D"]
+position = Vector2(-1.85474, -1.24896)
+rotation = 0.00992632
+
+[node name="ckill_check_collision" type="CollisionPolygon2D" parent="skill_checks/Polygon2D/skill_check_zone"]
+position = Vector2(0.118824, -0.992946)
+rotation = 0.0345181
+polygon = PackedVector2Array(-0.268433, -44.1807, 19.0687, -35.516, 16.569, -29.7065, 13.6468, -18.9147, 13.0554, -11.9398, 12, -3, 11.4502, 6.99234, 12, 18, 14.4048, 31.3289, 17.5457, 41.6311, 22.5948, 53.0987, 3, 61, -2.14673, 48.9937, -6.03064, 35.6178, -8.74908, 20.3335, -9.47473, 5.2182, -8.71436, -3.74963, -7.78503, -14.7103, -6.11279, -22.5972, -3.02167, -35.3818)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="skill_checks/Polygon2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ika66")
+}
+
+[node name="Polygon2D2" type="Polygon2D" parent="skill_checks"]
+position = Vector2(5, -120.752)
+rotation = 1.57507
+color = Color(0.580392, 0.580392, 0.580392, 1)
+polygon = PackedVector2Array(0, -47, 19, -38, 16, -32, 13, -21, 10, -5, 9, 5, 9, 16, 11, 29, 14, 40, 18, 51, -2, 58, -10, 32, -12, 17, -12, 1, -9, -18, -7, -26)
+
+[node name="skill_check_zone2" type="Area2D" parent="skill_checks/Polygon2D2"]
+position = Vector2(-0.970093, 7.00421)
+rotation = 1.56652
+
+[node name="ckill_check_collision" type="CollisionPolygon2D" parent="skill_checks/Polygon2D2/skill_check_zone2"]
+position = Vector2(-9.17389, 0.916483)
+rotation = -1.53113
+polygon = PackedVector2Array(-0.268433, -44.1807, 19.0687, -35.516, 16.569, -29.7065, 13.6468, -18.9147, 13.0554, -11.9398, 12, -3, 11.4502, 6.99234, 12, 18, 14.4048, 31.3289, 17.5457, 41.6311, 22.5948, 53.0987, 3, 61, -2.14673, 48.9937, -6.03064, 35.6178, -8.74908, 20.3335, -9.47473, 5.2182, -8.62988, -4.74606, -7.78503, -14.7103, -6.11279, -22.5972, -3.02167, -35.3818)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="skill_checks/Polygon2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_ika66")
+}
+
+[node name="Polygon2D3" type="Polygon2D" parent="skill_checks"]
+position = Vector2(-121, -8.75218)
+color = Color(0.580392, 0.580392, 0.580392, 1)
+polygon = PackedVector2Array(0, -47, 19, -38, 16, -32, 13, -21, 10, -5, 9, 5, 9, 16, 11, 29, 14, 40, 18, 51, -2, 58, -10, 32, -12, 17, -12, 1, -9, -18, -7, -26)
+
+[node name="skill_check_zone3" type="Area2D" parent="skill_checks/Polygon2D3"]
+position = Vector2(-2, -2)
+rotation = 0.0157104
+
+[node name="ckill_check_collision" type="CollisionPolygon2D" parent="skill_checks/Polygon2D3/skill_check_zone3"]
+position = Vector2(0.118824, -0.992946)
+rotation = 0.0345181
+polygon = PackedVector2Array(-0.268433, -44.1807, 19.0687, -35.516, 16.569, -29.7065, 13.6468, -18.9147, 13.0554, -11.9398, 12, -3, 11.4502, 6.99234, 12, 18, 14.4048, 31.3289, 17.5457, 41.6311, 22.5948, 53.0987, 3, 61, -2.14673, 48.9937, -6.03064, 35.6178, -8.74908, 20.3335, -9.47473, 5.2182, -8.62988, -4.74606, -7.78503, -14.7103, -6.11279, -22.5972, -3.02167, -35.3818)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="skill_checks/Polygon2D3"]
+libraries = {
+"": SubResource("AnimationLibrary_ika66")
+}
+
+[node name="Polygon2D4" type="Polygon2D" parent="skill_checks"]
+position = Vector2(-5.00006, 121.248)
+rotation = -1.5761
+color = Color(0.580392, 0.580392, 0.580392, 1)
+polygon = PackedVector2Array(0, -47, 19, -38, 16, -32, 13, -21, 10, -5, 9, 5, 9, 16, 11, 29, 14, 40, 18, 51, -2, 58, -10, 32, -12, 17, -12, 1, -9, -18, -7, -26)
+
+[node name="skill_check_zone4" type="Area2D" parent="skill_checks/Polygon2D4"]
+position = Vector2(-1.98407, -3.01068)
+rotation = 0.00976246
+
+[node name="ckill_check_collision" type="CollisionPolygon2D" parent="skill_checks/Polygon2D4/skill_check_zone4"]
+position = Vector2(0.118824, -0.992946)
+rotation = 0.0345181
+polygon = PackedVector2Array(-0.268433, -44.1807, 19.0687, -35.516, 16.569, -29.7065, 13.6468, -18.9147, 13.0554, -11.9398, 12, -3, 11.4502, 6.99234, 12, 18, 14.4048, 31.3289, 17.5457, 41.6311, 22.5948, 53.0987, 3, 61, -2.14673, 48.9937, -6.03064, 35.6178, -8.74908, 20.3335, -9.47473, 5.2182, -8.62988, -4.74606, -7.78503, -14.7103, -6.11279, -22.5972, -3.02167, -35.3818)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="skill_checks/Polygon2D4"]
+libraries = {
+"": SubResource("AnimationLibrary_ika66")
+}
+
+[node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(28.8602, 16.207)
+offset_left = 483.0
+offset_top = 198.0
+offset_right = 491.0
+offset_bottom = 206.0
+scale = Vector2(16.814, 9.1559)
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vv68e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ttskj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_588a5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ifx8g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qo5c4")
+
+[connection signal="body_entered" from="skill_checks/Polygon2D/skill_check_zone" to="." method="_on_skill_check_zone_body_entered"]
+[connection signal="body_exited" from="skill_checks/Polygon2D/skill_check_zone" to="." method="_on_skill_check_zone_body_exited"]
+[connection signal="body_entered" from="skill_checks/Polygon2D2/skill_check_zone2" to="." method="_on_skill_check_zone_2_body_entered"]
+[connection signal="body_exited" from="skill_checks/Polygon2D2/skill_check_zone2" to="." method="_on_skill_check_zone_2_body_exited"]
+[connection signal="body_entered" from="skill_checks/Polygon2D3/skill_check_zone3" to="." method="_on_skill_check_zone_3_body_entered"]
+[connection signal="body_exited" from="skill_checks/Polygon2D3/skill_check_zone3" to="." method="_on_skill_check_zone_3_body_exited"]
+[connection signal="body_entered" from="skill_checks/Polygon2D4/skill_check_zone4" to="." method="_on_skill_check_zone_4_body_entered"]
+[connection signal="body_exited" from="skill_checks/Polygon2D4/skill_check_zone4" to="." method="_on_skill_check_zone_4_body_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

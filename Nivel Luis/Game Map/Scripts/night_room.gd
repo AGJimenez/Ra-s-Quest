@@ -19,7 +19,7 @@ func _ready():
 		$room/Player.global_position = $"Spawn_points/wall_puzzle-night".global_position
 
 func _process(delta):
-	if(Input.is_action_just_pressed("interact")):
+	if(Input.is_action_just_pressed("interact") && !change):
 		if(wall):
 			LoadManager.load_scene("res://Puzzles/wall_puzzle.tscn")
 	if(Input.is_action_just_pressed("torch")):
@@ -39,7 +39,7 @@ func _on_night_area_torch_body_entered(body):
 
 
 func _on_wall_puzzle_body_entered(body):
-	if(body.is_in_group("Player")):
+	if(body.is_in_group("Player") && !change):
 		wall = true
 		$room/Player/interact.visible = true
 
