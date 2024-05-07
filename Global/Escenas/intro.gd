@@ -18,3 +18,8 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.name=="Personaje":
 		get_tree().change_scene_to_file("res://Escenas/nivel1_Mario/nivel_mario.tscn")
+
+
+func _on_area_2dnpc_body_entered(body):
+	if body.name=="Personaje":
+		print("Conversacion con npc")

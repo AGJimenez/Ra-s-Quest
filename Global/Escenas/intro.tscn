@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://csjnejeofyv8y"]
+[gd_scene load_steps=36 format=3 uid="uid://csjnejeofyv8y"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_bnsu1"]
 [ext_resource type="Script" path="res://Escenas/intro.gd" id="1_x8x6h"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="10_kf2su"]
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="11_ep10g"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="12_auift"]
+[ext_resource type="PackedScene" uid="uid://b8gc7ec1uqh6s" path="res://Personaje/npcIntro.tscn" id="14_x7aiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj6tn"]
 texture = ExtResource("1_bnsu1")
@@ -10721,10 +10722,10 @@ z_index = 1
 position = Vector2(612, 812)
 
 [node name="Inventory_UI" parent="Personaje" index="4"]
-offset_left = -110.0
-offset_top = -182.0
-offset_right = -110.0
-offset_bottom = -182.0
+offset_left = -45.0
+offset_top = -92.0
+offset_right = -45.0
+offset_bottom = -92.0
 
 [node name="Camera2D" type="Camera2D" parent="Personaje"]
 limit_left = -192
@@ -10763,6 +10764,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_left = -271.0
 offset_top = -439.0
@@ -10787,6 +10789,14 @@ position = Vector2(576, -209)
 z_index = 1
 shape = SubResource("CircleShape2D_pdbvb")
 
+[node name="npc" parent="." instance=ExtResource("14_x7aiy")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(498, 642)
+scale = Vector2(3, 3)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="npc/Area2DNPC" to="." method="_on_area_2dnpc_body_entered"]
 
 [editable path="Personaje"]
+[editable path="npc"]
