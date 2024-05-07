@@ -439,67 +439,67 @@ func failed():
 		if(blank_color == "blue"):
 			anim_blank.play("uncolor_blue")
 			activated_blank = false
-			blank_color == "blank"
+			blank_color = "blank"
 		elif(blank_color == "red"):
 			anim_blank.play("uncolor_red")
 			activated_blank = false
-			blank_color == "blank"
+			blank_color = "blank"
 		elif(blank_color == "green"):
 			anim_blank.play("uncolor_green")
 			activated_blank = false
-			blank_color == "blank"
+			blank_color = "blank"
 		elif(blank_color == "yellow"):
 			anim_blank.play("uncolor_yellow")
 			activated_blank = false
-			blank_color == "blank"
+			blank_color = "blank"
 	if(activated_blank2):
 		if(blank2_color == "blue"):
 			anim_blank2.play("uncolor_blue")
 			activated_blank2 = false
-			blank2_color == "blank"
+			blank2_color = "blank"
 		elif(blank2_color == "red"):
 			anim_blank2.play("uncolor_red")
 			activated_blank2 = false
-			blank2_color == "blank"
+			blank2_color = "blank"
 		elif(blank2_color == "green"):
 			anim_blank2.play("uncolor_green")
 			activated_blank2 = false
-			blank2_color == "blank"
+			blank2_color = "blank"
 		elif(blank2_color == "yellow"):
 			anim_blank2.play("uncolor_yellow")
 			activated_blank2 = false
-			blank2_color == "blank"
+			blank2_color = "blank"
 	if(activated_blank3):
 		if(blank3_color == "blue"):
 			anim_blank3.play("uncolor_blue")
 			activated_blank3 = false
-			blank3_color == "blank"
+			blank3_color = "blank"
 		elif(blank3_color == "red"):
 			anim_blank3.play("uncolor_red")
 			activated_blank3 = false
-			blank3_color == "blank"
+			blank3_color = "blank"
 		elif(blank3_color == "green"):
 			anim_blank3.play("uncolor_green")
 			activated_blank3 = false
-			blank3_color == "blank"
+			blank3_color = "blank"
 		elif(blank3_color == "yellow"):
 			anim_blank3.play("uncolor_yellow")
 			activated_blank3 = false
-			blank3_color == "blank"
+			blank3_color = "blank"
 	if(activated_blank4):
 		if(blank4_color == "blue"):
 			anim_blank4.play("uncolor_blue")
 			activated_blank4 = false
-			blank4_color == "blank"
+			blank4_color = "blank"
 		elif(blank4_color == "red"):
 			anim_blank4.play("uncolor_red")
 			activated_blank4 = false
-			blank4_color == "blank"
+			blank4_color = "blank"
 		elif(blank4_color == "green"):
 			anim_blank4.play("uncolor_green")
 			activated_blank4 = false
-			blank4_color == "blank"
+			blank4_color = "blank"
 		elif(blank4_color == "yellow"):
 			anim_blank4.play("uncolor_yellow")
 			activated_blank4 = false
-			blank4_color == "blank"
+			blank4_color = "blank"
