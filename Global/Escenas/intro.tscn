@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://csjnejeofyv8y"]
+[gd_scene load_steps=31 format=3 uid="uid://csjnejeofyv8y"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_bnsu1"]
+[ext_resource type="Script" path="res://Escenas/intro.gd" id="1_x8x6h"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="2_i2buq"]
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="3_0kt3w"]
 [ext_resource type="Texture2D" uid="uid://cn3ct3bvcphwp" path="res://Assets/Egyptian_A3.png" id="4_sge3h"]
@@ -10607,8 +10608,46 @@ size = Vector2(515, 673)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifm2b"]
 size = Vector2(115.5, 20)
 
+[sub_resource type="Animation" id="Animation_ry5yg"]
+resource_name = "new_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_16nwd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m64uu"]
+_data = {
+"RESET": SubResource("Animation_16nwd"),
+"new_animation": SubResource("Animation_ry5yg")
+}
+
 [node name="Intro" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_x8x6h")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -10642,7 +10681,6 @@ z_index = 1
 position = Vector2(612, 812)
 
 [node name="Camera2D" type="Camera2D" parent="Personaje"]
-zoom = Vector2(2.5, 2.5)
 limit_left = -390
 limit_top = -351
 limit_right = 1244
@@ -10671,3 +10709,16 @@ shape = SubResource("RectangleShape2D_ifm2b")
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-194, 795, -188, -354, 1349, -348, 1344, 766, 1460, 755, 1417, -608, -390, -523, -390, 851)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m64uu")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 2
+offset_left = -271.0
+offset_top = -439.0
+offset_right = 1546.0
+offset_bottom = 1180.0
+color = Color(0, 0, 0, 1)
