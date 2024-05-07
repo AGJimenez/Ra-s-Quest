@@ -12,3 +12,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+
+func _on_area_2d_body_entered(body):
+	if body.name=="Personaje":
+		get_tree().change_scene_to_file("res://Escenas/nivel1_Mario/nivel_mario.tscn")
