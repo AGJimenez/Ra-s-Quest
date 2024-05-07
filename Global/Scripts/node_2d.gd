@@ -3,8 +3,6 @@ extends Node2D
 var on_area_cofre=false
 var on_area_balanza=false
 @onready var panel = get_node("Personaje/Camera2D/Panel")
-@onready var Sprite = get_node("Sprite2D")
-@onready var SpriteCollision = get_node("Sprite2D/CollisionShape2D")
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Conversacion_Principal.dialogue"),"main")
@@ -12,8 +10,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	interaccion()
-	if(panel.numeroDePanelesSuperados ==  4):
-		quit_Espinas()
 
 
 func interaccion_con_cofre():
@@ -206,8 +202,3 @@ func _on_introduccion_area_body_entered(body):
 
 func _on_introduccion_area_body_exited(body):
 	$introduccion_area.queue_free()
-
-func quit_Espinas():
-	Sprite.hide()
-	SpriteCollision.disabled=true
-
