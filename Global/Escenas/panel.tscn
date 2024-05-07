@@ -598,6 +598,7 @@ layer_1/tile_data = PackedInt32Array(262145, 524293, 12, 65538, 327687, 70, 1310
 [node name="Label3" type="Label" parent="Panel"]
 visible = false
 texture_filter = 1
+layout_mode = 0
 offset_left = 13.0
 offset_top = 19.0
 offset_right = 654.0

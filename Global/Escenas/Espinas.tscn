@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb764wcr421wx"]
+
+[ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="1_1xaew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ph6oe"]
+size = Vector2(44.314, 245.084)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywboi"]
+atlas = ExtResource("1_1xaew")
+region = Rect2(522, 2050, 46, 254)
+
+[node name="Sprite2D" type="StaticBody2D"]
+position = Vector2(2391, 1222)
+scale = Vector2(0.826923, 0.433219)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.389404, -16.3606)
+shape = SubResource("RectangleShape2D_ph6oe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.20933, -20.7748)
+scale = Vector2(1.18377, 1.03172)
+texture = SubResource("AtlasTexture_ywboi")

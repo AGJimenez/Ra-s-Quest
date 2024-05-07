@@ -693,8 +693,18 @@ position = Vector2(0, 15.5)
 shape = SubResource("RectangleShape2D_d7wiv")
 
 [node name="Inventory_UI" parent="." instance=ExtResource("6_rt0w4")]
+<<<<<<< Updated upstream
 z_index = 5
 offset_left = -41.0
 offset_top = -90.0
 offset_right = -41.0
 offset_bottom = -90.0
+=======
+visible = false
+z_index = 99
+offset_left = -108.0
+offset_top = -187.0
+offset_right = -108.0
+offset_bottom = -187.0
+scale = Vector2(2.5, 2.5)
+>>>>>>> Stashed changes
