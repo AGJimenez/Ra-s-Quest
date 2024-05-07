@@ -19,6 +19,7 @@ signal signal_button_pressed
 
 func _ready():
 	#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_inicial.dialogue"), "dialogo_inicial")
+	$AnimationPlayer.play("new_animation")
 	return
 	
 func _process(_delta):
