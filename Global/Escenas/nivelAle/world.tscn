@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://276uutptuj65"]
+[gd_scene load_steps=26 format=3 uid="uid://276uutptuj65"]
 
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="1_ue6xu"]
 [ext_resource type="Texture2D" uid="uid://cn3ct3bvcphwp" path="res://Assets/Egyptian_A3.png" id="2_m47o2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="9_pnbil"]
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="10_p4rfy"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="11_tn2yn"]
+[ext_resource type="PackedScene" uid="uid://b20eu864hbfkc" path="res://Escenas/nivelAle/fuego.tscn" id="12_dxw6u"]
 
 [sub_resource type="GDScript" id="GDScript_pqws4"]
 
@@ -10728,9 +10729,9 @@ position = Vector2(0, 270)
 scale = Vector2(0.75, 0.75)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 limit_left = -288
-limit_top = -448
+limit_top = -488
 limit_right = 288
 limit_bottom = 288
 limit_smoothed = true
@@ -10744,3 +10745,27 @@ shape = SubResource("CircleShape2D_hcksp")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colision"]
 visible = false
 polygon = PackedVector2Array(-283, -283, -83, -283, -85, -281, -85, -279, -83, -278, -76, -278, -75, -279, -75, -281, -77, -283, -64, -283, -64, -256, -32, -256, -32, -288, 32, -288, 32, -256, 64, -256, 64, -283, 76, -283, 74, -281, 74, -279, 76, -278, 85, -278, 86, -279, 86, -281, 85, -283, 111, -283, 283, -283, 283, 288, -283, 288, -283, -283, -308, -216, -304, 100, -300, 301, -181, 346, 232, 341, 334, 309, 344, 106, 313, -476, -299, -467, -339, -402, -344, -312, -309, -274, -285, -281)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("12_dxw6u")]
+z_index = 1
+position = Vector2(-112, -22)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("12_dxw6u")]
+z_index = 1
+position = Vector2(112, -21)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("12_dxw6u")]
+z_index = 1
+position = Vector2(-112, -181)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("12_dxw6u")]
+z_index = 1
+position = Vector2(113, -182)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("12_dxw6u")]
+z_index = 1
+position = Vector2(-112, 203)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("12_dxw6u")]
+z_index = 1
+position = Vector2(112, 202)

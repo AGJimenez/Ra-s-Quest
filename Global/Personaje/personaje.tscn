@@ -1,65 +1,9 @@
-[gd_scene load_steps=60 format=3 uid="uid://youdt3f7onux"]
+[gd_scene load_steps=43 format=3 uid="uid://youdt3f7onux"]
 
+[ext_resource type="Script" path="res://Personaje.gd" id="1_yymvt"]
 [ext_resource type="Texture2D" uid="uid://cfqoqfp1poopx" path="res://Assets/Full Spritesheet (normal).png" id="2_3iukn"]
 [ext_resource type="Texture2D" uid="uid://c5ymjyxfv7igl" path="res://Assets/Full Spritesheet (inverted).png" id="2_5p5nv"]
-[ext_resource type="Script" path="res://inventory.gd" id="2_eiy3h"]
-[ext_resource type="Script" path="res://inv_slot.gd" id="3_bir3p"]
-[ext_resource type="PackedScene" uid="uid://dsm02wxkpslo1" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel.tscn" id="4_fs3wc"]
-[ext_resource type="Script" path="res://Scripts/personaje.gd" id="4_hqpn0"]
-[ext_resource type="PackedScene" uid="uid://irpot6b873ed" path="res://Escenas/panel.tscn" id="5_fr7af"]
 [ext_resource type="PackedScene" uid="uid://btmu3gp7r1hqc" path="res://Escenas/nivelAle/inventory_ui.tscn" id="6_rt0w4"]
-
-[sub_resource type="Resource" id="Resource_3cufc"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_hlid2"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_xg8ki"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_qy4o1"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_w174g"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_8l8ei"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_mflx0"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_ncfaw"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_jslqr"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_gd34n"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_b5vyk"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_ilokp"]
-script = ExtResource("3_bir3p")
-amount = 0
-
-[sub_resource type="Resource" id="Resource_nthwc"]
-script = ExtResource("2_eiy3h")
-slots = Array[ExtResource("3_bir3p")]([SubResource("Resource_3cufc"), SubResource("Resource_hlid2"), SubResource("Resource_xg8ki"), SubResource("Resource_qy4o1"), SubResource("Resource_w174g"), SubResource("Resource_8l8ei"), SubResource("Resource_mflx0"), SubResource("Resource_ncfaw"), SubResource("Resource_jslqr"), SubResource("Resource_gd34n"), SubResource("Resource_b5vyk"), SubResource("Resource_ilokp")])
 
 [sub_resource type="Animation" id="Animation_0xip3"]
 length = 0.001
@@ -602,76 +546,76 @@ _data = {
 "stopUp": SubResource("Animation_10as1")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7djhv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j3kv1"]
 animation = &"interactLeft"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rw51y"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_moh16"]
 animation = &"interactRight"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xiht3"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rl2fp"]
 animation = &"interactDown"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fmyms"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6h7xp"]
 animation = &"interactUp"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_daotv"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_7djhv")
+blend_point_0/node = SubResource("AnimationNodeAnimation_j3kv1")
 blend_point_0/pos = Vector2(-1, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_rw51y")
+blend_point_1/node = SubResource("AnimationNodeAnimation_moh16")
 blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_xiht3")
+blend_point_2/node = SubResource("AnimationNodeAnimation_rl2fp")
 blend_point_2/pos = Vector2(0, 1.1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_fmyms")
+blend_point_3/node = SubResource("AnimationNodeAnimation_6h7xp")
 blend_point_3/pos = Vector2(0, -1.1)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yckl1"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_14sef"]
 animation = &"moveLeft"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5frpn"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a5rkg"]
 animation = &"moveRight"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2m8j"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ff0ei"]
 animation = &"moveDown"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oj78c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_efd4h"]
 animation = &"moveUp"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_xma7l"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_yckl1")
+blend_point_0/node = SubResource("AnimationNodeAnimation_14sef")
 blend_point_0/pos = Vector2(-1, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_5frpn")
+blend_point_1/node = SubResource("AnimationNodeAnimation_a5rkg")
 blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_t2m8j")
+blend_point_2/node = SubResource("AnimationNodeAnimation_ff0ei")
 blend_point_2/pos = Vector2(0, 1.1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_oj78c")
+blend_point_3/node = SubResource("AnimationNodeAnimation_efd4h")
 blend_point_3/pos = Vector2(0, -1.1)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_brjgv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5nw0m"]
 animation = &"stopLeft"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gs8j8"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0q3f1"]
 animation = &"stopRight"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3laif"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0gves"]
 animation = &"stopDown"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3cbf8"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pu5bu"]
 animation = &"stopUp"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hsie6"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_brjgv")
+blend_point_0/node = SubResource("AnimationNodeAnimation_5nw0m")
 blend_point_0/pos = Vector2(-1, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_gs8j8")
+blend_point_1/node = SubResource("AnimationNodeAnimation_0q3f1")
 blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_3laif")
+blend_point_2/node = SubResource("AnimationNodeAnimation_0gves")
 blend_point_2/pos = Vector2(0, 1.1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_3cbf8")
+blend_point_3/node = SubResource("AnimationNodeAnimation_pu5bu")
 blend_point_3/pos = Vector2(0, -1.1)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
@@ -706,7 +650,7 @@ switch_mode = 2
 advance_mode = 2
 advance_condition = &"is_moving"
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gcyys"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wo46b"]
 states/End/position = Vector2(1091, 153)
 states/Start/position = Vector2(196, 178)
 states/interact/node = SubResource("AnimationNodeBlendSpace2D_daotv")
@@ -717,34 +661,25 @@ states/stop/node = SubResource("AnimationNodeBlendSpace2D_hsie6")
 states/stop/position = Vector2(479, 178)
 transitions = ["Start", "stop", SubResource("AnimationNodeStateMachineTransition_oe81y"), "stop", "interact", SubResource("AnimationNodeStateMachineTransition_tu3gb"), "interact", "stop", SubResource("AnimationNodeStateMachineTransition_g27f6"), "stop", "move", SubResource("AnimationNodeStateMachineTransition_nqxfr"), "move", "stop", SubResource("AnimationNodeStateMachineTransition_4dk2o"), "move", "interact", SubResource("AnimationNodeStateMachineTransition_k2sey"), "interact", "move", SubResource("AnimationNodeStateMachineTransition_n6vds")]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixbdv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7wiv"]
 size = Vector2(34, 19)
 
-[node name="Personaje" type="Node2D"]
-y_sort_enabled = true
-position = Vector2(576, 324)
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_yymvt")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-motion_mode = 1
-script = ExtResource("4_hqpn0")
-inv = SubResource("Resource_nthwc")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
 texture = ExtResource("2_3iukn")
 hframes = 12
 vframes = 15
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_gxl3e")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
-libraries = {
-"": SubResource("AnimationLibrary_gxl3e")
-}
-tree_root = SubResource("AnimationNodeStateMachine_gcyys")
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_wo46b")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
 parameters/conditions/interact = false
@@ -753,32 +688,11 @@ parameters/interact/blend_position = Vector2(0, 0)
 parameters/move/blend_position = Vector2(0, 0)
 parameters/stop/blend_position = Vector2(-0.3232, -0.89418)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15.5)
-shape = SubResource("RectangleShape2D_ixbdv")
+shape = SubResource("RectangleShape2D_d7wiv")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(1.75, 1.75)
-position_smoothing_enabled = true
-
-[node name="Panel_Mario" parent="CharacterBody2D/Camera2D" instance=ExtResource("4_fs3wc")]
-visible = false
-z_index = 5
-offset_left = -329.0
-offset_top = -185.0
-offset_right = 330.0
-offset_bottom = 188.0
-
-[node name="Panel_Dani" parent="CharacterBody2D/Camera2D" instance=ExtResource("5_fr7af")]
-visible = false
-z_index = 99
-offset_left = -245.0
-offset_top = -149.0
-offset_right = 427.0
-offset_bottom = 255.0
-scale = Vector2(0.75, 0.75)
-
-[node name="Inventory_UI" parent="CharacterBody2D" instance=ExtResource("6_rt0w4")]
+[node name="Inventory_UI" parent="." instance=ExtResource("6_rt0w4")]
 offset_left = -41.0
 offset_top = -90.0
 offset_right = -41.0

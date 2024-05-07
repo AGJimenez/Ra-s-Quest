@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b20eu864hbfkc"]
 
-[ext_resource type="Texture2D" uid="uid://crc768wnxskdn" path="res://32px+VXACE/!$Fire_Animation.png" id="1_amqyp"]
-[ext_resource type="Script" path="res://escenas/fuego.gd" id="2_j6qu5"]
+[ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_amqyp"]
+[ext_resource type="Script" path="res://escenas/nivelAle/fuego.gd" id="2_j6qu5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lv7s8"]
 atlas = ExtResource("1_amqyp")
