@@ -1,10 +1,65 @@
-[gd_scene load_steps=44 format=3 uid="uid://youdt3f7onux"]
+[gd_scene load_steps=60 format=3 uid="uid://youdt3f7onux"]
 
 [ext_resource type="Texture2D" uid="uid://cfqoqfp1poopx" path="res://Assets/Full Spritesheet (normal).png" id="2_3iukn"]
 [ext_resource type="Texture2D" uid="uid://c5ymjyxfv7igl" path="res://Assets/Full Spritesheet (inverted).png" id="2_5p5nv"]
+[ext_resource type="Script" path="res://inventory.gd" id="2_eiy3h"]
+[ext_resource type="Script" path="res://inv_slot.gd" id="3_bir3p"]
 [ext_resource type="PackedScene" uid="uid://dsm02wxkpslo1" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel.tscn" id="4_fs3wc"]
 [ext_resource type="Script" path="res://Scripts/personaje.gd" id="4_hqpn0"]
 [ext_resource type="PackedScene" uid="uid://irpot6b873ed" path="res://Escenas/panel.tscn" id="5_fr7af"]
+[ext_resource type="PackedScene" uid="uid://btmu3gp7r1hqc" path="res://Escenas/nivelAle/inventory_ui.tscn" id="6_rt0w4"]
+
+[sub_resource type="Resource" id="Resource_3cufc"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_hlid2"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_xg8ki"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_qy4o1"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_w174g"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_8l8ei"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_mflx0"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_ncfaw"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_jslqr"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_gd34n"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_b5vyk"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_ilokp"]
+script = ExtResource("3_bir3p")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_nthwc"]
+script = ExtResource("2_eiy3h")
+slots = Array[ExtResource("3_bir3p")]([SubResource("Resource_3cufc"), SubResource("Resource_hlid2"), SubResource("Resource_xg8ki"), SubResource("Resource_qy4o1"), SubResource("Resource_w174g"), SubResource("Resource_8l8ei"), SubResource("Resource_mflx0"), SubResource("Resource_ncfaw"), SubResource("Resource_jslqr"), SubResource("Resource_gd34n"), SubResource("Resource_b5vyk"), SubResource("Resource_ilokp")])
 
 [sub_resource type="Animation" id="Animation_0xip3"]
 length = 0.001
@@ -672,6 +727,7 @@ position = Vector2(576, 324)
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 motion_mode = 1
 script = ExtResource("4_hqpn0")
+inv = SubResource("Resource_nthwc")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 scale = Vector2(3, 3)
@@ -718,3 +774,9 @@ offset_top = -149.0
 offset_right = 427.0
 offset_bottom = 255.0
 scale = Vector2(0.75, 0.75)
+
+[node name="Inventory_UI" parent="CharacterBody2D" instance=ExtResource("6_rt0w4")]
+offset_left = -41.0
+offset_top = -90.0
+offset_right = -41.0
+offset_bottom = -90.0

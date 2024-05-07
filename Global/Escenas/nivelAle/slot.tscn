@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt3o744tgye0f"]
+
+[sub_resource type="GDScript" id="GDScript_0v4br"]
+script/source = "extends Panel
+
+@onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
+@onready var amount_text: Label = $CenterContainer/Panel/Label
+
+func update(slot: InventorySlot):
+	if !slot.item: #si no hay item
+		item_visual.visible = false
+		amount_text.visible = false
+	else :
+		item_visual.visible = true
+		item_visual.texture = slot.item.texture
+		amount_text.visible = true
+		amount_text.text = str(slot.amount)
+
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Slot" type="Panel"]
+offset_right = 16.0
+offset_bottom = 16.0
+script = SubResource("GDScript_0v4br")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(20, 23)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 23.0
+offset_bottom = 26.0
+scale = Vector2(0.2, 0.2)
+text = "99"
+horizontal_alignment = 2

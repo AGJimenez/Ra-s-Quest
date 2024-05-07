@@ -5,7 +5,7 @@ class_name Personaje
 @onready var animTree: AnimationTree = $AnimationTree
 var direction: Vector2 = Vector2.ZERO
 @onready var has_interacted = false
-
+@export var inv: Inv
 
 
 func _ready():
@@ -41,3 +41,9 @@ func update_animation():
 		animTree["parameters/stop/blend_position"] = direction
 		animTree["parameters/move/blend_position"] = direction
 		animTree["parameters/interact/blend_position"] = direction
+
+func player():
+	pass
+
+func collect(item):
+	inv.insert(item)

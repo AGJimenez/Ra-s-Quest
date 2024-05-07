@@ -1,0 +1,118 @@
+[gd_scene load_steps=3 format=3 uid="uid://btmu3gp7r1hqc"]
+
+[ext_resource type="PackedScene" uid="uid://bt3o744tgye0f" path="res://Escenas/nivelAle/slot.tscn" id="3_bako7"]
+
+[sub_resource type="GDScript" id="GDScript_mvhub"]
+script/source = "extends Control
+
+var is_open = false
+@onready var inventory: Inv = preload(\"res://Inventario/playerinv.tres\")
+@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	inventory.update.connect(update_slots)
+	update_slots()
+	close()
+
+func update_slots():
+	for i in range(min(inventory.slots.size(), slots.size())):
+		slots[i].update(inventory.slots[i])
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"i\"):
+		if is_open:
+			close()
+		else:
+			open()
+
+func open():
+	visible = true
+	is_open = true
+	
+func close():
+	visible = false
+	is_open = false
+"
+
+[node name="Inventory_UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_mvhub")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 86.0
+offset_bottom = 65.0
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -28.0
+offset_right = 38.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="Slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_bako7")]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
