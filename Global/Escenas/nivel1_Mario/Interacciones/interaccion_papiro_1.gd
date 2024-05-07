@@ -1,15 +1,15 @@
 extends StaticBody2D
-class_name Papiro1
+class_name InteraccionPapiro1
 
-@onready var label = $Label
+@onready var label = $PanelInteraccion1
 @onready var areaEntered: bool = false
 
-@onready var nivelMario = get_tree().get_root().get_node("nivelMario")
+@onready var nivel_Mario = get_tree().get_root().get_node("nivelMario")
 
 
 func _on_area_2d_body_entered(body):
 	if body is Personaje:
-		if (nivelMario.puzles_correctos == 0):
+		if (nivel_Mario.puzles_resueltos == 0):
 			label.show()
 			areaEntered = true
 			print(areaEntered)
