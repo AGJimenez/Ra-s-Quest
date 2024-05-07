@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://csjnejeofyv8y"]
+[gd_scene load_steps=35 format=3 uid="uid://csjnejeofyv8y"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_bnsu1"]
 [ext_resource type="Script" path="res://Escenas/intro.gd" id="1_x8x6h"]
@@ -10645,6 +10645,21 @@ _data = {
 "new_animation": SubResource("Animation_ry5yg")
 }
 
+[sub_resource type="Animation" id="Animation_1pnhg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(563, -29)]
+}
+
 [sub_resource type="Animation" id="Animation_o6heh"]
 resource_name = "camara"
 length = 5.0
@@ -10661,26 +10676,14 @@ tracks/0/keys = {
 "values": [Vector2(563, -29), Vector2(613, 790)]
 }
 
-[sub_resource type="Animation" id="Animation_1pnhg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(563, -29)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w8ry1"]
 _data = {
 "RESET": SubResource("Animation_1pnhg"),
 "camara": SubResource("Animation_o6heh")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdbvb"]
+radius = 44.5533
 
 [node name="Intro" type="Node2D"]
 y_sort_enabled = true
@@ -10724,7 +10727,7 @@ offset_right = -110.0
 offset_bottom = -182.0
 
 [node name="Camera2D" type="Camera2D" parent="Personaje"]
-limit_left = -390
+limit_left = -192
 limit_top = -351
 limit_right = 1244
 limit_bottom = 1088
@@ -10777,5 +10780,14 @@ libraries = {
 position = Vector2(563, -29)
 limit_bottom = 1180
 limit_smoothed = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(576, -209)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+shape = SubResource("CircleShape2D_pdbvb")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 
 [editable path="Personaje"]
