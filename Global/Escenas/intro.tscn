@@ -10641,6 +10641,14 @@ layer_6/tile_data = PackedInt32Array(720930, 524295, 4, 655394, 524295, 4, 58985
 z_index = 1
 position = Vector2(612, 812)
 
+[node name="Camera2D" type="Camera2D" parent="Personaje"]
+zoom = Vector2(2.5, 2.5)
+limit_left = -390
+limit_top = -351
+limit_right = 1244
+limit_bottom = 1088
+limit_smoothed = true
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
