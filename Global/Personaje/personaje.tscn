@@ -1,6 +1,6 @@
 [gd_scene load_steps=43 format=3 uid="uid://youdt3f7onux"]
 
-[ext_resource type="Script" path="res://Personaje.gd" id="1_yymvt"]
+[ext_resource type="Script" path="res://Scripts/personaje.gd" id="1_fstgl"]
 [ext_resource type="Texture2D" uid="uid://cfqoqfp1poopx" path="res://Assets/Full Spritesheet (normal).png" id="2_3iukn"]
 [ext_resource type="Texture2D" uid="uid://c5ymjyxfv7igl" path="res://Assets/Full Spritesheet (inverted).png" id="2_5p5nv"]
 [ext_resource type="PackedScene" uid="uid://btmu3gp7r1hqc" path="res://Escenas/nivelAle/inventory_ui.tscn" id="6_rt0w4"]
@@ -665,7 +665,7 @@ transitions = ["Start", "stop", SubResource("AnimationNodeStateMachineTransition
 size = Vector2(34, 19)
 
 [node name="Personaje" type="CharacterBody2D"]
-script = ExtResource("1_yymvt")
+script = ExtResource("1_fstgl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
