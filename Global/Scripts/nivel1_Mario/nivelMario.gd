@@ -16,11 +16,11 @@ var puzle_correcto = 0
 # SEÑALES 
 signal signal_button_pressed
 
-
+# MÉTODOS
 func _ready():
 	$AnimationPlayer.play("new_animation")
-	
-	
+
+
 func _process(_delta):
 	interacciones()
 
@@ -28,6 +28,7 @@ func _process(_delta):
 func interacciones():
 # MANEJO PUZZLE 1
 	if (interaccionPapiro1.areaEntered == true && player.has_interacted == true):
+		$ColorRect.hide()
 		player.speed = 0
 		panel.show()
 		if (puzle_correcto == 1):
@@ -37,8 +38,10 @@ func interacciones():
 			player.speed = 100
 	
 
+
 func _on_signal_button_puzle1_pressed():
 	if (resultadoPuzle1.get_text() == "2"):
 		puzle_correcto = 1
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_acierto_puzle1.dialogue"), "dialogo_acierto_puzle1");
 	elif (resultadoPuzle1.get_text() != "2"):
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_error_puzle1.dialogue"), "dialogo_error_puzle1");
