@@ -48,7 +48,6 @@ script = ExtResource("1_drflq")
 position = Vector2(-51, -10)
 
 [node name="Interacciones" parent="." instance=ExtResource("3_p6jtr")]
-position = Vector2(3070, 2463)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -18,9 +18,8 @@ signal signal_button_pressed
 
 
 func _ready():
-	#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_inicial.dialogue"), "dialogo_inicial")
 	$AnimationPlayer.play("new_animation")
-	return
+	
 	
 func _process(_delta):
 	interacciones()
@@ -38,10 +37,8 @@ func interacciones():
 			player.speed = 100
 	
 
-
-
 func _on_signal_button_puzle1_pressed():
 	if (resultadoPuzle1.get_text() == "2"):
 		puzle_correcto = 1
 	elif (resultadoPuzle1.get_text() != "2"):
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_error_puzle1.dialogue"), 		"dialogo_error_puzle1");
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_error_puzle1.dialogue"), "dialogo_error_puzle1");

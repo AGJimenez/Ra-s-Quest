@@ -4,39 +4,38 @@
 [ext_resource type="Texture2D" uid="uid://dagu1b5ghdg37" path="res://Assets/puzle1.png" id="1_urwxa"]
 
 [node name="Puzle1" type="Panel"]
-offset_right = 659.0
-offset_bottom = 373.0
+offset_right = 528.0
+offset_bottom = 324.0
 script = ExtResource("1_u1loc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(329.5, 186)
-scale = Vector2(0.686458, 0.688889)
+position = Vector2(263.75, 161)
+scale = Vector2(0.548437, 0.596296)
 texture = ExtResource("1_urwxa")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_top = 296.0
-offset_right = 659.0
-offset_bottom = 375.0
+offset_top = 254.0
+offset_right = 426.0
+offset_bottom = 324.0
 text = "¿Cuál es el valor de la incógnita?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextoPuzle1" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 491.0
-offset_top = 319.0
-offset_right = 553.0
-offset_bottom = 354.0
-scroll_fit_content_height = true
-
 [node name="BotonPuzle1" type="Button" parent="."]
 layout_mode = 0
-offset_left = 579.0
-offset_top = 343.0
-offset_right = 650.0
-offset_bottom = 365.0
+offset_left = 451.0
+offset_top = 292.0
+offset_right = 518.0
+offset_bottom = 314.0
 theme_override_font_sizes/font_size = 10
 text = "Responder"
+
+[node name="TextoPuzle1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 275.0
+offset_right = 428.063
+offset_bottom = 306.0
 
 [connection signal="pressed" from="BotonPuzle1" to="." method="_on_button_pressed"]

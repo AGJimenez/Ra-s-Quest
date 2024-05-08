@@ -12,7 +12,6 @@ func _on_area_2d_body_entered(body):
 		if (nivel_Mario.puzles_resueltos == 0):
 			label.show()
 			areaEntered = true
-			print(areaEntered)
 		else:
 			pass
 
@@ -21,4 +20,3 @@ func _on_area_2d_body_exited(body):
 	if body is Personaje:
 		label.hide()
 		areaEntered = false
-		print(areaEntered)

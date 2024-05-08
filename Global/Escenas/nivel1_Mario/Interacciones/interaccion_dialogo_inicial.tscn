@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsaoh1nrvr6sk"]
+
+[ext_resource type="Script" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_dialogo_inicial.gd" id="1_o1pyp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbjv0"]
+size = Vector2(550, 45)
+
+[node name="InteraccionDialogoInicial" type="StaticBody2D"]
+script = ExtResource("1_o1pyp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rbjv0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

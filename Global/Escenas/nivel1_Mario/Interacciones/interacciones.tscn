@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3icwgvb0l2e3"]
+[gd_scene load_steps=3 format=3 uid="uid://c3icwgvb0l2e3"]
 
 [ext_resource type="PackedScene" uid="uid://cl6ifn75nogh8" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_papiro_1.tscn" id="1_7wcq4"]
+[ext_resource type="PackedScene" uid="uid://dsaoh1nrvr6sk" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_dialogo_inicial.tscn" id="2_4lr7e"]
 
 [node name="Interacciones" type="Node2D"]
 
 [node name="InteraccionPapiro1" parent="." instance=ExtResource("1_7wcq4")]
+position = Vector2(3070, 2460)
+
+[node name="InteraccionDialogoInicial" parent="." instance=ExtResource("2_4lr7e")]
+position = Vector2(1901, 3610)

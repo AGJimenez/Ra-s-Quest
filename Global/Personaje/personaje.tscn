@@ -679,6 +679,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gxl3e")
+}
 tree_root = SubResource("AnimationNodeStateMachine_wo46b")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
@@ -693,6 +696,7 @@ position = Vector2(0, 15.5)
 shape = SubResource("RectangleShape2D_d7wiv")
 
 [node name="Inventory_UI" parent="." instance=ExtResource("6_rt0w4")]
+visible = false
 z_index = 5
 offset_left = -41.0
 offset_top = -90.0
