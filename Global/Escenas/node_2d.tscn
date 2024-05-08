@@ -11544,12 +11544,11 @@ position = Vector2(0, 23)
 shape = SubResource("RectangleShape2D_ircx3")
 
 [node name="Personaje" parent="." groups=["Personaje"] instance=ExtResource("15_2j1o6")]
-position = Vector2(1945, 1246)
+position = Vector2(2131, 2024)
 
 [node name="Camera2D" type="Camera2D" parent="Personaje"]
-position = Vector2(207, 3)
 zoom = Vector2(2, 2)
-limit_left = 1975
+limit_left = 1750
 limit_top = 944
 limit_right = 3445
 limit_bottom = 2560
@@ -11558,11 +11557,11 @@ limit_smoothed = true
 [node name="Panel" parent="Personaje/Camera2D" instance=ExtResource("16_ortta")]
 visible = false
 z_index = 99
-offset_left = -245.0
+offset_left = -287.0
 offset_top = -162.0
-offset_right = 427.0
+offset_right = 385.0
 offset_bottom = 242.0
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.86, 0.8)
 size_flags_horizontal = 4
 size_flags_vertical = 6
 metadata/_edit_use_anchors_ = true

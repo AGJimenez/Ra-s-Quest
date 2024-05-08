@@ -3,6 +3,7 @@ extends Panel
 var numeroDePanelesSuperados=0
 signal panel_interaction_success
 var ultima_Area=null
+var speedPlayer = 100
 
 
 func _ready():
@@ -58,6 +59,7 @@ func comprobarDatos():
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_correcta.dialogue"),"main")
 				$"Panel/Ecuacion 1".hide()
 				hide()
+				speedPlayer = 100
 				numeroDePanelesSuperados=numeroDePanelesSuperados+1
 				ultima_Area.queue_free()
 			else:

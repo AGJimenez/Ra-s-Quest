@@ -7,6 +7,7 @@ var on_area_balanza=false
 @onready var player = get_node("Personaje")
 @onready var Sprite = get_node("StaticBody2D")
 @onready var SpriteCollision = get_node("StaticBody2D/CollisionShape2D")
+var nivelesSuperados = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():	
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Conversacion_Principal.dialogue"),"main")
@@ -14,14 +15,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	interaccion()
-	if(panel.numeroDePanelesSuperados ==  4):
+	if panel.numeroDePanelesSuperados == 4:
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/interaccion_con_Anubis.dialogue"),"laberinto")
 		quit_Espinas()
+	if on_area_cofre == false:
+		player.speed = panel.speedPlayer
+	
 
 
 func interaccion_con_cofre():
 	if panel.visible:
 		panel.visible = false
-		player.speed = 100
 	else:
 		panel.visible = true
 		player.speed = 0
@@ -31,7 +35,7 @@ func interaccion():
 	if on_area_cofre ==true and Input.is_action_just_pressed("Interact"):
 		print("DALE A LA E")
 		interaccion_con_cofre()
-	elif on_area_balanza==true and Input.is_action_just_pressed("I"):
+	elif on_area_balanza==true and Input.is_action_just_pressed("Interact"):
 		interaccion_con_balanza()
 
 func interaccion_con_balanza():
