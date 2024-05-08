@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://rv355l033ppg"
+path="res://.godot/imported/controlesNpc.dialogue-971d5cc7cd67944ed7abe7133d718c90.tres"
+
+[deps]
+
+source_file="res://Dialogos/intro/controlesNpc.dialogue"
+dest_files=["res://.godot/imported/controlesNpc.dialogue-971d5cc7cd67944ed7abe7133d718c90.tres"]
+
+[params]
+
+defaults=true
