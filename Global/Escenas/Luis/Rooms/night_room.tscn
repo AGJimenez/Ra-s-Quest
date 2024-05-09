@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="6_ynq5w"]
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="7_qo3cd"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="10_gjakg"]
-[ext_resource type="PackedScene" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_vanm5"]
+[ext_resource type="PackedScene" uid="uid://dsbdik5i5hic1" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_vanm5"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_x4lfw"]
 [ext_resource type="Texture2D" uid="uid://dwq87qii5ulu" path="res://Assets/Sprites/light.png" id="13_43yrx"]
 [ext_resource type="PackedScene" uid="uid://sx6hfyddu2qe" path="res://Personaje/Luis/objectives/blue_flower.tscn" id="14_1ntin"]
@@ -16992,7 +16992,7 @@ grow_vertical = 1
 scale = Vector2(0.272401, 0.26056)
 
 [node name="little torch" parent="room/Player" instance=ExtResource("11_x4lfw")]
-position = Vector2(-19, -11.653)
+position = Vector2(-19, 10)
 
 [node name="door" type="StaticBody2D" parent="."]
 position = Vector2(687, -19)

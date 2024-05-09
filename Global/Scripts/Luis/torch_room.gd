@@ -45,6 +45,9 @@ func _process(delta):
 				$fall/fall.play("fall")
 				await get_tree().create_timer(2).timeout
 				$room/Player.visible = false
+				Global.change = "night-world"
+				LoadManager.load_scene("res://Escenas/nivelAle/world.tscn")
+				
 
 func _ready():
 	$room.set_layer_enabled(1,false)

@@ -10961,6 +10961,11 @@ offset_right = 31.0
 offset_bottom = 480.0
 color = Color(0, 0, 0, 0.435294)
 
+[node name="spawn_points" type="Node2D" parent="."]
+
+[node name="night-world" type="Marker2D" parent="spawn_points"]
+position = Vector2(0, 575)
+
 [connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_3_pressed"]

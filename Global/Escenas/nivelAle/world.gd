@@ -8,6 +8,8 @@ var ignorarMov = false
 
 func _ready():
 	$Area2D/Control.visible = false
+	if Global.change == "night-world":
+		$player.global_position = $"spawn_points/night-world".global_position
 	#connect()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

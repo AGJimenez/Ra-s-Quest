@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="5_m65vy"]
 [ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="7_kkkem"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="8_uaxlb"]
-[ext_resource type="PackedScene" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_f7bmy"]
+[ext_resource type="PackedScene" uid="uid://dsbdik5i5hic1" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_f7bmy"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_q7mc2"]
-[ext_resource type="PackedScene" path="res://Interfaz/Luis/prompts_windows/dialog_smth.tscn" id="11_vljsg"]
+[ext_resource type="PackedScene" uid="uid://p8ifbemsfuus" path="res://Interfaz/Luis/prompts_windows/dialog_smth.tscn" id="11_vljsg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avwf6"]
 texture = ExtResource("5_m65vy")

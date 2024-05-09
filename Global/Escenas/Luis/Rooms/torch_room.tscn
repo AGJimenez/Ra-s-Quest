@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b6vyr1tiikv6i" path="res://Personaje/Luis/Fire/movable_torch.tscn" id="8_v6n8k"]
 [ext_resource type="Script" path="res://Scripts/Luis/Camera_torch.gd" id="9_ngvp2"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="9_wh1a7"]
-[ext_resource type="PackedScene" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_4qhnt"]
-[ext_resource type="PackedScene" path="res://Interfaz/Luis/prompts_windows/talk_to_god.tscn" id="10_o1qt3"]
+[ext_resource type="PackedScene" uid="uid://dsbdik5i5hic1" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_4qhnt"]
+[ext_resource type="PackedScene" uid="uid://cpr8emerbq5gc" path="res://Interfaz/Luis/prompts_windows/talk_to_god.tscn" id="10_o1qt3"]
 [ext_resource type="PackedScene" uid="uid://c31ghn4gfitj5" path="res://Personaje/Luis/Objects/statue.tscn" id="10_upecq"]
 [ext_resource type="Texture2D" uid="uid://cqc55bif2ih6y" path="res://Assets/Sprites/images.jpg" id="12_0fa5f"]
 [ext_resource type="PackedScene" uid="uid://dxs4op32cdoah" path="res://Personaje/Luis/Objects/statue_flip_h.tscn" id="12_ubwqa"]
@@ -11866,7 +11866,7 @@ offset_bottom = -69.0218
 scale = Vector2(0.340812, 0.307428)
 
 [node name="little torch" parent="room/Player" instance=ExtResource("9_wh1a7")]
-position = Vector2(-19, -11.653)
+position = Vector2(-19, 8.96387)
 
 [node name="fall_player" type="AnimationPlayer" parent="room/Player"]
 libraries = {
