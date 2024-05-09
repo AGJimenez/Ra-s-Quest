@@ -1,8 +1,8 @@
 extends Node2D
 
 var enAreaNPC = false
-@onready var pausa_menu = $Personaje/Camera2D/CanvasLayer/Pausa
 var paused = false
+var ignorarMov = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,9 +16,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if enAreaNPC == true and Input.is_action_just_pressed("Interact"):
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/intro/controlesNpc.dialogue"),"this_is_a_node_title")
-	
+	if !ignorarMov: 
+		if enAreaNPC == true and Input.is_action_just_pressed("Interact"):
+			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/intro/controlesNpc.dialogue"),"this_is_a_node_title")
+		
+		
 	if Input.is_action_just_pressed("pausa"):
 		pauseMenu()
 		
@@ -41,19 +43,35 @@ func _on_area_2dnpc_body_exited(body):
 	
 func pauseMenu():
 	if paused:
-		pausa_menu.hide()
+		$Personaje/Camera2D/CanvasLayer.hide()
 		Engine.time_scale = 1
 	else:
-		pausa_menu.show()
+		$Personaje/Camera2D/CanvasLayer.show()
 		Engine.time_scale = 0
 	paused = !paused
+	ignorarMov = !ignorarMov
 	
 func resumeGame():
-	pausa_menu.hide()
+	$Personaje/Camera2D/CanvasLayer.hide()
 	Engine.time_scale = 1
-
+	ignorarMov = false
+	
 func reloadLevel():
 	get_tree().reload_current_scene()
-
+	$Personaje/Camera2D/CanvasLayer.hide()
+	ignorarMov = false
+	
 func quitGame():
 	get_tree().quit()
+
+
+func _on_button_pressed():
+	resumeGame()
+
+
+func _on_button_3_pressed():
+	quitGame()
+
+
+func _on_button_2_pressed():
+	reloadLevel()
