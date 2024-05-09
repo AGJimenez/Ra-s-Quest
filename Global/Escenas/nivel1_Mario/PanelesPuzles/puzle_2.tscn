@@ -1,15 +1,104 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvp670pw5ohwv"]
+[gd_scene load_steps=5 format=3 uid="uid://bvp670pw5ohwv"]
 
 [ext_resource type="Texture2D" uid="uid://d2t3ci67hxp3m" path="res://Assets/puzle_2.png" id="1_7vshc"]
+[ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_2.gd" id="1_q233h"]
+[ext_resource type="Texture2D" uid="uid://dsk1wbsj5m3wd" path="res://Assets/fondo_puzle_2.png" id="1_tby0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k33gs"]
+size = Vector2(240, 240)
 
 [node name="Puzle2" type="Panel"]
 offset_right = 528.0
 offset_bottom = 324.0
+script = ExtResource("1_q233h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(252.375, 154.5)
-scale = Vector2(0.504253, 0.497165)
+position = Vector2(264, 162)
+scale = Vector2(0.55, 0.6)
+texture = ExtResource("1_tby0r")
+
+[node name="Piezas" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 9.0
+offset_right = 383.0
+offset_bottom = 249.0
+
+[node name="Area2D" type="Area2D" parent="Piezas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piezas/Area2D"]
+position = Vector2(120, 120)
+shape = SubResource("RectangleShape2D_k33gs")
+
+[node name="Pieza1" type="Sprite2D" parent="Piezas/Area2D"]
+position = Vector2(40, 40)
+scale = Vector2(0.454545, 0.454545)
 texture = ExtResource("1_7vshc")
-offset = Vector2(-176, -176)
 hframes = 3
 vframes = 3
+
+[node name="Pieza2" type="Sprite2D" parent="Piezas/Area2D"]
+position = Vector2(120, 40)
+scale = Vector2(0.455579, 0.454545)
+texture = ExtResource("1_7vshc")
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Pieza3" type="Sprite2D" parent="Piezas/Area2D"]
+position = Vector2(200, 40)
+scale = Vector2(0.455579, 0.454545)
+texture = ExtResource("1_7vshc")
+hframes = 3
+vframes = 3
+frame = 2
+
+[node name="Pieza4" type="Sprite2D" parent="Piezas/Area2D"]
+position = Vector2(40, 120)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("1_7vshc")
+hframes = 3
+vframes = 3
+frame = 3
+
+[node name="Pieza5" type="Sprite2D" parent="Piezas/Area2D"]
+position = Vector2(120, 120)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("1_7vshc")
+hframes = 3
+vframes = 3
+frame = 4
+
+[node name="Pieza6" type="Sprite2D" parent="Piezas/Area2D"]
+position = Vector2(200, 120)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("1_7vshc")
+hframes = 3
+vframes = 3
+frame = 5
+
+[node name="Pieza7" type="Sprite2D" parent="Piezas/Area2D"]
+position = Vector2(120, 200)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("1_7vshc")
+hframes = 3
+vframes = 3
+frame = 7
+
+[node name="Pieza8" type="Sprite2D" parent="Piezas/Area2D"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(40, 200)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("1_7vshc")
+hframes = 3
+vframes = 3
+frame = 6
+
+[node name="Pieza9" type="Sprite2D" parent="Piezas/Area2D"]
+position = Vector2(200, 200)
+scale = Vector2(0.454545, 0.454545)
+texture = ExtResource("1_7vshc")
+hframes = 3
+vframes = 3
+frame = 8
