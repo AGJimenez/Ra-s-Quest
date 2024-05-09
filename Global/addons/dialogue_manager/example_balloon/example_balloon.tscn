@@ -76,6 +76,7 @@ base_font = ExtResource("4_awetp")
 variation_embolden = 0.96
 
 [node name="ExampleBalloon" type="CanvasLayer"]
+process_mode = 3
 layer = 100
 script = ExtResource("1_36de5")
 

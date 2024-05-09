@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://csjnejeofyv8y"]
+[gd_scene load_steps=38 format=3 uid="uid://csjnejeofyv8y"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_bnsu1"]
 [ext_resource type="Script" path="res://Escenas/intro.gd" id="1_x8x6h"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="12_auift"]
 [ext_resource type="PackedScene" uid="uid://b8gc7ec1uqh6s" path="res://Personaje/npcIntro.tscn" id="14_x7aiy"]
 [ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="15_hxlry"]
+[ext_resource type="PackedScene" uid="uid://dgpqbcxle6mpj" path="res://Escenas/pausa.tscn" id="16_ttfnc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj6tn"]
 texture = ExtResource("1_bnsu1")
@@ -10688,6 +10689,7 @@ _data = {
 radius = 44.5533
 
 [node name="Intro" type="Node2D"]
+process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_x8x6h")
 
@@ -10802,9 +10804,15 @@ limit_bottom = 1088
 limit_smoothed = true
 position_smoothing_enabled = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Personaje/Camera2D"]
+
+[node name="Pausa" parent="Personaje/Camera2D/CanvasLayer" instance=ExtResource("16_ttfnc")]
+visible = false
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="npc/Area2DNPC" to="." method="_on_area_2dnpc_body_entered"]
 [connection signal="body_exited" from="npc/Area2DNPC" to="." method="_on_area_2dnpc_body_exited"]
 
 [editable path="npc"]
 [editable path="Personaje"]
+[editable path="Personaje/Camera2D/CanvasLayer/Pausa"]
