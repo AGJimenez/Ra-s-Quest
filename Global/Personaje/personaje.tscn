@@ -1,9 +1,46 @@
-[gd_scene load_steps=43 format=3 uid="uid://youdt3f7onux"]
+[gd_scene load_steps=49 format=3 uid="uid://youdt3f7onux"]
 
 [ext_resource type="Script" path="res://Scripts/personaje.gd" id="1_fstgl"]
 [ext_resource type="Texture2D" uid="uid://cfqoqfp1poopx" path="res://Assets/Full Spritesheet (normal).png" id="2_3iukn"]
 [ext_resource type="Texture2D" uid="uid://c5ymjyxfv7igl" path="res://Assets/Full Spritesheet (inverted).png" id="2_5p5nv"]
+[ext_resource type="Texture2D" uid="uid://k8u3xfcxqocv" path="res://Assets/Sprites/Skeleton.png" id="3_th4uf"]
 [ext_resource type="PackedScene" uid="uid://btmu3gp7r1hqc" path="res://Escenas/nivelAle/inventory_ui.tscn" id="6_rt0w4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu4pd"]
+atlas = ExtResource("3_th4uf")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17jtb"]
+atlas = ExtResource("3_th4uf")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i438"]
+atlas = ExtResource("3_th4uf")
+region = Rect2(32, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goquq"]
+atlas = ExtResource("3_th4uf")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fj8tr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu4pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17jtb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i438")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goquq")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_0xip3"]
 length = 0.001
@@ -662,9 +699,11 @@ states/stop/position = Vector2(479, 178)
 transitions = ["Start", "stop", SubResource("AnimationNodeStateMachineTransition_oe81y"), "stop", "interact", SubResource("AnimationNodeStateMachineTransition_tu3gb"), "interact", "stop", SubResource("AnimationNodeStateMachineTransition_g27f6"), "stop", "move", SubResource("AnimationNodeStateMachineTransition_nqxfr"), "move", "stop", SubResource("AnimationNodeStateMachineTransition_4dk2o"), "move", "interact", SubResource("AnimationNodeStateMachineTransition_k2sey"), "interact", "move", SubResource("AnimationNodeStateMachineTransition_n6vds")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7wiv"]
-size = Vector2(34, 19)
+size = Vector2(37.0461, 16.9795)
 
-[node name="Personaje" type="CharacterBody2D"]
+[node name="Personaje" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_fstgl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -672,6 +711,12 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_3iukn")
 hframes = 12
 vframes = 15
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(3.24342, 3.24342)
+sprite_frames = SubResource("SpriteFrames_fj8tr")
+animation = &"dead"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -689,7 +734,8 @@ parameters/move/blend_position = Vector2(0, 0)
 parameters/stop/blend_position = Vector2(-0.3232, -0.89418)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 15.5)
+position = Vector2(6.25849e-07, 18.5)
+scale = Vector2(0.647841, 0.647841)
 shape = SubResource("RectangleShape2D_d7wiv")
 
 [node name="Inventory_UI" parent="." instance=ExtResource("6_rt0w4")]

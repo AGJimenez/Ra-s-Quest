@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://eav1u8daqpcg"]
+
+[ext_resource type="Texture2D" uid="uid://cwxved7hwbvyd" path="res://Personaje/Luis/Fire/!$Fire_Animation - copia.png" id="1_g0no6"]
+[ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="2_7g10y"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0bcbp"]
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3huwf"]
+atlas = ExtResource("1_g0no6")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35mmc"]
+atlas = ExtResource("1_g0no6")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xje0n"]
+atlas = ExtResource("1_g0no6")
+region = Rect2(64, 64, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gi8mb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3huwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35mmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xje0n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_m3gpv"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_rfsxk"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cuyg6"]
+gradient = SubResource("Gradient_rfsxk")
+fill = 1
+fill_from = Vector2(0.504587, 0.495413)
+fill_to = Vector2(0.183486, 0.811927)
+
+[node name="little torch" type="Node2D"]
+y_sort_enabled = true
+
+[node name="fire" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_0bcbp")
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_gi8mb")
+autoplay = "default"
+frame = 1
+frame_progress = 0.794923
+offset = Vector2(0, -25)
+
+[node name="base" type="Sprite2D" parent="."]
+y_sort_enabled = true
+material = SubResource("CanvasItemMaterial_m3gpv")
+texture = ExtResource("2_7g10y")
+offset = Vector2(0, -5)
+region_enabled = true
+region_rect = Rect2(205, 49, 8, 9)
+
+[node name="Light" type="Node2D" parent="."]
+position = Vector2(0.200001, 0)
+
+[node name="Shadow" type="PointLight2D" parent="Light"]
+position = Vector2(0, -2)
+scale = Vector2(-11.0677, -10.2937)
+energy = 0.5
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = SubResource("GradientTexture2D_cuyg6")
+offset = Vector2(0, 2)
+texture_scale = 0.7
+
+[node name="light_floor" type="PointLight2D" parent="Light"]
+position = Vector2(0, 1.19209e-07)
+scale = Vector2(-7.71578, -7.07209)
+energy = 0.5
+range_item_cull_mask = 3
+shadow_filter = 1
+texture = SubResource("GradientTexture2D_cuyg6")
+offset = Vector2(0, 2)

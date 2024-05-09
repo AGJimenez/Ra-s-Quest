@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://sx6hfyddu2qe"]
+
+[ext_resource type="Script" path="res://Personaje/Luis/objectives/blue_flower.gd" id="1_7nca2"]
+[ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="1_qlhjy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pj1ly"]
+
+[node name="blue_flower" type="Node2D"]
+light_mask = 2
+script = ExtResource("1_7nca2")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 20
+offset_left = -10.0
+offset_top = -36.0
+offset_right = 35.0
+offset_bottom = -13.0
+scale = Vector2(0.405894, 0.405894)
+text = "SMTH"
+
+[node name="body" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 10, 1)
+light_mask = 2
+position = Vector2(-2, -10)
+texture = ExtResource("1_qlhjy")
+region_enabled = true
+region_rect = Rect2(359.998, 323.513, 13.2428, 23.6478)
+
+[node name="interaction_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+scale = Vector2(2.24661, 2.24661)
+shape = SubResource("CircleShape2D_pj1ly")
+
+[connection signal="body_entered" from="interaction_area" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="interaction_area" to="." method="_on_interaction_area_body_exited"]

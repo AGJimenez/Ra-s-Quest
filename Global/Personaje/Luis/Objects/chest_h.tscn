@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ngc3d8p4i0gj"]
+
+[ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="1_62sqp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gxsx"]
+size = Vector2(20, 17.8551)
+
+[node name="chest_h" type="StaticBody2D"]
+light_mask = 3
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
+texture = ExtResource("1_62sqp")
+region_enabled = true
+region_rect = Rect2(416, 454, 32, 54)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12.6383)
+scale = Vector2(1.56826, 1.52767)
+shape = SubResource("RectangleShape2D_3gxsx")
