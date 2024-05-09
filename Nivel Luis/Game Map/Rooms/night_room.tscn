@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d31bvrjh6ekq8"]
+[gd_scene load_steps=35 format=3 uid="uid://d31bvrjh6ekq8"]
 
 [ext_resource type="Texture2D" uid="uid://c5mw4vjvmhmpx" path="res://Tilesets/non-rm-a4-square.png" id="1_0y8jt"]
 [ext_resource type="Script" path="res://Scripts/night_room.gd" id="1_40c50"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://dsbdik5i5hic1" path="res://dialogue_windows/interact.tscn" id="10_vanm5"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Fire/little_torch.tscn" id="11_x4lfw"]
 [ext_resource type="Texture2D" uid="uid://dwq87qii5ulu" path="res://Sprites/light.png" id="13_43yrx"]
+[ext_resource type="PackedScene" uid="uid://sx6hfyddu2qe" path="res://objectives/blue_flower.tscn" id="14_1ntin"]
+[ext_resource type="PackedScene" uid="uid://c81tcmllbpcsp" path="res://objectives/red_flower.tscn" id="15_frtik"]
+[ext_resource type="PackedScene" uid="uid://c8c11t8m3f3fd" path="res://objectives/green_flower.tscn" id="16_1rikp"]
+[ext_resource type="PackedScene" uid="uid://ycbhpb1pb66b" path="res://objectives/yellow_flower.tscn" id="17_icuvp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa8ju"]
 texture = ExtResource("1_0y8jt")
@@ -16956,7 +16960,7 @@ layer_5/y_sort_enabled = true
 layer_5/tile_data = PackedInt32Array(1048618, 786433, 11, 1048623, 917505, 11, -131065, 655361, 3, -65529, 655361, 4, -131064, 720897, 3, -65528, 720897, 4, -131063, 983041, 4, -65527, 983041, 5, -131062, 786433, 3, -65526, 786433, 4, -131061, 851969, 3, -65525, 851969, 4, 262153, 917505, 12, -131041, 720897, 7, -65505, 720897, 8, -131038, 720897, 7, -65502, 720897, 8, -131049, 851969, 9, -65513, 851969, 10, -131053, 851969, 268435465, -65517, 851969, 268435466, 786460, 983041, 11, -65496, 786433, 7, 40, 786433, 8, -65494, 786433, 7, 42, 786433, 8)
 layer_6/name = "Object"
 layer_6/y_sort_enabled = true
-layer_6/tile_data = PackedInt32Array(65555, 393223, 11, 131091, 393223, 12, 196627, 393223, 13, 262163, 393223, 14, 327699, 393223, 15, 65559, 393223, 11, 131095, 393223, 12, 196631, 393223, 13, 262167, 393223, 14, 327703, 393223, 15, 1245224, 655361, 12, 1310760, 655361, 13, 1376296, 655361, 12, 1441832, 655361, 13, 1245231, 851969, 7, 1310767, 851969, 8, 1441839, 720897, 10, 1376298, 786433, 13, 1507371, 720897, 5, 1572907, 720897, 6, 1507372, 786433, 5, 1572908, 786433, 6, 1114159, 786433, 14, 1179695, 786433, 15, 1114160, 786433, 14, 1179696, 786433, 15, 1114158, 786433, 14, 1179694, 786433, 15, 1507342, 720897, 10, 1114109, 720897, 10, 131120, 720897, 10, 131081, 851969, 5, 196617, 851969, 6, 851996, 983041, 7, 917532, 983041, 8, 524324, 65543, 11, 589860, 65543, 12, 655396, 65543, 13, 720932, 65543, 14, 786468, 65543, 15, 196621, 65543, 11, 262157, 65543, 12, 327693, 65543, 13, 393229, 65543, 14, 458765, 65543, 15, 35, 917505, 13, 131110, 851969, 13, 917502, 720897, 14, 983038, 720897, 15, 851968, 720897, 14, 917504, 720897, 15, 851969, 720897, 14, 917505, 720897, 15, 1245194, 917505, 7, 1310730, 917505, 8, 1507338, 917505, 7, 1572874, 917505, 8, 1048572, 131073, 9, 1114108, 131073, 10, 1310737, 131073, 9, 1376273, 131073, 10, 41, 524289, 7, 65577, 524289, 8)
+layer_6/tile_data = PackedInt32Array(65555, 393223, 11, 131091, 393223, 12, 196627, 393223, 13, 262163, 393223, 14, 327699, 393223, 15, 65559, 393223, 11, 131095, 393223, 12, 196631, 393223, 13, 262167, 393223, 14, 327703, 393223, 15, 1245224, 655361, 12, 1310760, 655361, 13, 1376296, 655361, 12, 1441832, 655361, 13, 1245231, 851969, 7, 1310767, 851969, 8, 1376298, 786433, 13, 1507371, 720897, 5, 1572907, 720897, 6, 1507372, 786433, 5, 1572908, 786433, 6, 1114159, 786433, 14, 1179695, 786433, 15, 1114160, 786433, 14, 1179696, 786433, 15, 1114158, 786433, 14, 1179694, 786433, 15, 131081, 851969, 5, 196617, 851969, 6, 851996, 983041, 7, 917532, 983041, 8, 524324, 65543, 11, 589860, 65543, 12, 655396, 65543, 13, 720932, 65543, 14, 786468, 65543, 15, 196621, 65543, 11, 262157, 65543, 12, 327693, 65543, 13, 393229, 65543, 14, 458765, 65543, 15, 35, 917505, 13, 131110, 851969, 13, 917502, 720897, 14, 983038, 720897, 15, 851968, 720897, 14, 917504, 720897, 15, 851969, 720897, 14, 917505, 720897, 15, 1245194, 917505, 7, 1310730, 917505, 8, 1507338, 917505, 7, 1572874, 917505, 8, 1048572, 131073, 9, 1114108, 131073, 10, 1310737, 131073, 9, 1376273, 131073, 10, 41, 524289, 7, 65577, 524289, 8)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="room" instance=ExtResource("10_gjakg")]
@@ -17048,6 +17052,21 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_puzzle"]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_bxk6f")
+
+[node name="flowers" type="Node2D" parent="."]
+light_mask = 2
+
+[node name="blue_flower" parent="flowers" instance=ExtResource("14_1ntin")]
+position = Vector2(-79, 532)
+
+[node name="red_flower" parent="flowers" instance=ExtResource("15_frtik")]
+position = Vector2(1547, 88)
+
+[node name="green_flower" parent="flowers" instance=ExtResource("16_1rikp")]
+position = Vector2(1519, 726)
+
+[node name="yellow_flower" parent="flowers" instance=ExtResource("17_icuvp")]
+position = Vector2(466, 760)
 
 [connection signal="body_entered" from="night_area_chest" to="." method="_on_night_area_chest_body_entered"]
 [connection signal="body_entered" from="night_area_torch" to="." method="_on_night_area_torch_body_entered"]

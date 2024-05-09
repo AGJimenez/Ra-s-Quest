@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvp670pw5ohwv"]
+
+[ext_resource type="Texture2D" uid="uid://d2t3ci67hxp3m" path="res://Assets/puzle_2.png" id="1_7vshc"]
+
+[node name="Puzle2" type="Panel"]
+offset_right = 528.0
+offset_bottom = 324.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(252.375, 154.5)
+scale = Vector2(0.504253, 0.497165)
+texture = ExtResource("1_7vshc")
+offset = Vector2(-176, -176)
+hframes = 3
+vframes = 3

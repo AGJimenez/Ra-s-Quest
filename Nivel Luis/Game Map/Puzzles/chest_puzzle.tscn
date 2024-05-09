@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjwaur5qv0j6v"]
+[gd_scene load_steps=14 format=3 uid="uid://bjwaur5qv0j6v"]
 
 [ext_resource type="Script" path="res://Scripts/chest_puzzle.gd" id="1_f07qv"]
 [ext_resource type="Texture2D" uid="uid://crrmwov80imkt" path="res://Tilesets/non-rm-a3.png" id="2_0lkkx"]
 [ext_resource type="Texture2D" uid="uid://cd2h6pj1jh42c" path="res://Tilesets/Egyptian_C.png" id="2_1kd5x"]
 [ext_resource type="Texture2D" uid="uid://bfjib41qumsbp" path="res://Sprites/circlue.png" id="2_a51jv"]
-[ext_resource type="Texture2D" uid="uid://cr5tid3tgxk13" path="res://icon.svg" id="3_gpqsv"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_cr6mv"]
-b = Vector2(6.51848e-05, 13.9089)
+a = Vector2(-0.646347, -5.87567)
+b = Vector2(-0.646339, 5.8757)
 
 [sub_resource type="Animation" id="Animation_qf417"]
 length = 0.001
@@ -83,14 +83,17 @@ position = Vector2(426, 327)
 scale = Vector2(0.776483, 1.10769)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_check"]
-rotation = -1.57079
-scale = Vector2(5.97755, 0.614587)
+rotation = -3.14159
+scale = Vector2(6.26393, 0.644031)
 shape = SubResource("SegmentShape2D_cr6mv")
 
 [node name="Sprite2D" type="Sprite2D" parent="player_check"]
 position = Vector2(4.50751, -1.86563e-05)
-scale = Vector2(0.0704296, 0.141059)
-texture = ExtResource("3_gpqsv")
+rotation = -1.57079
+scale = Vector2(0.352414, 0.312784)
+texture = ExtResource("2_1kd5x")
+region_enabled = true
+region_rect = Rect2(387.177, 289.001, 24.6215, 61.9882)
 
 [node name="skill_checks" type="Node2D" parent="."]
 position = Vector2(553, 238)

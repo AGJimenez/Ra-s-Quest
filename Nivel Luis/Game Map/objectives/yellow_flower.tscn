@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://ycbhpb1pb66b"]
+
+[ext_resource type="Script" path="res://objectives/yellow_flower.gd" id="1_8afag"]
+[ext_resource type="Texture2D" uid="uid://cd2h6pj1jh42c" path="res://Tilesets/Egyptian_C.png" id="1_e8mb8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6wk2b"]
+
+[node name="yellow_flower" type="Node2D"]
+light_mask = 2
+script = ExtResource("1_8afag")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+z_index = 20
+offset_left = -10.0
+offset_top = -36.0
+offset_right = 35.0
+offset_bottom = -13.0
+scale = Vector2(0.405894, 0.405894)
+text = "SMTH"
+
+[node name="body" type="Sprite2D" parent="."]
+self_modulate = Color(3, 20, 0, 1)
+light_mask = 2
+z_index = 20
+position = Vector2(-2, -10)
+texture = ExtResource("1_e8mb8")
+region_enabled = true
+region_rect = Rect2(359.998, 323.513, 13.2428, 23.6478)
+
+[node name="interaction_area" type="Area2D" parent="body"]
+position = Vector2(2, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="body/interaction_area"]
+scale = Vector2(2.24661, 2.24661)
+shape = SubResource("CircleShape2D_6wk2b")
+
+[connection signal="body_entered" from="body/interaction_area" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="body/interaction_area" to="." method="_on_interaction_area_body_exited"]
