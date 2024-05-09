@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dnojpaa48v650"
+path="res://.godot/imported/Mito.dialogue-e8274e60a34ea1ee6aedc15f9ec156a4.tres"
+
+[deps]
+
+source_file="res://Dialogos/nivelAle/Mito.dialogue"
+dest_files=["res://.godot/imported/Mito.dialogue-e8274e60a34ea1ee6aedc15f9ec156a4.tres"]
+
+[params]
+
+defaults=true

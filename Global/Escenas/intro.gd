@@ -36,7 +36,6 @@ func _on_area_2dnpc_body_entered(body):
 		print("Conversacion con npc")
 
 
-
 func _on_area_2dnpc_body_exited(body):
 	enAreaNPC = false
 	$npc/Control.visible = false

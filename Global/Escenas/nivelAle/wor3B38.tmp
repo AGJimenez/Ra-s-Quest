@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://276uutptuj65"]
+[gd_scene load_steps=29 format=3 uid="uid://276uutptuj65"]
 
 [ext_resource type="Script" path="res://Escenas/nivelAle/world.gd" id="1_ao47j"]
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="1_ue6xu"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="10_p4rfy"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="11_tn2yn"]
 [ext_resource type="PackedScene" uid="uid://b20eu864hbfkc" path="res://Escenas/nivelAle/fuego.tscn" id="12_dxw6u"]
+[ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="12_pqhud"]
 [ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="13_nrv0w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7obs0"]
@@ -10806,6 +10807,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "QUIT"
 
+[node name="ExampleBalloon" parent="player/Camera2D" instance=ExtResource("12_pqhud")]
+
 [node name="colision" type="StaticBody2D" parent="."]
 visible = false
 
@@ -10858,3 +10861,5 @@ offset_bottom = -28.0
 [connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+
+[editable path="player/Camera2D/ExampleBalloon"]

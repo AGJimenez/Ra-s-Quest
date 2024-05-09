@@ -2,6 +2,7 @@ extends CanvasLayer
 
 ## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
+@export var SIGNAL_DIALOGUE_FINISHED = "dialogue_finished"
 
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
@@ -33,6 +34,7 @@ var dialogue_line: DialogueLine:
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
 			queue_free()
+			emit_signal(SIGNAL_DIALOGUE_FINISHED)
 			return
 
 		# If the node isn't ready yet then none of the labels will be ready yet either

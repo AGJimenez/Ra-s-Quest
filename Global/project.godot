@@ -70,7 +70,7 @@ pausa={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogos/nivel1_Mario/dialogo_inicial.dialogue", "res://Dialogos/Dani/Conversacion_Principal.dialogue", "res://Dialogos/Dani/Go_To_FinalPuzzle.dialogue", "res://Dialogos/Dani/interaccion_con_Anubis.dialogue", "res://Dialogos/Dani/interaccion_con_balanza.dialogue", "res://Dialogos/Dani/Interacción_Con_Cofre.dialogue", "res://Dialogos/Dani/panel_respuesta.dialogue", "res://Dialogos/Dani/panel_respuesta_correcta.dialogue", "res://Dialogos/Dani/panel_respuesta_incorrecta.dialogue", "res://Dialogos/Dani/prueba.dialogue", "res://Dialogos/nivel1_Mario/dialogo_error_puzle1.dialogue", "res://Dialogos/intro/controlesNpc.dialogue", "res://Dialogos/intro/jjj.dialogue", "res://Dialogos/nivel1_Mario/dialogo_acierto_puzle1.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogos/nivel1_Mario/dialogo_inicial.dialogue", "res://Dialogos/Dani/Conversacion_Principal.dialogue", "res://Dialogos/Dani/Go_To_FinalPuzzle.dialogue", "res://Dialogos/Dani/interaccion_con_Anubis.dialogue", "res://Dialogos/Dani/interaccion_con_balanza.dialogue", "res://Dialogos/Dani/Interacción_Con_Cofre.dialogue", "res://Dialogos/Dani/panel_respuesta.dialogue", "res://Dialogos/Dani/panel_respuesta_correcta.dialogue", "res://Dialogos/Dani/panel_respuesta_incorrecta.dialogue", "res://Dialogos/Dani/prueba.dialogue", "res://Dialogos/nivel1_Mario/dialogo_error_puzle1.dialogue", "res://Dialogos/intro/controlesNpc.dialogue", "res://Dialogos/intro/jjj.dialogue", "res://Dialogos/nivel1_Mario/dialogo_acierto_puzle1.dialogue", "res://Dialogos/nivelAle/Mito.dialogue")
 
 [rendering]
 
