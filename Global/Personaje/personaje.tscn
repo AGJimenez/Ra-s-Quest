@@ -707,6 +707,7 @@ collision_mask = 3
 script = ExtResource("1_fstgl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 scale = Vector2(3, 3)
 texture = ExtResource("2_3iukn")
 hframes = 12
@@ -734,6 +735,7 @@ parameters/move/blend_position = Vector2(0, 0)
 parameters/stop/blend_position = Vector2(-0.3232, -0.89418)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
 position = Vector2(6.25849e-07, 18.5)
 scale = Vector2(0.647841, 0.647841)
 shape = SubResource("RectangleShape2D_d7wiv")
