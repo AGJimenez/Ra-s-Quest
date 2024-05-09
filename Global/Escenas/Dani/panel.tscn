@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://irpot6b873ed"]
 
-[ext_resource type="Script" path="res://Scripts/panel.gd" id="1_jheh2"]
+[ext_resource type="Script" path="res://Scripts/Dani/panel.gd" id="1_jheh2"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="1_nqopo"]
 [ext_resource type="Texture2D" uid="uid://cn3ct3bvcphwp" path="res://Assets/Egyptian_A3.png" id="2_qkdw3"]
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="3_iifma"]

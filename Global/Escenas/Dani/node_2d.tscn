@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://2j2y4f5wxlxu"]
 
-[ext_resource type="Script" path="res://Scripts/node_2d.gd" id="1_ftdwg"]
+[ext_resource type="Script" path="res://Scripts/Dani/node_2d.gd" id="1_ftdwg"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="1_sld68"]
 [ext_resource type="Texture2D" uid="uid://cn3ct3bvcphwp" path="res://Assets/Egyptian_A3.png" id="2_nr601"]
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="3_8ixj0"]
@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="8_rfm3r"]
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="9_sp2ii"]
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="10_2o8f1"]
-[ext_resource type="PackedScene" path="res://Escenas/area_cofres.tscn" id="13_vh4bp"]
-[ext_resource type="PackedScene" path="res://Escenas/balanza_maat.tscn" id="14_5y6kt"]
+[ext_resource type="PackedScene" uid="uid://c1h1gywnkr35a" path="res://Escenas/Dani/area_cofres.tscn" id="13_vh4bp"]
+[ext_resource type="PackedScene" uid="uid://dycvn2u110ytr" path="res://Escenas/Dani/balanza_maat.tscn" id="14_5y6kt"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="15_2j1o6"]
-[ext_resource type="PackedScene" path="res://Escenas/area_cofres_vertical.tscn" id="15_ahc0e"]
-[ext_resource type="PackedScene" uid="uid://irpot6b873ed" path="res://Escenas/panel.tscn" id="16_ortta"]
-[ext_resource type="PackedScene" uid="uid://cm1grxk6de8lv" path="res://Escenas/static_body_2d.tscn" id="17_fc726"]
+[ext_resource type="PackedScene" uid="uid://ya58j8lojb06" path="res://Escenas/Dani/area_cofres_vertical.tscn" id="15_ahc0e"]
+[ext_resource type="PackedScene" uid="uid://irpot6b873ed" path="res://Escenas/Dani/panel.tscn" id="16_ortta"]
+[ext_resource type="PackedScene" uid="uid://cm1grxk6de8lv" path="res://Escenas/Dani/static_body_2d.tscn" id="17_fc726"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtdwe"]
 texture = ExtResource("1_sld68")
