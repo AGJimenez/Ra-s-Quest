@@ -6,19 +6,19 @@ var blank_color = "blank"
 var blank2_color = "blank"
 var blank3_color = "blank"
 var blank4_color = "blank"
-var blank_fraction = 0.0
-var blank2_fraction = 0.0
-var blank3_fraction = 0.0
-var blank4_fraction = 0.0
+var blank_fraction: float
+var blank2_fraction: float
+var blank3_fraction: float
+var blank4_fraction: float
 var activated_blank = false
 var activated_blank2 = false
 var activated_blank3 = false
 var activated_blank4 = false
+var fraction_blue
+var fraction_red
+var fraction_green
+var fraction_yellow
 
-@export var fraction_blue = "3/5"
-@export var fraction_red = "9/8"
-@export var fraction_green = "2/4"
-@export var fraction_yellow = "1/9"
 
 @onready var player_light = $player_light/PointLight2D
 @onready var anim = $player_light/PointLight2D/AnimationPlayer
@@ -26,6 +26,16 @@ var activated_blank4 = false
 @onready var anim_blank2 = $blank_gems/blank_gem2/AnimationPlayer
 @onready var anim_blank3 = $blank_gems/blank_gem3/AnimationPlayer
 @onready var anim_blank4 = $blank_gems/blank_gem4/AnimationPlayer
+
+func _ready():
+	fraction_blue = Global.decimals[Global.random[0]]
+	fraction_red = Global.decimals[Global.random[1]]
+	fraction_green = Global.decimals[Global.random[2]]
+	fraction_yellow = Global.decimals[Global.random[3]]
+	print(fraction_blue)
+	print(fraction_red)
+	print(fraction_green)
+	print(fraction_yellow) 
 
 func _process(delta):
 	if(Input.is_action_just_pressed("interact")):
