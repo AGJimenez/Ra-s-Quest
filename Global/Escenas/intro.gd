@@ -80,9 +80,9 @@ func _on_button_2_pressed():
 
 
 func quitarMov():
-	$Personaje.speed = 0
+	$Personaje.set_physics_process(false)
 	ignorarMov = true
 	
 func DarMov():
-	$Personaje.speed = 100
+	$Personaje.set_physics_process(true)
 	ignorarMov = false
