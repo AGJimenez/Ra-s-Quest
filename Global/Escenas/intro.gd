@@ -3,6 +3,7 @@ extends Node2D
 var enAreaNPC = false
 var paused = false
 var ignorarMov = false
+var cont = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,8 +20,10 @@ func _process(delta):
 	if !ignorarMov: 
 		if enAreaNPC == true and Input.is_action_just_pressed("Interact"):
 			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/intro/controlesNpc.dialogue"),"this_is_a_node_title")
-		
-		
+			quitarMov()
+			await get_tree().create_timer(10).timeout
+			DarMov()
+			
 	if Input.is_action_just_pressed("pausa"):
 		pauseMenu()
 		
@@ -74,3 +77,12 @@ func _on_button_3_pressed():
 
 func _on_button_2_pressed():
 	reloadLevel()
+
+
+func quitarMov():
+	$Personaje.speed = 0
+	ignorarMov = true
+	
+func DarMov():
+	$Personaje.speed = 100
+	ignorarMov = false

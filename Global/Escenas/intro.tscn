@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://csjnejeofyv8y"]
+[gd_scene load_steps=38 format=3 uid="uid://csjnejeofyv8y"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_bnsu1"]
 [ext_resource type="Script" path="res://Escenas/intro.gd" id="1_x8x6h"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="12_auift"]
 [ext_resource type="PackedScene" uid="uid://b8gc7ec1uqh6s" path="res://Personaje/npcIntro.tscn" id="14_x7aiy"]
 [ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="15_hxlry"]
+[ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="16_cnf1g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj6tn"]
 texture = ExtResource("1_bnsu1")
@@ -10684,8 +10685,8 @@ _data = {
 "camara": SubResource("Animation_o6heh")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_pdbvb"]
-radius = 44.5533
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0nif"]
+size = Vector2(85, 60)
 
 [node name="Intro" type="Node2D"]
 y_sort_enabled = true
@@ -10771,7 +10772,8 @@ position = Vector2(576, -209)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 z_index = 1
-shape = SubResource("CircleShape2D_pdbvb")
+position = Vector2(-0.5, -14)
+shape = SubResource("RectangleShape2D_g0nif")
 
 [node name="npc" parent="." instance=ExtResource("14_x7aiy")]
 z_index = 1
@@ -10869,14 +10871,17 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "QUIT"
 
+[node name="ExampleBalloon" parent="Personaje/Camera2D" instance=ExtResource("16_cnf1g")]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="npc/Area2DNPC" to="." method="_on_area_2dnpc_body_entered"]
 [connection signal="body_exited" from="npc/Area2DNPC" to="." method="_on_area_2dnpc_body_exited"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="dialogue_finished" from="Personaje/Camera2D/ExampleBalloon" to="." method="_on_example_balloon_dialogue_finished"]
 
 [editable path="npc"]
 [editable path="Personaje"]

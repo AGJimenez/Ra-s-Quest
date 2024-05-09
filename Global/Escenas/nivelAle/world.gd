@@ -8,7 +8,7 @@ var ignorarMov = false
 
 func _ready():
 	$Area2D/Control.visible = false
-	
+	#connect()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

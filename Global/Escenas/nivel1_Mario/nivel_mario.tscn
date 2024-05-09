@@ -62,4 +62,7 @@ offset_right = 5465.0
 offset_bottom = 6059.0
 color = Color(0, 0, 0, 1)
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1898, 2047)
+
 [connection signal="signal_button_pressed" from="." to="." method="_on_signal_button_puzle1_pressed"]
