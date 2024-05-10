@@ -1,4 +1,5 @@
 ~ dialogo_inicial
+set Global.dialogue_state = true
 
 ???: ¿¿QUIÉN OSA A ENTRAR EN ESTE TEMPLO??
 Jack: ¿Qui-quién ha dicho e-eso?
@@ -22,4 +23,5 @@ Isis: ¿Aceptas el reto?
 - Si no queda otra...
 Isis: Perfecto. Para encontrar el [b]primer papiro[/b], deberás buscar el monumento en omenaje a Khepri, el dios escarabajo.
 
+set Global.dialogue_state = false
 => END

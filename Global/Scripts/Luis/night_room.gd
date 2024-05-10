@@ -18,7 +18,7 @@ func _ready():
 	if Global.change == "wall_puzzle-night":
 		$room/Player.global_position = $"Spawn_points/wall_puzzle-night".global_position
 
-func _process(delta):
+func _process(_delta):
 	if(Input.is_action_just_pressed("Interact") && !change):
 		if(wall):
 			LoadManager.load_scene("res://Escenas/Luis/Puzzles/wall_puzzle.tscn")

@@ -14,6 +14,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if(Global.dialogue_state == true):
+		$Personaje.set_physics_process(false)
+	if(Global.dialogue_state == false):
+		$Personaje.set_physics_process(true)
 	interaccion()
 	if panel.numeroDePanelesSuperados == 4:
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/interaccion_con_Anubis.dialogue"),"laberinto")

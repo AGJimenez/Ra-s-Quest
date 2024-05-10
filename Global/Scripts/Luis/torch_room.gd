@@ -23,9 +23,11 @@ var pickable = false
 @onready var light_red = $"God Statue"/objective/light_floor/AnimationPlayer
 
 
-func _process(delta):
+func _process(_delta):
 	if((area_1_movable && area_2_movable && area_3_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_2_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_2_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player))):
-		if(!talk):
+		if(!Global.activated):
+			$room/Player.velocity = Vector2.ZERO
+			$room/Player.update_animation()
 			$room/Player.set_physics_process(false)
 			$room/Player.set_process(false)
 			await get_tree().create_timer(1).timeout
@@ -39,6 +41,7 @@ func _process(delta):
 			if(Input.is_action_just_pressed("Interact") && talk):
 				$room/Player.set_physics_process(false)
 				$room/Player/talk_to_god.visible = false
+				await get_tree().create_timer(0.9).timeout
 				$room.set_layer_enabled(1,true)
 				await get_tree().create_timer(0.5).timeout
 				$room/Player/fall_player.play("fall")

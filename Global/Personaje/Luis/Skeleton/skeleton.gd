@@ -18,7 +18,7 @@ enum enemy_states{
 }
 
 
-func _process(delta):
+func _process(_delta):
 	if (Global.activated && !dead):
 		set_physics_process(false)
 		anim.play("death")
@@ -28,7 +28,7 @@ func _process(delta):
 	if(dead):
 		pass
 			
-func _physics_process(delta):
+func _physics_process(_delta):
 	ray_collide()
 	_random()
 	match current_state:

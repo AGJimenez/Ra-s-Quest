@@ -13,11 +13,15 @@ func _ready():
 	#connect()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if !ignorarMov: 
 		if enAreaPlayer == true and Input.is_action_just_pressed("Interact"):
 			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelAle/Mito.dialogue"), "start")
-			
+		if(Global.dialogue_state == true):
+			$player.set_physics_process(false)
+		if(Global.dialogue_state == false):
+			$player.set_physics_process(true)
+
 	if Input.is_action_just_pressed("pausa"):
 		pauseMenu()
 		
@@ -51,7 +55,7 @@ func _on_area_2d_body_entered(body):
 		print("jeroglifico")
 
 	
-func _on_area_2d_body_exited(body):
+func _on_area_2d_body_exited(_body):
 	enAreaPlayer = false
 	$Area2D/Control.visible = false
 

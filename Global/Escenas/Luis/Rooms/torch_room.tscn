@@ -11561,6 +11561,7 @@ texture_region_size = Vector2i(32, 32)
 15:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:13/0/physics_layer_0/angular_velocity = 0.0
 8:14/0 = 0
+8:14/0/y_sort_origin = -30
 8:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:14/0/physics_layer_0/angular_velocity = 0.0
 9:14/0 = 0
@@ -11834,6 +11835,7 @@ layer_7/tile_data = PackedInt32Array(16, 720901, 12, 65552, 720901, 13, 17, 7209
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="room" instance=ExtResource("5_2r7ys")]
+y_sort_enabled = true
 position = Vector2(563, 507)
 scale = Vector2(1, 1.11559)
 
@@ -11866,7 +11868,7 @@ offset_bottom = -69.0218
 scale = Vector2(0.340812, 0.307428)
 
 [node name="little torch" parent="room/Player" instance=ExtResource("9_wh1a7")]
-position = Vector2(-19, 8.96387)
+position = Vector2(-24, 8.96387)
 
 [node name="fall_player" type="AnimationPlayer" parent="room/Player"]
 libraries = {
@@ -12008,6 +12010,7 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_1w3mb")
 
 [node name="Torches" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="movable_torch" parent="Torches" instance=ExtResource("8_v6n8k")]
 position = Vector2(430, 399)
@@ -12019,6 +12022,7 @@ position = Vector2(402, 170)
 position = Vector2(689, 176)
 
 [node name="Statues" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Statue" parent="Statues" instance=ExtResource("10_upecq")]
 light_mask = 7
@@ -12094,6 +12098,7 @@ libraries = {
 }
 
 [node name="skeletons" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="skeleton" parent="skeletons" instance=ExtResource("13_s2o15")]
 position = Vector2(168, 445)
@@ -12109,6 +12114,7 @@ position = Vector2(990, 83)
 
 [node name="Objects" type="Node2D" parent="."]
 light_mask = 3
+y_sort_enabled = true
 
 [node name="chest" parent="Objects" instance=ExtResource("16_t8sgt")]
 position = Vector2(144, 13)

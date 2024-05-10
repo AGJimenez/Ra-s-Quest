@@ -20,6 +20,10 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Global="*res://Personaje/Luis/Global/Global.tscn"
 LoadManager="*res://Scripts/Luis/load_manager.gd"
 
+[dialogue_manager]
+
+general/states=["Global"]
+
 [display]
 
 window/stretch/mode="viewport"

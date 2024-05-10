@@ -1,4 +1,5 @@
 ~ main
+set Global.dialogue_state = true
 
 Anubis: ¿A dónde te crees que vas tan rápido?
 
@@ -8,6 +9,7 @@ Anubis: Bien, veremos si eres lo suficientemente inteligente como para hacerlo. 
 
 Jack: Estoy listo para lo que sea que tengas preparado, Anubis. No me intimidan tus juegos.
 
+set Global.dialogue_state = false
 => END
 
 ~ laberinto

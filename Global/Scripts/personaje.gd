@@ -2,13 +2,16 @@ extends CharacterBody2D
 class_name Personaje
 
 var push_force = 120
-@export var speed = 100
-@onready var animTree: AnimationTree = $AnimationTree
 var direction: Vector2 = Vector2.ZERO
-@onready var has_interacted = false
+var input_enabled = true
+
+@export var speed = 100
 @export var inv: Inv
 
-var input_enabled = true
+@onready var animTree: AnimationTree = $AnimationTree
+@onready var anim = $AnimationPlayer
+@onready var has_interacted = false
+
 
 func _ready():
 	animTree.active = true
@@ -65,6 +68,17 @@ func update_animation():
 		animTree["parameters/stop/blend_position"] = direction
 		animTree["parameters/move/blend_position"] = direction
 		animTree["parameters/interact/blend_position"] = direction
+		
+func update_torch():
+	pass
+	#if(LEFT):
+		#torch.position = Vector2(0,-7)
+	#if(RIGHT):
+		#torch.position = Vector2(0,27)
+	#if(UP):
+		#torch.position = Vector2(21,13)
+	#if(DOWN):
+		#torch.position = Vector2(-21,13)
 
 func player():
 	pass
