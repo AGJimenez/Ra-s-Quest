@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bxj3omaky0j3t"
+path="res://.godot/imported/gain_torch.dialogue-7ba491f1edc4d273d2b70bc75f427480.tres"
+
+[deps]
+
+source_file="res://Dialogos/Luis/chest_room/gain_torch.dialogue"
+dest_files=["res://.godot/imported/gain_torch.dialogue-7ba491f1edc4d273d2b70bc75f427480.tres"]
+
+[params]
+
+defaults=true

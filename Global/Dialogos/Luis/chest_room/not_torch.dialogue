@@ -1,0 +1,6 @@
+~ not_torch_dialog
+set Global.dialogue_state = true
+
+Jack: Parece que está muy oscuro, necesito algo de luz
+set Global.dialogue_state = false
+=> END

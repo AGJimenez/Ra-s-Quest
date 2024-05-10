@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="8_uaxlb"]
 [ext_resource type="PackedScene" uid="uid://dsbdik5i5hic1" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_f7bmy"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_q7mc2"]
-[ext_resource type="PackedScene" uid="uid://p8ifbemsfuus" path="res://Interfaz/Luis/prompts_windows/dialog_smth.tscn" id="11_vljsg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avwf6"]
 texture = ExtResource("5_m65vy")
@@ -11520,6 +11519,9 @@ sources/6 = SubResource("TileSetAtlasSource_mpib0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcdvo"]
 size = Vector2(40.0082, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kin1j"]
+size = Vector2(20, 33.6283)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wleei"]
 size = Vector2(45, 20)
 
@@ -11558,17 +11560,10 @@ position = Vector2(158, 177)
 [node name="interact" parent="room/Player" instance=ExtResource("10_f7bmy")]
 visible = false
 offset_left = -41.0
-offset_top = -64.5398
+offset_top = -50.0
 offset_right = -41.0
-offset_bottom = -64.5398
+offset_bottom = -50.0
 scale = Vector2(0.279214, 0.350542)
-
-[node name="dialog_smth" parent="room/Player" instance=ExtResource("11_vljsg")]
-visible = false
-offset_left = -50.0
-offset_top = -71.7109
-offset_right = -50.0
-offset_bottom = -71.7109
 
 [node name="Camera_chest" type="Camera2D" parent="."]
 position = Vector2(130, 76)
@@ -11589,6 +11584,13 @@ shape = SubResource("RectangleShape2D_aqlas")
 position = Vector2(-5.96046e-08, 0)
 scale = Vector2(0.699857, 0.983784)
 shape = SubResource("RectangleShape2D_jcdvo")
+
+[node name="not_torch_area" type="Area2D" parent="night_entrance"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="night_entrance/not_torch_area"]
+position = Vector2(0, 6.63295)
+scale = Vector2(1.38822, 0.97341)
+shape = SubResource("RectangleShape2D_kin1j")
 
 [node name="Spawn_points" type="Node2D" parent="."]
 
@@ -11611,7 +11613,16 @@ visible = false
 position = Vector2(136, 96)
 scale = Vector2(6.29021, 6.29021)
 
+[node name="Shadow" parent="little torch/Light" index="0"]
+range_item_cull_mask = 0
+
+[node name="light_floor" parent="little torch/Light" index="1"]
+range_item_cull_mask = 0
+
 [connection signal="body_entered" from="night_entrance/chest_area_night" to="." method="_on_chest_area_night_body_entered"]
-[connection signal="body_exited" from="night_entrance/chest_area_night" to="." method="_on_chest_area_night_body_exited"]
+[connection signal="body_entered" from="night_entrance/not_torch_area" to="." method="_on_not_torch_area_body_entered"]
+[connection signal="body_exited" from="night_entrance/not_torch_area" to="." method="_on_not_torch_area_body_exited"]
 [connection signal="body_entered" from="chest_puzzle" to="." method="_on_chest_puzzle_body_entered"]
 [connection signal="body_exited" from="chest_puzzle" to="." method="_on_chest_puzzle_body_exited"]
+
+[editable path="little torch"]

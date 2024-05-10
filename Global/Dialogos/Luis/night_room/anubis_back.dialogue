@@ -1,0 +1,13 @@
+~ anubis_dialog
+set Global.dialogue_state = true
+
+Anubis: No te creas que es tan facil derrotar a un [tornado radius=3.0 freq=3.2 connected=1][color=yellow] dios
+Anubis: Tengo una habitación especial preparada simplemente para ti espero que te guste
+Jack: Te he derrotado una vez, no creo que dos veces sea tan complicado
+Jack: Dame unos minutos para terminar tu prueba y volvemos a hablar
+Anubis: Esperaré tu respuesta pacientemente...
+Anubis: [shake] Nos vemos en el [color=red]Duat
+...
+Jack: A que se referirá con eso...
+set Global.dialogue_state = false
+=> END

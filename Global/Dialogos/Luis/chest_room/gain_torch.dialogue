@@ -1,0 +1,6 @@
+~ gain_torch_dialog
+set Global.dialogue_state = true
+
+???: Has conseguido una antorcha mágica, te veo dentro de poco
+set Global.dialogue_state = false
+=> END

@@ -39,7 +39,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dead",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="Animation" id="Animation_0xip3"]
@@ -718,6 +718,8 @@ visible = false
 scale = Vector2(3.24342, 3.24342)
 sprite_frames = SubResource("SpriteFrames_fj8tr")
 animation = &"dead"
+frame = 3
+frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

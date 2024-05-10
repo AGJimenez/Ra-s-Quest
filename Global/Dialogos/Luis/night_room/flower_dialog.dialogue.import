@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://d3rh331cbtrid"
+path="res://.godot/imported/flower_dialog.dialogue-a2ad642a91e36a07ea135162e339676c.tres"
+
+[deps]
+
+source_file="res://Dialogos/Luis/night_room/flower_dialog.dialogue"
+dest_files=["res://.godot/imported/flower_dialog.dialogue-a2ad642a91e36a07ea135162e339676c.tres"]
+
+[params]
+
+defaults=true

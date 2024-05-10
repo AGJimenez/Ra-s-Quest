@@ -307,6 +307,7 @@ scale = Vector2(2.04173, 2.34881)
 script = ExtResource("1_63inp")
 
 [node name="colliders" type="Node2D" parent="."]
+position = Vector2(0, -5.42972)
 
 [node name="ray(0,1)" type="RayCast2D" parent="colliders"]
 position = Vector2(0, 5.6)
@@ -333,21 +334,22 @@ target_position = Vector2(0, 10.2179)
 
 [node name="skelyboy" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
+scale = Vector2(1.27766, 1.27766)
 sprite_frames = SubResource("SpriteFrames_64qjj")
 animation = &"idle"
 autoplay = "idle"
+offset = Vector2(0, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5.53472)
+position = Vector2(1.44989e-12, 0.104997)
 rotation = 3.14159
-scale = Vector2(0.478899, 0.321719)
+scale = Vector2(0.752698, 0.505654)
 shape = SubResource("CircleShape2D_ejy50")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
 [node name="aura" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.129412)
-scale = Vector2(4.7142, 1.78938)
+position = Vector2(0, -5.42972)
+scale = Vector2(4.0976, 1.55534)
 sprite_frames = SubResource("SpriteFrames_mmjvb")
 animation = &"aura"
 autoplay = "aura"
@@ -358,12 +360,13 @@ frame_progress = 0.615988
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -5.42972)
 scale = Vector2(0.754524, 0.909894)
 collision_layer = 3
 collision_mask = 3
 
 [node name="death_aura" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(6.37007, 2.30251)
+scale = Vector2(5.57608, 2.01552)
 shape = SubResource("CircleShape2D_wludh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

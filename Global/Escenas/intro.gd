@@ -22,7 +22,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if !ignorarMov: 
-		if enAreaNPC == true and Input.is_action_just_pressed("Interact") && intro_finished:
+		if enAreaNPC == true and Input.is_action_just_pressed("Interact") && intro_finished && !Global.dialogue_state == true:
 			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/intro/controlesNpc.dialogue"),"this_is_a_node_title")
 		if(intro_finished):
 			if(Global.dialogue_state == true):

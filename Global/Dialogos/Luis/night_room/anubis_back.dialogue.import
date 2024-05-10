@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dbhrprfbrq1y6"
+path="res://.godot/imported/anubis_back.dialogue-f64d01b911d3d5820d6595dd76bd33d3.tres"
+
+[deps]
+
+source_file="res://Dialogos/Luis/night_room/anubis_back.dialogue"
+dest_files=["res://.godot/imported/anubis_back.dialogue-f64d01b911d3d5820d6595dd76bd33d3.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://biof75t6sfck0"
+path="res://.godot/imported/not_torch.dialogue-0c9342c19dcbda9756ffae80cb951d8e.tres"
+
+[deps]
+
+source_file="res://Dialogos/Luis/chest_room/not_torch.dialogue"
+dest_files=["res://.godot/imported/not_torch.dialogue-0c9342c19dcbda9756ffae80cb951d8e.tres"]
+
+[params]
+
+defaults=true

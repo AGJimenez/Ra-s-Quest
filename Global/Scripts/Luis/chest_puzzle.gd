@@ -7,6 +7,9 @@ var speed = 1.5
 var speed_rotation = 1.5
 var radius_rotation = 120
 
+var new_speed = 0.75
+var new_speed_rotation = 0.75
+
 var skill = false
 var skill2 = false
 var skill3 = false 
@@ -28,29 +31,53 @@ func _process(delta):
 	circular_motion()
 	player_check.rotation += speed_rotation * delta
 	if(skill):
-		if(Input.is_action_just_pressed("spacebar")):
-			$skill_checks/Polygon2D/AnimationPlayer.play("activated")
+		if(Input.is_action_just_pressed("spacebar") && !complete1):
+			$skill_checks/skill1/AnimationPlayer.play("activated")
 			print("complete1")
+			speed += new_speed
+			speed_rotation += new_speed_rotation
 			complete1 = true
 			skill = false
+			shrink_1()
+			shrink_2()
+			shrink_3()
+			shrink_4()
 	if(skill2):
-		if(Input.is_action_just_pressed("spacebar")):
-			$skill_checks/Polygon2D2/AnimationPlayer.play("activated")
+		if(Input.is_action_just_pressed("spacebar") && !complete2):
+			$skill_checks/skill2/AnimationPlayer.play("activated")
 			print("complete2")
+			speed += new_speed
+			speed_rotation += new_speed_rotation
 			complete2 = true
 			skill2 = false
+			shrink_1()
+			shrink_2()
+			shrink_3()
+			shrink_4()
 	if(skill3):
-		if(Input.is_action_just_pressed("spacebar")):
-			$skill_checks/Polygon2D3/AnimationPlayer.play("activated")
+		if(Input.is_action_just_pressed("spacebar") && !complete3):
+			$skill_checks/skill3/AnimationPlayer.play("activated")
 			print("complete3")
+			speed += new_speed
+			speed_rotation += new_speed_rotation
 			complete3 = true
 			skill3 = false
+			shrink_1()
+			shrink_2()
+			shrink_3()
+			shrink_4()
 	if(skill4):
-		if(Input.is_action_just_pressed("spacebar")):
-			$skill_checks/Polygon2D4/AnimationPlayer.play("activated")
+		if(Input.is_action_just_pressed("spacebar") && !complete4):
+			$skill_checks/skill4/AnimationPlayer.play("activated")
 			print("complete4")
+			speed += new_speed
+			speed_rotation += new_speed_rotation
 			complete4 = true
 			skill4 = false
+			shrink_1()
+			shrink_2()
+			shrink_3()
+			shrink_4()
 	if(complete1 && complete2 && complete3 && complete4):
 		player_check.visible = false
 		stop()
@@ -132,3 +159,19 @@ func _on_button_pressed():
 	$skill_checks.visible = true
 	start()
 	$Button.disabled = true
+	
+func shrink_1():
+	if(!complete1):
+		$skill_checks/skill1.scale -= Vector2(0.15,0.15)
+		
+func shrink_2():
+	if(!complete2):
+		$skill_checks/skill2.scale -= Vector2(0.15,0.15)
+
+func shrink_3():
+	if(!complete3):
+		$skill_checks/skill3.scale -= Vector2(0.15,0.15)
+
+func shrink_4():
+	if(!complete4):
+		$skill_checks/skill4.scale -= Vector2(0.15,0.15)

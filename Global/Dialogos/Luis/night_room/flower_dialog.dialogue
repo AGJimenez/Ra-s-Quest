@@ -1,0 +1,30 @@
+~ flower_dialog
+set Global.dialogue_state = true
+
+if Global.flower == "blue":
+	if Global.blue_flower_dialog == false:
+		Jack: Una extraña flor azul, parece tener pétalos hechos de zafiro
+		Jack: Tiene algo escrito en el medio...
+		set Global.blue_flower_dialog = true
+	{{Global.blue_fraction}}
+if Global.flower == "red":
+	if Global.red_flower_dialog == false:
+		Jack: Me pregunto como dentro de una pirámide habrá crecido esta rosa
+		Jack: Supongo que los dioses se aburrirán, parece tener números escritos en ella
+		set Global.red_flower_dialog = true
+	{{Global.red_fraction}}
+if Global.flower == "green":
+	if Global.green_flower_dialog == false:
+		Jack: Entre tanta oscuridad y pirámide encontrar un color tan llamativo parece un milagro
+		(Te acercas a la flor y encuentras una fracción en ella)
+		set Global.green_flower_dialog = true
+	{{Global.green_fraction}}
+if Global.flower == "yellow":
+	if Global.yellow_flower_dialog == false:
+		Jack: El amarillo siempre fue uno de mis colores favoritos, espero que me ayude con mi búsqueda
+		(Al mover los pétalos descubres unos extraños números)
+		set Global.yellow_flower_dialog = true
+	{{Global.yellow_fraction}}
+
+set Global.dialogue_state = false
+=> END

@@ -11854,17 +11854,17 @@ one_shot = true
 
 [node name="talk_to_god" parent="room/Player" instance=ExtResource("10_o1qt3")]
 visible = false
-offset_left = -20.0
-offset_top = -76.1929
-offset_right = -20.0
-offset_bottom = -76.1929
+offset_left = -33.0
+offset_top = -59.1615
+offset_right = -33.0
+offset_bottom = -59.1615
 
 [node name="interact" parent="room/Player" instance=ExtResource("10_4qhnt")]
 visible = false
 offset_left = -51.0
-offset_top = -69.0218
+offset_top = -51.9904
 offset_right = -51.0
-offset_bottom = -69.0218
+offset_bottom = -51.9904
 scale = Vector2(0.340812, 0.307428)
 
 [node name="little torch" parent="room/Player" instance=ExtResource("9_wh1a7")]
