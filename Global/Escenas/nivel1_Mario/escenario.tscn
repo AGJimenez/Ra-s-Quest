@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cwqd7o7cxh88e"]
+[gd_scene load_steps=27 format=3 uid="uid://cwqd7o7cxh88e"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_8pra0"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="2_khlw3"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="10_wyvbu"]
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="11_pa8re"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="12_8g7o8"]
+[ext_resource type="PackedScene" uid="uid://beleossls3vt" path="res://Escenas/nivel1_Mario/PanelesPuzles/camera_2d.tscn" id="13_b773v"]
 [ext_resource type="PackedScene" uid="uid://dsm02wxkpslo1" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel.tscn" id="13_ecipq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26sp1"]
@@ -289,7 +290,6 @@ texture_region_size = Vector2i(32, 32)
 13:13/0 = 0
 13:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:13/0/physics_layer_0/angular_velocity = 0.0
-13:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.25, -12.75, 16, -16, 13.25, -6.25, -6.75, 4.25, -7, 12.75, -16, 16)
 14:13/0 = 0
 14:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:13/0/physics_layer_0/angular_velocity = 0.0
@@ -1983,20 +1983,14 @@ layer_5/z_index = 1
 layer_5/tile_data = PackedInt32Array(3932218, 2555924, 23, 3932219, 2555924, 23, 3932220, 2555924, 23, 3932221, 2555924, 23, 3932222, 2555924, 23, 3932223, 2555924, 23, 6029363, 524304, 12, 6029382, 983056, 12, 4784179, 524304, 15, 4784198, 851984, 11)
 
 [node name="Personaje" parent="TileMap" instance=ExtResource("12_8g7o8")]
-position = Vector2(3120, 2511)
+position = Vector2(569, 2539)
 
-[node name="Camera2D" type="Camera2D" parent="TileMap/Personaje"]
-zoom = Vector2(1.75, 1.75)
-limit_left = 487
-limit_top = 1973
-limit_right = 3315
-limit_bottom = 4011
-limit_smoothed = true
+[node name="Camera2D" parent="TileMap/Personaje" instance=ExtResource("13_b773v")]
 
 [node name="Panel_Mario" parent="TileMap/Personaje/Camera2D" instance=ExtResource("13_ecipq")]
-visible = false
 z_index = 5
-offset_left = -432.0
-offset_top = -199.0
-offset_right = 250.0
-offset_bottom = 218.0
+offset_left = -389.0
+offset_top = -208.0
+offset_right = 855.0
+offset_bottom = 209.0
+metadata/_edit_use_anchors_ = true

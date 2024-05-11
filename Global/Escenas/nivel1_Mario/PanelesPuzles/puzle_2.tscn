@@ -17,6 +17,15 @@ position = Vector2(264, 162)
 scale = Vector2(0.55, 0.6)
 texture = ExtResource("1_tby0r")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 255.0
+offset_right = 528.0
+offset_bottom = 325.0
+text = "Desplaza las piezas para descubrir el símbolo correcto"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(144, 9)
 script = ExtResource("1_q233h")

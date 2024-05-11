@@ -8,11 +8,12 @@
 script = ExtResource("1_drflq")
 
 [node name="Escenario" parent="." instance=ExtResource("2_ou1fc")]
-position = Vector2(-51, -10)
 
 [node name="Interacciones" parent="." instance=ExtResource("3_p6jtr")]
+position = Vector2(50, 13)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(1898, 2047)
 
 [connection signal="signal_button_pressed" from="." to="." method="_on_signal_button_puzle1_pressed"]
+[connection signal="signal_puzle2" from="." to="." method="_on_signal_puzle_2"]

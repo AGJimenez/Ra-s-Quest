@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://beleossls3vt"]
+
+[node name="Camera2D" type="Camera2D"]
+zoom = Vector2(1.75, 1.75)
+limit_left = 487
+limit_top = 1973
+limit_right = 3315
+limit_bottom = 4011
+limit_smoothed = true

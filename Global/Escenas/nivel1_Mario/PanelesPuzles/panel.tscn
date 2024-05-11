@@ -5,11 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://bvp670pw5ohwv" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_2.tscn" id="3_hk61x"]
 
 [node name="Panel_Mario" type="Panel"]
-offset_right = 749.0
+offset_right = 1244.0
 offset_bottom = 417.0
+mouse_filter = 1
 script = ExtResource("1_4un72")
 
 [node name="Puzle1" parent="." instance=ExtResource("2_yl75d")]
+visible = false
 layout_mode = 0
 offset_left = 93.0
 offset_top = 48.0
@@ -17,9 +19,3 @@ offset_right = 621.0
 offset_bottom = 371.0
 
 [node name="Puzle2" parent="." instance=ExtResource("3_hk61x")]
-visible = false
-layout_mode = 0
-offset_left = 112.0
-offset_top = 49.0
-offset_right = 640.0
-offset_bottom = 373.0
