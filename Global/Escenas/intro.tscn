@@ -10872,13 +10872,14 @@ grow_vertical = 2
 text = "QUIT"
 
 [node name="ExampleBalloon" parent="Personaje/Camera2D" instance=ExtResource("16_cnf1g")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="npc/Area2DNPC" to="." method="_on_area_2dnpc_body_entered"]
 [connection signal="body_exited" from="npc/Area2DNPC" to="." method="_on_area_2dnpc_body_exited"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="dialogue_finished" from="Personaje/Camera2D/ExampleBalloon" to="." method="_on_example_balloon_dialogue_finished"]

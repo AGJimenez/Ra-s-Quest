@@ -3,7 +3,6 @@ extends Node2D
 var enAreaNPC = false
 var paused = false
 var ignorarMov = false
-var cont = 0
 var intro_finished = false
 
 # Called when the node enters the scene tree for the first time.

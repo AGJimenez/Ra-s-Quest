@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://r1i7cj56hh7f"]
+
+[ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="1_wyigg"]
+[ext_resource type="Texture2D" uid="uid://bfc5yngl422by" path="res://Assets/sunra.png" id="2_e5aoq"]
+[ext_resource type="Script" path="res://Escenas/nivelAle/Ra.gd" id="3_b1sfm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mvxk"]
+atlas = ExtResource("1_wyigg")
+region = Rect2(256.274, 256.079, 94.5697, 63.9038)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4de6"]
+atlas = ExtResource("1_wyigg")
+region = Rect2(31.7258, 372.014, 31.4624, 33.3045)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugwo2"]
+size = Vector2(133, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n18c"]
+atlas = ExtResource("2_e5aoq")
+region = Rect2(267.235, 67.8442, 221.24, 133.99)
+
+[node name="PuzzleDioses" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_2mvxk")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 235.0
+offset_right = 266.0
+offset_bottom = 395.0
+texture = SubResource("AtlasTexture_y4de6")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 378.0
+offset_top = 234.0
+offset_right = 528.0
+offset_bottom = 394.0
+texture = SubResource("AtlasTexture_y4de6")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 639.0
+offset_top = 235.0
+offset_right = 789.0
+offset_bottom = 395.0
+texture = SubResource("AtlasTexture_y4de6")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+offset_left = 895.0
+offset_top = 234.0
+offset_right = 1045.0
+offset_bottom = 394.0
+texture = SubResource("AtlasTexture_y4de6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(127, 247)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(66.5, 53)
+shape = SubResource("RectangleShape2D_ugwo2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(389, 246)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(66.5, 53)
+shape = SubResource("RectangleShape2D_ugwo2")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(650, 247)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(66.5, 53)
+shape = SubResource("RectangleShape2D_ugwo2")
+
+[node name="Ra" type="Sprite2D" parent="."]
+position = Vector2(839, 118)
+scale = Vector2(0.627195, 0.671422)
+texture = SubResource("AtlasTexture_8n18c")
+script = ExtResource("3_b1sfm")
+
+[node name="Button" type="Button" parent="Ra"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.5
+offset_top = -66.5
+offset_right = -110.5
+offset_bottom = -66.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="Ra/Button" to="Ra" method="_on_button_button_down"]
+[connection signal="button_up" from="Ra/Button" to="Ra" method="_on_button_button_up"]

@@ -3,20 +3,36 @@ extends Node2D
 class_name world
 
 var enAreaPlayer = false
+var enAreaPlayerCofre = false
 var paused = false
 var ignorarMov = false
+var transComplete = false
 
 func _ready():
+	transComplete = false
+	ignorarMov = true
+	$player.set_physics_process(false)
+	$player/Camera2D.enabled = false
 	$Area2D/Control.visible = false
+	$Area2D2/Control.visible = false
+	$AnimationPlayer.play("camera")
+	await get_tree().create_timer(5).timeout
+	transComplete = true
+	ignorarMov = false
+	$player.set_physics_process(true)
+	$Camera2D.enabled = false
+	$player/Camera2D.enabled = true
 	if Global.change == "night-world":
 		$player.global_position = $"spawn_points/night-world".global_position
-	#connect()
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if !ignorarMov: 
-		if enAreaPlayer == true and Input.is_action_just_pressed("Interact"):
+	if !ignorarMov and transComplete: 
+		if enAreaPlayer == true and Input.is_action_just_pressed("Interact")  && !Global.dialogue_state == true:
 			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelAle/Mito.dialogue"), "start")
+		if enAreaPlayerCofre == true and Input.is_action_just_pressed("Interact"):
+			pass
 		if(Global.dialogue_state == true):
 			$player.set_physics_process(false)
 		if(Global.dialogue_state == false):
@@ -69,3 +85,14 @@ func _on_button_2_pressed():
 
 func _on_button_3_pressed():
 	quitGame()
+
+
+func _on_area_2d_2_body_entered(body):
+	if body.name == "player":
+		enAreaPlayerCofre = true
+		$Area2D2/Control.visible = true
+
+
+func _on_area_2d_2_body_exited(body):
+	enAreaPlayerCofre = false
+	$Area2D2/Control.visible = false
