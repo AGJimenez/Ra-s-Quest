@@ -2,6 +2,7 @@ extends Node2D
 
 var on_area_cofre=false
 var on_area_balanza=false
+var isFinalPuzzleEnabled = false
 @onready var panel = get_node("Personaje/Camera2D/Panel")
 @onready var camera = get_node("Personaje/Camera2D")
 @onready var player = get_node("Personaje")
@@ -20,8 +21,9 @@ func _process(delta):
 		$Personaje.set_physics_process(true)
 	interaccion()
 	if panel.numeroDePanelesSuperados == 4:
-		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/interaccion_intrduccion_laberinto.dialogue"),"main")
 		quit_Espinas()
+	elif panel.numeroDePanelesSuperados == 12:
+		isFinalPuzzleEnabled = true
 	if on_area_cofre == false:
 		player.speed = panel.speedPlayer
 	

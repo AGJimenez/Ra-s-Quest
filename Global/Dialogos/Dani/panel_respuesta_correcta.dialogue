@@ -1,3 +1,5 @@
 ~ main
+set Global.dialogue_state = true
 Maat: Respuesta correcta!
+set Global.dialogue_state = false
 => END

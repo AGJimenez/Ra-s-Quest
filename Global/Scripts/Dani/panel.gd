@@ -84,7 +84,7 @@ func comprobarDatos():
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_incorrecta.dialogue"),"main")
 		3:
 			if texto=="1":
-				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_correcta.dialogue"),"main")
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/interaccion_intrduccion_laberinto.dialogue"),"main")
 				$"Panel/Ecuacion 4".hide()
 				hide()
 				numeroDePanelesSuperados=numeroDePanelesSuperados+1
