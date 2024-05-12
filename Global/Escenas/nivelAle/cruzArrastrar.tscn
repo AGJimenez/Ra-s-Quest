@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://d06deaw0tipjn"]
+
+[ext_resource type="Script" path="res://Escenas/nivelAle/cruzArrastrar.gd" id="1_goto1"]
+[ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="1_mu5y7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2e8ir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w1bo"]
+size = Vector2(15, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeie1"]
+atlas = ExtResource("1_mu5y7")
+region = Rect2(360.755, 288.243, 15.4049, 33.107)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 1000.0
+physics_material_override = SubResource("PhysicsMaterial_2e8ir")
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_goto1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_7w1bo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_aeie1")

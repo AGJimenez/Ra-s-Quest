@@ -7,9 +7,11 @@ var enAreaPlayerCofre = false
 var paused = false
 var ignorarMov = false
 var transComplete = false
+var segundoPuzzleActivado = false
 
 func _ready():
 	transComplete = false
+	$pasilloHabitacion.visible = false
 	ignorarMov = true
 	$player.set_physics_process(false)
 	$player/Camera2D/puzzleDioses.visible = false
@@ -112,3 +114,8 @@ func _on_area_2d_2_body_exited(body):
 func _on_puzzle_dioses_resultado_correcto():
 	$colision/puertaColision.disabled = true
 	$TileMap2.set_layer_enabled(0,false)
+	parteDos()
+	
+func parteDos():
+	segundoPuzzleActivado = true
+	$pasilloHabitacion.visible = true
