@@ -11,7 +11,6 @@ var mouse = false
 
 func _ready():
 	comenzar_puzle()
-	print(panel_position.position)
 
 
 func _process(_delta):
