@@ -8,9 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k33gs"]
 size = Vector2(240, 240)
 
-[node name="Puzle2" type="Panel"]
-offset_left = 80.0
-offset_right = 608.0
+[node name="Puzle2" type="Panel" groups=["PuzlesMario"]]
+offset_right = 528.0
 offset_bottom = 324.0
 mouse_filter = 1
 script = ExtResource("1_in07k")

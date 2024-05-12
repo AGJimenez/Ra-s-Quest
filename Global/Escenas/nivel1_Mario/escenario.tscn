@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cwqd7o7cxh88e"]
+[gd_scene load_steps=28 format=3 uid="uid://cwqd7o7cxh88e"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_8pra0"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="2_khlw3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="12_8g7o8"]
 [ext_resource type="PackedScene" uid="uid://beleossls3vt" path="res://Escenas/nivel1_Mario/PanelesPuzles/camera_2d.tscn" id="13_b773v"]
 [ext_resource type="PackedScene" uid="uid://dsm02wxkpslo1" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel.tscn" id="13_ecipq"]
+[ext_resource type="Texture2D" uid="uid://b8llbff1c0r3a" path="res://Assets/fondo_puzle2.png" id="15_ka0n6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26sp1"]
 texture = ExtResource("1_8pra0")
@@ -1959,6 +1960,7 @@ sources/19 = SubResource("TileSetAtlasSource_kw2wt")
 sources/20 = SubResource("TileSetAtlasSource_wwqu8")
 
 [node name="Escenario" type="Node2D"]
+position = Vector2(66, 30)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -1987,9 +1989,29 @@ layer_5/tile_data = PackedInt32Array(3932218, 2555924, 23, 3932219, 2555924, 23,
 position = Vector2(569, 2539)
 
 [node name="Camera2D" parent="TileMap/Personaje" instance=ExtResource("13_b773v")]
+enabled = false
 
 [node name="Panel_Mario" parent="TileMap/Personaje/Camera2D" instance=ExtResource("13_ecipq")]
 visible = false
 z_index = 5
-offset_left = -195.0
-offset_top = -143.0
+offset_left = 28.0
+offset_top = -167.0
+offset_right = 1467.0
+offset_bottom = 393.0
+
+[node name="Puzle2" type="Sprite2D" parent="."]
+position = Vector2(1069, 5791.5)
+scale = Vector2(0.373651, 0.37753)
+texture = ExtResource("15_ka0n6")
+
+[node name="Panel_Mario" parent="." instance=ExtResource("13_ecipq")]
+z_index = 5
+offset_left = 781.0
+offset_top = 5629.0
+offset_right = 1309.0
+offset_bottom = 5953.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D_2" type="Camera2D" parent="Panel_Mario"]
+position = Vector2(264, 162)
+scale = Vector2(1, 1)
