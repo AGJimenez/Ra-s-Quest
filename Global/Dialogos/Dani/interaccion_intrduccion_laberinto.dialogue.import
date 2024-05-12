@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://by7pga5020hh2"
+path="res://.godot/imported/interaccion_intrduccion_laberinto.dialogue-622c825bd30ecbc59719c5c44b024273.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dani/interaccion_intrduccion_laberinto.dialogue"
+dest_files=["res://.godot/imported/interaccion_intrduccion_laberinto.dialogue-622c825bd30ecbc59719c5c44b024273.tres"]
+
+[params]
+
+defaults=true

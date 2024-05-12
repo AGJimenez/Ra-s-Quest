@@ -20,7 +20,7 @@ func _process(delta):
 		$Personaje.set_physics_process(true)
 	interaccion()
 	if panel.numeroDePanelesSuperados == 4:
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/interaccion_con_Anubis.dialogue"),"laberinto")
+		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/interaccion_intrduccion_laberinto.dialogue"),"main")
 		quit_Espinas()
 	if on_area_cofre == false:
 		player.speed = panel.speedPlayer
