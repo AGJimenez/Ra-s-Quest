@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var draggable = true
 var draggin = false
 var of  = Vector2(0,0)
+var draggable = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +13,7 @@ func _ready():
 func _process(delta):
 	if draggin && draggable:
 		position = get_global_mouse_position() - of
+
 
 
 

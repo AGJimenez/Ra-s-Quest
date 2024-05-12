@@ -12,6 +12,7 @@ func _ready():
 	transComplete = false
 	ignorarMov = true
 	$player.set_physics_process(false)
+	$player/Camera2D/puzzleDioses.visible = false
 	$player/Camera2D.enabled = false
 	$Area2D/Control.visible = false
 	$Area2D2/Control.visible = false
@@ -22,22 +23,31 @@ func _ready():
 	$player.set_physics_process(true)
 	$Camera2D.enabled = false
 	$player/Camera2D.enabled = true
+	
 	if Global.change == "night-world":
 		$player.global_position = $"spawn_points/night-world".global_position
-		
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+
 	if !ignorarMov and transComplete: 
 		if enAreaPlayer == true and Input.is_action_just_pressed("Interact")  && !Global.dialogue_state == true:
 			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelAle/Mito.dialogue"), "start")
-		if enAreaPlayerCofre == true and Input.is_action_just_pressed("Interact"):
-			pass
+
+		if enAreaPlayerCofre == true and Input.is_action_just_pressed("Interact") && $player/Camera2D/puzzleDioses.visible == false:
+			$player/Camera2D/puzzleDioses.visible = true
+
+			
+		elif enAreaPlayerCofre == true and Input.is_action_just_pressed("Interact") && $player/Camera2D/puzzleDioses.visible == true:
+			$player/Camera2D/puzzleDioses.visible = false
+			
+			
 		if(Global.dialogue_state == true):
 			$player.set_physics_process(false)
 		if(Global.dialogue_state == false):
 			$player.set_physics_process(true)
-
+		
+		
 	if Input.is_action_just_pressed("pausa"):
 		pauseMenu()
 		
@@ -96,3 +106,9 @@ func _on_area_2d_2_body_entered(body):
 func _on_area_2d_2_body_exited(body):
 	enAreaPlayerCofre = false
 	$Area2D2/Control.visible = false
+
+
+
+func _on_puzzle_dioses_resultado_correcto():
+	$colision/puertaColision.disabled = true
+	$TileMap2.set_layer_enabled(0,false)
