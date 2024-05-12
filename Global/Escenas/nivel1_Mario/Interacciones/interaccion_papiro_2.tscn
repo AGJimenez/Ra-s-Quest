@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_papiro_2.gd" id="1_qduo7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jon42"]
-size = Vector2(42, 45)
+size = Vector2(42, 52)
 
 [node name="InteraccionPapiro2" type="StaticBody2D"]
 script = ExtResource("1_qduo7")
@@ -11,15 +11,14 @@ script = ExtResource("1_qduo7")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_jon42")
 
 [node name="PanelInteraccion2" type="Panel" parent="."]
 visible = false
-offset_left = -12.0
-offset_top = -51.0
-offset_right = 34.0
-offset_bottom = -30.0
+offset_left = -23.0
+offset_top = -55.0
+offset_right = 23.0
+offset_bottom = -34.0
 
 [node name="Label" type="Label" parent="PanelInteraccion2"]
 texture_filter = 1

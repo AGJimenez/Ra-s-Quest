@@ -3,24 +3,30 @@ class_name Puzle2
 
 var piezas = []
 var resuelto = []
-var mouse 
-@onready var puzlecorrecto = nivelMario.new()
+var mouse = false
+
+@onready var panel_position = get_node("%Puzle2")
+@onready var nivel_Mario = nivelMario.new()
 
 
 func _ready():
 	comenzar_puzle()
+	print(panel_position.position)
 
 
 func _process(_delta):
 	if (Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and mouse):
+		print(mouse)
 		var mouse_copy = mouse
 		mouse = false
+# Para funcionamiento correcto: coger posición esquina superior izquierda de panel, dividirlo entre 80 y restarselo a rows y cols
 		var rows = int(mouse_copy.position.y / 80)
-		var cols = int(mouse_copy.position.x / 80) -2
+		var cols = int(mouse_copy.position.x / 80) -2 
+		print(rows, cols)
 		check_blank_space(rows, cols)
 		if piezas == resuelto:
 			print("HAS GANADO")
-			puzlecorrecto.puzle_correcto += 1
+			nivel_Mario.puzle_correcto += 1
 
 
 func comenzar_puzle():
@@ -89,5 +95,5 @@ func swap_tiles(tile_src, tile_dst):
 
 
 func _on_input_event(viewport, event, shape_idx):
-	if (event is InputEventMouseButton and event.button_index == 1):
+	if (event is InputEventMouseButton):
 		mouse = event

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvp670pw5ohwv"]
+[gd_scene load_steps=6 format=3 uid="uid://bvp670pw5ohwv"]
 
 [ext_resource type="Texture2D" uid="uid://d2t3ci67hxp3m" path="res://Assets/puzle_2.png" id="1_7vshc"]
+[ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel_puzle_2.gd" id="1_in07k"]
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_2.gd" id="1_q233h"]
 [ext_resource type="Texture2D" uid="uid://dsk1wbsj5m3wd" path="res://Assets/fondo_puzle_2.png" id="1_tby0r"]
 
@@ -8,9 +9,11 @@
 size = Vector2(240, 240)
 
 [node name="Puzle2" type="Panel"]
-offset_right = 528.0
+offset_left = 80.0
+offset_right = 608.0
 offset_bottom = 324.0
 mouse_filter = 1
+script = ExtResource("1_in07k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(264, 162)

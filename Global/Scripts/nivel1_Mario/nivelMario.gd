@@ -18,6 +18,7 @@ var puzle_correcto = 1
 @onready var panelpuzle2 = get_node("Escenario/TileMap/Personaje/Camera2D/Panel_Mario/Puzle2")
 @onready var puzle2 = get_node("Escenario/TileMap/Personaje/Camera2D/Panel_Mario/Puzle2/Area2D")
 
+
 # SEÑALES 
 signal signal_button_pressed
 signal signal_puzle2

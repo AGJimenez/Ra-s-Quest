@@ -13,4 +13,4 @@ position = Vector2(1901, 3610)
 position = Vector2(3070, 2460)
 
 [node name="InteraccionPapiro2" parent="." instance=ExtResource("3_dnr4l")]
-position = Vector2(508, 2486)
+position = Vector2(540, 2470)
