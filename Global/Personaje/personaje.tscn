@@ -710,6 +710,7 @@ script = ExtResource("1_fstgl")
 y_sort_enabled = true
 scale = Vector2(3, 3)
 texture = ExtResource("2_3iukn")
+offset = Vector2(0, -5)
 hframes = 12
 vframes = 15
 
@@ -720,6 +721,7 @@ sprite_frames = SubResource("SpriteFrames_fj8tr")
 animation = &"dead"
 frame = 3
 frame_progress = 1.0
+offset = Vector2(0, -5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -741,7 +743,6 @@ parameters/stop/blend_position = Vector2(-0.3232, -0.89418)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, 17)
 scale = Vector2(0.647841, 0.647841)
 shape = SubResource("RectangleShape2D_d7wiv")
 

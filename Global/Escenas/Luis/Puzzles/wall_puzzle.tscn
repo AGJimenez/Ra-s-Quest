@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cyj1ihef8limx"]
+[gd_scene load_steps=58 format=3 uid="uid://cyj1ihef8limx"]
 
 [ext_resource type="Script" path="res://Scripts/Luis/wall_puzzle.gd" id="1_2nli3"]
 [ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="2_nx3th"]
@@ -417,8 +417,15 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_38uit"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oalqb"]
-size = Vector2(20.8207, 23.0921)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6whl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjujt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bouqn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ja3o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5tch"]
 
 [sub_resource type="Animation" id="Animation_xfnhm"]
 length = 0.001
@@ -730,78 +737,106 @@ region_rect = Rect2(103.914, 163.741, 49.6411, 49.821)
 
 [node name="blank_gems" type="Node2D" parent="."]
 
-[node name="blank_gem" type="Sprite2D" parent="blank_gems"]
+[node name="blank_gem_button" type="Button" parent="blank_gems"]
+offset_left = 388.0
+offset_top = 326.0
+offset_right = 396.0
+offset_bottom = 335.0
+scale = Vector2(5.16593, 5.16593)
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c6whl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jjujt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bouqn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5ja3o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5tch")
+
+[node name="blank_gem" type="Sprite2D" parent="blank_gems/blank_gem_button"]
 texture_filter = 1
-position = Vector2(409, 349)
-scale = Vector2(1.99436, 1.99436)
+position = Vector2(4.0651, 4.45225)
+scale = Vector2(0.386061, 0.386061)
 texture = ExtResource("4_1wabf")
 region_enabled = true
 region_rect = Rect2(168.567, 54.9191, 32.9719, 33.2422)
 
-[node name="area_blank" type="Area2D" parent="blank_gems/blank_gem"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blank_gems/blank_gem/area_blank"]
-position = Vector2(-0.100535, -0.095777)
-shape = SubResource("RectangleShape2D_oalqb")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blank_gems/blank_gem"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="blank_gems/blank_gem_button/blank_gem"]
 libraries = {
 "": SubResource("AnimationLibrary_txh16")
 }
 
-[node name="blank_gem2" type="Sprite2D" parent="blank_gems"]
+[node name="blank_gem_button2" type="Button" parent="blank_gems"]
+offset_left = 452.0
+offset_top = 415.0
+offset_right = 460.0
+offset_bottom = 424.0
+scale = Vector2(5.16593, 5.16593)
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c6whl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jjujt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bouqn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5ja3o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5tch")
+
+[node name="blank_gem2" type="Sprite2D" parent="blank_gems/blank_gem_button2"]
 texture_filter = 1
-position = Vector2(473, 439)
-scale = Vector2(1.994, 1.994)
+position = Vector2(4.0651, 4.64583)
+scale = Vector2(0.385991, 0.385991)
 texture = ExtResource("4_1wabf")
 region_enabled = true
 region_rect = Rect2(168.567, 54.9191, 32.9719, 33.2422)
 
-[node name="area_blank2" type="Area2D" parent="blank_gems/blank_gem2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blank_gems/blank_gem2/area_blank2"]
-position = Vector2(-0.100535, -0.095777)
-shape = SubResource("RectangleShape2D_oalqb")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blank_gems/blank_gem2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="blank_gems/blank_gem_button2/blank_gem2"]
 libraries = {
 "": SubResource("AnimationLibrary_txh16")
 }
 
-[node name="blank_gem3" type="Sprite2D" parent="blank_gems"]
+[node name="blank_gem_button3" type="Button" parent="blank_gems"]
+offset_left = 582.0
+offset_top = 416.0
+offset_right = 590.0
+offset_bottom = 425.0
+scale = Vector2(5.16593, 5.16593)
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c6whl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jjujt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bouqn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5ja3o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5tch")
+
+[node name="blank_gem3" type="Sprite2D" parent="blank_gems/blank_gem_button3"]
 texture_filter = 1
-position = Vector2(604, 439)
-scale = Vector2(1.994, 1.994)
+position = Vector2(4.25867, 4.45226)
+scale = Vector2(0.385991, 0.385991)
 texture = ExtResource("4_1wabf")
 region_enabled = true
 region_rect = Rect2(168.567, 54.9191, 32.9719, 33.2422)
 
-[node name="area_blank3" type="Area2D" parent="blank_gems/blank_gem3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blank_gems/blank_gem3/area_blank3"]
-position = Vector2(-0.100535, -0.095777)
-shape = SubResource("RectangleShape2D_oalqb")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blank_gems/blank_gem3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="blank_gems/blank_gem_button3/blank_gem3"]
 libraries = {
 "": SubResource("AnimationLibrary_txh16")
 }
 
-[node name="blank_gem4" type="Sprite2D" parent="blank_gems"]
+[node name="blank_gem_button4" type="Button" parent="blank_gems"]
+offset_left = 655.0
+offset_top = 326.0
+offset_right = 663.0
+offset_bottom = 335.0
+scale = Vector2(5.16593, 5.16593)
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c6whl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jjujt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bouqn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_5ja3o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o5tch")
+
+[node name="blank_gem4" type="Sprite2D" parent="blank_gems/blank_gem_button4"]
 texture_filter = 1
-position = Vector2(676, 349)
-scale = Vector2(1.994, 1.994)
+position = Vector2(4.06509, 4.45225)
+scale = Vector2(0.385991, 0.385991)
 texture = ExtResource("4_1wabf")
 region_enabled = true
 region_rect = Rect2(168.567, 54.9191, 32.9719, 33.2422)
 
-[node name="area_blank4" type="Area2D" parent="blank_gems/blank_gem4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blank_gems/blank_gem4/area_blank4"]
-position = Vector2(-0.100535, -0.095777)
-shape = SubResource("RectangleShape2D_oalqb")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blank_gems/blank_gem4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="blank_gems/blank_gem_button4/blank_gem4"]
 libraries = {
 "": SubResource("AnimationLibrary_txh16")
 }
@@ -812,7 +847,7 @@ libraries = {
 [connection signal="pressed" from="color_gems/red_gem" to="." method="_on_red_gem_pressed"]
 [connection signal="pressed" from="color_gems/green_gem" to="." method="_on_green_gem_pressed"]
 [connection signal="pressed" from="color_gems/yellow_gem" to="." method="_on_yellow_gem_pressed"]
-[connection signal="body_entered" from="blank_gems/blank_gem/area_blank" to="." method="_on_area_blank_body_entered"]
-[connection signal="body_entered" from="blank_gems/blank_gem2/area_blank2" to="." method="_on_area_blank_2_body_entered"]
-[connection signal="body_entered" from="blank_gems/blank_gem3/area_blank3" to="." method="_on_area_blank_3_body_entered"]
-[connection signal="body_entered" from="blank_gems/blank_gem4/area_blank4" to="." method="_on_area_blank_4_body_entered"]
+[connection signal="pressed" from="blank_gems/blank_gem_button" to="." method="_on_blank_gem_button_pressed"]
+[connection signal="pressed" from="blank_gems/blank_gem_button2" to="." method="_on_blank_gem_button_2_pressed"]
+[connection signal="pressed" from="blank_gems/blank_gem_button3" to="." method="_on_blank_gem_button_3_pressed"]
+[connection signal="pressed" from="blank_gems/blank_gem_button4" to="." method="_on_blank_gem_button_4_pressed"]
