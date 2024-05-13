@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bvp670pw5ohwv" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_2.tscn" id="3_hk61x"]
 
 [node name="Panel_Mario" type="Panel"]
-offset_right = 1244.0
-offset_bottom = 531.0
+offset_right = 1059.0
+offset_bottom = 401.0
 mouse_filter = 1
 script = ExtResource("1_4un72")
 

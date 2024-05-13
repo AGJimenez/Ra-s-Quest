@@ -5,7 +5,6 @@ var piezas = []
 var resuelto = []
 var mouse = false
 
-@onready var panel_position = get_node("%Puzle2")
 @onready var nivel_Mario = nivelMario.new()
 
 
@@ -18,9 +17,10 @@ func _process(_delta):
 		print(mouse)
 		var mouse_copy = mouse
 		mouse = false
-# Para funcionamiento correcto: coger posición esquina superior izquierda de panel, dividirlo entre 80 y restarselo a rows y cols
-		var rows = int(mouse_copy.position.y / 80)
-		var cols = int(mouse_copy.position.x / 80) -2 
+		var rows = int(mouse_copy.y / 80)
+		var cols = int(mouse_copy.x / 80) 
+		if (cols < 0):
+			cols = 0
 		print(rows, cols)
 		check_blank_space(rows, cols)
 		if piezas == resuelto:
@@ -42,6 +42,8 @@ func shuffle_tiles():
 		if (piezas[tile] != $Pieza7 and tile != previous and tile != previous_1):
 			var rows = int(piezas[tile].position.y / 80)
 			var cols = int(piezas[tile].position.x / 80)
+			if (cols < 0):
+				cols = 0
 			check_blank_space(rows, cols)
 			previous_1 = previous
 			previous = tile
@@ -75,6 +77,8 @@ func check_blank_space(rows, cols):
 func find_empty(position, pos):
 	var new_rows = int(position.y / 80)
 	var new_cols = int(position.x / 80)
+	if (new_cols < 0):
+			new_cols = 0
 	var new_pos = new_rows * 3 + new_cols
 	if (piezas[new_pos] == $Pieza7):
 		swap_tiles(pos, new_pos)
@@ -94,5 +98,14 @@ func swap_tiles(tile_src, tile_dst):
 
 
 func _on_input_event(viewport, event, shape_idx):
-	if (event is InputEventMouseButton):
-		mouse = event
+	if (event is InputEventMouseButton and event.pressed):
+		#mouse = event
+		var global_mouse_pos = viewport.get_mouse_position()
+		var sprite_size = Vector2(176.3, 80)
+		for i in range(0, 9):
+			var pieza_rect = Rect2(piezas[i].position, sprite_size)
+			if pieza_rect.has_point(Vector2(global_mouse_pos.x, global_mouse_pos.y)):
+				print("Datos: ", global_mouse_pos, ", ", pieza_rect)
+				print("Posición de la pieza ", i, ": ", piezas[i].position)
+				mouse = piezas[i].position
+				break

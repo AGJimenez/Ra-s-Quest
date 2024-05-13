@@ -1989,29 +1989,29 @@ layer_5/tile_data = PackedInt32Array(3932218, 2555924, 23, 3932219, 2555924, 23,
 position = Vector2(569, 2539)
 
 [node name="Camera2D" parent="TileMap/Personaje" instance=ExtResource("13_b773v")]
-enabled = false
 
 [node name="Panel_Mario" parent="TileMap/Personaje/Camera2D" instance=ExtResource("13_ecipq")]
 visible = false
 z_index = 5
-offset_left = 28.0
-offset_top = -167.0
-offset_right = 1467.0
-offset_bottom = 393.0
+offset_left = -77.0
+offset_top = -163.0
+offset_right = 982.0
+offset_bottom = 238.0
 
 [node name="Puzle2" type="Sprite2D" parent="."]
-position = Vector2(1069, 5791.5)
+position = Vector2(1094, 5908.5)
 scale = Vector2(0.373651, 0.37753)
 texture = ExtResource("15_ka0n6")
 
-[node name="Panel_Mario" parent="." instance=ExtResource("13_ecipq")]
+[node name="Panel_Mario2" parent="." instance=ExtResource("13_ecipq")]
 z_index = 5
-offset_left = 781.0
-offset_top = 5629.0
-offset_right = 1309.0
-offset_bottom = 5953.0
+offset_left = 847.0
+offset_top = 5788.0
+offset_right = 1375.0
+offset_bottom = 6112.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D_2" type="Camera2D" parent="Panel_Mario"]
-position = Vector2(264, 162)
+[node name="Camera2D_2" type="Camera2D" parent="Panel_Mario2"]
+position = Vector2(576, 324)
 scale = Vector2(1, 1)
+enabled = false
