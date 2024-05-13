@@ -14,7 +14,12 @@ layout_mode = 3
 anchors_preset = 0
 size_flags_horizontal = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 26.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 light_mask = 0
 material = SubResource("CanvasItemMaterial_yd3d2")
 layout_mode = 1

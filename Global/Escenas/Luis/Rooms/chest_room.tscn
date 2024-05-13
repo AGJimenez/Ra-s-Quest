@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="5_m65vy"]
 [ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="7_kkkem"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="8_uaxlb"]
-[ext_resource type="PackedScene" uid="uid://dsbdik5i5hic1" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_f7bmy"]
+[ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="10_togbu"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_q7mc2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avwf6"]
@@ -11560,13 +11560,12 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="room" instance=ExtResource("8_uaxlb")]
 position = Vector2(158, 177)
 
-[node name="interact" parent="room/Player" instance=ExtResource("10_f7bmy")]
+[node name="interact" parent="room/Player" instance=ExtResource("10_togbu")]
 visible = false
-offset_left = -41.0
-offset_top = -50.0
-offset_right = -41.0
-offset_bottom = -50.0
-scale = Vector2(0.279214, 0.350542)
+offset_left = -17.0
+offset_top = -72.0
+offset_right = 23.0
+offset_bottom = -32.0
 
 [node name="Camera_chest" type="Camera2D" parent="."]
 position = Vector2(130, 76)

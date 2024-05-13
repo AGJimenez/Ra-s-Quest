@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://b6vyr1tiikv6i" path="res://Personaje/Luis/Fire/movable_torch.tscn" id="8_v6n8k"]
 [ext_resource type="Script" path="res://Scripts/Luis/Camera_torch.gd" id="9_ngvp2"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="9_wh1a7"]
-[ext_resource type="PackedScene" uid="uid://dsbdik5i5hic1" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_4qhnt"]
 [ext_resource type="PackedScene" uid="uid://cpr8emerbq5gc" path="res://Interfaz/Luis/prompts_windows/talk_to_god.tscn" id="10_o1qt3"]
 [ext_resource type="PackedScene" uid="uid://c31ghn4gfitj5" path="res://Personaje/Luis/Objects/statue.tscn" id="10_upecq"]
 [ext_resource type="Texture2D" uid="uid://cqc55bif2ih6y" path="res://Assets/Sprites/images.jpg" id="12_0fa5f"]
+[ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="12_dewqq"]
 [ext_resource type="PackedScene" uid="uid://dxs4op32cdoah" path="res://Personaje/Luis/Objects/statue_flip_h.tscn" id="12_ubwqa"]
 [ext_resource type="PackedScene" uid="uid://y3y34hnkwmfq" path="res://Personaje/Luis/Skeleton/skeleton.tscn" id="13_s2o15"]
 [ext_resource type="PackedScene" uid="uid://bnpl3a36jnylw" path="res://Personaje/Luis/Objects/chest.tscn" id="16_t8sgt"]
@@ -11696,6 +11696,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1.11559)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_6i5ql"]
 resource_name = "fall"
@@ -11711,6 +11723,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1.11559), Vector2(0.2, 0.223)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 6.28319, 12.5664]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f5sqp"]
@@ -11926,13 +11950,12 @@ offset_top = -59.1615
 offset_right = -33.0
 offset_bottom = -59.1615
 
-[node name="interact" parent="room/Player" instance=ExtResource("10_4qhnt")]
+[node name="interact" parent="room/Player" instance=ExtResource("12_dewqq")]
 visible = false
-offset_left = -51.0
-offset_top = -51.9904
-offset_right = -51.0
-offset_bottom = -51.9904
-scale = Vector2(0.340812, 0.307428)
+offset_left = -17.0
+offset_top = -71.0
+offset_right = 23.0
+offset_bottom = -31.0
 
 [node name="little torch" parent="room/Player" instance=ExtResource("9_wh1a7")]
 position = Vector2(-24, -3)

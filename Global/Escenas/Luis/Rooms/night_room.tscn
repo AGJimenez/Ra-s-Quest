@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="6_ynq5w"]
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="7_qo3cd"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="10_gjakg"]
-[ext_resource type="PackedScene" uid="uid://dsbdik5i5hic1" path="res://Interfaz/Luis/prompts_windows/interact.tscn" id="10_vanm5"]
+[ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="11_k2qxs"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_x4lfw"]
 [ext_resource type="Texture2D" uid="uid://dwq87qii5ulu" path="res://Assets/Sprites/light.png" id="13_43yrx"]
 [ext_resource type="PackedScene" uid="uid://sx6hfyddu2qe" path="res://Personaje/Luis/objectives/blue_flower.tscn" id="14_1ntin"]
@@ -17091,18 +17091,12 @@ limit_bottom = 832
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="interact" parent="room/Player" instance=ExtResource("10_vanm5")]
+[node name="interact" parent="room/Player" instance=ExtResource("11_k2qxs")]
 visible = false
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -39.0
-offset_top = -53.0
-offset_right = -39.0
-offset_bottom = -53.0
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.272401, 0.26056)
+offset_left = -16.0
+offset_top = -70.0
+offset_right = 24.0
+offset_bottom = -30.0
 
 [node name="little torch" parent="room/Player" instance=ExtResource("11_x4lfw")]
 position = Vector2(-19, -3)
