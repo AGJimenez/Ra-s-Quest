@@ -11,6 +11,8 @@ size = Vector2(28, 20)
 [node name="Statue_flip_h" type="Node2D"]
 light_mask = 3
 y_sort_enabled = true
+metadata/_edit_horizontal_guides_ = [17.0, 42.0]
+metadata/_edit_vertical_guides_ = [-15.0, 14.0]
 
 [node name="body" type="StaticBody2D" parent="."]
 light_mask = 3
@@ -19,7 +21,9 @@ y_sort_enabled = true
 [node name="statue" type="Sprite2D" parent="body"]
 light_mask = 3
 y_sort_enabled = true
+position = Vector2(1, 25)
 texture = ExtResource("1_maowv")
+offset = Vector2(0, -25)
 flip_h = true
 region_enabled = true
 region_rect = Rect2(318, 4, 34, 88)

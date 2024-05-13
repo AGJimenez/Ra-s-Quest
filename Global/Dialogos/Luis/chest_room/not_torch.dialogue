@@ -1,6 +1,6 @@
 ~ not_torch_dialog
 set Global.dialogue_state = true
 
-Jack: Parece que está muy oscuro, necesito algo de luz
+Jack: [[Parece que está muy oscuro, necesito algo de luz | No debería entrar sin antes tener un tipo de linterna | Si entro en esta sala no podré ver nada]]
 set Global.dialogue_state = false
 => END
