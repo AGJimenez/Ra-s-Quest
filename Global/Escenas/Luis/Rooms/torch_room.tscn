@@ -1,7 +1,8 @@
-[gd_scene load_steps=52 format=3 uid="uid://cd4bl7bkrabtx"]
+[gd_scene load_steps=53 format=3 uid="uid://cd4bl7bkrabtx"]
 
 [ext_resource type="Script" path="res://Scripts/Luis/torch_room.gd" id="1_qaml2"]
 [ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="2_lyww8"]
+[ext_resource type="PackedScene" uid="uid://c6d6x475xvrht" path="res://Personaje/Luis/particulas/eyes.tscn" id="2_w8dl0"]
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="3_0ghcv"]
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="3_36a7v"]
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="4_rhk0u"]
@@ -12245,6 +12246,16 @@ position = Vector2(0, 14)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/chest_flip_h2/area_flip_h2"]
 position = Vector2(-18, -1.5)
 shape = SubResource("RectangleShape2D_deb1e")
+
+[node name="particles" type="Node2D" parent="."]
+
+[node name="left_eye" parent="particles" instance=ExtResource("2_w8dl0")]
+position = Vector2(541, 205)
+emitting = false
+
+[node name="right_eye" parent="particles" instance=ExtResource("2_w8dl0")]
+position = Vector2(548, 205)
+emitting = false
 
 [connection signal="timeout" from="room/Player/Camera_torch/Timer" to="room/Player/Camera_torch" method="_on_timer_timeout"]
 [connection signal="body_entered" from="torch_area_night" to="." method="_on_torch_area_night_body_entered"]

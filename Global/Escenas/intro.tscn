@@ -10880,8 +10880,8 @@ visible = false
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="dialogue_finished" from="Personaje/Camera2D/ExampleBalloon" to="." method="_on_example_balloon_dialogue_finished"]
 
 [editable path="npc"]

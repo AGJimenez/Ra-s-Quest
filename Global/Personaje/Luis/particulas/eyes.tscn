@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6d6x475xvrht"]
+
+[ext_resource type="Texture2D" uid="uid://qfqxcsfkr3jm" path="res://Assets/Sprites/floaty_32.png" id="1_nu5j8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5mifi"]
+blend_mode = 1
+light_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_dp1ih"]
+offsets = PackedFloat32Array(0, 0.42, 1)
+colors = PackedColorArray(0.375199, 0, 0.0611731, 1, 0.817339, 0.000122324, 0.152873, 1, 0, 0, 0, 0)
+
+[node name="eyes" type="CPUParticles2D"]
+z_index = 20
+material = SubResource("CanvasItemMaterial_5mifi")
+amount = 9
+lifetime = 0.6
+texture = ExtResource("1_nu5j8")
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_max = 1.0
+linear_accel_max = 2.0
+angle_max = 360.0
+color_ramp = SubResource("Gradient_dp1ih")

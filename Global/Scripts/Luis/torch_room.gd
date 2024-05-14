@@ -19,6 +19,8 @@ var chest_flip_h2_complete = false
 var talk = false
 var pickable = false
 
+@onready var left_eye = $particles/left_eye
+@onready var right_eye = $particles/right_eye
 @onready var shadow_red = $"God Statue"/objective/Shadow/AnimationPlayer
 @onready var light_red = $"God Statue"/objective/light_floor/AnimationPlayer
 
@@ -37,6 +39,8 @@ func _process(_delta):
 		if(Global.activated):
 			light_red.play("red")
 			shadow_red.play("red")
+			left_eye.emitting = true
+			right_eye.emitting = true
 			$"room/Player/little torch".visible = false
 			if(Input.is_action_just_pressed("Interact") && talk):
 				$room/Player.set_physics_process(false)
