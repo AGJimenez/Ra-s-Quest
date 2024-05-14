@@ -699,7 +699,7 @@ states/stop/position = Vector2(479, 178)
 transitions = ["Start", "stop", SubResource("AnimationNodeStateMachineTransition_oe81y"), "stop", "interact", SubResource("AnimationNodeStateMachineTransition_tu3gb"), "interact", "stop", SubResource("AnimationNodeStateMachineTransition_g27f6"), "stop", "move", SubResource("AnimationNodeStateMachineTransition_nqxfr"), "move", "stop", SubResource("AnimationNodeStateMachineTransition_4dk2o"), "move", "interact", SubResource("AnimationNodeStateMachineTransition_k2sey"), "interact", "move", SubResource("AnimationNodeStateMachineTransition_n6vds")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7wiv"]
-size = Vector2(37.0461, 16.9795)
+size = Vector2(20.0665, 53.2539)
 
 [node name="Personaje" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 3

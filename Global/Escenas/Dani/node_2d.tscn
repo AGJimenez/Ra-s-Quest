@@ -11492,7 +11492,7 @@ shape = SubResource("RectangleShape2D_ircx3")
 position = Vector2(2133, 1957)
 
 [node name="CollisionShape2D" parent="Personaje" index="4"]
-position = Vector2(-0.5, -13.25)
+position = Vector2(0, -13)
 
 [node name="Camera2D" type="Camera2D" parent="Personaje"]
 zoom = Vector2(2, 2)
