@@ -9,27 +9,32 @@
 size = Vector2(240, 240)
 
 [node name="Puzle2" type="Panel" groups=["PuzlesMario"]]
-offset_right = 528.0
-offset_bottom = 324.0
+offset_left = 288.0
+offset_top = 158.0
+offset_right = 864.0
+offset_bottom = 482.0
+scale = Vector2(1.6, 1.6)
+pivot_offset = Vector2(288, 162)
 mouse_filter = 1
 script = ExtResource("1_in07k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(264, 162)
-scale = Vector2(0.55, 0.6)
+position = Vector2(288, 162)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_tby0r")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_top = 255.0
-offset_right = 528.0
+offset_left = 1.0
+offset_top = 285.0
+offset_right = 577.0
 offset_bottom = 325.0
 text = "Desplaza las piezas para descubrir el símbolo correcto"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(144, 9)
+position = Vector2(169, 41)
 script = ExtResource("1_q233h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

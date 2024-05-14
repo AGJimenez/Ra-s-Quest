@@ -21,3 +21,7 @@ offset_bottom = 371.0
 [node name="Puzle2" parent="." instance=ExtResource("3_hk61x")]
 unique_name_in_owner = true
 layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 576.0
+offset_bottom = 324.0

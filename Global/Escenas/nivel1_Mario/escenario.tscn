@@ -1999,19 +1999,16 @@ offset_right = 982.0
 offset_bottom = 238.0
 
 [node name="Puzle2" type="Sprite2D" parent="."]
-position = Vector2(1094, 5908.5)
+position = Vector2(256, 154)
 scale = Vector2(0.373651, 0.37753)
 texture = ExtResource("15_ka0n6")
 
 [node name="Panel_Mario2" parent="." instance=ExtResource("13_ecipq")]
 z_index = 5
-offset_left = 847.0
-offset_top = 5788.0
-offset_right = 1375.0
-offset_bottom = 6112.0
+offset_right = 528.0
+offset_bottom = 324.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D_2" type="Camera2D" parent="Panel_Mario2"]
-position = Vector2(576, 324)
-scale = Vector2(1, 1)
+position = Vector2(288, 161)
 enabled = false
