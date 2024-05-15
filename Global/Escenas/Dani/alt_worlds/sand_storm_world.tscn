@@ -15,21 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://b1r8jc0uuy3sb" path="res://Personaje/Luis/particulas/sand_storm_activated.tscn" id="10_6uddr"]
 [ext_resource type="PackedScene" uid="uid://ba2q0ayvoalrm" path="res://Escenas/Dani/objectives/objective_sand_world.tscn" id="14_qv743"]
 
-[sub_resource type="Animation" id="Animation_bfl0h"]
-resource_name = "darker"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.996078, 0.780392, 0.572549, 1), Color(0.713726, 0.431373, 0.0509804, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_m0cui"]
 length = 0.001
 tracks/0/type = "value"
@@ -43,6 +28,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0.996078, 0.780392, 0.572549, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bfl0h"]
+resource_name = "darker"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.996078, 0.780392, 0.572549, 1), Color(0.713726, 0.431373, 0.0509804, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_75mlk"]
