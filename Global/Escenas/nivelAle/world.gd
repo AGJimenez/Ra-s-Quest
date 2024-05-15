@@ -14,10 +14,9 @@ var palancaArea3 = false
 var palancaArea4 = false
 var palancaArea5 = false
 var palancaArea6 = false
-var prueba = "HOLa"
+
 
 func _ready():
-
 	transComplete = false
 	$pasilloHabitacion.visible = false
 	ignorarMov = true
@@ -26,14 +25,14 @@ func _ready():
 	$player/Camera2D.enabled = false
 	$Area2D/Control.visible = false
 	$Area2D2/Control.visible = false
-	$RayCast2D.enabled = false
-	$RayCast2D.visible = false
+	
 	$areaPalanca1/Control.visible = false
 	$areaPalanca2/Control.visible = false
 	$areaPalanca3/Control.visible = false
 	$areaPalanca4/Control.visible = false
 	$areaPalanca5/Control.visible = false
 	$areaPalanca6/Control.visible = false
+	
 	$AnimationPlayer.play("camera")
 	await get_tree().create_timer(5).timeout
 	transComplete = true
@@ -72,14 +71,14 @@ func _process(_delta):
 				print("AREA1")
 				$columna5.rotateMirror(_delta)
 			if palancaArea4 == true and Input.is_action_pressed("Interact"):
+				print("AREA1")
 				$columna6.rotateMirror(_delta)
-				print(prueba)
 			if palancaArea5 == true and Input.is_action_pressed("Interact"):
 				print("AREA1")
 				$columna2.rotateMirror(_delta)
 			if palancaArea6 == true and Input.is_action_pressed("Interact"):
 				$columna4.rotateMirror(_delta)
-				
+				print("AREA1")
 						
 		if(Global.dialogue_state == true):
 			$player.set_physics_process(false)
@@ -157,14 +156,13 @@ func parteDos():
 	segundoPuzzleActivado = true
 	$pasilloHabitacion.visible = true
 
+
 func _on_area_espejo_body_entered(body):
 	if body.name == "RigidBody2D":
 		print("OBJETO")
 		$RigidBody2D.freeze = true
 		segundoPuzzleActivado = true
-		$RayCast2D.enabled = true
-		$RayCast2D.visible = true
-		
+
 func _on_area_palanca_1_body_entered(body):
 	if body.name == "player":
 		$areaPalanca1/Control.visible = true
@@ -219,13 +217,3 @@ func _on_area_palanca_6_body_entered(body):
 func _on_area_palanca_6_body_exited(body):
 	$areaPalanca6/Control.visible = false
 	palancaArea6 = false
-
-
-func _on_raycast_signals_body_exitedCol6(body):
-	prueba = "FUERA DEL CUERPO"
-
-
-
-
-func _on_raycast_signals_body_insideCol6(body):
-	prueba = "ADIOS"
