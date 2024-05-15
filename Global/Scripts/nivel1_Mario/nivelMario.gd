@@ -5,8 +5,8 @@ class_name nivelMario
 @onready var player = get_node("Escenario/TileMap/Personaje")
 @onready var panel = get_node("Escenario/TileMap/Personaje/Camera2D/Panel_Mario")
 
-var puzles_resueltos = 1
-var puzle_correcto = 1
+var puzles_resueltos = 0
+var puzle_correcto = 0
 
 # VARIABLES PUZLE 1
 @onready var interaccionPapiro1 = get_node("Interacciones/InteraccionPapiro1")
@@ -48,7 +48,7 @@ func interacciones():
 	if (interaccionPapiro2.areaEntered == true && player.has_interacted == true):
 		player.speed = 0
 		panel.show()
-		#panelpuzle2.show()
+		panelpuzle2.show()
 		if (puzle_correcto == 2):
 			panel.hide()
 			interaccionPapiro2.hide()
