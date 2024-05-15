@@ -9,3 +9,4 @@ func rotateMirror(delta):
 	currentRotation += rotateSpeed * delta
 	if currentRotation >= 360:
 		currentRotation = 0
+

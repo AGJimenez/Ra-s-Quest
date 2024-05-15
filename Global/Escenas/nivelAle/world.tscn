@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://276uutptuj65"]
+[gd_scene load_steps=66 format=3 uid="uid://276uutptuj65"]
 
 [ext_resource type="Script" path="res://Escenas/nivelAle/world.gd" id="1_ao47j"]
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="1_ue6xu"]
@@ -22811,6 +22811,16 @@ size = Vector2(5, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8m8s"]
 
+[sub_resource type="Gradient" id="Gradient_0nfb5"]
+offsets = PackedFloat32Array(0.00649351, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x325u"]
+gradient = SubResource("Gradient_0nfb5")
+fill = 1
+fill_from = Vector2(0.472477, 0.490826)
+fill_to = Vector2(0.192661, 0.90367)
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_ao47j")
@@ -23186,39 +23196,44 @@ offset_bottom = -32.0
 [node name="columna1" parent="." instance=ExtResource("19_v57ys")]
 z_index = 3
 position = Vector2(-176, -99)
-collision_layer = 2
-collision_mask = 2
 
 [node name="columna2" parent="." instance=ExtResource("19_v57ys")]
 z_index = 1
 position = Vector2(-176, -258)
-collision_layer = 2
-collision_mask = 2
 motion_mode = 1
 
 [node name="columna3" parent="." instance=ExtResource("19_v57ys")]
 z_index = 3
 position = Vector2(177, -99)
-collision_layer = 2
-collision_mask = 2
 
 [node name="columna4" parent="." instance=ExtResource("19_v57ys")]
 z_index = 1
 position = Vector2(176, -258)
-collision_layer = 2
-collision_mask = 2
 
 [node name="columna5" parent="." instance=ExtResource("19_v57ys")]
 z_index = 3
 position = Vector2(-176, 92)
-collision_layer = 2
-collision_mask = 2
 
 [node name="columna6" parent="." instance=ExtResource("19_v57ys")]
 z_index = 1
 position = Vector2(177, 92)
-collision_layer = 2
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-14, -2)
+scale = Vector2(0.609375, 0.609375)
+color = Color(1, 1, 1, 0.341176)
+energy = 2.0
+texture = SubResource("GradientTexture2D_x325u")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+z_index = 5
+position = Vector2(-16, -7)
+target_position = Vector2(192, 100)
 collision_mask = 2
+
+[node name="Line2D" type="Line2D" parent="RayCast2D"]
+points = PackedVector2Array(0, -1, 193, 99)
+antialiased = true
 
 [connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
@@ -23241,3 +23256,5 @@ collision_mask = 2
 [connection signal="body_exited" from="areaPalanca5" to="." method="_on_area_palanca_5_body_exited"]
 [connection signal="body_entered" from="areaPalanca6" to="." method="_on_area_palanca_6_body_entered"]
 [connection signal="body_exited" from="areaPalanca6" to="." method="_on_area_palanca_6_body_exited"]
+
+[editable path="columna6"]

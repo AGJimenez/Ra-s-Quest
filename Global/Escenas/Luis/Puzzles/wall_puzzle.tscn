@@ -19,12 +19,12 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_b6hmd"]
 
-[sub_resource type="Gradient" id="Gradient_0nfb5"]
+[sub_resource type="Gradient" id="Gradient_ciykg"]
 offsets = PackedFloat32Array(0.00649351, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0mnt2"]
-gradient = SubResource("Gradient_0nfb5")
+gradient = SubResource("Gradient_ciykg")
 fill = 1
 fill_from = Vector2(0.472477, 0.490826)
 fill_to = Vector2(0.192661, 0.90367)
