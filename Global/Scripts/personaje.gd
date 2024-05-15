@@ -4,6 +4,8 @@ class_name Personaje
 var push_force = 120
 var direction: Vector2 = Vector2.ZERO
 var input_enabled = true
+var wind_enabled = false
+var wind_force: Vector2 = Vector2.ZERO
 
 @export var speed = 100
 @export var inv: Inv
@@ -34,11 +36,17 @@ func _physics_process(_delta):
 	if input_enabled:
 		direction = Input.get_vector("Left", "Right", "Up", "Down").normalized()
 		if direction:
-			velocity = direction * speed
-			push_force = 120
+			if(!wind_enabled):
+				velocity = direction * speed
+				push_force = 120
+			else:
+				velocity = (direction * speed) + wind_force
 		else:
-			velocity = Vector2.ZERO
-			push_force = 0
+			if(!wind_enabled):
+				velocity = Vector2.ZERO
+				push_force = 0
+			else:
+				velocity = wind_force
 			
 
 		move_and_slide()
@@ -52,22 +60,33 @@ func set_input_enabled(enabled):
 	input_enabled = enabled
 
 func update_animation():
-	if (velocity == Vector2.ZERO):
+	if(wind_enabled && !direction):
 		animTree["parameters/conditions/idle"] = true
 		animTree["parameters/conditions/is_moving"] = false
+	elif(wind_enabled && direction):
+		if (direction != Vector2.ZERO):
+			animTree["parameters/conditions/idle"] = false
+			animTree["parameters/conditions/is_moving"] = true
+			animTree["parameters/stop/blend_position"] = direction
+			animTree["parameters/move/blend_position"] = direction
+			animTree["parameters/interact/blend_position"] = direction
 	else:
-		animTree["parameters/conditions/idle"] = false
-		animTree["parameters/conditions/is_moving"] = true
-	if (Input.is_action_pressed("Interact")):
-		animTree["parameters/conditions/interact"] = true
-		has_interacted = true
-	else:
-		animTree["parameters/conditions/interact"] = false
+		if (velocity == Vector2.ZERO):
+			animTree["parameters/conditions/idle"] = true
+			animTree["parameters/conditions/is_moving"] = false
+		else:
+			animTree["parameters/conditions/idle"] = false
+			animTree["parameters/conditions/is_moving"] = true
+		if (Input.is_action_pressed("Interact")):
+			animTree["parameters/conditions/interact"] = true
+			has_interacted = true
+		else:
+			animTree["parameters/conditions/interact"] = false
 
-	if (direction != Vector2.ZERO):
-		animTree["parameters/stop/blend_position"] = direction
-		animTree["parameters/move/blend_position"] = direction
-		animTree["parameters/interact/blend_position"] = direction
+		if (direction != Vector2.ZERO):
+			animTree["parameters/stop/blend_position"] = direction
+			animTree["parameters/move/blend_position"] = direction
+			animTree["parameters/interact/blend_position"] = direction
 		
 func update_torch():
 	pass
@@ -85,3 +104,10 @@ func player():
 
 func collect(item):
 	inv.insert(item)
+
+
+func _on_sand_storm_world_wind_force(vector, wind):
+	velocity = vector
+	wind_force = vector
+	wind_enabled = wind
+	
