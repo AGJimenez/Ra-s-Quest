@@ -70,8 +70,8 @@ func update_animation():
 			animTree["parameters/stop/blend_position"] = direction
 			animTree["parameters/move/blend_position"] = direction
 			animTree["parameters/interact/blend_position"] = direction
-	else:
-		if (velocity == Vector2.ZERO):
+	elif(!wind_enabled):
+		if (velocity == Vector2.ZERO || direction == Vector2.ZERO):
 			animTree["parameters/conditions/idle"] = true
 			animTree["parameters/conditions/is_moving"] = false
 		else:
@@ -84,6 +84,8 @@ func update_animation():
 			animTree["parameters/conditions/interact"] = false
 
 		if (direction != Vector2.ZERO):
+			animTree["parameters/conditions/idle"] = false
+			animTree["parameters/conditions/is_moving"] = true
 			animTree["parameters/stop/blend_position"] = direction
 			animTree["parameters/move/blend_position"] = direction
 			animTree["parameters/interact/blend_position"] = direction

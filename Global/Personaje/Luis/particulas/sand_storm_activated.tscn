@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1r8jc0uuy3sb"]
+
+[sub_resource type="Curve" id="Curve_ffpnm"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 28.57), 0.0, 0.0, 0, 0, Vector2(1, -46.1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="sand_storm_activated" type="CPUParticles2D"]
+emitting = false
+amount = 200
+lifetime = 2.0
+preprocess = 2.0
+speed_scale = 1.25
+gravity = Vector2(980, 20)
+tangential_accel_max = 20.0
+tangential_accel_curve = SubResource("Curve_ffpnm")
+scale_amount_min = 3.0
+scale_amount_max = 6.0
+color = Color(0.6, 0.388235, 0.141176, 1)
