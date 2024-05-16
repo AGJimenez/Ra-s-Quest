@@ -77,18 +77,18 @@ func update_animation():
 		else:
 			animTree["parameters/conditions/idle"] = false
 			animTree["parameters/conditions/is_moving"] = true
-		if (Input.is_action_pressed("Interact")):
+		if (Input.is_action_pressed("Interact") && velocity == Vector2.ZERO && direction == Vector2.ZERO):
 			animTree["parameters/conditions/interact"] = true
 			has_interacted = true
 		else:
 			animTree["parameters/conditions/interact"] = false
-
-		if (direction != Vector2.ZERO):
-			animTree["parameters/conditions/idle"] = false
-			animTree["parameters/conditions/is_moving"] = true
-			animTree["parameters/stop/blend_position"] = direction
-			animTree["parameters/move/blend_position"] = direction
-			animTree["parameters/interact/blend_position"] = direction
+		if(!Global.dialogue_state):
+			if (direction != Vector2.ZERO):
+				animTree["parameters/conditions/idle"] = false
+				animTree["parameters/conditions/is_moving"] = true
+				animTree["parameters/stop/blend_position"] = direction
+				animTree["parameters/move/blend_position"] = direction
+				animTree["parameters/interact/blend_position"] = direction
 		
 func update_torch():
 	pass

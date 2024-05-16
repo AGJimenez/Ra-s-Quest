@@ -22809,11 +22809,6 @@ fill = 1
 fill_from = Vector2(0.495413, 0.495413)
 fill_to = Vector2(0.137615, 0.885321)
 
-[sub_resource type="Animation" id="Animation_pfsng"]
-resource_name = "rayo"
-length = 1.5
-loop_mode = 1
-
 [sub_resource type="Animation" id="Animation_85alu"]
 length = 0.001
 tracks/0/type = "value"
@@ -22845,11 +22840,31 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 0.917647, 0.545098, 0.4)]
 }
 
+[sub_resource type="Animation" id="Animation_pfsng"]
+resource_name = "rayo"
+length = 1.5
+loop_mode = 1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fvi0k"]
 _data = {
 "RESET": SubResource("Animation_85alu"),
 "aparecer": SubResource("Animation_klb5c"),
 "rayo": SubResource("Animation_pfsng")
+}
+
+[sub_resource type="Animation" id="Animation_xm0pj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("segundaLinea:default_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_67s2h"]
@@ -22868,12 +22883,18 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 0.917647, 0.545098, 0.4)]
 }
 
-[sub_resource type="Animation" id="Animation_xm0pj"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4rd7v"]
+_data = {
+"RESET": SubResource("Animation_xm0pj"),
+"rayo2": SubResource("Animation_67s2h")
+}
+
+[sub_resource type="Animation" id="Animation_byc6p"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("segundaLinea:default_color")
+tracks/0/path = NodePath("terceraLinea:default_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -22881,12 +22902,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4rd7v"]
-_data = {
-"RESET": SubResource("Animation_xm0pj"),
-"rayo2": SubResource("Animation_67s2h")
 }
 
 [sub_resource type="Animation" id="Animation_4fyjx"]
@@ -22906,12 +22921,18 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 0.917647, 0.545098, 0.4)]
 }
 
-[sub_resource type="Animation" id="Animation_byc6p"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jrny3"]
+_data = {
+"RESET": SubResource("Animation_byc6p"),
+"rayo3": SubResource("Animation_4fyjx")
+}
+
+[sub_resource type="Animation" id="Animation_c5g6h"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("terceraLinea:default_color")
+tracks/0/path = NodePath("cuartaLinea:default_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -22919,12 +22940,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jrny3"]
-_data = {
-"RESET": SubResource("Animation_byc6p"),
-"rayo3": SubResource("Animation_4fyjx")
 }
 
 [sub_resource type="Animation" id="Animation_ixw81"]
@@ -22944,12 +22959,18 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 0.917647, 0.545098, 0.4)]
 }
 
-[sub_resource type="Animation" id="Animation_c5g6h"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yoan"]
+_data = {
+"RESET": SubResource("Animation_c5g6h"),
+"rayo4": SubResource("Animation_ixw81")
+}
+
+[sub_resource type="Animation" id="Animation_nv3u0"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("cuartaLinea:default_color")
+tracks/0/path = NodePath("quintalinea:default_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -22958,11 +22979,17 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1yoan"]
-_data = {
-"RESET": SubResource("Animation_c5g6h"),
-"rayo4": SubResource("Animation_ixw81")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("sextaLinea:default_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_n1n5v"]
@@ -22994,12 +23021,18 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 0.917647, 0.545098, 0.4)]
 }
 
-[sub_resource type="Animation" id="Animation_nv3u0"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3utm"]
+_data = {
+"RESET": SubResource("Animation_nv3u0"),
+"rayo5": SubResource("Animation_n1n5v")
+}
+
+[sub_resource type="Animation" id="Animation_1nsfc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("quintalinea:default_color")
+tracks/0/path = NodePath("septimaLinea:default_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23011,7 +23044,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sextaLinea:default_color")
+tracks/1/path = NodePath("octavaLinea:default_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -23019,12 +23052,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3utm"]
-_data = {
-"RESET": SubResource("Animation_nv3u0"),
-"rayo5": SubResource("Animation_n1n5v")
 }
 
 [sub_resource type="Animation" id="Animation_drh25"]
@@ -23056,12 +23083,18 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 0.917647, 0.545098, 0.4)]
 }
 
-[sub_resource type="Animation" id="Animation_1nsfc"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwxe5"]
+_data = {
+"RESET": SubResource("Animation_1nsfc"),
+"rayo6": SubResource("Animation_drh25")
+}
+
+[sub_resource type="Animation" id="Animation_nrhm6"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("septimaLinea:default_color")
+tracks/0/path = NodePath("novenaLinea:default_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23069,24 +23102,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("octavaLinea:default_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwxe5"]
-_data = {
-"RESET": SubResource("Animation_1nsfc"),
-"rayo6": SubResource("Animation_drh25")
 }
 
 [sub_resource type="Animation" id="Animation_fce3u"]
@@ -23104,21 +23119,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 0.917647, 0.545098, 0.4)]
-}
-
-[sub_resource type="Animation" id="Animation_nrhm6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("novenaLinea:default_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_56a55"]

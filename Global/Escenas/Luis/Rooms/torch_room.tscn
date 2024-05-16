@@ -12285,3 +12285,5 @@ emitting = false
 [connection signal="body_exited" from="Objects/chest_flip_h/area_chest_flip_h" to="." method="_on_area_chest_flip_h_body_exited"]
 [connection signal="body_entered" from="Objects/chest_flip_h2/area_flip_h2" to="." method="_on_area_flip_h_2_body_entered"]
 [connection signal="body_exited" from="Objects/chest_flip_h2/area_flip_h2" to="." method="_on_area_flip_h_2_body_exited"]
+
+[editable path="room/Player"]

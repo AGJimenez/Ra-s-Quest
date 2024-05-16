@@ -28,8 +28,8 @@ var pickable = false
 func _process(_delta):
 	if((area_1_movable && area_2_movable && area_3_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_2_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_2_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player))):
 		if(!Global.activated):
-			$room/Player.velocity = Vector2.ZERO
-			$room/Player.update_animation()
+			$room/Player.animTree["parameters/conditions/idle"] = true
+			$room/Player.animTree["parameters/conditions/is_moving"] = false
 			$room/Player.set_physics_process(false)
 			$room/Player.set_process(false)
 			await get_tree().create_timer(1).timeout

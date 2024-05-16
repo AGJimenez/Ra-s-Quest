@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="2_0lkkx"]
 [ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="2_1kd5x"]
 [ext_resource type="Texture2D" uid="uid://bfjib41qumsbp" path="res://Assets/Sprites/circlue.png" id="2_a51jv"]
+[ext_resource type="PackedScene" uid="uid://d30cd25qhtl80" path="res://Personaje/Luis/Objects/key.tscn" id="5_m8ofc"]
+[ext_resource type="PackedScene" uid="uid://cbywe1y1tpeyd" path="res://Personaje/Luis/Objects/lock.tscn" id="6_dwjrd"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_cr6mv"]
 a = Vector2(-0.646347, -5.87567)
@@ -45,15 +47,41 @@ _data = {
 "activated": SubResource("Animation_vxym8")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vv68e"]
+[sub_resource type="Animation" id="Animation_85fyp"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttskj"]
+[sub_resource type="Animation" id="Animation_smqq0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_588a5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifx8g"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qo5c4"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mma5k"]
+_data = {
+"RESET": SubResource("Animation_smqq0"),
+"fade": SubResource("Animation_85fyp")
+}
 
 [node name="chest_puzzle" type="Control"]
 layout_mode = 3
@@ -64,6 +92,7 @@ script = ExtResource("1_f07qv")
 color = Color(0.772549, 0.772549, 0.772549, 1)
 
 [node name="background" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(577, -51)
 scale = Vector2(14.5955, 14.5955)
 texture = ExtResource("2_0lkkx")
@@ -71,6 +100,7 @@ region_enabled = true
 region_rect = Rect2(1263.87, 223.54, 79.8716, 96.4088)
 
 [node name="frontground" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(552, 395)
 scale = Vector2(19.5893, 19.5893)
 texture = ExtResource("2_1kd5x")
@@ -182,19 +212,19 @@ libraries = {
 "": SubResource("AnimationLibrary_ika66")
 }
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 483.0
-offset_top = 198.0
-offset_right = 491.0
-offset_bottom = 206.0
-scale = Vector2(16.814, 9.1559)
-mouse_default_cursor_shape = 2
-theme_override_styles/normal = SubResource("StyleBoxEmpty_vv68e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ttskj")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_588a5")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ifx8g")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qo5c4")
+[node name="lock" parent="." instance=ExtResource("6_dwjrd")]
+z_index = -1
+position = Vector2(555, 464)
+scale = Vector2(6.15378, 6.15378)
+
+[node name="key" parent="." instance=ExtResource("5_m8ofc")]
+position = Vector2(97, 396)
+scale = Vector2(5.43797, 5.43797)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="key"]
+libraries = {
+"": SubResource("AnimationLibrary_mma5k")
+}
 
 [connection signal="body_entered" from="skill_checks/skill1/skill_check_zone" to="." method="_on_skill_check_zone_body_entered"]
 [connection signal="body_exited" from="skill_checks/skill1/skill_check_zone" to="." method="_on_skill_check_zone_body_exited"]
@@ -204,4 +234,5 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_qo5c4")
 [connection signal="body_exited" from="skill_checks/skill3/skill_check_zone3" to="." method="_on_skill_check_zone_3_body_exited"]
 [connection signal="body_entered" from="skill_checks/skill4/skill_check_zone4" to="." method="_on_skill_check_zone_4_body_entered"]
 [connection signal="body_exited" from="skill_checks/skill4/skill_check_zone4" to="." method="_on_skill_check_zone_4_body_exited"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="unlock" from="lock" to="." method="_on_lock_unlock"]
+[connection signal="unlock" from="lock" to="key" method="_on_lock_unlock"]

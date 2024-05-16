@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://d30cd25qhtl80"]
+
+[ext_resource type="Texture2D" uid="uid://brq1aholhfi7l" path="res://Assets/Sprites/Key 10 - GOLD -.png" id="1_lgu0h"]
+[ext_resource type="Script" path="res://Personaje/Luis/Objects/key.gd" id="1_upsl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwth7"]
+size = Vector2(13.5524, 16.1443)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h3nol"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5jxx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s21bq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpkpe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tsdpn"]
+
+[node name="key" type="CharacterBody2D" groups=["Key"]]
+script = ExtResource("1_upsl2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lgu0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 9.45203)
+scale = Vector2(0.368939, 0.368939)
+shape = SubResource("RectangleShape2D_xwth7")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -4.0
+offset_top = -13.0
+offset_right = 4.0
+offset_bottom = -5.0
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h3nol")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u5jxx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s21bq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dpkpe")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tsdpn")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

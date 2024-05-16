@@ -19,6 +19,7 @@ var complete2 = false
 var complete3 = false
 var complete4 = false
 
+@onready var key_anim = $key/AnimationPlayer
 @onready var player_check = $player_check
 
 func _ready():
@@ -154,11 +155,13 @@ func _on_skill_check_zone_4_body_exited(body):
 		skill4 = false
 
 
-func _on_button_pressed():
+func _on_lock_unlock():
+	key_anim.play("fade")
+	await key_anim.animation_finished
+	$key.queue_free()
 	player_check.visible = true
 	$skill_checks.visible = true
 	start()
-	$Button.disabled = true
 	
 func shrink_1():
 	if(!complete1):
@@ -175,3 +178,5 @@ func shrink_3():
 func shrink_4():
 	if(!complete4):
 		$skill_checks/skill4.scale -= Vector2(0.15,0.15)
+
+
