@@ -737,9 +737,9 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/idle = false
 parameters/conditions/interact = false
 parameters/conditions/is_moving = false
-parameters/interact/blend_position = Vector2(0, 0)
-parameters/move/blend_position = Vector2(0, 0)
-parameters/stop/blend_position = Vector2(-0.3232, -0.89418)
+parameters/interact/blend_position = Vector2(0.0128, 0.00582004)
+parameters/move/blend_position = Vector2(0.0319999, 0.646032)
+parameters/stop/blend_position = Vector2(0.0224, -0.680952)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true

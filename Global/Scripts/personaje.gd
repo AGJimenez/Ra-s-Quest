@@ -77,7 +77,7 @@ func update_animation():
 		else:
 			animTree["parameters/conditions/idle"] = false
 			animTree["parameters/conditions/is_moving"] = true
-		if (Input.is_action_pressed("Interact") && velocity == Vector2.ZERO && direction == Vector2.ZERO):
+		if (Input.is_action_pressed("Interact") && animTree["parameters/conditions/is_moving"] == false && !Global.dialogue_state):
 			animTree["parameters/conditions/interact"] = true
 			has_interacted = true
 		else:

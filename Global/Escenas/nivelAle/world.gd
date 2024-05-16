@@ -14,6 +14,7 @@ func _ready():
 	transComplete = false
 	$pasilloHabitacion.visible = false
 	ignorarMov = true
+	$player.set_process(false)
 	$player.set_physics_process(false)
 	$player/Camera2D/puzzleDioses.visible = false
 	$player/Camera2D.enabled = false
@@ -21,9 +22,10 @@ func _ready():
 	$Area2D2/Control.visible = false
 	
 	$AnimationPlayer.play("camera")
-	await get_tree().create_timer(5).timeout
+	await $AnimationPlayer.animation_finished
 	transComplete = true
 	ignorarMov = false
+	$player.set_process(true)
 	$player.set_physics_process(true)
 	$Camera2D.enabled = false
 	$player/Camera2D.enabled = true
