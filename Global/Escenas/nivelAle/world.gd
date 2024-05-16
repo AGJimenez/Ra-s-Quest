@@ -14,11 +14,11 @@ func _ready():
 	transComplete = false
 	$pasilloHabitacion.visible = false
 	ignorarMov = true
-<<<<<<< Updated upstream
+
 	$player.set_process(false)
-=======
+
 	$altar/CollisionShape2D3.disabled = true
->>>>>>> Stashed changes
+
 	$player.set_physics_process(false)
 	$player/Camera2D/puzzleDioses.visible = false
 	$player/Camera2D.enabled = false
