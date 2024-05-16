@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkomrelai5dxv"]
+[gd_scene load_steps=4 format=3 uid="uid://dkomrelai5dxv"]
 
 [ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="1_0afv0"]
 [ext_resource type="Script" path="res://Escenas/nivelAle/CruzColumna.gd" id="1_o40du"]
@@ -7,15 +7,8 @@
 atlas = ExtResource("1_0afv0")
 region = Rect2(360.808, 288.054, 15.4048, 32.9718)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmreh"]
-size = Vector2(15, 32)
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_o40du")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_poqsg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_tmreh")
