@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdo3d1d5jt8tb"]
+
+[ext_resource type="PackedScene" uid="uid://dsm02wxkpslo1" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel.tscn" id="1_atlwc"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 10
+
+[node name="Panel_Mario" parent="." instance=ExtResource("1_atlwc")]

@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="11_pa8re"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="12_8g7o8"]
 [ext_resource type="PackedScene" uid="uid://beleossls3vt" path="res://Escenas/nivel1_Mario/PanelesPuzles/camera_2d.tscn" id="13_b773v"]
-[ext_resource type="PackedScene" uid="uid://dsm02wxkpslo1" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel.tscn" id="13_ecipq"]
+[ext_resource type="PackedScene" uid="uid://bdo3d1d5jt8tb" path="res://canvas_layer_panel.tscn" id="14_nkr3p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26sp1"]
 texture = ExtResource("1_8pra0")
@@ -1985,16 +1985,11 @@ layer_5/z_index = 1
 layer_5/tile_data = PackedInt32Array(3932218, 2555924, 23, 3932219, 2555924, 23, 3932220, 2555924, 23, 3932221, 2555924, 23, 3932222, 2555924, 23, 3932223, 2555924, 23, 6029363, 524304, 12, 6029382, 983056, 12, 4784179, 524304, 15, 4784198, 851984, 11)
 
 [node name="Personaje" parent="TileMap" instance=ExtResource("12_8g7o8")]
-position = Vector2(2995, 2702)
+position = Vector2(576, 2536)
 
 [node name="Camera2D" parent="TileMap/Personaje" instance=ExtResource("13_b773v")]
 limit_right = 3432
 position_smoothing_enabled = true
 
-[node name="Panel_Mario" parent="TileMap/Personaje/Camera2D" instance=ExtResource("13_ecipq")]
-z_index = 5
-offset_left = -329.0
-offset_top = -183.0
-offset_right = 825.0
-offset_bottom = 458.0
-scale = Vector2(0.57, 0.57)
+[node name="CanvasLayer" parent="." instance=ExtResource("14_nkr3p")]
+visible = false

@@ -5,7 +5,7 @@ var piezas = []
 var resuelto = []
 var mouse = false
 
-@onready var nivel_Mario = nivelMario.new()
+@onready var nivel_Mario = get_tree().get_root().get_node("nivelMario")
 
 
 func _ready():
@@ -15,16 +15,12 @@ func _ready():
 func _process(_delta):
 	if (Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and mouse):
 		var mouse_copy = mouse
-		print(mouse.position)
 		mouse = false
 		var rows = int(mouse_copy.position.y / 128 ) - 1
 		var cols = int(mouse_copy.position.x / 128 ) - 3
-		print(rows, ",", cols)
-		print(piezas[rows * 3 + cols])
 		check_blank_space(rows, cols)
 		if piezas == resuelto:
-			print("HAS GANADO")
-			nivel_Mario.puzle_correcto += 1
+			nivel_Mario.signal_puzle2.emit()
 
 
 func comenzar_puzle():
@@ -34,13 +30,13 @@ func comenzar_puzle():
 
 
 func shuffle_tiles():
-	var previous = 99
-	var previous_1 = 98
+	var previous = 999
+	var previous_1 = 998
 	for t in range (0, 1000):
 		var tile = randi() % 9
 		if (piezas[tile] != $Pieza7 and tile != previous and tile != previous_1):
-			var rows = int(piezas[tile].position.y / 128)
-			var cols = int(piezas[tile].position.x / 128)
+			var rows = int(piezas[tile].position.y / 80)
+			var cols = int(piezas[tile].position.x / 80)
 			check_blank_space(rows, cols)
 			previous_1 = previous
 			previous_1 = tile

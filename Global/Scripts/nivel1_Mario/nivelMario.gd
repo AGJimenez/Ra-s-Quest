@@ -3,21 +3,20 @@ class_name nivelMario
 
 # VARIABLES GENERALES
 @onready var player = get_node("Escenario/TileMap/Personaje")
-@onready var panel = get_node("Escenario/TileMap/Personaje/Camera2D/Panel_Mario")
+@onready var panel = get_node("Escenario/CanvasLayer")
 
-var puzles_resueltos = 0
-var puzle_correcto = 0
+var puzles_resueltos = 1
+var puzle_correcto = 1
 
 # VARIABLES PUZLE 1
 @onready var interaccionPapiro1 = get_node("Interacciones/InteraccionPapiro1")
-@onready var puzle1 = get_node("Escenario/TileMap/Personaje/Camera2D/Panel_Mario/Puzle1")
-@onready var resultadoPuzle1 = get_node("Escenario/TileMap/Personaje/Camera2D/Panel_Mario/Puzle1/TextoPuzle1")
-@onready var botonPuzle1 = get_node("Escenario/TileMap/Personaje/Camera2D/Panel_Mario/Puzle1/BotonPuzle1")
+@onready var puzle1 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle1")
+@onready var resultadoPuzle1 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle1/TextoPuzle1")
+@onready var botonPuzle1 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle1/BotonPuzle1")
 
 # VARIABLES PUZLE 2
 @onready var interaccionPapiro2 = get_node("Interacciones/InteraccionPapiro2")
-@onready var panelpuzle2 = get_node("Escenario/TileMap/Personaje/Camera2D/Panel_Mario/Puzle2")
-@onready var puzle2 = get_node("Escenario/TileMap/Personaje/Camera2D/Panel_Mario/Puzle2/Area2D")
+@onready var puzle2 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle2")
 
 
 # SEÑALES 
@@ -34,7 +33,7 @@ func _process(_delta):
 
 func interacciones():
 # MANEJO PUZZLE 1
-	if (interaccionPapiro1.areaEntered == true && player.has_interacted == true):
+	if (interaccionPapiro1.areaEntered == true and player.has_interacted == true):
 		player.speed = 0
 		panel.show()
 		if (puzle_correcto == 1):
@@ -44,17 +43,19 @@ func interacciones():
 			interaccionPapiro2.show()
 			puzles_resueltos += 1
 			player.speed = 100
+			player.has_interacted = false
 # MANEJO PUZLE 2
-	if (interaccionPapiro2.areaEntered == true && player.has_interacted == true):
+	if (interaccionPapiro2.areaEntered == true and player.has_interacted == true):
 		player.speed = 0
 		panel.show()
-		panelpuzle2.show()
+		puzle2.show()
 		if (puzle_correcto == 2):
 			panel.hide()
+			puzle2.hide()
 			interaccionPapiro2.hide()
-			panelpuzle2.hide()
 			puzles_resueltos += 1
 			player.speed = 100
+			player.has_interacted = false
 
 
 func _on_signal_button_puzle1_pressed():
@@ -63,3 +64,7 @@ func _on_signal_button_puzle1_pressed():
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_acierto_puzle1.dialogue"), "dialogo_acierto_puzle1");
 	elif (resultadoPuzle1.get_text() != "2"):
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_error_puzle1.dialogue"), "dialogo_error_puzle1");
+
+
+func _on_signal_puzle_2():
+	puzle_correcto += 1

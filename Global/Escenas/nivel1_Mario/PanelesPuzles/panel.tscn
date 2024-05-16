@@ -12,10 +12,10 @@ script = ExtResource("1_4un72")
 
 [node name="Puzle1" parent="." instance=ExtResource("2_yl75d")]
 layout_mode = 0
-offset_left = 288.5
-offset_top = 160.25
-offset_right = 816.5
-offset_bottom = 483.25
+offset_left = 289.0
+offset_top = 160.0
+offset_right = 864.0
+offset_bottom = 483.0
 
 [node name="Puzle2" parent="." instance=ExtResource("3_hk61x")]
 unique_name_in_owner = true
