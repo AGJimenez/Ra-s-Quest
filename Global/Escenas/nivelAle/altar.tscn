@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1gfh8ec2eqwr"]
+
+[ext_resource type="Texture2D" uid="uid://bme8qnjfd5xla" path="res://Assets/altar.png" id="1_lf1qk"]
+[ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="2_tbqxo"]
+[ext_resource type="Texture2D" uid="uid://bq2q1g4mcsbcb" path="res://Assets/Egyptian_P.png" id="3_b6hkp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u2a6"]
+atlas = ExtResource("2_tbqxo")
+region = Rect2(255.637, 256.105, 96.5482, 64.4973)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo21i"]
+atlas = ExtResource("3_b6hkp")
+region = Rect2(158.89, 222.81, 4.32417, 33.7826)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f8fn"]
+size = Vector2(80, 50)
+
+[node name="altar" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lf1qk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -14)
+scale = Vector2(0.75, 0.25)
+texture = SubResource("AtlasTexture_4u2a6")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-30, -15)
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_7f8fn")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-24, -15)
+rotation = -0.562319
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(-17, -12)
+rotation = 0.708538
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-15, -18)
+rotation = -1.32194
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(-6.88809, -15.984)
+rotation = -0.562319
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(0.111904, -12.984)
+rotation = 0.708538
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(2.11191, -18.984)
+rotation = -1.32194
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(9, -13)
+rotation = -1.32194
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(15.1119, -13.8713)
+rotation = -0.562319
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(22.1119, -10.8713)
+rotation = 0.708538
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+position = Vector2(22, -17)
+rotation = -1.83896
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+position = Vector2(30.1119, -16.8713)
+rotation = -0.5681
+scale = Vector2(0.5, 0.257576)
+texture = SubResource("AtlasTexture_lo21i")

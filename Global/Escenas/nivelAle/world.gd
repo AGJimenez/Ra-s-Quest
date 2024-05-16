@@ -8,19 +8,23 @@ var paused = false
 var ignorarMov = false
 var transComplete = false
 var segundoPuzzleActivado = false
-
-
+var espejosAcabados = false
+var animacionAltar = false
 func _ready():
 	transComplete = false
 	$pasilloHabitacion.visible = false
 	ignorarMov = true
+<<<<<<< Updated upstream
 	$player.set_process(false)
+=======
+	$altar/CollisionShape2D3.disabled = true
+>>>>>>> Stashed changes
 	$player.set_physics_process(false)
 	$player/Camera2D/puzzleDioses.visible = false
 	$player/Camera2D.enabled = false
 	$Area2D/Control.visible = false
 	$Area2D2/Control.visible = false
-	
+	$altar/Control.visible = false
 	$AnimationPlayer.play("camera")
 	await $AnimationPlayer.animation_finished
 	transComplete = true
@@ -34,6 +38,7 @@ func _ready():
 		$player.global_position = $"spawn_points/night-world".global_position
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta):
 
 	if !ignorarMov and transComplete: 
@@ -67,7 +72,14 @@ func _process(_delta):
 								$columna4.rotarCol6(_delta)
 								if $columna4.isRotating == false:
 									$Rayo7.play("rayo7")
-					
+									espejosAcabados = true
+			if espejosAcabados and !animacionAltar:
+				print("emergiendo")
+				$altarAnimacion.play("emerger")
+				$altar/CollisionShape2D3.disabled = false
+				animacionAltar = true
+				
+
 		if(Global.dialogue_state == true):
 			$player.set_physics_process(false)
 		if(Global.dialogue_state == false):
@@ -150,3 +162,12 @@ func _on_area_espejo_body_entered(body):
 		print("OBJETO")
 		$RigidBody2D.freeze = true
 		segundoPuzzleActivado = true
+
+
+func _on_area_altar_body_entered(body):
+	if body.name == "player":
+		$altar/Control.visible = true
+
+
+func _on_area_altar_body_exited(body):
+	$altar/Control.visible = false

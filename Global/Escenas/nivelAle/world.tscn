@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://276uutptuj65"]
+[gd_scene load_steps=88 format=3 uid="uid://276uutptuj65"]
 
 [ext_resource type="Script" path="res://Escenas/nivelAle/world.gd" id="1_ao47j"]
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="1_ue6xu"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://r1i7cj56hh7f" path="res://Escenas/nivelAle/puzzle_dioses.tscn" id="16_vmpor"]
 [ext_resource type="PackedScene" uid="uid://d06deaw0tipjn" path="res://Escenas/nivelAle/cruzArrastrar.tscn" id="18_o7tfn"]
 [ext_resource type="PackedScene" uid="uid://dkomrelai5dxv" path="res://Escenas/nivelAle/CruzColumna.tscn" id="19_v57ys"]
+[ext_resource type="PackedScene" uid="uid://c1gfh8ec2eqwr" path="res://Escenas/nivelAle/altar.tscn" id="20_g0u12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7obs0"]
 texture = ExtResource("1_ue6xu")
@@ -23127,9 +23128,103 @@ _data = {
 "rayo7": SubResource("Animation_fce3u")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1btpf"]
+size = Vector2(79, 37)
+
+[sub_resource type="Animation" id="Animation_d3u3l"]
+resource_name = "emerger"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("altar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, -143), Vector2(-1, -193)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("altar:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tpwgr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("altar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -143)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("altar:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jm3u"]
+_data = {
+"RESET": SubResource("Animation_tpwgr"),
+"emerger": SubResource("Animation_d3u3l")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8pl8"]
+atlas = ExtResource("3_jty2i")
+region = Rect2(255.87, 130.198, 64.4182, 60.7185)
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_ao47j")
+metadata/_edit_horizontal_guides_ = [-218.0, -168.0]
+metadata/_edit_vertical_guides_ = [-41.0, 39.0]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -23182,6 +23277,9 @@ position = Vector2(0, 570)
 scale = Vector2(0.75, 0.75)
 collision_layer = 1
 collision_mask = 1
+
+[node name="CollisionShape2D" parent="player" index="4"]
+position = Vector2(2.38419e-07, 5.83337)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(2.25, 2.25)
@@ -23561,6 +23659,37 @@ points = PackedVector2Array(176, -258, -188, -365)
 width = 2.0
 default_color = Color(1, 1, 1, 0)
 
+[node name="altar" parent="." instance=ExtResource("20_g0u12")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1, -143)
+
+[node name="CollisionShape2D3" parent="altar" index="3"]
+visible = true
+
+[node name="areaAltar" type="Area2D" parent="altar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="altar/areaAltar"]
+position = Vector2(0.5, 26.5)
+shape = SubResource("RectangleShape2D_1btpf")
+
+[node name="Control" parent="altar" instance=ExtResource("13_nrv0w")]
+offset_left = -15.0
+offset_top = -60.0
+offset_right = 25.0
+offset_bottom = -20.0
+
+[node name="altarAnimacion" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3jm3u")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+y_sort_enabled = true
+position = Vector2(-3, -188.5)
+scale = Vector2(1.40625, 0.816667)
+texture = SubResource("AtlasTexture_t8pl8")
+
 [connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_3_pressed"]
@@ -23570,3 +23699,8 @@ default_color = Color(1, 1, 1, 0)
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
 [connection signal="body_entered" from="areaEspejo" to="." method="_on_area_espejo_body_entered"]
+[connection signal="body_entered" from="altar/areaAltar" to="." method="_on_area_altar_body_entered"]
+[connection signal="body_exited" from="altar/areaAltar" to="." method="_on_area_altar_body_exited"]
+
+[editable path="player"]
+[editable path="altar"]
