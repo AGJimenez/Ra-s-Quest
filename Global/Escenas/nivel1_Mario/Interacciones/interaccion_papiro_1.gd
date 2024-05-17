@@ -1,5 +1,4 @@
 extends StaticBody2D
-class_name InteraccionPapiro1
 
 @onready var label = $PanelInteraccion1
 @onready var areaEntered: bool = false

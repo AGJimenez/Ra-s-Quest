@@ -7,12 +7,18 @@ var intro_finished = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if(Save.save_dict["map_number"] < 0):
+		number_changed()
+		Save.save_dict["map"] = "res://Escenas/Luis/Rooms/chest_room.tscn"
+		Save.save_game()
+	$Personaje.set_process(false)
 	$Personaje.set_physics_process(false)
 	$npc/Control.visible = false
 	$AnimationPlayer.play("new_animation")
 	$Personaje/Camera2D.enabled = false
 	$AnimationPlayer2.play("camara")
-	await get_tree().create_timer(5).timeout
+	await $AnimationPlayer2.animation_finished
+	$Personaje.set_process(true)
 	$Personaje.set_physics_process(true)
 	intro_finished = true
 	$Camera2D.enabled = false
@@ -42,7 +48,6 @@ func _on_area_2dnpc_body_entered(body):
 	if body.name == "Personaje":
 		enAreaNPC = true
 		$npc/Control.visible = true
-		print("Conversacion con npc")
 
 
 func _on_area_2dnpc_body_exited(body):
@@ -70,7 +75,7 @@ func reloadLevel():
 	ignorarMov = false
 	
 func quitGame():
-	get_tree().quit()
+	LoadManager.load_scene("res://Interfaz/menu_ppal.tscn")
 
 
 func _on_button_pressed():
@@ -83,3 +88,6 @@ func _on_button_3_pressed():
 
 func _on_button_2_pressed():
 	reloadLevel()
+
+func number_changed():
+	Save.save_dict["map_number"] = 0

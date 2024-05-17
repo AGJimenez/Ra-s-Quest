@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bbkkr2taq2dek"
+path="res://.godot/imported/not_prepared.dialogue-e56abbb43d97d79b2a44d57eff9e006d.tres"
+
+[deps]
+
+source_file="res://Dialogos/Luis/chest_room/not_prepared.dialogue"
+dest_files=["res://.godot/imported/not_prepared.dialogue-e56abbb43d97d79b2a44d57eff9e006d.tres"]
+
+[params]
+
+defaults=true

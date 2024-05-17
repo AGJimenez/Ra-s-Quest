@@ -11,6 +11,10 @@ var segundoPuzzleActivado = false
 var espejosAcabados = false
 var animacionAltar = false
 func _ready():
+	if(Save.save_dict["map_number"] < 5):
+		number_changed()
+		Save.save_dict["map"] = "res://Escenas/nivelAle/world.tscn"
+		Save.save_game()
 	transComplete = false
 	$pasilloHabitacion.visible = false
 	ignorarMov = true
@@ -171,3 +175,6 @@ func _on_area_altar_body_entered(body):
 
 func _on_area_altar_body_exited(body):
 	$altar/Control.visible = false
+
+func number_changed():
+	Save.save_dict["map_number"] = 5

@@ -34,7 +34,6 @@ func _process(delta):
 	if(skill):
 		if(Input.is_action_just_pressed("spacebar") && !complete1):
 			$skill_checks/skill1/AnimationPlayer.play("activated")
-			print("complete1")
 			speed += new_speed
 			speed_rotation += new_speed_rotation
 			complete1 = true
@@ -46,7 +45,6 @@ func _process(delta):
 	if(skill2):
 		if(Input.is_action_just_pressed("spacebar") && !complete2):
 			$skill_checks/skill2/AnimationPlayer.play("activated")
-			print("complete2")
 			speed += new_speed
 			speed_rotation += new_speed_rotation
 			complete2 = true
@@ -58,7 +56,6 @@ func _process(delta):
 	if(skill3):
 		if(Input.is_action_just_pressed("spacebar") && !complete3):
 			$skill_checks/skill3/AnimationPlayer.play("activated")
-			print("complete3")
 			speed += new_speed
 			speed_rotation += new_speed_rotation
 			complete3 = true
@@ -70,7 +67,6 @@ func _process(delta):
 	if(skill4):
 		if(Input.is_action_just_pressed("spacebar") && !complete4):
 			$skill_checks/skill4/AnimationPlayer.play("activated")
-			print("complete4")
 			speed += new_speed
 			speed_rotation += new_speed_rotation
 			complete4 = true

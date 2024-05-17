@@ -1,5 +1,4 @@
 extends Panel
-class_name Puzle1
 
 @onready var nivel_Mario = get_tree().get_root().get_node("nivelMario")
 

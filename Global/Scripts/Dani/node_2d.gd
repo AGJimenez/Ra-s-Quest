@@ -10,7 +10,11 @@ var isFinalPuzzleEnabled = false
 @onready var SpriteCollision = get_node("StaticBody2D/CollisionShape2D")
 var nivelesSuperados = 0
 # Called when the node enters the scene tree for the first time.
-func _ready():	
+func _ready():
+	if(Save.save_dict["map_number"] < 2):
+		number_changed()
+		Save.save_dict["map"] = "res://Escenas/Dani/node_2d.tscn"
+		Save.save_game()
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Conversacion_Principal.dialogue"),"main")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -222,3 +226,6 @@ func _on_introduccion_area_body_exited(body):
 func quit_Espinas():
 	Sprite.hide()
 	SpriteCollision.disabled=true
+
+func number_changed():
+	Save.save_dict["map_number"] = 2

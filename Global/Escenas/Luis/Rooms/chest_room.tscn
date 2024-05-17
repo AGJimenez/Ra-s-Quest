@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cfgpctstjmt0h"]
+[gd_scene load_steps=25 format=3 uid="uid://cfgpctstjmt0h"]
 
 [ext_resource type="Script" path="res://Scripts/Luis/chest_room.gd" id="1_e1gyu"]
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="1_ua8wt"]
@@ -428,7 +428,6 @@ texture_region_size = Vector2i(32, 32)
 37:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 37:8/0/physics_layer_0/angular_velocity = 0.0
 39:8/0 = 0
-39:8/0/y_sort_origin = -15
 39:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 39:8/0/physics_layer_0/angular_velocity = 0.0
 40:8/0 = 0
@@ -9256,6 +9255,7 @@ texture_region_size = Vector2i(32, 32)
 12:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:11/0/physics_layer_0/angular_velocity = 0.0
 13:11/0 = 0
+13:11/0/y_sort_origin = -100
 13:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:11/0/physics_layer_0/angular_velocity = 0.0
 14:11/0 = 0
@@ -9277,6 +9277,7 @@ texture_region_size = Vector2i(32, 32)
 11:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:12/0/physics_layer_0/angular_velocity = 0.0
 13:12/0 = 0
+13:12/0/y_sort_origin = -100
 13:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:12/0/physics_layer_0/angular_velocity = 0.0
 14:12/0 = 0
@@ -9311,6 +9312,7 @@ texture_region_size = Vector2i(32, 32)
 15:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:13/0/physics_layer_0/angular_velocity = 0.0
 8:14/0 = 0
+8:14/0/y_sort_origin = 200
 8:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:14/0/physics_layer_0/angular_velocity = 0.0
 9:14/0 = 0
@@ -9338,6 +9340,7 @@ texture_region_size = Vector2i(32, 32)
 15:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:14/0/physics_layer_0/angular_velocity = 0.0
 8:15/0 = 0
+8:15/0/y_sort_origin = -100
 8:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:15/0/physics_layer_0/angular_velocity = 0.0
 9:15/0 = 0
@@ -11526,6 +11529,9 @@ size = Vector2(20, 33.6283)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wleei"]
 size = Vector2(45, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1cgb"]
+size = Vector2(60, 32)
+
 [node name="chest_room" type="Node2D"]
 script = ExtResource("1_e1gyu")
 
@@ -11548,6 +11554,7 @@ layer_2/name = "Darkness"
 layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(-65533, 262147, 53, -131069, 262147, 53)
 layer_3/name = "Shadows"
+layer_3/y_sort_enabled = true
 layer_3/tile_data = PackedInt32Array(-131070, 917508, 9, -65534, 917508, 10, -65532, 983044, 10, -131068, 983044, 9, 196615, 851972, 11, -196605, 524292, 14, 3, 524292, 15, 327681, 851972, 12)
 layer_4/name = "Objects"
 layer_4/y_sort_enabled = true
@@ -11610,6 +11617,13 @@ position = Vector2(-12.5, 0)
 scale = Vector2(1.38241, 2.02023)
 shape = SubResource("RectangleShape2D_wleei")
 
+[node name="easter_egg_chest" type="Area2D" parent="."]
+position = Vector2(13, 175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="easter_egg_chest"]
+position = Vector2(20, -4)
+shape = SubResource("RectangleShape2D_f1cgb")
+
 [node name="little torch" parent="." instance=ExtResource("11_q7mc2")]
 visible = false
 position = Vector2(136, 96)
@@ -11626,5 +11640,7 @@ range_item_cull_mask = 0
 [connection signal="body_exited" from="night_entrance/not_torch_area" to="." method="_on_not_torch_area_body_exited"]
 [connection signal="body_entered" from="chest_puzzle" to="." method="_on_chest_puzzle_body_entered"]
 [connection signal="body_exited" from="chest_puzzle" to="." method="_on_chest_puzzle_body_exited"]
+[connection signal="body_entered" from="easter_egg_chest" to="." method="_on_easter_egg_chest_body_entered"]
+[connection signal="body_exited" from="easter_egg_chest" to="." method="_on_easter_egg_chest_body_exited"]
 
 [editable path="little torch"]

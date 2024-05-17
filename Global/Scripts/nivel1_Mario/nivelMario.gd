@@ -25,7 +25,10 @@ signal signal_puzle2
 
 # MÉTODOS
 func _ready():
-	pass
+	if(Save.save_dict["map_number"] < 1):
+		number_changed()
+		Save.save_dict["map"] = "res://Escenas/nivel1_Mario/nivel_mario.tscn"
+		Save.save_game()
 
 func _process(_delta):
 	interacciones()
@@ -68,3 +71,6 @@ func _on_signal_button_puzle1_pressed():
 
 func _on_signal_puzle_2():
 	puzle_correcto += 1
+
+func number_changed():
+	Save.save_dict["map_number"] = 1

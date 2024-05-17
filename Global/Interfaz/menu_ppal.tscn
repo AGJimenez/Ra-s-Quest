@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc4e1genctsv0"]
+[gd_scene load_steps=12 format=3 uid="uid://bc4e1genctsv0"]
 
 [ext_resource type="Texture2D" uid="uid://dv7f0vk31uyr0" path="res://Assets/ras.png" id="1_0wgld"]
 [ext_resource type="Script" path="res://Interfaz/menu_ppal.gd" id="1_hhmsd"]
 [ext_resource type="FontFile" uid="uid://df7wawb1o2m51" path="res://Assets/fuentes/papyrus.ttf" id="2_miai6"]
 [ext_resource type="Theme" uid="uid://dtngmjro2nr1c" path="res://Assets/defaultButton.tres" id="3_vs2ip"]
+[ext_resource type="FontFile" uid="uid://yaesjl55ipex" path="res://Assets/fuentes/Pixelme.ttf" id="5_6sgtm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_olrmd"]
 font = ExtResource("2_miai6")
@@ -13,7 +14,18 @@ outline_size = 20
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 31
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ncjly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d1sj6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lclv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5gn1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhpjg"]
+
 [node name="MenuPpal" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,6 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hhmsd")
+metadata/_edit_vertical_guides_ = [386.0, 766.0]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -32,6 +45,7 @@ offset_bottom = 188.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_0wgld")
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -41,6 +55,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0431373, 0, 0.176471, 0.933333)
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -54,39 +69,129 @@ offset_bottom = 106.0
 grow_horizontal = 2
 text = "RA'S QUEST"
 label_settings = SubResource("LabelSettings_olrmd")
+metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="."]
+[node name="Continue" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.5
-offset_top = -31.5
-offset_right = 82.5
-offset_bottom = 31.5
+offset_left = -82.0
+offset_top = -85.0
+offset_right = 83.0
+offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_vs2ip")
-text = "START"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ncjly")
+text = "CONTINUAR"
 
-[node name="Button2" type="Button" parent="."]
+[node name="new_game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 329.0
+offset_right = 659.0
+offset_bottom = 392.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_vs2ip")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d1sj6")
+text = "NUEVA PARTIDA"
+
+[node name="delete_save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 426.0
+offset_right = 659.0
+offset_bottom = 489.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_vs2ip")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7lclv")
+text = "BORRAR PARTIDA"
+
+[node name="exit" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -78.0
-offset_top = 56.0
-offset_right = 87.0
-offset_bottom = 119.0
+offset_left = -82.0
+offset_top = 206.0
+offset_right = 83.0
+offset_bottom = 269.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_vs2ip")
-text = "EXIT"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x5gn1")
+text = "SALIR"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Control" type="Control" parent="."]
+process_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="delete_container" type="MarginContainer" parent="Control"]
+process_mode = 3
+visible = false
+offset_left = 387.0
+offset_top = 215.0
+offset_right = 766.0
+offset_bottom = 322.0
+
+[node name="delete_color" type="ColorRect" parent="Control/delete_container"]
+layout_mode = 2
+color = Color(0.0431373, 0, 0.176471, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/delete_container"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/delete_container/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="separator2" type="Control" parent="Control/delete_container/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="delete_label" type="Label" parent="Control/delete_container/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6sgtm")
+text = "Quieres borrar la partida?"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/delete_container/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="yes" type="Button" parent="Control/delete_container/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_vs2ip")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bhpjg")
+text = "Si"
+
+[node name="no" type="Button" parent="Control/delete_container/HBoxContainer/VBoxContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_vs2ip")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bhpjg")
+text = "No"
+
+[node name="separator" type="Control" parent="Control/delete_container/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="delete_save" to="." method="_on_delete_save_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/delete_container/HBoxContainer/VBoxContainer/HBoxContainer/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Control/delete_container/HBoxContainer/VBoxContainer/HBoxContainer/no" to="." method="_on_no_pressed"]

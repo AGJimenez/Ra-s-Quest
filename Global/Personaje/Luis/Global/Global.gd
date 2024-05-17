@@ -9,6 +9,7 @@ var change = ""
 #chest_room
 var chest_puzzle_complete = false
 var gain_torch_end = false
+var not_prepared = true
 
 #night_room
 var door_disable = false
