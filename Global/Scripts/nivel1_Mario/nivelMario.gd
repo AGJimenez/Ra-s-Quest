@@ -6,7 +6,7 @@ class_name nivelMario
 @onready var panel = get_node("Escenario/CanvasLayer")
 
 var puzles_resueltos = 1
-var puzle_correcto = 1
+var puzle_correcto = 2
 
 # VARIABLES PUZLE 1
 @onready var interaccionPapiro1 = get_node("Interacciones/InteraccionPapiro1")
@@ -18,20 +18,32 @@ var puzle_correcto = 1
 @onready var interaccionPapiro2 = get_node("Interacciones/InteraccionPapiro2")
 @onready var puzle2 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle2")
 
+# VARIABLES PROBLEMA OJO HORUS
+@onready var interaccionOjoHorus = get_node("Interacciones/InteraccionOjoHorus")
+@onready var panelOjoHorus = get_node("Escenario/CanvasLayer/Panel_Mario/ProblemaOjoHorus")
+@onready var resultadoOjoHorus = get_node("Escenario/CanvasLayer/Panel_Mario/ProblemaOjoHorus/TextoOjoHorus")
+@onready var botonOjoHorus = get_node("Escenario/CanvasLayer/Panel_Mario/ProblemaOjoHorus/BotonOjoHorus")
+
 
 # SEÑALES 
 signal signal_button_pressed
 signal signal_puzle2
+signal signal_problema_ojohorus
 
 # MÉTODOS
 func _ready():
 	if(Save.save_dict["map_number"] < 1):
 		number_changed()
-		Save.save_dict["map"] = "res://Escenas/nivel1_Mario/nivel_mario.tscn"
+		Save.save_dict["map"] = "res://Escenas/nivelMario/nivel_mario.tscn"
 		Save.save_game()
+
 
 func _process(_delta):
 	interacciones()
+	if (Global.dialogue_state == true):
+		player.speed = 0
+	else:
+		player.speed = 100
 
 
 func interacciones():
@@ -56,21 +68,44 @@ func interacciones():
 			panel.hide()
 			puzle2.hide()
 			interaccionPapiro2.hide()
-			puzles_resueltos += 1
 			player.speed = 100
 			player.has_interacted = false
+# MANEJO PROBLEMA OJO HORUS
+	if(interaccionOjoHorus.areaEntered == true and player.has_interacted == true):
+		player.speed = 0
+		panel.show()
+		panelOjoHorus.show()
+		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_ojohorus.dialogue"), "dialogo_ojohorus");
+		
 
 
+# METODOS DE SEÑALES
 func _on_signal_button_puzle1_pressed():
 	if (resultadoPuzle1.get_text() == "2"):
 		puzle_correcto += 1
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_acierto_puzle1.dialogue"), "dialogo_acierto_puzle1");
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_acierto_puzle1.dialogue"), "dialogo_acierto_puzle1");
 	elif (resultadoPuzle1.get_text() != "2"):
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivel1_Mario/dialogo_error_puzle1.dialogue"), "dialogo_error_puzle1");
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_error_puzle1.dialogue"), "dialogo_error_puzle1");
 
 
 func _on_signal_puzle_2():
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_acierto_puzle2.dialogue"), "dialogo_acierto_puzle2");
 	puzle_correcto += 1
+	#if (Global.dialogue_state == false):
+		#puzle_correcto += 1
 
 func number_changed():
 	Save.save_dict["map_number"] = 1
+
+
+func _on_signal_problema_ojohorus():
+	if(resultadoOjoHorus.get_text() == "26'875" or resultadoOjoHorus.get_text() == "26,875"):
+		puzles_resueltos += 1
+		panel.hide()
+		panelOjoHorus.hide()
+		interaccionOjoHorus.hide()
+		player.speed = 100
+		player.has_interacted = false
+	else:
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_error_puzle1.dialogue"), "dialogo_error_puzle1");
+		

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsk1wbsj5m3wd"
-path="res://.godot/imported/fondo_puzle_2.png-36905908029c276cfa1418020d7e8d77.ctex"
+uid="uid://ddsoekph60rw6"
+path="res://.godot/imported/puzle_ojo_horus.png-fad7d6547c1cf7e849dc8236b838c3b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fondo_puzle_2.png"
-dest_files=["res://.godot/imported/fondo_puzle_2.png-36905908029c276cfa1418020d7e8d77.ctex"]
+source_file="res://Assets/puzle_ojo_horus.png"
+dest_files=["res://.godot/imported/puzle_ojo_horus.png-fad7d6547c1cf7e849dc8236b838c3b3.ctex"]
 
 [params]
 

@@ -1,6 +1,8 @@
 ~ dialogo_acierto_puzle1
+set Global.dialogue_state = true
 
 Isis: No está nada mal... Bien hecho.
 Isis: Has conseguido el [b]primer papiro[/b]. Ahora tendrás que encontrar el [b]segundo papiro[/b]. Para ello, deberás buscar allí donde yace un espíritu aventurero, que cautivado por la hermosura de la naturaleza, lo acabó perdiendo todo por culpa de la avaricia.
 
+set Global.dialogue_state = false
 => END

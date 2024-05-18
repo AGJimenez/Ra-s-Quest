@@ -1,0 +1,10 @@
+~ dialogo_ojohorus
+set Global.dialogue_state = true
+
+Isis: Bien, has encontrado el símbolo. Ahora tendrás que responder correctamente al siguiente problema.
+Jack: ¿Esos son Horus y Seth, verdad?
+Isis: Correcto. Aquí aparece representada la pelea que tuvieron Horus y Seth, tal y como te he contado antes. En este caso, Horus cuenta con un escudo que utilizó durante el enfrentamiento.
+Isis: La pregunta es, ¿sabrías calcular el area de este escudo?
+
+set Global.dialogue_state = false
+=> END

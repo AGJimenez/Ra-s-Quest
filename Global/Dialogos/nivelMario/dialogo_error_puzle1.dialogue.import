@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://27vy7d4ddqnc"
+path="res://.godot/imported/dialogo_error_puzle1.dialogue-048a7c6fca6658d9ef2a4fccde0cf3c3.tres"
+
+[deps]
+
+source_file="res://Dialogos/nivelMario/dialogo_error_puzle1.dialogue"
+dest_files=["res://.godot/imported/dialogo_error_puzle1.dialogue-048a7c6fca6658d9ef2a4fccde0cf3c3.tres"]
+
+[params]
+
+defaults=true

@@ -16,4 +16,5 @@ position = Vector2(117, 44)
 position = Vector2(1898, 2047)
 
 [connection signal="signal_button_pressed" from="." to="." method="_on_signal_button_puzle1_pressed"]
+[connection signal="signal_problema_ojohorus" from="." to="." method="_on_signal_problema_ojohorus"]
 [connection signal="signal_puzle2" from="." to="." method="_on_signal_puzle_2"]

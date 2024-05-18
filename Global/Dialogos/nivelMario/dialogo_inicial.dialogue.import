@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bl8ppp8613y0v"
+path="res://.godot/imported/dialogo_inicial.dialogue-f5ca88aca3bd49da80552e6550d6f0bb.tres"
+
+[deps]
+
+source_file="res://Dialogos/nivelMario/dialogo_inicial.dialogue"
+dest_files=["res://.godot/imported/dialogo_inicial.dialogue-f5ca88aca3bd49da80552e6550d6f0bb.tres"]
+
+[params]
+
+defaults=true

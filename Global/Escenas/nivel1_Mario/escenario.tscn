@@ -1985,7 +1985,7 @@ layer_5/z_index = 1
 layer_5/tile_data = PackedInt32Array(3932218, 2555924, 23, 3932219, 2555924, 23, 3932220, 2555924, 23, 3932221, 2555924, 23, 3932222, 2555924, 23, 3932223, 2555924, 23, 6029363, 524304, 12, 6029382, 983056, 12, 4784179, 524304, 15, 4784198, 851984, 11)
 
 [node name="Personaje" parent="TileMap" instance=ExtResource("12_8g7o8")]
-position = Vector2(576, 2536)
+position = Vector2(2260, 2538)
 
 [node name="Camera2D" parent="TileMap/Personaje" instance=ExtResource("13_b773v")]
 limit_right = 3432

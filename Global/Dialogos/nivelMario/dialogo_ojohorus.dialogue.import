@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dddkk0hp3l0np"
+path="res://.godot/imported/dialogo_ojohorus.dialogue-bc96620660d35bc38de96e23b2ed21a1.tres"
+
+[deps]
+
+source_file="res://Dialogos/nivelMario/dialogo_ojohorus.dialogue"
+dest_files=["res://.godot/imported/dialogo_ojohorus.dialogue-bc96620660d35bc38de96e23b2ed21a1.tres"]
+
+[params]
+
+defaults=true

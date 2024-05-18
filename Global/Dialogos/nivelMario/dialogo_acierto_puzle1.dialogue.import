@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://jnj1wr5g28jp"
+path="res://.godot/imported/dialogo_acierto_puzle1.dialogue-dd056d5c4550e48da9884459e458ce54.tres"
+
+[deps]
+
+source_file="res://Dialogos/nivelMario/dialogo_acierto_puzle1.dialogue"
+dest_files=["res://.godot/imported/dialogo_acierto_puzle1.dialogue-dd056d5c4550e48da9884459e458ce54.tres"]
+
+[params]
+
+defaults=true

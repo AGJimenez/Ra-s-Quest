@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d2t3ci67hxp3m" path="res://Assets/puzle_2.png" id="1_7vshc"]
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel_puzle_2.gd" id="1_in07k"]
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_2.gd" id="1_q233h"]
-[ext_resource type="Texture2D" uid="uid://dsk1wbsj5m3wd" path="res://Assets/fondo_puzle_2.png" id="1_tby0r"]
+[ext_resource type="Texture2D" uid="uid://bykah2d03b4sk" path="res://Assets/fondo_puzle2.png" id="2_op155"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k33gs"]
 size = Vector2(240, 240)
@@ -21,7 +21,7 @@ script = ExtResource("1_in07k")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(288, 162)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_tby0r")
+texture = ExtResource("2_op155")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
