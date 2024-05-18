@@ -1,0 +1,5 @@
+~ main
+set Global.dialogue_state = true
+Maat: La lujuria puede ser contrarrestada con la castidad, donde el autocontrol y la pureza restauran el equilibrio.
+set Global.dialogue_state = false
+=> END

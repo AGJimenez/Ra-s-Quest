@@ -1,0 +1,5 @@
+~ main
+set Global.dialogue_state = true
+Maat: La envidia se equilibra con la caridad, donde el amor y la bondad hacia otros reducen el resentimiento.
+set Global.dialogue_state = false
+=> END

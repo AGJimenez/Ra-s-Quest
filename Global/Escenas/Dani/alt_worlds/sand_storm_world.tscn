@@ -7082,6 +7082,16 @@ scale = Vector2(10.1414, 10.1414)
 shape = SubResource("RectangleShape2D_rd7ph")
 
 [connection signal="wind_force" from="." to="TileMap/Personaje" method="_on_sand_storm_world_wind_force"]
+[connection signal="body_entered" from="safe_zones/area_safe2" to="." method="_on_area_safe_2_body_entered"]
+[connection signal="body_exited" from="safe_zones/area_safe2" to="." method="_on_area_safe_2_body_exited"]
+[connection signal="body_entered" from="safe_zones/area_safe3" to="." method="_on_area_safe_3_body_entered"]
+[connection signal="body_exited" from="safe_zones/area_safe3" to="." method="_on_area_safe_3_body_exited"]
+[connection signal="body_entered" from="safe_zones/area_safe4" to="." method="_on_area_safe_4_body_entered"]
+[connection signal="body_exited" from="safe_zones/area_safe4" to="." method="_on_area_safe_4_body_exited"]
+[connection signal="body_entered" from="safe_zones/area_safe5" to="." method="_on_area_safe_5_body_entered"]
+[connection signal="body_exited" from="safe_zones/area_safe5" to="." method="_on_area_safe_5_body_exited"]
+[connection signal="body_entered" from="safe_zones/area_safe6" to="." method="_on_area_safe_6_body_entered"]
+[connection signal="body_exited" from="safe_zones/area_safe6" to="." method="_on_area_safe_6_body_exited"]
 [connection signal="timeout" from="timers/start_sand" to="." method="_on_start_sand_timeout"]
 [connection signal="timeout" from="timers/stop_sand" to="." method="_on_stop_sand_timeout"]
 [connection signal="body_entered" from="area_complete/Area2D" to="." method="_on_area_2d_body_entered"]
