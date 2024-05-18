@@ -2,6 +2,7 @@ extends Node2D
 
 class_name world
 
+var enAreaAltar = false
 var enAreaPlayer = false
 var enAreaPlayerCofre = false
 var paused = false
@@ -82,7 +83,8 @@ func _process(_delta):
 				$altarAnimacion.play("emerger")
 				$altar/CollisionShape2D3.disabled = false
 				animacionAltar = true
-				
+				if enAreaAltar == true and Input.is_action_just_pressed("Interact") && $player/Camera2D/puzzleDioses.visible == false:
+					pass
 
 		if(Global.dialogue_state == true):
 			$player.set_physics_process(false)
@@ -171,10 +173,14 @@ func _on_area_espejo_body_entered(body):
 func _on_area_altar_body_entered(body):
 	if body.name == "player":
 		$altar/Control.visible = true
-
+		enAreaAltar = true
 
 func _on_area_altar_body_exited(body):
 	$altar/Control.visible = false
+<<<<<<< Updated upstream
 
 func number_changed():
 	Save.save_dict["map_number"] = 5
+=======
+	enAreaAltar = false
+>>>>>>> Stashed changes

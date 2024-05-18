@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpr78usfnkoki"]
+
+[ext_resource type="Script" path="res://angulo1.gd" id="1_35vb4"]
+[ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="2_1g0tg"]
+[ext_resource type="Texture2D" uid="uid://bq2q1g4mcsbcb" path="res://Assets/Egyptian_P.png" id="3_0t41k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_havel"]
+atlas = ExtResource("2_1g0tg")
+region = Rect2(31.567, 371.837, 31.7557, 32.6799)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqdai"]
+size = Vector2(20, 22.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt4sm"]
+atlas = ExtResource("3_0t41k")
+region = Rect2(249.784, 223.731, 3.5134, 32.5665)
+
+[node name="angulo1" type="CharacterBody2D"]
+script = ExtResource("1_35vb4")
+
+[node name="Ra" type="Sprite2D" parent="."]
+position = Vector2(8, -2.99999)
+scale = Vector2(0.7, 0.749)
+texture = SubResource("AtlasTexture_havel")
+
+[node name="Button" type="Button" parent="Ra"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.2857
+offset_top = -16.0214
+offset_right = -14.2857
+offset_bottom = -16.0214
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -3.25)
+shape = SubResource("RectangleShape2D_wqdai")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8.5, -1.33936)
+rotation = 1.5708
+scale = Vector2(0.833333, 0.46875)
+texture = SubResource("AtlasTexture_bt4sm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(8.93797, -5.68242)
+rotation = -1.02276
+scale = Vector2(0.833333, 0.509904)
+texture = SubResource("AtlasTexture_bt4sm")
+
+[connection signal="button_down" from="Ra/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Ra/Button" to="." method="_on_button_button_up"]

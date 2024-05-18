@@ -1,0 +1,163 @@
+[gd_scene load_steps=7 format=3 uid="uid://di5otpdw5wae6"]
+
+[ext_resource type="Texture2D" uid="uid://bme8qnjfd5xla" path="res://Assets/altar.png" id="1_2ub8x"]
+[ext_resource type="Script" path="res://Escenas/nivelAle/PuzzleAngulos.gd" id="1_a43u0"]
+[ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="2_jot4a"]
+[ext_resource type="PackedScene" uid="uid://dpr78usfnkoki" path="res://Escenas/nivelAle/angulo_1.tscn" id="3_hcf1o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyfnu"]
+atlas = ExtResource("2_jot4a")
+region = Rect2(255.729, 256.014, 96.2708, 64.282)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcih1"]
+size = Vector2(129, 128)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a43u0")
+metadata/_edit_horizontal_guides_ = [83.0, 302.0]
+metadata/_edit_vertical_guides_ = [106.0, 504.0, 926.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(583, 609)
+scale = Vector2(14.6, 24.46)
+texture = ExtResource("1_2ub8x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(585.5, 251.5)
+scale = Vector2(11.1146, 6.64062)
+texture = SubResource("AtlasTexture_wyfnu")
+
+[node name="angulo1" type="Area2D" parent="."]
+position = Vector2(170, 146)
+scale = Vector2(1.25, 1.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="angulo1"]
+position = Vector2(2, 1)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("RectangleShape2D_fcih1")
+
+[node name="angulo2" type="Area2D" parent="."]
+position = Vector2(567, 148)
+scale = Vector2(1.25, 1.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="angulo2"]
+position = Vector2(2, 1)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("RectangleShape2D_fcih1")
+
+[node name="angulo3" type="Area2D" parent="."]
+position = Vector2(990, 148)
+scale = Vector2(1.25, 1.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="angulo3"]
+position = Vector2(2, 1)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("RectangleShape2D_fcih1")
+
+[node name="angulo4" type="Area2D" parent="."]
+position = Vector2(170, 365)
+scale = Vector2(1.25, 1.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="angulo4"]
+position = Vector2(2, 1)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("RectangleShape2D_fcih1")
+
+[node name="angulo5" type="Area2D" parent="."]
+position = Vector2(568, 366)
+scale = Vector2(1.25, 1.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="angulo5"]
+position = Vector2(2, 1)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("RectangleShape2D_fcih1")
+
+[node name="angulo6" type="Area2D" parent="."]
+position = Vector2(988, 368)
+scale = Vector2(1.25, 1.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="angulo6"]
+position = Vector2(2, 1)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("RectangleShape2D_fcih1")
+
+[node name="angulo7" parent="." instance=ExtResource("3_hcf1o")]
+position = Vector2(314, 163)
+scale = Vector2(5, 5)
+
+[node name="angulo8" parent="." instance=ExtResource("3_hcf1o")]
+position = Vector2(318, 361)
+scale = Vector2(5, 5)
+
+[node name="Sprite2D" parent="angulo8" index="2"]
+position = Vector2(8.75, 1.8191)
+
+[node name="Sprite2D2" parent="angulo8" index="3"]
+position = Vector2(2.44999, -5.04154)
+rotation = 3.14159
+
+[node name="angulo9" parent="." instance=ExtResource("3_hcf1o")]
+position = Vector2(508, 344)
+scale = Vector2(5, 5)
+
+[node name="Sprite2D" parent="angulo9" index="2"]
+position = Vector2(5.31541, -5.10685)
+rotation = 0.00872665
+
+[node name="Sprite2D2" parent="angulo9" index="3"]
+position = Vector2(9.71541, -5.50686)
+rotation = -0.584685
+
+[node name="angulo10" parent="." instance=ExtResource("3_hcf1o")]
+position = Vector2(709, 237)
+scale = Vector2(5, 5)
+
+[node name="Sprite2D" parent="angulo10" index="2"]
+position = Vector2(11.8, -1)
+rotation = 1.7174
+scale = Vector2(0.613, 0.375)
+
+[node name="Sprite2D2" parent="angulo10" index="3"]
+position = Vector2(3.82313, -5.16042)
+rotation = -0.865683
+scale = Vector2(0.613, 0.375)
+
+[node name="angulo11" parent="." instance=ExtResource("3_hcf1o")]
+position = Vector2(729, 387)
+scale = Vector2(5, 5)
+
+[node name="Sprite2D" parent="angulo11" index="2"]
+rotation = 1.86227
+
+[node name="Sprite2D2" parent="angulo11" index="3"]
+position = Vector2(9.99999, -5)
+rotation = -0.731293
+
+[node name="angulo12" parent="." instance=ExtResource("3_hcf1o")]
+position = Vector2(856, 220)
+scale = Vector2(5, 5)
+
+[node name="Sprite2D" parent="angulo12" index="2"]
+position = Vector2(11.4, -2)
+rotation = 0.410152
+scale = Vector2(0.633, 0.388)
+
+[node name="Sprite2D2" parent="angulo12" index="3"]
+position = Vector2(8.99354, -9.55513)
+scale = Vector2(0.633, 0.388)
+
+[connection signal="body_entered" from="angulo3" to="." method="_on_angulo_3_body_entered"]
+[connection signal="body_entered" from="angulo6" to="." method="_on_angulo_6_body_entered"]
+
+[editable path="angulo7"]
+[editable path="angulo8"]
+[editable path="angulo9"]
+[editable path="angulo10"]
+[editable path="angulo11"]
+[editable path="angulo12"]

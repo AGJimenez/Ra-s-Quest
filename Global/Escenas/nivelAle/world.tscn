@@ -23663,9 +23663,6 @@ default_color = Color(1, 1, 1, 0)
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-1, -143)
 
-[node name="CollisionShape2D3" parent="altar" index="3"]
-visible = true
-
 [node name="areaAltar" type="Area2D" parent="altar"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="altar/areaAltar"]
