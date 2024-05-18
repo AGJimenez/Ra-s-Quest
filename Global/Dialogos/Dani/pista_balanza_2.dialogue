@@ -1,0 +1,5 @@
+~ main
+set Global.dialogue_state = true
+Maat: La soberbia se contrarresta con la humildad, donde la modestia y la autoconciencia restauran el equilibrio.
+set Global.dialogue_state = false
+=> END

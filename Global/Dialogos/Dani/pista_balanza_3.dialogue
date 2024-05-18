@@ -1,0 +1,5 @@
+~ main
+set Global.dialogue_state = true
+Maat: La pereza se equilibra con la diligencia, fomentando el esfuerzo y la dedicación.
+set Global.dialogue_state = false
+=> END

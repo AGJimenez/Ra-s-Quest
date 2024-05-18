@@ -1,0 +1,13 @@
+~ main
+set Global.dialogue_state = true
+Jack: ¿Cómo?, ¿Dónde estoy?
+Maat: Bienvenido Jack, a tu última prueba, donde veré si eres digno de pasar. Al final, de este desierto, hay una balanza la cuál tienes que equilibrar, si consigues hacerlo, te dejaré ir, sino lo consigues, bueno, ya te lo imaginas.
+- Quejarte
+	Jack: ¡Pero no habíamos quedado en eso, es injusto! He superado los retos que me habéis puesto.
+	Maat: Tranquilo Jack, has superado los retos que Anubis te había propuesto, pero falto yo. Suerte Jack, y por cierto, ¿Sabías que la ira es uno de los siete pecados capitales? Es mejor que tengas paciencia para este reto. De nuevo, te deseo suerte.
+- Aceptar reto
+	Jack: He superado anteriormente los retos que me habéis puesto, ¡por uno más no pasará nada!
+	Maat: Asi me gusta Jack, por cierto, espero que sepas lo que son los pecados capitales, te vendrá bien para esta prueba... Suerte Jack.
+set Global.dialogue_state = false
+
+=> END

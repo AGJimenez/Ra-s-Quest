@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://8vfwl2jawdlx"
+path="res://.godot/imported/pista_balanza_4.dialogue-91183f64f6a24385ebe95e9d5566e3a6.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dani/pista_balanza_4.dialogue"
+dest_files=["res://.godot/imported/pista_balanza_4.dialogue-91183f64f6a24385ebe95e9d5566e3a6.tres"]
+
+[params]
+
+defaults=true

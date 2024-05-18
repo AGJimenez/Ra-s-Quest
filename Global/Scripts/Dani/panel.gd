@@ -1,6 +1,6 @@
 extends Panel
 
-var numeroDePanelesSuperados=0
+var numeroDePanelesSuperados=12
 signal panel_interaction_success
 var ultima_Area=null
 var speedPlayer = 100
@@ -165,7 +165,7 @@ func comprobarDatos():
 				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_incorrecta.dialogue"),"main")
 		12:
 			if (textoLabel3=="0" && texto2Label3=="7" && texto3Label3=="-7")||(textoLabel3=="0" && texto2Label3=="-7" && texto3Label3=="7")||(textoLabel3=="7" && texto2Label3=="0" && texto3Label3=="-7")||(textoLabel3=="7" && texto2Label3=="-7" && texto3Label3=="0")||(textoLabel3=="-7" && texto2Label3=="7" && texto3Label3=="0")||(textoLabel3=="-7" && texto2Label3=="0" && texto3Label3=="7"):
-				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta_correcta.dialogue"),"main")
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Go_To_FinalPuzzle.dialogue"),"main")
 				$"Panel/Ecuacion 13".hide()
 				hide()
 				numeroDePanelesSuperados=numeroDePanelesSuperados+1

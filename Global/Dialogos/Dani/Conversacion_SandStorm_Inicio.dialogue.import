@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://scddj1dvifga"
+path="res://.godot/imported/Conversacion_SandStorm_Inicio.dialogue-a8c4882a982f1f789b2bd94b89e0dd9a.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dani/Conversacion_SandStorm_Inicio.dialogue"
+dest_files=["res://.godot/imported/Conversacion_SandStorm_Inicio.dialogue-a8c4882a982f1f789b2bd94b89e0dd9a.tres"]
+
+[params]
+
+defaults=true
