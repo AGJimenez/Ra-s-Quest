@@ -177,10 +177,7 @@ func _on_area_altar_body_entered(body):
 
 func _on_area_altar_body_exited(body):
 	$altar/Control.visible = false
-<<<<<<< Updated upstream
 
 func number_changed():
 	Save.save_dict["map_number"] = 5
-=======
 	enAreaAltar = false
->>>>>>> Stashed changes

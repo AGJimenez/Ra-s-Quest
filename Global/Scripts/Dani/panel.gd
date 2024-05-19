@@ -1,6 +1,6 @@
 extends Panel
 
-var numeroDePanelesSuperados=12
+var numeroDePanelesSuperados=0
 signal panel_interaction_success
 var ultima_Area=null
 var speedPlayer = 100

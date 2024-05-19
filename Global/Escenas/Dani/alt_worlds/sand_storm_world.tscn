@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cy88lby5jtg7c"]
+[gd_scene load_steps=34 format=3 uid="uid://cy88lby5jtg7c"]
 
 [ext_resource type="Texture2D" uid="uid://qydlg5bd87sl" path="res://Assets/Egyptian_B.png" id="1_8m402"]
 [ext_resource type="Script" path="res://Escenas/Dani/alt_worlds/sand_storm_world.gd" id="1_gyfxk"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://byt7r8b5igd5p" path="res://Personaje/Luis/particulas/sand_storm_particle.tscn" id="7_cyxe5"]
 [ext_resource type="Texture2D" uid="uid://kn8h52tm3odn" path="res://Personaje/Luis/particulas/shader/WaterNoise1.tres" id="8_xsuc1"]
 [ext_resource type="PackedScene" uid="uid://b1r8jc0uuy3sb" path="res://Personaje/Luis/particulas/sand_storm_activated.tscn" id="10_6uddr"]
+[ext_resource type="PackedScene" uid="uid://b6l5pvj27ya1a" path="res://Escenas/Dani/Ultimo_Puzzle.tscn" id="11_1ynps"]
 [ext_resource type="PackedScene" uid="uid://ba2q0ayvoalrm" path="res://Escenas/Dani/objectives/objective_sand_world.tscn" id="14_qv743"]
 
 [sub_resource type="Animation" id="Animation_m0cui"]
@@ -6888,6 +6889,9 @@ size = Vector2(33, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4anf"]
 size = Vector2(34, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5oa1n"]
+size = Vector2(48, 68)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rd7ph"]
 size = Vector2(21.9313, 20)
 
@@ -6958,7 +6962,7 @@ metadata/_edit_lock_ = true
 
 [node name="Personaje" parent="TileMap" instance=ExtResource("5_6meiw")]
 y_sort_enabled = true
-position = Vector2(1044, 293)
+position = Vector2(1044, 292)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Personaje"]
 zoom = Vector2(1.5, 1.5)
@@ -6966,6 +6970,11 @@ limit_left = 0
 limit_top = 0
 limit_right = 1152
 limit_bottom = 642
+
+[node name="CanvasLayer" type="CanvasLayer" parent="TileMap/Personaje/Camera2D"]
+visible = false
+
+[node name="Control" parent="TileMap/Personaje/Camera2D/CanvasLayer" instance=ExtResource("11_1ynps")]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.25
@@ -7070,13 +7079,19 @@ y_sort_enabled = true
 [node name="objective_sand_world" parent="objective" instance=ExtResource("14_qv743")]
 position = Vector2(207, 353)
 
+[node name="Area2D_Balanza" type="Area2D" parent="objective/objective_sand_world"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="objective/objective_sand_world/Area2D_Balanza"]
+position = Vector2(1, 10)
+shape = SubResource("RectangleShape2D_5oa1n")
+
 [node name="area_complete" type="Node2D" parent="."]
 position = Vector2(202, 352)
 
 [node name="Area2D" type="Area2D" parent="area_complete"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="area_complete/Area2D"]
-position = Vector2(9.7932, 0)
+position = Vector2(10, -4.70214e-14)
 rotation = 3.14159
 scale = Vector2(10.1414, 10.1414)
 shape = SubResource("RectangleShape2D_rd7ph")
@@ -7094,4 +7109,6 @@ shape = SubResource("RectangleShape2D_rd7ph")
 [connection signal="body_exited" from="safe_zones/area_safe6" to="." method="_on_area_safe_6_body_exited"]
 [connection signal="timeout" from="timers/start_sand" to="." method="_on_start_sand_timeout"]
 [connection signal="timeout" from="timers/stop_sand" to="." method="_on_stop_sand_timeout"]
+[connection signal="body_entered" from="objective/objective_sand_world/Area2D_Balanza" to="." method="_on_area_2d_balanza_body_entered"]
+[connection signal="body_exited" from="objective/objective_sand_world/Area2D_Balanza" to="." method="_on_area_2d_balanza_body_exited"]
 [connection signal="body_entered" from="area_complete/Area2D" to="." method="_on_area_2d_body_entered"]

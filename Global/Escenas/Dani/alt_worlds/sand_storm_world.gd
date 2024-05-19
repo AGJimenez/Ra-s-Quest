@@ -5,6 +5,7 @@ signal wind_force(vector: Vector2, wind: bool)
 @onready var sand_storm_complete: bool = false
 @onready var wind_force_vector: Vector2 = Vector2(160,0)
 var zona_safe = 0
+var isBalanzaPuzzleVisible = false
 
 func _ready():
 	$timers/stop_sand.start(3.25)
@@ -25,6 +26,9 @@ func _process(_delta):
 			else:
 				wind_force_vector = Vector2(160,0)
 				emit_signal("wind_force", wind_force_vector, true)
+	
+	if Input.is_action_just_pressed("Interact"):
+		$TileMap/Personaje/Camera2D/CanvasLayer.visible = isBalanzaPuzzleVisible
 
 func _on_start_sand_timeout():
 	$particles/sand_storm_activated.emitting = false
@@ -52,6 +56,8 @@ func _on_area_2d_body_entered(body):
 			$timers/stop_sand.queue_free()
 			sand_storm_complete = true
 			emit_signal("wind_force", wind_force_vector, false)
+		if Input.is_action_just_pressed("Interact"):
+			$TileMap/Personaje/Camera2D/CanvasLayer/Control.visible = true
 
 
 func dialogos():
@@ -106,3 +112,13 @@ func _on_area_safe_6_body_entered(body):
 
 func _on_area_safe_6_body_exited(body):
 	zona_safe = 0
+
+
+func _on_area_2d_balanza_body_entered(body):
+	if(body.is_in_group("Player")):
+		isBalanzaPuzzleVisible = true
+
+
+func _on_area_2d_balanza_body_exited(body):
+	if(body.is_in_group("Player")):
+		isBalanzaPuzzleVisible = false
