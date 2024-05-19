@@ -1,0 +1,320 @@
+[gd_scene load_steps=17 format=3 uid="uid://b6l5pvj27ya1a"]
+
+[ext_resource type="Texture2D" path="res://Assets/_60d5f404-1cf2-4d45-beb9-7a91c1223f18.png" id="1_gop7x"]
+[ext_resource type="Texture2D" uid="uid://cdw7a7mqktdou" path="res://Assets/balanza_de_Maat.png" id="2_2susg"]
+[ext_resource type="Texture2D" uid="uid://csqxr254gi6mi" path="res://Assets/pesa_egipcia.png" id="3_hxp6m"]
+[ext_resource type="Script" path="res://Scripts/Dani/Envidia.gd" id="3_q8yrt"]
+[ext_resource type="Script" path="res://Scripts/Dani/Lujuria.gd" id="5_i7q0v"]
+[ext_resource type="Script" path="res://Scripts/Dani/Soberbia.gd" id="6_rdvru"]
+[ext_resource type="Script" path="res://Scripts/Dani/Avaricia.gd" id="7_i2nss"]
+[ext_resource type="Script" path="res://Scripts/Dani/Pereza.gd" id="8_1ktq8"]
+[ext_resource type="Script" path="res://Scripts/Dani/Esfuerzo.gd" id="9_lkg2t"]
+[ext_resource type="Script" path="res://Scripts/Dani/Altruismo.gd" id="10_vici2"]
+[ext_resource type="Script" path="res://Scripts/Dani/Humildad.gd" id="11_jbnqu"]
+[ext_resource type="Script" path="res://Scripts/Dani/Pureza.gd" id="12_uxjhc"]
+[ext_resource type="Script" path="res://Scripts/Dani/Caridad.gd" id="13_3h3c1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yxka"]
+atlas = ExtResource("1_gop7x")
+region = Rect2(20, 24, 48, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71lmb"]
+size = Vector2(72.1633, 55.7792)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3ilh"]
+size = Vector2(20, 67)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -170.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 465.0
+offset_right = 1152.0
+offset_bottom = 641.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(52, 596)
+scale = Vector2(0.0912888, 0.09375)
+texture = SubResource("AtlasTexture_7yxka")
+
+[node name="BalanzaDeMaat" type="Sprite2D" parent="."]
+position = Vector2(575.5, 231)
+scale = Vector2(2.55778, 1.02667)
+texture = ExtResource("2_2susg")
+
+[node name="Balanza_Izquierda" type="Area2D" parent="BalanzaDeMaat"]
+position = Vector2(-123.349, 31.1688)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BalanzaDeMaat/Balanza_Izquierda"]
+position = Vector2(-0.781914, 1.94806)
+shape = SubResource("RectangleShape2D_71lmb")
+
+[node name="Balanza_Derecha" type="Area2D" parent="BalanzaDeMaat"]
+position = Vector2(144.07, 28.2468)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BalanzaDeMaat/Balanza_Derecha"]
+position = Vector2(1.56384, 0.974028)
+shape = SubResource("RectangleShape2D_71lmb")
+
+[node name="Envidia" type="CharacterBody2D" parent="."]
+position = Vector2(75, 536)
+script = ExtResource("3_q8yrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Envidia"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Envidia"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Envidia/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Lujuria" type="CharacterBody2D" parent="."]
+position = Vector2(190, 536)
+script = ExtResource("5_i7q0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lujuria"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lujuria"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Lujuria/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label_Envidia" type="Label" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 583.0
+offset_right = 101.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Envidia"
+
+[node name="Label_Lujuria" type="Label" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 583.0
+offset_right = 216.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Lujuria"
+
+[node name="Soberbia" type="CharacterBody2D" parent="."]
+position = Vector2(305, 536)
+script = ExtResource("6_rdvru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Soberbia"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Soberbia"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Soberbia/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Avaricia" type="CharacterBody2D" parent="."]
+position = Vector2(420, 536)
+script = ExtResource("7_i2nss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Avaricia"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Avaricia"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Avaricia/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label_Soberbia" type="Label" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 583.0
+offset_right = 336.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Soberbia"
+
+[node name="Label_Avaricia" type="Label" parent="."]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 583.0
+offset_right = 447.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Avaricia
+"
+
+[node name="Pereza" type="CharacterBody2D" parent="."]
+position = Vector2(535, 536)
+script = ExtResource("8_1ktq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pereza"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pereza"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Pereza/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Esfuerzo" type="CharacterBody2D" parent="."]
+position = Vector2(650, 536)
+script = ExtResource("9_lkg2t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Esfuerzo"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Esfuerzo"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Esfuerzo/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label_Pereza" type="Label" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 583.0
+offset_right = 561.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Pereza
+"
+
+[node name="Label_Esfuerzo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 583.0
+offset_right = 677.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Esfuerzo"
+
+[node name="Altruismo" type="CharacterBody2D" parent="."]
+position = Vector2(765, 536)
+script = ExtResource("10_vici2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Altruismo"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Altruismo"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Altruismo/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Humildad" type="CharacterBody2D" parent="."]
+position = Vector2(880, 536)
+script = ExtResource("11_jbnqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Humildad"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Humildad"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Humildad/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label_Altruismo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 583.0
+offset_right = 796.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Altruismo"
+horizontal_alignment = 1
+
+[node name="Label_Humildad" type="Label" parent="."]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 583.0
+offset_right = 916.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Humildad"
+
+[node name="Pureza" type="CharacterBody2D" parent="."]
+position = Vector2(995, 536)
+script = ExtResource("12_uxjhc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pureza"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pureza"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Pureza/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label_Pureza" type="Label" parent="."]
+layout_mode = 0
+offset_left = 965.0
+offset_top = 583.0
+offset_right = 1019.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Pureza"
+horizontal_alignment = 1
+
+[node name="Caridad" type="CharacterBody2D" parent="."]
+position = Vector2(1105, 536)
+script = ExtResource("13_3h3c1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caridad"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_r3ilh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Caridad"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_hxp6m")
+
+[node name="Button" type="Button" parent="Caridad/Sprite2D"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label_Caridad" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1070.0
+offset_top = 583.0
+offset_right = 1131.0
+offset_bottom = 606.0
+scale = Vector2(1.15, 1.15)
+text = "Caridad
+"
+horizontal_alignment = 1

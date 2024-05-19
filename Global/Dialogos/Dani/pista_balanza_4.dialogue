@@ -1,5 +1,5 @@
 ~ main
 set Global.dialogue_state = true
-Maat: La avaricia es contrarrestada por la generosidad, donde compartir y dar a los demás equilibra la codicia.
+Maat: La avaricia es contrarrestada por la generosidad y el altruismo, donde compartir y dar a los demás equilibra la codicia.
 set Global.dialogue_state = false
 => END
