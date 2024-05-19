@@ -1,0 +1,5 @@
+~ main
+set Global.dialogue_state = true
+Maat: Impresionante Jack, no tengo palabras. Ahora mismo te llevo de nuevo a la sala, y ahora si podrás pasar a la siguiente, solo tendrás qur buscar la puerta en el laberinto. Suerte en tu camino Jack.
+set Global.dialogue_state = false
+=> END

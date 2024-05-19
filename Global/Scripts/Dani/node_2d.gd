@@ -210,7 +210,7 @@ func _on_area_cofres_vertical_9_body_exited(body):
 
 func _on_balanza_maat_body_entered(body):
 	if(body.is_in_group("Personaje")):
-		if(panel.numeroDePanelesSuperados >= 4):
+		if(panel.numeroDePanelesSuperados >= 12):
 			on_area_balanza=true
 			Global.change = "node_2d-sand_storm_world"
 			LoadManager.load_scene("res://Escenas/Dani/alt_worlds/sand_storm_world.tscn")

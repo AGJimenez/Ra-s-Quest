@@ -53,7 +53,7 @@ func correctPlacement():
 			
 			if isBalanzaDerCorrect && isBalanzaIzqCorrect:
 				isSolucionCorrect = true
-				print("PUZZLE COMPLETADO")
+				emit_signal("resultadoCorrecto")
 
 func _on_balanza_izquierda_body_entered(body):
 	if body.name == "Envidia":

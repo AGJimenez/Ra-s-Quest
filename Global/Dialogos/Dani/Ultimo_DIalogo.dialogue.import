@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://igh8w0pq8lav"
+path="res://.godot/imported/Ultimo_DIalogo.dialogue-47de680b7ee70c94ce684af6c6b52663.tres"
+
+[deps]
+
+source_file="res://Dialogos/Dani/Ultimo_DIalogo.dialogue"
+dest_files=["res://.godot/imported/Ultimo_DIalogo.dialogue-47de680b7ee70c94ce684af6c6b52663.tres"]
+
+[params]
+
+defaults=true

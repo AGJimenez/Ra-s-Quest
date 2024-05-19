@@ -9,6 +9,8 @@ var isBalanzaPuzzleVisible = false
 
 func _ready():
 	$timers/stop_sand.start(3.25)
+	$timers/start_transition.wait_time = 10.0
+	$timers/start_transition.one_shot = true
 	if(Global.change == "node_2d-sand_storm_world"):
 		$TileMap/Personaje.global_position = $"spawn_point/node_2d-sand_storm_world".global_position
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Conversacion_SandStorm_Inicio.dialogue"),"main")
@@ -122,3 +124,14 @@ func _on_area_2d_balanza_body_entered(body):
 func _on_area_2d_balanza_body_exited(body):
 	if(body.is_in_group("Player")):
 		isBalanzaPuzzleVisible = false
+
+
+func _on_control_resultado_correcto():
+	$TileMap/Personaje/Camera2D/CanvasLayer.visible = false
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Ultimo_DIalogo.dialogue"),"main")
+	$timers/start_transition.start()
+
+
+func _on_start_transition_timeout():
+	Global.change = "sand_storm_world-node_2d"
+	LoadManager.load_scene("res://Escenas/Dani/node_2d.tscn")
