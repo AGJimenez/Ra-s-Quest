@@ -35,8 +35,8 @@ func shuffle_tiles():
 	for t in range (0, 1000):
 		var tile = randi() % 9
 		if (piezas[tile] != $Pieza7 and tile != previous and tile != previous_1):
-			var rows = int(piezas[tile].position.y / 128)
-			var cols = int(piezas[tile].position.x / 128)
+			var rows = int(piezas[tile].position.y / 80)
+			var cols = int(piezas[tile].position.x / 80)
 			check_blank_space(rows, cols)
 			previous_1 = previous
 			previous_1 = tile

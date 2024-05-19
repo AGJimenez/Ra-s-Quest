@@ -1,0 +1,8 @@
+~ dialogo_puzle3
+set Global.dialogue_state = true
+
+Isis: ¡Correcto! Acabas de conseguir el [b]segundo papiro[/b]. Estás a mitad de camino para salir de esta sala.
+Isis: 
+
+set Global.dialogue_state = false
+=> END
