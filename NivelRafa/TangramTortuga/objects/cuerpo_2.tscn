@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mu8hxi1e4mv6"]
+
+[ext_resource type="Material" uid="uid://c4tsuvqotxjd1" path="res://materials/rosa_claro.tres" id="1_yek26"]
+[ext_resource type="Script" path="res://objects/move_and_place.gd" id="2_qua38"]
+
+[node name="cuerpo2" type="CSGPolygon3D"]
+transform = Transform3D(2.9, 0, 0, 0, -1.26763e-07, 2.9, 0, -2.9, -1.26763e-07, 0, 0, 0)
+polygon = PackedVector2Array(0, 1, 1.5, 0, 3, 1)
+material = ExtResource("1_yek26")
+script = ExtResource("2_qua38")
+starting_material = ExtResource("1_yek26")

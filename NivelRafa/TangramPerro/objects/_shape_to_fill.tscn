@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://chrceqaijdbfm"]
+
+[ext_resource type="Script" path="res://objects/_shape_to_fill.gd" id="1_iuc3n"]
+[ext_resource type="Material" uid="uid://bhkiveda5ysgd" path="res://materials/green.tres" id="1_p2o6o"]
+
+[node name="_shapeToFill" type="CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+material = ExtResource("1_p2o6o")
+script = ExtResource("1_iuc3n")
+
+[node name="cuerpoIzq" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-0.833886, -0.551937, 0, 0.551937, -0.833886, 0, 0, 0, 1, 2.36, 1.845, 0)
+polygon = PackedVector2Array(0, 1, 1.5, 2, 2.5, 0.5)
+material = ExtResource("1_p2o6o")
+
+[node name="cuerpoDer" type="CSGPolygon3D" parent="."]
+transform = Transform3D(0.832737, 0.553668, 2.42016e-08, -0.553668, 0.832737, -7.31126e-09, -2.42016e-08, -7.31128e-09, 1, 0.47, 0.97, 0)
+polygon = PackedVector2Array(0, 1, 1.5, 2, 2.5, 0.5)
+material = ExtResource("1_p2o6o")
+
+[node name="piernaDer" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.315, 0, 0)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 0.5, 0)
+material = ExtResource("1_p2o6o")
+
+[node name="cabeza" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 2.11758e-22, 1, -2.02, 2.86, 0)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2)
+material = ExtResource("1_p2o6o")
+
+[node name="cola" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 2.11758e-22, 1, 2.82, 2.31, 0)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 0.5, 0)
+material = ExtResource("1_p2o6o")
+
+[node name="oreja" type="CSGPolygon3D" parent="."]
+transform = Transform3D(3.27835e-08, -0.75, -6.55671e-08, -0.75, -3.27835e-08, 0, 0, 6.55671e-08, -0.75, -0.02, 3.35, -0.75)
+polygon = PackedVector2Array(0.719469, -0.0122364, -0.976679, 1.71188, 0.235539, 1.71611, 1.96494, -0.0103362)
+material = ExtResource("1_p2o6o")

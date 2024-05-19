@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvtikik3hw6qh"]
+
+[ext_resource type="Material" uid="uid://dsq6tfa13jd6u" path="res://materials/prueba_2.tres" id="1_tufym"]
+[ext_resource type="Script" path="res://objects/move_and_place.gd" id="2_3pgex"]
+
+[node name="Pieza_Larga" type="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+size = Vector3(6, 1, 1)
+material = ExtResource("1_tufym")
+script = ExtResource("2_3pgex")
+starting_material = ExtResource("1_tufym")
