@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://irpot6b873ed"]
+[gd_scene load_steps=24 format=3 uid="uid://irpot6b873ed"]
 
 [ext_resource type="Script" path="res://Scripts/Dani/panel.gd" id="1_jheh2"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="1_nqopo"]
@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="8_alead"]
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="9_ac4bt"]
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="10_85752"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ljno"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebbf6"]
 texture = ExtResource("1_nqopo")
@@ -381,6 +384,7 @@ offset_left = 1.0
 offset_top = 288.0
 offset_right = 672.0
 offset_bottom = 404.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ljno")
 
 [node name="Ecuacion 1" type="TileMap" parent="Panel"]
 visible = false
@@ -448,7 +452,7 @@ text = "¿Qué valor tiene la cabeza de Anubis?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextEdit" type="TextEdit" parent="Panel/Label"]
+[node name="TextEdit" type="LineEdit" parent="Panel/Label"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -458,8 +462,10 @@ anchor_right = 0.123
 anchor_bottom = 0.512
 offset_left = 412.157
 offset_top = -15.472
-offset_right = 495.157
+offset_right = 500.157
 offset_bottom = 15.528
+placeholder_text = "Valor"
+max_length = 2
 
 [node name="Button" type="Button" parent="Panel/Label"]
 texture_filter = 1
@@ -516,7 +522,7 @@ text = "¿Qué dos valores tiene la cabeza de Anubis?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextEdit" type="TextEdit" parent="Panel/Label2"]
+[node name="TextEdit" type="LineEdit" parent="Panel/Label2"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -528,6 +534,8 @@ offset_left = 445.157
 offset_top = 10.528
 offset_right = 528.157
 offset_bottom = 41.528
+placeholder_text = "Valor"
+max_length = 3
 
 [node name="Button2" type="Button" parent="Panel/Label2"]
 texture_filter = 1
@@ -539,7 +547,7 @@ offset_bottom = 90.0
 theme_override_font_sizes/font_size = 10
 text = "Responder"
 
-[node name="TextEdit2" type="TextEdit" parent="Panel/Label2"]
+[node name="TextEdit2" type="LineEdit" parent="Panel/Label2"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -551,6 +559,8 @@ offset_left = 446.157
 offset_top = -35.472
 offset_right = 529.157
 offset_bottom = -4.472
+placeholder_text = "Valor"
+max_length = 3
 
 [node name="Ecuacion 9" type="TileMap" parent="Panel"]
 visible = false
@@ -608,7 +618,7 @@ text = "¿Qué tres valores tiene la cabeza de Anubis?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextEdit" type="TextEdit" parent="Panel/Label3"]
+[node name="TextEdit" type="LineEdit" parent="Panel/Label3"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -620,6 +630,8 @@ offset_left = 446.157
 offset_top = 19.528
 offset_right = 529.157
 offset_bottom = 50.528
+placeholder_text = "Valor"
+max_length = 3
 
 [node name="Button3" type="Button" parent="Panel/Label3"]
 texture_filter = 1
@@ -631,7 +643,7 @@ offset_bottom = 90.0
 theme_override_font_sizes/font_size = 10
 text = "Responder"
 
-[node name="TextEdit2" type="TextEdit" parent="Panel/Label3"]
+[node name="TextEdit2" type="LineEdit" parent="Panel/Label3"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -643,8 +655,10 @@ offset_left = 446.157
 offset_top = -56.472
 offset_right = 529.157
 offset_bottom = -25.472
+placeholder_text = "Valor"
+max_length = 3
 
-[node name="TextEdit3" type="TextEdit" parent="Panel/Label3"]
+[node name="TextEdit3" type="LineEdit" parent="Panel/Label3"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -656,6 +670,8 @@ offset_left = 446.157
 offset_top = -16.472
 offset_right = 529.157
 offset_bottom = 14.528
+placeholder_text = "Valor"
+max_length = 3
 
 [node name="Ecuacion 13" type="TileMap" parent="Panel"]
 visible = false
