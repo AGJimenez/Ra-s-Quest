@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b4dkhcluoery2"]
+[gd_scene load_steps=22 format=3 uid="uid://b4dkhcluoery2"]
 
 [ext_resource type="Texture2D" uid="uid://lj7pwy4d4qm" path="res://Assets/Egyptian_A2.png" id="1_1hg7q"]
 [ext_resource type="Texture2D" uid="uid://mcdh6texv4dp" path="res://Assets/Egyptian_A4.png" id="1_88slb"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bp1ini6hjy1l4" path="res://Assets/non-rm-a2-square.png" id="8_q2sdd"]
 [ext_resource type="PackedScene" uid="uid://ccj43t50j36f6" path="res://ColisionCircular.tscn" id="10_nwcwn"]
 [ext_resource type="PackedScene" uid="uid://di3fwm40tyjg1" path="res://Interaction/InteractionArea/interaction_area.tscn" id="11_xi467"]
+[ext_resource type="PackedScene" uid="uid://drxin6ommjpqs" path="res://objects/main_scene.tscn" id="12_5lbj5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abrps"]
 texture = ExtResource("1_88slb")
@@ -3736,5 +3737,11 @@ position = Vector2(1277, -542)
 [node name="CollisionShape2D55" parent="Colisiones Objetos" instance=ExtResource("10_nwcwn")]
 position = Vector2(1282, -542)
 
-[node name="prueba" parent="." instance=ExtResource("11_xi467")]
-position = Vector2(81, -23)
+[node name="InteractionArea" parent="." instance=ExtResource("11_xi467")]
+position = Vector2(84, -16)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Node3D" type="Node3D" parent="SubViewport"]
+
+[node name="main_scene" parent="SubViewport/Node3D" instance=ExtResource("12_5lbj5")]

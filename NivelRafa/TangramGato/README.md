@@ -1,1 +1,0 @@
-This is a 3d puzzle game made in Godot. I made the tutorial for it here: https://youtu.be/dTygltE7yJg

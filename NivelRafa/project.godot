@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 LoadManager="*res://load_manager.gd"
 InteractionManager="*res://Interaction/InteractionArea/InteractionManager.tscn"
+Globals="*res://objects/globals.gd"
 
 [input]
 

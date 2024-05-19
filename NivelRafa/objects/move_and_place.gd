@@ -1,8 +1,8 @@
-extends CSGPrimitive3D
+extends CSGBox3D
 
 class_name MovingPiece
 
-var shape_to_fill:  CSGPrimitive3D
+var shape_to_fill: CSGBox3D
 var is_currently_selected = false
 @export var starting_material: Material
 var material_to_use
@@ -17,13 +17,13 @@ func _input(event: InputEvent) -> void:
 	if not is_currently_selected:
 		return
 	
-	if event.is_action_pressed("move_left"):
+	if event.is_action_pressed("Left"):
 		self.position.x -= 1
-	elif event.is_action_pressed("move_right"):
+	elif event.is_action_pressed("Right"):
 		self.position.x += 1
-	elif event.is_action_pressed("move_away"):
+	elif event.is_action_pressed("Up"):
 		self.position.z -= 1
-	elif event.is_action_pressed("move_closer"):
+	elif event.is_action_pressed("Down"):
 		self.position.z += 1
 		
 	if event.is_action_pressed("restart"):
