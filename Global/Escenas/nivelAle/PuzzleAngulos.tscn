@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://di5otpdw5wae6"]
+[gd_scene load_steps=8 format=3 uid="uid://di5otpdw5wae6"]
 
 [ext_resource type="Texture2D" uid="uid://bme8qnjfd5xla" path="res://Assets/altar.png" id="1_2ub8x"]
 [ext_resource type="Script" path="res://Escenas/nivelAle/PuzzleAngulos.gd" id="1_a43u0"]
@@ -8,6 +8,10 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_wyfnu"]
 atlas = ExtResource("2_jot4a")
 region = Rect2(255.729, 256.014, 96.2708, 64.282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6gs8"]
+atlas = ExtResource("2_jot4a")
+region = Rect2(255.927, 191.882, 95.7568, 65.354)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcih1"]
 size = Vector2(129, 128)
@@ -32,6 +36,36 @@ texture = ExtResource("1_2ub8x")
 position = Vector2(585.5, 251.5)
 scale = Vector2(11.1146, 6.64062)
 texture = SubResource("AtlasTexture_wyfnu")
+
+[node name="base" type="Sprite2D" parent="."]
+position = Vector2(181.25, 149.75)
+scale = Vector2(1.59474, 2.37692)
+texture = SubResource("AtlasTexture_n6gs8")
+
+[node name="base3" type="Sprite2D" parent="."]
+position = Vector2(576, 151)
+scale = Vector2(1.59474, 2.37692)
+texture = SubResource("AtlasTexture_n6gs8")
+
+[node name="base4" type="Sprite2D" parent="."]
+position = Vector2(1004, 151)
+scale = Vector2(1.59474, 2.37692)
+texture = SubResource("AtlasTexture_n6gs8")
+
+[node name="base5" type="Sprite2D" parent="."]
+position = Vector2(174, 368)
+scale = Vector2(1.59474, 2.37692)
+texture = SubResource("AtlasTexture_n6gs8")
+
+[node name="base6" type="Sprite2D" parent="."]
+position = Vector2(580, 360)
+scale = Vector2(1.59474, 2.37692)
+texture = SubResource("AtlasTexture_n6gs8")
+
+[node name="base2" type="Sprite2D" parent="."]
+position = Vector2(992, 365)
+scale = Vector2(1.59474, 2.37692)
+texture = SubResource("AtlasTexture_n6gs8")
 
 [node name="angulo1" type="Area2D" parent="."]
 position = Vector2(170, 146)
@@ -88,11 +122,11 @@ scale = Vector2(1.25, 1.25)
 shape = SubResource("RectangleShape2D_fcih1")
 
 [node name="angulo7" parent="." instance=ExtResource("3_hcf1o")]
-position = Vector2(314, 163)
+position = Vector2(339, 333)
 scale = Vector2(5, 5)
 
 [node name="angulo8" parent="." instance=ExtResource("3_hcf1o")]
-position = Vector2(318, 361)
+position = Vector2(307, 145)
 scale = Vector2(5, 5)
 
 [node name="Sprite2D" parent="angulo8" index="2"]
@@ -103,7 +137,7 @@ position = Vector2(2.44999, -5.04154)
 rotation = 3.14159
 
 [node name="angulo9" parent="." instance=ExtResource("3_hcf1o")]
-position = Vector2(508, 344)
+position = Vector2(767, 181)
 scale = Vector2(5, 5)
 
 [node name="Sprite2D" parent="angulo9" index="2"]
@@ -115,7 +149,7 @@ position = Vector2(9.71541, -5.50686)
 rotation = -0.584685
 
 [node name="angulo10" parent="." instance=ExtResource("3_hcf1o")]
-position = Vector2(709, 237)
+position = Vector2(733, 378)
 scale = Vector2(5, 5)
 
 [node name="Sprite2D" parent="angulo10" index="2"]
@@ -129,7 +163,7 @@ rotation = -0.865683
 scale = Vector2(0.613, 0.375)
 
 [node name="angulo11" parent="." instance=ExtResource("3_hcf1o")]
-position = Vector2(729, 387)
+position = Vector2(135, 383)
 scale = Vector2(5, 5)
 
 [node name="Sprite2D" parent="angulo11" index="2"]
@@ -140,7 +174,7 @@ position = Vector2(9.99999, -5)
 rotation = -0.731293
 
 [node name="angulo12" parent="." instance=ExtResource("3_hcf1o")]
-position = Vector2(856, 220)
+position = Vector2(538, 264)
 scale = Vector2(5, 5)
 
 [node name="Sprite2D" parent="angulo12" index="2"]
@@ -152,7 +186,11 @@ scale = Vector2(0.633, 0.388)
 position = Vector2(8.99354, -9.55513)
 scale = Vector2(0.633, 0.388)
 
+[connection signal="body_entered" from="angulo1" to="." method="_on_angulo_1_body_entered"]
+[connection signal="body_entered" from="angulo2" to="." method="_on_angulo_2_body_entered"]
 [connection signal="body_entered" from="angulo3" to="." method="_on_angulo_3_body_entered"]
+[connection signal="body_entered" from="angulo4" to="." method="_on_angulo_4_body_entered"]
+[connection signal="body_entered" from="angulo5" to="." method="_on_angulo_5_body_entered"]
 [connection signal="body_entered" from="angulo6" to="." method="_on_angulo_6_body_entered"]
 
 [editable path="angulo7"]

@@ -13,7 +13,7 @@ atlas = ExtResource("3_b6hkp")
 region = Rect2(158.89, 222.81, 4.32417, 33.7826)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7f8fn"]
-size = Vector2(80, 50)
+size = Vector2(80, 42)
 
 [node name="altar" type="StaticBody2D"]
 
@@ -31,6 +31,7 @@ scale = Vector2(0.5, 0.257576)
 texture = SubResource("AtlasTexture_lo21i")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_7f8fn")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
