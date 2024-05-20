@@ -5,7 +5,7 @@ class_name nivelMario
 @onready var player = get_node("Escenario/TileMap/Personaje")
 @onready var panel = get_node("Escenario/CanvasLayer")
 
-var puzles_resueltos = 1
+var puzles_resueltos = 2
 var puzle_correcto = 2
 
 # VARIABLES PUZLE 1
@@ -76,7 +76,7 @@ func interacciones():
 		panel.show()
 		panelOjoHorus.show()
 		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_ojohorus.dialogue"), "dialogo_ojohorus");
-		
+
 
 
 # METODOS DE SEÑALES
@@ -100,6 +100,7 @@ func number_changed():
 
 func _on_signal_problema_ojohorus():
 	if(resultadoOjoHorus.get_text() == "26'875" or resultadoOjoHorus.get_text() == "26,875"):
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_acierto_ojohorus.dialogue"), "dialogo_acierto_ojohorus");
 		puzles_resueltos += 1
 		panel.hide()
 		panelOjoHorus.hide()

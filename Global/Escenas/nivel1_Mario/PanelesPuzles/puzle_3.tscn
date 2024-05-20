@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://chape4vnresul"]
+
+[ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_3.gd" id="1_brs6h"]
+[ext_resource type="Texture2D" uid="uid://bykah2d03b4sk" path="res://Assets/fondo_puzle2.png" id="1_pl3oo"]
+
+[node name="Puzle3" type="Panel"]
+offset_right = 1152.0
+offset_bottom = 640.0
+script = ExtResource("1_brs6h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+texture = ExtResource("1_pl3oo")
+
+[node name="NumPrimo1" type="Area2D" parent="."]
