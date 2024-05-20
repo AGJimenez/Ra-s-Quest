@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://drxin6ommjpqs"]
+
+[ext_resource type="Script" path="res://gato/game_controller.gd" id="1_yoffu"]
+[ext_resource type="PackedScene" uid="uid://chrceqaijdbfm" path="res://objects/_shape_to_fill.tscn" id="2_i82xu"]
+[ext_resource type="PackedScene" uid="uid://dbw2litx2xh6q" path="res://gato/cabeza.tscn" id="4_ceqh7"]
+[ext_resource type="PackedScene" uid="uid://cfqkqcmif70kp" path="res://gato/oreja_izq.tscn" id="5_frumx"]
+[ext_resource type="PackedScene" uid="uid://dituuyyhs5xta" path="res://gato/oreja_der.tscn" id="6_c8c8n"]
+[ext_resource type="Script" path="res://gato/Label.gd" id="6_dtig5"]
+[ext_resource type="PackedScene" uid="uid://px6u1u374k4c" path="res://gato/cuerpo_1.tscn" id="7_rssbi"]
+[ext_resource type="PackedScene" uid="uid://mu8hxi1e4mv6" path="res://gato/cuerpo_2.tscn" id="8_1owiw"]
+[ext_resource type="PackedScene" uid="uid://bm64fvbxbpcd0" path="res://gato/cola.tscn" id="8_nfghu"]
+[ext_resource type="PackedScene" uid="uid://ccylunq67pcqy" path="res://gato/culo.tscn" id="10_cxfhk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a45nm"]
+albedo_color = Color(0.721569, 0.564706, 0.203922, 1)
+
+[node name="main_scene" type="Node3D"]
+script = ExtResource("1_yoffu")
+
+[node name="_shapeToFill" parent="." instance=ExtResource("2_i82xu")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.173648, 0.984808, 0, -0.984808, -0.173648, -7.36897, 50, -2)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0201406, 3.156, -5)
+light_energy = 1.5
+light_indirect_energy = 6.0
+omni_range = 161.0
+omni_attenuation = 0.007041
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.0
+offset_top = -56.5
+offset_right = 307.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Alma Restaurada"
+script = ExtResource("6_dtig5")
+
+[node name="Cabeza" parent="." instance=ExtResource("4_ceqh7")]
+transform = Transform3D(2.9, 0, 0, 0, -1.26763e-07, 2.9, 0, -2.9, -1.26763e-07, 7, 0, 0)
+
+[node name="orejaDer" parent="." instance=ExtResource("6_c8c8n")]
+transform = Transform3D(2.9, 0, 0, 0, -1.26763e-07, 2.9, 0, -2.9, -1.26763e-07, 10.9, 0, -2.9)
+
+[node name="orejaIzq" parent="." instance=ExtResource("5_frumx")]
+transform = Transform3D(2.9, 0, 0, 0, -1.26763e-07, 2.9, 0, -2.9, -1.26763e-07, -10.9, 0, -2.9)
+
+[node name="cuerpo1" parent="." instance=ExtResource("7_rssbi")]
+transform = Transform3D(8.5, 0, 0, 0, -3.71547e-07, 8.5, 0, -8.5, -3.71547e-07, -9.9, 0, -2.9)
+
+[node name="cola" parent="." instance=ExtResource("8_nfghu")]
+transform = Transform3D(2.9, 0, 0, 0, -1.26763e-07, 2.9, 0, -2.9, -1.26763e-07, -15.49, 0, -8.835)
+
+[node name="cuerpo2" parent="." instance=ExtResource("8_1owiw")]
+transform = Transform3D(8.43, 0, 0, 0, -3.68487e-07, 8.43, 0, -8.43, -3.68487e-07, -22.46, 0, 24.592)
+
+[node name="culo" parent="." instance=ExtResource("10_cxfhk")]
+transform = Transform3D(8.43, 0, 0, 0, -3.68487e-07, 8.43, 0, -8.43, -3.68487e-07, -36.24, 0, 8.643)
+
+[node name="Suelo" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -10, -4)
+size = Vector3(262, 1, 180)
+material = SubResource("StandardMaterial3D_a45nm")

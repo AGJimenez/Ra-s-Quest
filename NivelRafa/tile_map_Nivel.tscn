@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bp1ini6hjy1l4" path="res://Assets/non-rm-a2-square.png" id="8_q2sdd"]
 [ext_resource type="PackedScene" uid="uid://ccj43t50j36f6" path="res://ColisionCircular.tscn" id="10_nwcwn"]
 [ext_resource type="PackedScene" uid="uid://di3fwm40tyjg1" path="res://Interaction/InteractionArea/interaction_area.tscn" id="11_xi467"]
-[ext_resource type="PackedScene" uid="uid://drxin6ommjpqs" path="res://objects/main_scene.tscn" id="12_5lbj5"]
+[ext_resource type="PackedScene" uid="uid://drxin6ommjpqs" path="res://objects/main_scene.tscn" id="13_u4djq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abrps"]
 texture = ExtResource("1_88slb")
@@ -3740,8 +3740,12 @@ position = Vector2(1282, -542)
 [node name="InteractionArea" parent="." instance=ExtResource("11_xi467")]
 position = Vector2(84, -16)
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="Humano" type="SubViewport" parent="."]
 
-[node name="Node3D" type="Node3D" parent="SubViewport"]
+[node name="Humano" type="Node3D" parent="Humano"]
 
-[node name="main_scene" parent="SubViewport/Node3D" instance=ExtResource("12_5lbj5")]
+[node name="main_scene" parent="Humano/Humano" instance=ExtResource("13_u4djq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.710331, 0)
+
+[node name="main_scene2" parent="Humano/Humano" instance=ExtResource("13_u4djq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.34085, 0)

@@ -2,7 +2,7 @@ extends Node3D
 
 var shapes_to_cycle_through = []
 var index_selected = 0
-var shape_to_fill: CSGPrimitive3D
+var shape_to_fill:  CSGPrimitive3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +26,7 @@ func on_level_complete():
 
 func show_shapes():
 	for shape in shapes_to_cycle_through:
-		var current: CSGPrimitive3D = shape
+		var current:CSGPrimitive3D = shape
 		current.operation = CSGShape3D.OPERATION_UNION
 
 func subtract_from_main():
