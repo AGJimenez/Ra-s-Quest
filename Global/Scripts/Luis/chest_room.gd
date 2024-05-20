@@ -34,6 +34,7 @@ func _process(_delta):
 
 	if(Global.dialogue_state == true):
 		$room/Player.velocity = Vector2.ZERO
+		$room/Player.direction = Vector2.ZERO
 		if(Global.gain_torch_end && !easter_egg):
 			$"little torch".visible = true
 		$room/Player.set_physics_process(false)

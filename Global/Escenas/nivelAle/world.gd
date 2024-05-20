@@ -38,8 +38,8 @@ func _ready():
 	$Camera2D.enabled = false
 	$player/Camera2D.enabled = true
 	
-	if Global.change == "night-world":
-		$player.global_position = $"spawn_points/night-world".global_position
+	if Global.change == "torch-world":
+		$player.global_position = $"spawn_points/torch-world".global_position
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 

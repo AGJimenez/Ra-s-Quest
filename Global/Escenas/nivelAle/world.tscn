@@ -23451,7 +23451,7 @@ color = Color(0, 0, 0, 0.435294)
 
 [node name="spawn_points" type="Node2D" parent="."]
 
-[node name="night-world" type="Marker2D" parent="spawn_points"]
+[node name="torch-world" type="Marker2D" parent="spawn_points"]
 position = Vector2(0, 575)
 
 [node name="Camera2D" type="Camera2D" parent="."]

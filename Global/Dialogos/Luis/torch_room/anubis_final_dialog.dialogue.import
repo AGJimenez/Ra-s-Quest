@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cr4avjgsvp4nr"
+path="res://.godot/imported/anubis_final_dialog.dialogue-070a9a751c02bae86a6f2e374e9cd5d0.tres"
+
+[deps]
+
+source_file="res://Dialogos/Luis/torch_room/anubis_final_dialog.dialogue"
+dest_files=["res://.godot/imported/anubis_final_dialog.dialogue-070a9a751c02bae86a6f2e374e9cd5d0.tres"]
+
+[params]
+
+defaults=true

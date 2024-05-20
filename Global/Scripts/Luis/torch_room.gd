@@ -18,6 +18,8 @@ var chest_flip_h2 = false
 var chest_flip_h2_complete = false
 var talk = false
 var pickable = false
+var talked = false
+var done = false
 
 @onready var left_eye = $particles/left_eye
 @onready var right_eye = $particles/right_eye
@@ -25,8 +27,22 @@ var pickable = false
 @onready var light_red = $"God Statue"/objective/light_floor/AnimationPlayer
 
 
+func _ready():
+	$room.set_layer_enabled(1,false)
+	if Global.change == "night-torch":
+		$room/Player.global_position = $"Spawn_points/night-torch".global_position
+
+
 func _process(_delta):
-	if((area_1_movable && area_2_movable && area_3_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_2_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_2_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player))):
+	if(Global.dialogue_state):
+		$room/Player.animTree["parameters/conditions/idle"] = true
+		$room/Player.animTree["parameters/conditions/is_moving"] = false
+		$room/Player.set_physics_process(false)
+		$room/Player.set_process(false)
+	if(!Global.dialogue_state && !talked):
+		$room/Player.set_physics_process(true)
+		$room/Player.set_process(true)
+	if(!done &&((area_1_movable && area_2_movable && area_3_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_2_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_2_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)))):
 		if(!Global.activated):
 			$room/Player.animTree["parameters/conditions/idle"] = true
 			$room/Player.animTree["parameters/conditions/is_moving"] = false
@@ -42,24 +58,22 @@ func _process(_delta):
 			left_eye.emitting = true
 			right_eye.emitting = true
 			$"room/Player/little torch".visible = false
-			if(Input.is_action_just_pressed("Interact") && talk):
-				$room/Player.set_physics_process(false)
+			if(Input.is_action_just_pressed("Interact") && talk && !talked):
 				$room/Player/talk_to_god.visible = false
-				await get_tree().create_timer(0.9).timeout
-				$room.set_layer_enabled(1,true)
-				await get_tree().create_timer(0.5).timeout
-				$room/Player/fall_player.play("fall")
-				$fall/fall.play("fall")
-				await get_tree().create_timer(2).timeout
-				$room/Player.visible = false
-				Global.change = "night-world"
-				LoadManager.load_scene("res://Escenas/nivelAle/world.tscn")
+				talked = true
+				DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Luis/torch_room/anubis_final_dialog.dialogue"), "anubis_angry")
+	if(!Global.dialogue_state && talked && !done):
+		done = true
+		await get_tree().create_timer(0.9).timeout
+		$room.set_layer_enabled(1,true)
+		await get_tree().create_timer(0.5).timeout
+		$room/Player/fall_player.play("fall")
+		$fall/fall.play("fall")
+		await get_tree().create_timer(2).timeout
+		$room/Player.visible = false
+		Global.change = "torch-world"
+		LoadManager.load_scene("res://Escenas/nivelAle/world.tscn")
 				
-
-func _ready():
-	$room.set_layer_enabled(1,false)
-	if Global.change == "night-torch":
-		$room/Player.global_position = $"Spawn_points/night-torch".global_position
 
 
 func _on_torch_area_night_body_entered(body):
@@ -293,7 +307,7 @@ func _on_area_flip_h_2_body_exited(body):
 
 
 func _on_area_talk_body_entered(body):
-	if(body.is_in_group("Player") && Global.activated):
+	if(body.is_in_group("Player") && Global.activated && !talked):
 		$room/Player/talk_to_god.visible = true
 		talk = true
 		
