@@ -34,7 +34,7 @@ signal signal_problema_ojohorus
 func _ready():
 	if(Save.save_dict["map_number"] < 1):
 		number_changed()
-		Save.save_dict["map"] = "res://Escenas/nivelMario/nivel_mario.tscn"
+		Save.save_dict["map"] = "res://Escenas/nivel1_Mario/nivel_mario.tscn"
 		Save.save_game()
 
 

@@ -1,0 +1,10 @@
+~ tutorial
+set Global.dialogue_state = true
+set Global.controls_wasd = false
+
+Frèderic: Muy bien! Ahora interactua con él utilizando "E"
+
+set Global.controls_e = true
+
+set Global.dialogue_state = false
+=> END

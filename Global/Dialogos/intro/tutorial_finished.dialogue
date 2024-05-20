@@ -1,0 +1,15 @@
+~ tutorial_end
+set Global.dialogue_state = true
+set Global.controls_e = false
+
+Frèderic: Así se hace!
+
+set Global.controls_add = true
+
+Frèderic: Escuché de algunos exploradores que tambien te van a servir las teclas "Barra espaciadora" y "Click izquierdo", me pregunto para que servirán.
+Frèderic: Bueno eso no importa ahora mismo, entra en la pirámide Jack, no hay tiempo que perder.
+
+set Global.controls_add = false
+set Global.tutorial_on = false
+set Global.dialogue_state = false
+=> END

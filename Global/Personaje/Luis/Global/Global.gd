@@ -1,5 +1,10 @@
 extends Node2D
 
+#intro
+var tutorial_on = false
+var controls_wasd = false
+var controls_e = false
+var controls_add = false
 #dialog
 var dialogue_state = false
 

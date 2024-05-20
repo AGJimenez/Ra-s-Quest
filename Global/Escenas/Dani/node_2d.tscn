@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://2j2y4f5wxlxu"]
+[gd_scene load_steps=31 format=3 uid="uid://2j2y4f5wxlxu"]
 
 [ext_resource type="Script" path="res://Scripts/Dani/node_2d.gd" id="1_ftdwg"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="1_sld68"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="15_2j1o6"]
 [ext_resource type="PackedScene" uid="uid://ya58j8lojb06" path="res://Escenas/Dani/area_cofres_vertical.tscn" id="15_ahc0e"]
 [ext_resource type="PackedScene" uid="uid://irpot6b873ed" path="res://Escenas/Dani/panel.tscn" id="16_ortta"]
+[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="17_fbuch"]
 [ext_resource type="PackedScene" uid="uid://cm1grxk6de8lv" path="res://Escenas/Dani/static_body_2d.tscn" id="17_fc726"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtdwe"]
@@ -11514,6 +11515,8 @@ scale = Vector2(0.75, 0.698)
 size_flags_horizontal = 4
 size_flags_vertical = 6
 metadata/_edit_use_anchors_ = true
+
+[node name="pause_menu" parent="Personaje/Camera2D" instance=ExtResource("17_fbuch")]
 
 [node name="StaticBody2D" parent="." instance=ExtResource("17_fc726")]
 position = Vector2(2383, 1148)

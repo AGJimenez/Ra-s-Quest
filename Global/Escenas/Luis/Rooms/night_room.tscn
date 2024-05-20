@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d31bvrjh6ekq8"]
+[gd_scene load_steps=36 format=3 uid="uid://d31bvrjh6ekq8"]
 
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="1_0y8jt"]
 [ext_resource type="Script" path="res://Scripts/Luis/night_room.gd" id="1_40c50"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="6_ynq5w"]
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="7_qo3cd"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="10_gjakg"]
+[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="11_c4igy"]
 [ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="11_k2qxs"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_x4lfw"]
 [ext_resource type="Texture2D" uid="uid://dwq87qii5ulu" path="res://Assets/Sprites/light.png" id="13_43yrx"]
@@ -17090,6 +17091,8 @@ limit_right = 1600
 limit_bottom = 832
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="pause_menu" parent="room/Player/Camera_night" instance=ExtResource("11_c4igy")]
 
 [node name="interact" parent="room/Player" instance=ExtResource("11_k2qxs")]
 visible = false

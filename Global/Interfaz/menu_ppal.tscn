@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bc4e1genctsv0"]
+[gd_scene load_steps=14 format=3 uid="uid://bc4e1genctsv0"]
 
 [ext_resource type="Texture2D" uid="uid://dv7f0vk31uyr0" path="res://Assets/ras.png" id="1_0wgld"]
 [ext_resource type="Script" path="res://Interfaz/menu_ppal.gd" id="1_hhmsd"]
@@ -23,6 +23,10 @@ shadow_size = 31
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x5gn1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhpjg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sbbe0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtp6k"]
 
 [node name="MenuPpal" type="Control"]
 process_mode = 1
@@ -138,6 +142,7 @@ offset_bottom = 40.0
 [node name="delete_container" type="MarginContainer" parent="Control"]
 process_mode = 3
 visible = false
+layout_mode = 0
 offset_left = 387.0
 offset_top = 215.0
 offset_right = 766.0
@@ -189,9 +194,55 @@ text = "No"
 [node name="separator" type="Control" parent="Control/delete_container/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 559.0
+offset_right = 46.0
+offset_bottom = 587.0
+scale = Vector2(2.23824, 2.23824)
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_vs2ip")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sbbe0")
+text = "⚙️"
+
+[node name="settings_menu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 498.0
+offset_right = 262.0
+offset_bottom = 542.0
+
+[node name="MarginContainer" type="MarginContainer" parent="settings_menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="settings_color" type="ColorRect" parent="settings_menu/MarginContainer"]
+layout_mode = 2
+color = Color(0.0431373, 0, 0.176471, 1)
+
+[node name="VFlowContainer" type="HBoxContainer" parent="settings_menu/MarginContainer"]
+layout_mode = 2
+
+[node name="full_screen" type="Label" parent="settings_menu/MarginContainer/VFlowContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6sgtm")
+text = "Pantalla completa:"
+
+[node name="act_deact" type="CheckButton" parent="settings_menu/MarginContainer/VFlowContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("5_6sgtm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qtp6k")
+text = "Desactivado"
+
 [connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="new_game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="delete_save" to="." method="_on_delete_save_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Control/delete_container/HBoxContainer/VBoxContainer/HBoxContainer/yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="Control/delete_container/HBoxContainer/VBoxContainer/HBoxContainer/no" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="toggled" from="settings_menu/MarginContainer/VFlowContainer/act_deact" to="." method="_on_act_deact_toggled"]

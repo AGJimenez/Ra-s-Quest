@@ -3,8 +3,13 @@ set Global.dialogue_state = true
 
 Frèderic: Así que ya has llegado Jack. El equipo de excavación estaba como loco esperándote, pero ahora no se atreven a entrar en la pirámide, por lo que piensan que es mejor que entres tú, por llegar tarde. ¿Necesitas que te recuerde como moverte? Pareces un poco desorientado del vuelo
 - Sí
-	Has elegido si
+	set Global.tutorial_on = true
+	Fréderic: Bueno te voy a recordar un poco todo esto, ves ese arbol de allí? Muevete hacia él utilizando "WASD"
+	set Global.controls_wasd = true
 - No
-	Has elegido no
+	set Global.controls_wasd = false
+	Frèderic: Vaya parece que ya eres todo un experto, bueno no hay mas tiempo que perder, entra en esa pirámide y encuentra el tesoro Jack.
+	set Global.tutorial_on = false
+	
 set Global.dialogue_state = false
 => END

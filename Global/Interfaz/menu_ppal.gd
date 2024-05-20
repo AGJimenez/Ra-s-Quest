@@ -2,8 +2,15 @@ extends Control
 
 var paused = false
 
+func _ready():
+	Save.load_game()
+	var check = Save.save_dict["fullscreen"]
+	if(check):
+		$settings_menu/MarginContainer/VFlowContainer/act_deact.button_pressed = true
+		$settings_menu/MarginContainer/VFlowContainer/act_deact.text = "Activado"
+
 func _process(delta):
-	if(!FileAccess.file_exists("user://savegame.save")):
+	if(Save.save_dict["map"] == ""):
 		$Continue.disabled = true
 	else:
 		$Continue.disabled = false
@@ -16,7 +23,7 @@ func _on_new_game_pressed():
 
 
 func _on_continue_pressed():
-	Save.load_game()
+	LoadManager.load_scene(Save.save_dict["map"])
 
 
 func _on_delete_save_pressed():
@@ -45,3 +52,18 @@ func _on_yes_pressed():
 	resumeGame()
 	Save.delete_save()
 	$Control/delete_container.visible = false
+
+
+func _on_act_deact_toggled(toggled_on):
+	if(toggled_on):
+		$settings_menu/MarginContainer/VFlowContainer/act_deact.text = "Activado"
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		$settings_menu/MarginContainer/VFlowContainer/act_deact.text = "Desactivado"
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	Save.save_dict["fullscreen"] = toggled_on
+	Save.save_game()
+
+
+func _on_settings_pressed():
+	$settings_menu.visible = !$settings_menu.visible

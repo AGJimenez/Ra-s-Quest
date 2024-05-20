@@ -17,6 +17,12 @@ func _ready():
 	emit_signal("wind_force", wind_force_vector, false)
 
 func _process(_delta):
+	if(Global.dialogue_state == true):
+		$TileMap/Personaje.velocity = Vector2.ZERO
+		$TileMap/Personaje.direction = Vector2.ZERO
+		$TileMap/Personaje.set_physics_process(false)
+	if(Global.dialogue_state == false):
+		$TileMap/Personaje.set_physics_process(true)
 	if(!sand_storm_complete):
 		if($safe_zones/area_safe.has_overlapping_bodies() || $safe_zones/area_safe2.has_overlapping_bodies() || $safe_zones/area_safe3.has_overlapping_bodies() || $safe_zones/area_safe4.has_overlapping_bodies() || $safe_zones/area_safe5.has_overlapping_bodies() || $safe_zones/area_safe6.has_overlapping_bodies()):
 			emit_signal("wind_force", wind_force_vector, false)

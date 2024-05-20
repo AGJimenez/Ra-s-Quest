@@ -20,6 +20,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(Global.dialogue_state == true):
+		$Personaje.velocity = Vector2.ZERO
+		$Personaje.direction = Vector2.ZERO
 		$Personaje.set_physics_process(false)
 	if(Global.dialogue_state == false):
 		$Personaje.set_physics_process(true)
@@ -36,6 +38,7 @@ func _process(delta):
 func interaccion_con_cofre():
 	if panel.visible:
 		panel.visible = false
+		player.speed = 100
 	else:
 		panel.visible = true
 		player.speed = 0

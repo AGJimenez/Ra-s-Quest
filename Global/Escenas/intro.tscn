@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://csjnejeofyv8y"]
+[gd_scene load_steps=52 format=3 uid="uid://csjnejeofyv8y"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_bnsu1"]
 [ext_resource type="Script" path="res://Escenas/intro.gd" id="1_x8x6h"]
@@ -14,8 +14,16 @@
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="11_ep10g"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="12_auift"]
 [ext_resource type="PackedScene" uid="uid://b8gc7ec1uqh6s" path="res://Personaje/npcIntro.tscn" id="14_x7aiy"]
+[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="15_8uagc"]
 [ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="15_hxlry"]
+[ext_resource type="Texture2D" uid="uid://d325iqae4dv8m" path="res://Assets/Sprites/tutorial/w_light.png" id="16_55bvw"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="16_cnf1g"]
+[ext_resource type="Texture2D" uid="uid://bign2ish5xvsh" path="res://Assets/Sprites/tutorial/space_light.png" id="16_paek1"]
+[ext_resource type="Texture2D" uid="uid://6kl8podfckom" path="res://Assets/Sprites/tutorial/a_key_light.png" id="17_m6wnb"]
+[ext_resource type="Texture2D" uid="uid://bd7fgryp0oplb" path="res://Assets/Sprites/tutorial/s_light.png" id="18_v0f13"]
+[ext_resource type="Texture2D" uid="uid://cb0n1ip07qv1v" path="res://Assets/Sprites/tutorial/d_light.png" id="19_3l11r"]
+[ext_resource type="Texture2D" uid="uid://cisnsj0o3adhy" path="res://Assets/Sprites/tutorial/e_light.png" id="20_5ji6m"]
+[ext_resource type="Texture2D" uid="uid://cfueyo7p61rhh" path="res://Assets/Sprites/tutorial/left_mouse_button_light.png" id="22_re76b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj6tn"]
 texture = ExtResource("1_bnsu1")
@@ -3952,8 +3960,10 @@ texture_region_size = Vector2i(32, 32)
 11:3/0/physics_layer_0/angular_velocity = 0.0
 13:3/size_in_atlas = Vector2i(3, 4)
 13:3/0 = 0
+13:3/0/y_sort_origin = 46
 13:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:3/0/physics_layer_0/angular_velocity = 0.0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(21.6, 28.8, 40, 39.2, 44, 49.6, 24.8, 64, 2.4, 60.8, -6.4, 56, -24.8, 59.2, -30.4, 55.2, -17.6, 49.6, -36.8, 48.8, -40, 45.6, -19.2, 42.4, -14.4, 36.8, 1.6, 29.6)
 11:5/size_in_atlas = Vector2i(1, 2)
 11:5/0 = 0
 11:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -4802,12 +4812,15 @@ texture_region_size = Vector2i(32, 32)
 1:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:11/0/physics_layer_0/angular_velocity = 0.0
 2:11/0 = 0
+2:11/0/y_sort_origin = 200
 2:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:11/0/physics_layer_0/angular_velocity = 0.0
 3:11/0 = 0
+3:11/0/y_sort_origin = 200
 3:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:11/0/physics_layer_0/angular_velocity = 0.0
 4:11/0 = 0
+4:11/0/y_sort_origin = 200
 4:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:11/0/physics_layer_0/angular_velocity = 0.0
 7:11/0 = 0
@@ -4835,12 +4848,15 @@ texture_region_size = Vector2i(32, 32)
 1:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:12/0/physics_layer_0/angular_velocity = 0.0
 2:12/0 = 0
+2:12/0/y_sort_origin = 200
 2:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:12/0/physics_layer_0/angular_velocity = 0.0
 3:12/0 = 0
+3:12/0/y_sort_origin = 200
 3:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:12/0/physics_layer_0/angular_velocity = 0.0
 4:12/0 = 0
+4:12/0/y_sort_origin = 200
 4:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:12/0/physics_layer_0/angular_velocity = 0.0
 7:12/0 = 0
@@ -4861,12 +4877,15 @@ texture_region_size = Vector2i(32, 32)
 1:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:13/0/physics_layer_0/angular_velocity = 0.0
 2:13/0 = 0
+2:13/0/y_sort_origin = 200
 2:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:13/0/physics_layer_0/angular_velocity = 0.0
 3:13/0 = 0
+3:13/0/y_sort_origin = 200
 3:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:13/0/physics_layer_0/angular_velocity = 0.0
 4:13/0 = 0
+4:13/0/y_sort_origin = 200
 4:13/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:13/0/physics_layer_0/angular_velocity = 0.0
 7:13/0 = 0
@@ -4904,9 +4923,11 @@ texture_region_size = Vector2i(32, 32)
 1:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:14/0/physics_layer_0/angular_velocity = 0.0
 2:14/0 = 0
+2:14/0/y_sort_origin = 200
 2:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:14/0/physics_layer_0/angular_velocity = 0.0
 4:14/0 = 0
+4:14/0/y_sort_origin = 200
 4:14/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:14/0/physics_layer_0/angular_velocity = 0.0
 7:14/0 = 0
@@ -4931,9 +4952,11 @@ texture_region_size = Vector2i(32, 32)
 1:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:15/0/physics_layer_0/angular_velocity = 0.0
 2:15/0 = 0
+2:15/0/y_sort_origin = 200
 2:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:15/0/physics_layer_0/angular_velocity = 0.0
 4:15/0 = 0
+4:15/0/y_sort_origin = 200
 4:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:15/0/physics_layer_0/angular_velocity = 0.0
 7:15/0 = 0
@@ -10676,7 +10699,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(563, -29), Vector2(614, 800)]
+"values": [Vector2(563, -29), Vector2(614, 840)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w8ry1"]
@@ -10688,7 +10711,198 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0nif"]
 size = Vector2(85, 60)
 
+[sub_resource type="Animation" id="Animation_beswb"]
+resource_name = "tutorial"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../left_mouse:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../e/e:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../wasd/w:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../wasd/a:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../wasd/s:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../wasd/d:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l71ky"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../left_mouse:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.384314, 0.384314, 0.384314, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../e/e:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../wasd/w:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../wasd/a:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../wasd/s:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../wasd/d:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4w26r"]
+_data = {
+"RESET": SubResource("Animation_l71ky"),
+"tutorial": SubResource("Animation_beswb")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cyisu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdkd2"]
+size = Vector2(38.6824, 17.1414)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8an5w"]
+size = Vector2(38.0839, 16.0667)
+
 [node name="Intro" type="Node2D"]
+process_mode = 1
 y_sort_enabled = true
 script = ExtResource("1_x8x6h")
 
@@ -10710,6 +10924,7 @@ layer_3/y_sort_enabled = true
 layer_3/tile_data = PackedInt32Array(-458735, 655367, 4, -524270, 655367, 4, -458734, 655367, 4, -524269, 655367, 4, -458733, 655367, 4, -458736, 655367, 4, -524272, 655367, 4, -524271, 655367, 4)
 layer_4/name = "puerta"
 layer_4/y_sort_enabled = true
+layer_4/z_index = 1
 layer_4/tile_data = PackedInt32Array(-655344, 131079, 11, -589808, 131079, 12, -524272, 131079, 13, -458736, 131079, 14, -393200, 131079, 15, -655341, 262151, 11, -589805, 262151, 12, -524269, 262151, 13, -458733, 262151, 14, -393197, 262151, 15, -655343, 196615, 11, -589807, 196615, 12, -524271, 196615, 13, -655342, 196615, 11, -589806, 196615, 12, -524270, 196615, 13, 458765, 393223, 11, 458774, 393223, 11, -131057, 393223, 11, -131052, 393223, 11, 655368, 393223, 11, 655387, 393223, 11)
 layer_5/name = "Decoracion"
 layer_5/y_sort_enabled = true
@@ -10734,7 +10949,8 @@ shape = SubResource("RectangleShape2D_f444l")
 polygon = PackedVector2Array(-206, 800, 68, 801, 128, 860, 553, 863, 607, 923, 739, 926, 863, 797, 968, 797, 994, 764, 1374, 767, 1358, 1136, -197, 1112)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(512, -199, 646, -199, 647, -305, 477, -302)
+position = Vector2(-3, -37)
+polygon = PackedVector2Array(533, -156, 533, -225, 624, -225, 624, -155, 642, -156, 640, -249, 516, -249, 515, -156)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-126.75, 402)
@@ -10781,20 +10997,10 @@ y_sort_enabled = true
 position = Vector2(615, 768)
 scale = Vector2(3, 3)
 
-[node name="CollisionShape2D" parent="npc" index="1"]
-position = Vector2(0, 5.16667)
-
-[node name="Control" parent="npc" instance=ExtResource("15_hxlry")]
-offset_left = -8.33333
-offset_top = -21.6667
-offset_right = 31.6667
-offset_bottom = 18.3333
-scale = Vector2(0.5, 0.5)
-
 [node name="Personaje" parent="." instance=ExtResource("12_auift")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(614, 800)
+position = Vector2(614, 834)
 
 [node name="Camera2D" type="Camera2D" parent="Personaje"]
 limit_left = -193
@@ -10804,85 +11010,111 @@ limit_bottom = 1152
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Personaje/Camera2D"]
-visible = false
-
-[node name="Control" type="Control" parent="Personaje/Camera2D/CanvasLayer"]
-z_index = 2
-y_sort_enabled = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Personaje/Camera2D/CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.552941)
-
-[node name="Button" type="Button" parent="Personaje/Camera2D/CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -15.5
-offset_right = 36.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "RESUME"
-
-[node name="Button2" type="Button" parent="Personaje/Camera2D/CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = 32.0
-offset_right = 36.0
-offset_bottom = 63.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "RELOAD"
-
-[node name="Button3" type="Button" parent="Personaje/Camera2D/CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = 82.0
-offset_right = 38.0
-offset_bottom = 113.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "QUIT"
+[node name="pause_menu" parent="Personaje/Camera2D" instance=ExtResource("15_8uagc")]
 
 [node name="ExampleBalloon" parent="Personaje/Camera2D" instance=ExtResource("16_cnf1g")]
 visible = false
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="npc/Area2DNPC" to="." method="_on_area_2dnpc_body_entered"]
-[connection signal="body_exited" from="npc/Area2DNPC" to="." method="_on_area_2dnpc_body_exited"]
-[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Personaje/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_3_pressed"]
-[connection signal="dialogue_finished" from="Personaje/Camera2D/ExampleBalloon" to="." method="_on_example_balloon_dialogue_finished"]
+[node name="tutorial" type="CanvasLayer" parent="Personaje/Camera2D"]
 
-[editable path="npc"]
+[node name="tutorial_keys" type="Control" parent="Personaje/Camera2D/tutorial"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 168.0
+offset_top = 86.0
+offset_right = 208.0
+offset_bottom = 126.0
+
+[node name="wasd" type="Control" parent="Personaje/Camera2D/tutorial/tutorial_keys"]
+visible = false
+anchors_preset = 0
+offset_left = -1.0
+offset_top = -25.0
+offset_right = 39.0
+offset_bottom = 15.0
+
+[node name="w" type="Sprite2D" parent="Personaje/Camera2D/tutorial/tutorial_keys/wasd"]
+texture = ExtResource("16_55bvw")
+
+[node name="a" type="Sprite2D" parent="Personaje/Camera2D/tutorial/tutorial_keys/wasd"]
+position = Vector2(-42, 43)
+texture = ExtResource("17_m6wnb")
+
+[node name="s" type="Sprite2D" parent="Personaje/Camera2D/tutorial/tutorial_keys/wasd"]
+position = Vector2(0, 43)
+texture = ExtResource("18_v0f13")
+
+[node name="d" type="Sprite2D" parent="Personaje/Camera2D/tutorial/tutorial_keys/wasd"]
+position = Vector2(43, 43)
+texture = ExtResource("19_3l11r")
+
+[node name="e" type="Control" parent="Personaje/Camera2D/tutorial/tutorial_keys"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="e" type="Sprite2D" parent="Personaje/Camera2D/tutorial/tutorial_keys/e"]
+texture = ExtResource("20_5ji6m")
+
+[node name="additional" type="Control" parent="Personaje/Camera2D/tutorial/tutorial_keys"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="space_bar" type="Sprite2D" parent="Personaje/Camera2D/tutorial/tutorial_keys/additional"]
+position = Vector2(1, 16)
+texture = ExtResource("16_paek1")
+
+[node name="left_mouse" type="Sprite2D" parent="Personaje/Camera2D/tutorial/tutorial_keys/additional"]
+modulate = Color(0.384314, 0.384314, 0.384314, 1)
+position = Vector2(111, 16)
+texture = ExtResource("22_re76b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personaje/Camera2D/tutorial/tutorial_keys"]
+root_node = NodePath("../additional/space_bar")
+libraries = {
+"": SubResource("AnimationLibrary_4w26r")
+}
+autoplay = "tutorial"
+
+[node name="press_e" parent="Personaje" instance=ExtResource("15_hxlry")]
+visible = false
+offset_left = -22.0
+offset_top = -97.0001
+offset_right = 18.0
+offset_bottom = -57.0001
+scale = Vector2(1.26937, 1.26937)
+
+[node name="tree_area_tutorial" type="Node2D" parent="."]
+position = Vector2(972, 668)
+
+[node name="tree_area" type="Area2D" parent="tree_area_tutorial"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree_area_tutorial/tree_area"]
+scale = Vector2(6.19658, 3.80971)
+shape = SubResource("CircleShape2D_cyisu")
+
+[node name="tutorial_escape" type="StaticBody2D" parent="."]
+position = Vector2(574, 519)
+
+[node name="tutorial_area" type="Area2D" parent="tutorial_escape"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorial_escape/tutorial_area"]
+position = Vector2(1, 0)
+scale = Vector2(3.3607, 3.3607)
+shape = SubResource("RectangleShape2D_qdkd2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tutorial_escape"]
+position = Vector2(1, 0)
+scale = Vector2(3.361, 3.361)
+shape = SubResource("RectangleShape2D_8an5w")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="dialogue_finished" from="Personaje/Camera2D/ExampleBalloon" to="." method="_on_example_balloon_dialogue_finished"]
+[connection signal="body_entered" from="tree_area_tutorial/tree_area" to="." method="_on_tree_area_body_entered"]
+[connection signal="body_exited" from="tree_area_tutorial/tree_area" to="." method="_on_tree_area_body_exited"]
+[connection signal="body_entered" from="tutorial_escape/tutorial_area" to="." method="_on_tutorial_area_body_entered"]
+
 [editable path="Personaje"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://s54wun5cdxd0"
+path="res://.godot/imported/tutorial_skip.dialogue-968626bf73489333308d5608d0525f84.tres"
+
+[deps]
+
+source_file="res://Dialogos/intro/tutorial_skip.dialogue"
+dest_files=["res://.godot/imported/tutorial_skip.dialogue-968626bf73489333308d5608d0525f84.tres"]
+
+[params]
+
+defaults=true

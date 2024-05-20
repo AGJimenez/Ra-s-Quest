@@ -1,11 +1,14 @@
 extends Node2D
 
-var enAreaNPC = false
-var paused = false
-var ignorarMov = false
 var intro_finished = false
+var tree = false
+var first_time = true
 
-# Called when the node enters the scene tree for the first time.
+@onready var pause_menu = $Personaje/Camera2D/pause_menu
+@onready var wasd = $Personaje/Camera2D/tutorial/tutorial_keys/wasd
+@onready var e = $Personaje/Camera2D/tutorial/tutorial_keys/e
+@onready var additional = $Personaje/Camera2D/tutorial/tutorial_keys/additional
+
 func _ready():
 	if(Save.save_dict["map_number"] < 0):
 		number_changed()
@@ -13,81 +16,77 @@ func _ready():
 		Save.save_game()
 	$Personaje.set_process(false)
 	$Personaje.set_physics_process(false)
-	$npc/Control.visible = false
 	$AnimationPlayer.play("new_animation")
 	$Personaje/Camera2D.enabled = false
 	$AnimationPlayer2.play("camara")
 	await $AnimationPlayer2.animation_finished
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/intro/controlesNpc.dialogue"),"this_is_a_node_title")
 	$Personaje.set_process(true)
 	$Personaje.set_physics_process(true)
 	intro_finished = true
 	$Camera2D.enabled = false
 	$Personaje/Camera2D.enabled = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if !ignorarMov: 
-		if enAreaNPC == true and Input.is_action_just_pressed("Interact") && intro_finished && !Global.dialogue_state == true:
-			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/intro/controlesNpc.dialogue"),"this_is_a_node_title")
-		if(intro_finished):
-			if(Global.dialogue_state == true):
-				$Personaje.set_physics_process(false)
-			if(Global.dialogue_state == false):
-				$Personaje.set_physics_process(true)
-			
-	if Input.is_action_just_pressed("pausa"):
-		pauseMenu()
+	if(Global.controls_wasd):
+		wasd.visible = true
+	else:
+		wasd.visible = false
+	if(Global.controls_e):
+		e.visible = true
+	else:
+		e.visible = false
+	if(Global.controls_add):
+		additional.visible = true
+	else:
+		additional.visible = false
+	if(!Global.tutorial_on):
+		$tutorial_escape/CollisionShape2D.disabled = true
+	else:
+		$tutorial_escape/CollisionShape2D.disabled = false
+
+	if(Global.tutorial_on && Input.is_action_just_pressed("Interact") && tree && !Global.dialogue_state):
+		tree = false
+		$Personaje/press_e.visible = false
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/intro/tutorial_finished.dialogue"),"tutorial_end")
+		
+		
+	if(intro_finished):
+		if(Global.dialogue_state == true):
+			$Personaje.velocity = Vector2.ZERO
+			$Personaje.direction = Vector2.ZERO
+			$Personaje.set_physics_process(false)
+		if(Global.dialogue_state == false):
+			$Personaje.set_physics_process(true)
+
 		
 func _on_area_2d_body_entered(body):
 	if body.name == "Personaje":
 		Global.change = "intro-nivelMario"
 		LoadManager.load_scene("res://Escenas/nivel1_Mario/nivel_mario.tscn")
 
-
-func _on_area_2dnpc_body_entered(body):
-	if body.name == "Personaje":
-		enAreaNPC = true
-		$npc/Control.visible = true
-
-
-func _on_area_2dnpc_body_exited(body):
-	enAreaNPC = false
-	$npc/Control.visible = false
-	
-func pauseMenu():
-	if paused:
-		$Personaje/Camera2D/CanvasLayer.hide()
-		Engine.time_scale = 1
-	else:
-		$Personaje/Camera2D/CanvasLayer.show()
-		Engine.time_scale = 0
-	paused = !paused
-	ignorarMov = !ignorarMov
-	
-func resumeGame():
-	$Personaje/Camera2D/CanvasLayer.hide()
-	Engine.time_scale = 1
-	ignorarMov = false
-	
-func reloadLevel():
-	get_tree().reload_current_scene()
-	$Personaje/Camera2D/CanvasLayer.hide()
-	ignorarMov = false
-	
-func quitGame():
-	LoadManager.load_scene("res://Interfaz/menu_ppal.tscn")
-
-
-func _on_button_pressed():
-	resumeGame()
-
-
-func _on_button_3_pressed():
-	quitGame()
-
-
-func _on_button_2_pressed():
-	reloadLevel()
-
 func number_changed():
 	Save.save_dict["map_number"] = 0
+
+
+func _on_tree_area_body_entered(body):
+	if(body.is_in_group("Player") && Global.tutorial_on):
+		$Personaje/press_e.visible = true
+		if(first_time):
+			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/intro/tutorial_continue.dialogue"),"tutorial")
+			first_time = false
+		tree = true
+
+
+func _on_tree_area_body_exited(body):
+	if(body.is_in_group("Player") && Global.tutorial_on):
+		$Personaje/press_e.visible = false
+		tree = false
+
+
+
+func _on_tutorial_area_body_entered(body):
+	if(body.is_in_group("Player") && Global.tutorial_on):
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/intro/tutorial_skip.dialogue"),"tutorial_skip_dialog")
+
+

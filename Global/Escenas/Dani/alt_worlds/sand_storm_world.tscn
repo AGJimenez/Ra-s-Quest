@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cy88lby5jtg7c"]
+[gd_scene load_steps=35 format=3 uid="uid://cy88lby5jtg7c"]
 
 [ext_resource type="Texture2D" uid="uid://qydlg5bd87sl" path="res://Assets/Egyptian_B.png" id="1_8m402"]
 [ext_resource type="Script" path="res://Escenas/Dani/alt_worlds/sand_storm_world.gd" id="1_gyfxk"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://kn8h52tm3odn" path="res://Personaje/Luis/particulas/shader/WaterNoise1.tres" id="8_xsuc1"]
 [ext_resource type="PackedScene" uid="uid://b1r8jc0uuy3sb" path="res://Personaje/Luis/particulas/sand_storm_activated.tscn" id="10_6uddr"]
 [ext_resource type="PackedScene" uid="uid://b6l5pvj27ya1a" path="res://Escenas/Dani/Ultimo_Puzzle.tscn" id="11_1ynps"]
+[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="12_w8gso"]
 [ext_resource type="PackedScene" uid="uid://ba2q0ayvoalrm" path="res://Escenas/Dani/objectives/objective_sand_world.tscn" id="14_qv743"]
 
 [sub_resource type="Animation" id="Animation_m0cui"]
@@ -6975,6 +6976,8 @@ limit_bottom = 642
 visible = false
 
 [node name="Control" parent="TileMap/Personaje/Camera2D/CanvasLayer" instance=ExtResource("11_1ynps")]
+
+[node name="pause_menu" parent="TileMap/Personaje/Camera2D" instance=ExtResource("12_w8gso")]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.25

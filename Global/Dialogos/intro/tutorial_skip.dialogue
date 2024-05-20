@@ -1,0 +1,6 @@
+~ tutorial_skip_dialog
+set Global.dialogue_state = true
+Fréderic: [[Oye Jack no creo que sea buena idea entrar en la pirámide sin saber lo básico.|Jack estás seguro de lo que estás haciendo? Vuelve aquí y sigue mis consejos.|No deberías avanzar más, aun no has terminado.]]
+
+set Global.dialogue_state = false
+=> END

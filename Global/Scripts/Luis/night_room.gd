@@ -28,6 +28,7 @@ func _process(_delta):
 		Global.anubis_dialog_end = true
 	if(Global.dialogue_state == true):
 		$room/Player.velocity = Vector2.ZERO
+		$room/Player.direction = Vector2.ZERO
 		$room/Player.set_physics_process(false)
 	if(Global.dialogue_state == false):
 		$room/Player.set_physics_process(true)

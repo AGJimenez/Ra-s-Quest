@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cd4bl7bkrabtx"]
+[gd_scene load_steps=54 format=3 uid="uid://cd4bl7bkrabtx"]
 
 [ext_resource type="Script" path="res://Scripts/Luis/torch_room.gd" id="1_qaml2"]
 [ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="2_lyww8"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b6vyr1tiikv6i" path="res://Personaje/Luis/Fire/movable_torch.tscn" id="8_v6n8k"]
 [ext_resource type="Script" path="res://Scripts/Luis/Camera_torch.gd" id="9_ngvp2"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="9_wh1a7"]
+[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="10_abp2x"]
 [ext_resource type="PackedScene" uid="uid://cpr8emerbq5gc" path="res://Interfaz/Luis/prompts_windows/talk_to_god.tscn" id="10_o1qt3"]
 [ext_resource type="PackedScene" uid="uid://c31ghn4gfitj5" path="res://Personaje/Luis/Objects/statue.tscn" id="10_upecq"]
 [ext_resource type="Texture2D" uid="uid://cqc55bif2ih6y" path="res://Assets/Sprites/images.jpg" id="12_0fa5f"]
@@ -11943,6 +11944,8 @@ script = ExtResource("9_ngvp2")
 
 [node name="Timer" type="Timer" parent="room/Player/Camera_torch"]
 one_shot = true
+
+[node name="pause_menu" parent="room/Player/Camera_torch" instance=ExtResource("10_abp2x")]
 
 [node name="talk_to_god" parent="room/Player" instance=ExtResource("10_o1qt3")]
 visible = false

@@ -4,7 +4,8 @@ extends Node
 var save_dict = {
 	"map": "",
 	"map_number" : 0,
-	"easter_egg_try_save": true
+	"easter_egg_try_save": true,
+	"fullscreen": false
 	}
 
 func save():
@@ -31,9 +32,13 @@ func load_game():
 		var node_data = json.get_data()
 		
 		save_dict["easter_egg_try_save"] = node_data["easter_egg_try_save"]
+		save_dict["map"] = node_data["map"]
 		save_dict["map_number"] = node_data["map_number"]
-		LoadManager.load_scene(node_data["map"])
-		
+		save_dict["fullscreen"] = node_data["fullscreen"]
+		if(save_dict["fullscreen"]):
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func delete_save():
 	DirAccess.remove_absolute("user://savegame.save")
