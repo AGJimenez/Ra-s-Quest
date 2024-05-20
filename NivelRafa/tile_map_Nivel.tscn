@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b4dkhcluoery2"]
+[gd_scene load_steps=23 format=3 uid="uid://b4dkhcluoery2"]
 
 [ext_resource type="Texture2D" uid="uid://lj7pwy4d4qm" path="res://Assets/Egyptian_A2.png" id="1_1hg7q"]
 [ext_resource type="Texture2D" uid="uid://mcdh6texv4dp" path="res://Assets/Egyptian_A4.png" id="1_88slb"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ccj43t50j36f6" path="res://ColisionCircular.tscn" id="10_nwcwn"]
 [ext_resource type="PackedScene" uid="uid://di3fwm40tyjg1" path="res://Interaction/InteractionArea/interaction_area.tscn" id="11_xi467"]
 [ext_resource type="PackedScene" uid="uid://drxin6ommjpqs" path="res://objects/main_scene.tscn" id="13_u4djq"]
+[ext_resource type="PackedScene" uid="uid://drxin6ommjpqs" path="res://gato/main_scene.tscn" id="13_wpc8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abrps"]
 texture = ExtResource("1_88slb")
@@ -3747,5 +3748,8 @@ position = Vector2(84, -16)
 [node name="main_scene" parent="Humano/Humano" instance=ExtResource("13_u4djq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.710331, 0)
 
-[node name="main_scene2" parent="Humano/Humano" instance=ExtResource("13_u4djq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.34085, 0)
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Gato" type="Node3D" parent="SubViewport"]
+
+[node name="main_scene" parent="SubViewport/Gato" instance=ExtResource("13_wpc8p")]
