@@ -1,7 +1,7 @@
 extends Node2D
 
 class_name world
-
+var finNivel = false
 var enAreaAltar = false
 var enAreaPlayer = false
 var enAreaPlayerCofre = false
@@ -11,7 +11,6 @@ var transComplete = false
 var segundoPuzzleActivado = false
 var espejosAcabados = false
 var animacionAltar = false
-var puzzleAngulosCompletado = false
 func _ready():
 	if(Save.save_dict["map_number"] < 5):
 		number_changed()
@@ -46,7 +45,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(_delta):
-	
+
 	if !ignorarMov and transComplete: 
 		if enAreaPlayer == true and Input.is_action_just_pressed("Interact")  && !Global.dialogue_state == true:
 			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelAle/Mito.dialogue"), "start")
@@ -84,15 +83,19 @@ func _process(_delta):
 				$altarAnimacion.play("emerger")
 				$altar/CollisionShape2D3.disabled = false
 				animacionAltar = true
-			if enAreaAltar == true and Input.is_action_just_pressed("Interact") && $player/Camera2D/puzzleAngulos.visible == false and animacionAltar == true:
-					$player/Camera2D/puzzleAngulos.visible = true
+				if enAreaAltar == true and Input.is_action_just_pressed("Interact") && $player/Camera2D/puzzleDioses.visible == false:
+					pass
+
+		if animacionAltar == true and enAreaAltar == true and Input.is_action_just_pressed("Interact") && $player/Camera2D/puzzleAngulos.visible == false:
+			$player/Camera2D/puzzleAngulos.visible = true
+
 			
-			elif enAreaAltar == true and Input.is_action_just_pressed("Interact") && $player/Camera2D/puzzleAngulos.visible == true and animacionAltar == true:
-					$player/Camera2D/puzzleAngulos.visible = false
-					
-		if puzzleAngulosCompletado == true:
-			$colision/CollisionShape2D17.disabled = true
+		elif animacionAltar == true and enAreaAltar == true and Input.is_action_just_pressed("Interact") && $player/Camera2D/puzzleAngulos.visible == true:
+			$player/Camera2D/puzzleAngulos.visible = false
+		
+		if finNivel ==true:
 			$puerta.visible = false
+			$colision/CollisionShape2D17.disabled = true
 		
 		if(Global.dialogue_state == true):
 			$player.set_physics_process(false)
@@ -164,9 +167,8 @@ func _on_area_2d_2_body_exited(body):
 func _on_puzzle_dioses_resultado_correcto():
 	$colision/puertaColision.disabled = true
 	$TileMap2.set_layer_enabled(0,false)
-	$player/Camera2D/puzzleDioses.visible = false
 	$pasilloHabitacion.visible = true
-	
+
 
 func _on_area_espejo_body_entered(body):
 	if body.name == "RigidBody2D":
@@ -189,4 +191,4 @@ func number_changed():
 
 
 func _on_control_correct_position_set():
-	puzzleAngulosCompletado = true
+	finNivel = true
