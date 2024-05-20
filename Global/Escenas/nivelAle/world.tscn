@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://276uutptuj65"]
+[gd_scene load_steps=91 format=3 uid="uid://276uutptuj65"]
 
 [ext_resource type="Script" path="res://Escenas/nivelAle/world.gd" id="1_ao47j"]
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="1_ue6xu"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="13_nrv0w"]
 [ext_resource type="PackedScene" uid="uid://di5otpdw5wae6" path="res://Escenas/nivelAle/PuzzleAngulos.tscn" id="16_kkx2o"]
 [ext_resource type="PackedScene" uid="uid://r1i7cj56hh7f" path="res://Escenas/nivelAle/puzzle_dioses.tscn" id="16_vmpor"]
+[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="17_vbfoq"]
 [ext_resource type="PackedScene" uid="uid://d06deaw0tipjn" path="res://Escenas/nivelAle/cruzArrastrar.tscn" id="18_o7tfn"]
 [ext_resource type="PackedScene" uid="uid://dkomrelai5dxv" path="res://Escenas/nivelAle/CruzColumna.tscn" id="19_v57ys"]
 [ext_resource type="PackedScene" uid="uid://c1gfh8ec2eqwr" path="res://Escenas/nivelAle/altar.tscn" id="20_g0u12"]
@@ -23298,74 +23299,6 @@ position = Vector2(2.38419e-07, 5.83337)
 zoom = Vector2(2.25, 2.25)
 limit_smoothed = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="player/Camera2D"]
-layer = 99
-visible = false
-
-[node name="Control" type="Control" parent="player/Camera2D/CanvasLayer"]
-z_index = 2
-y_sort_enabled = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="player/Camera2D/CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.552941)
-
-[node name="Button" type="Button" parent="player/Camera2D/CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -15.5
-offset_right = 36.0
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "RESUME"
-
-[node name="Button2" type="Button" parent="player/Camera2D/CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = 32.0
-offset_right = 36.0
-offset_bottom = 63.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "RELOAD"
-
-[node name="Button3" type="Button" parent="player/Camera2D/CanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = 82.0
-offset_right = 38.0
-offset_bottom = 113.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "QUIT"
-
 [node name="puzzleDioses" type="CanvasLayer" parent="player/Camera2D"]
 visible = false
 
@@ -23375,6 +23308,8 @@ visible = false
 visible = false
 
 [node name="Control" parent="player/Camera2D/puzzleAngulos" instance=ExtResource("16_kkx2o")]
+
+[node name="pause_menu" parent="player/Camera2D" instance=ExtResource("17_vbfoq")]
 
 [node name="colision" type="StaticBody2D" parent="."]
 
@@ -23710,9 +23645,6 @@ position = Vector2(-2, -179)
 position = Vector2(0.5, 26.5)
 shape = SubResource("RectangleShape2D_1btpf")
 
-[connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="player/Camera2D/CanvasLayer/Control/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="resultadoCorrecto" from="player/Camera2D/puzzleDioses/PuzzleDioses" to="." method="_on_puzzle_dioses_resultado_correcto"]
 [connection signal="correct_position_set" from="player/Camera2D/puzzleAngulos/Control" to="." method="_on_control_correct_position_set"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
