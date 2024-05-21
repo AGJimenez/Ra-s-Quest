@@ -317,4 +317,3 @@ func _on_area_talk_body_exited(body):
 	if(body.is_in_group("Player") && Global.activated):
 		$room/Player/talk_to_god.visible = false
 		talk = false
-

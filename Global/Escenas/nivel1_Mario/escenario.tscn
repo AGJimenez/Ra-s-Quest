@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cwqd7o7cxh88e"]
+[gd_scene load_steps=29 format=3 uid="uid://cwqd7o7cxh88e"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_8pra0"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="2_khlw3"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://beleossls3vt" path="res://Escenas/nivel1_Mario/PanelesPuzles/camera_2d.tscn" id="13_b773v"]
 [ext_resource type="PackedScene" uid="uid://bdo3d1d5jt8tb" path="res://canvas_layer_panel.tscn" id="14_nkr3p"]
 [ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="14_rtv16"]
+[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="15_q8baj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26sp1"]
 texture = ExtResource("1_8pra0")
@@ -1998,6 +1999,8 @@ limit_right = 3432
 position_smoothing_enabled = true
 
 [node name="pause_menu" parent="TileMap/Personaje/Camera2D" instance=ExtResource("14_rtv16")]
+
+[node name="saving_anim" parent="TileMap/Personaje/Camera2D" instance=ExtResource("15_q8baj")]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("14_nkr3p")]
 visible = false
