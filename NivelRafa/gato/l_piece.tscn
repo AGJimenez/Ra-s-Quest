@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c82ajfadhujaw"]
 
 [ext_resource type="Script" path="res://scripts/move_and_place.gd" id="1_kw7ns"]
-[ext_resource type="Material" uid="uid://b4xmc5m5yn223" path="res://materials/orange.tres" id="2_qn1ba"]
+[ext_resource type="Material" uid="uid://rougavd02eph" path="res://materials/azul.tres" id="2_qn1ba"]
 
 [node name="LPiece" type="CSGBox3D"]
 size = Vector3(3, 1, 1)
