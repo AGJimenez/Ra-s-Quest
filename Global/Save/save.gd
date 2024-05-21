@@ -1,5 +1,6 @@
 extends Node
 
+signal save_icon
 
 var save_dict = {
 	"map": "",
@@ -18,6 +19,8 @@ func save_game():
 	var json_string = JSON.stringify(save())
 	
 	save_game.store_line(json_string)
+	
+	emit_signal("save_icon")
 
 func load_game():
 	if not FileAccess.file_exists("user://savegame.save"):

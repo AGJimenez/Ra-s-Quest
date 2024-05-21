@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://276uutptuj65"]
+[gd_scene load_steps=92 format=3 uid="uid://276uutptuj65"]
 
 [ext_resource type="Script" path="res://Escenas/nivelAle/world.gd" id="1_ao47j"]
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="1_ue6xu"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://di5otpdw5wae6" path="res://Escenas/nivelAle/PuzzleAngulos.tscn" id="16_kkx2o"]
 [ext_resource type="PackedScene" uid="uid://r1i7cj56hh7f" path="res://Escenas/nivelAle/puzzle_dioses.tscn" id="16_vmpor"]
 [ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="17_vbfoq"]
+[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="18_ex3hk"]
 [ext_resource type="PackedScene" uid="uid://d06deaw0tipjn" path="res://Escenas/nivelAle/cruzArrastrar.tscn" id="18_o7tfn"]
 [ext_resource type="PackedScene" uid="uid://dkomrelai5dxv" path="res://Escenas/nivelAle/CruzColumna.tscn" id="19_v57ys"]
 [ext_resource type="PackedScene" uid="uid://c1gfh8ec2eqwr" path="res://Escenas/nivelAle/altar.tscn" id="20_g0u12"]
@@ -23310,6 +23311,8 @@ visible = false
 [node name="Control" parent="player/Camera2D/puzzleAngulos" instance=ExtResource("16_kkx2o")]
 
 [node name="pause_menu" parent="player/Camera2D" instance=ExtResource("17_vbfoq")]
+
+[node name="saving_anim" parent="player/Camera2D" instance=ExtResource("18_ex3hk")]
 
 [node name="colision" type="StaticBody2D" parent="."]
 

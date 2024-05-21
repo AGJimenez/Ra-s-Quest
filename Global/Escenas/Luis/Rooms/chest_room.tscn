@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cfgpctstjmt0h"]
+[gd_scene load_steps=27 format=3 uid="uid://cfgpctstjmt0h"]
 
 [ext_resource type="Script" path="res://Scripts/Luis/chest_room.gd" id="1_e1gyu"]
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="1_ua8wt"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="10_togbu"]
 [ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="11_knfwi"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_q7mc2"]
+[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="12_iamxw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avwf6"]
 texture = ExtResource("5_m65vy")
@@ -11580,6 +11581,8 @@ position = Vector2(130, 76)
 position_smoothing_enabled = true
 
 [node name="pause_menu" parent="Camera_chest" instance=ExtResource("11_knfwi")]
+
+[node name="saving_anim" parent="Camera_chest" instance=ExtResource("12_iamxw")]
 
 [node name="night_entrance" type="Node2D" parent="."]
 position = Vector2(113, -12)

@@ -1,8 +1,8 @@
-~ dialogo_puzle3
+~ dialogo_acierto_ojohorus
 set Global.dialogue_state = true
 
 Isis: ¡Correcto! Acabas de conseguir el [b]segundo papiro[/b]. Estás a mitad de camino para salir de esta sala.
-Isis: 
+Isis: Bien, para dar con el [b]tercer papiro[/b] tendrás que interrogar al dios que fue esposado y aprisionado. Él es la clave de tu éxito en esta prueba.
 
 set Global.dialogue_state = false
 => END

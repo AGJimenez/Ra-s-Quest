@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://4mirlw4ln50n"
+path="res://.godot/imported/dialogo_acierto_ojohorus.dialogue-120ab6a1f3b2945b058ae65155cfd106.tres"
+
+[deps]
+
+source_file="res://Dialogos/nivelMario/dialogo_acierto_ojohorus.dialogue"
+dest_files=["res://.godot/imported/dialogo_acierto_ojohorus.dialogue-120ab6a1f3b2945b058ae65155cfd106.tres"]
+
+[params]
+
+defaults=true

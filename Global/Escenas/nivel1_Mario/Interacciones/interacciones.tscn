@@ -17,4 +17,4 @@ position = Vector2(3070, 2460)
 position = Vector2(540, 2470)
 
 [node name="InteraccionOjoHorus" parent="." instance=ExtResource("4_0xjd7")]
-position = Vector2(2205, 2433)
+position = Vector2(2205, 3039)
