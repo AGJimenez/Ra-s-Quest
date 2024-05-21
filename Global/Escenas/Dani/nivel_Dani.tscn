@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="15_2j1o6"]
 [ext_resource type="PackedScene" uid="uid://ya58j8lojb06" path="res://Escenas/Dani/area_cofres_vertical.tscn" id="15_ahc0e"]
 [ext_resource type="PackedScene" uid="uid://irpot6b873ed" path="res://Escenas/Dani/panel.tscn" id="16_ortta"]
-[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="17_fbuch"]
+[ext_resource type="PackedScene" path="res://Interfaz/pause_menu.tscn" id="17_fbuch"]
 [ext_resource type="PackedScene" uid="uid://cm1grxk6de8lv" path="res://Escenas/Dani/static_body_2d.tscn" id="17_fc726"]
-[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="18_40bp2"]
+[ext_resource type="PackedScene" path="res://Interfaz/saving_anim.tscn" id="18_40bp2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtdwe"]
 texture = ExtResource("1_sld68")

@@ -41,7 +41,7 @@ script = ExtResource("1_gistl")
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
 offset_top = 464.0
-offset_right = 1151.0
+offset_right = 1152.0
 offset_bottom = 640.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ig4q3")
 
@@ -323,8 +323,8 @@ horizontal_alignment = 1
 
 [node name="BalanzaDeMaat" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(575.5, 231)
-scale = Vector2(2.55778, 1.02667)
+position = Vector2(576, 232)
+scale = Vector2(2.56, 1.03111)
 texture = ExtResource("13_tp6s8")
 
 [node name="Balanza_Izquierda" type="Area2D" parent="BalanzaDeMaat"]

@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://kn8h52tm3odn" path="res://Personaje/Luis/particulas/shader/WaterNoise1.tres" id="8_xsuc1"]
 [ext_resource type="PackedScene" uid="uid://b1r8jc0uuy3sb" path="res://Personaje/Luis/particulas/sand_storm_activated.tscn" id="10_6uddr"]
 [ext_resource type="PackedScene" uid="uid://b6l5pvj27ya1a" path="res://Escenas/Dani/Ultimo_Puzzle.tscn" id="11_1ynps"]
-[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="12_w8gso"]
+[ext_resource type="PackedScene" path="res://Interfaz/pause_menu.tscn" id="12_w8gso"]
 [ext_resource type="PackedScene" uid="uid://ba2q0ayvoalrm" path="res://Escenas/Dani/objectives/objective_sand_world.tscn" id="14_qv743"]
 
 [sub_resource type="Animation" id="Animation_m0cui"]

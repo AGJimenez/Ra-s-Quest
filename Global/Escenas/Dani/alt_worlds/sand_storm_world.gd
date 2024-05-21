@@ -139,5 +139,5 @@ func _on_control_resultado_correcto():
 
 
 func _on_start_transition_timeout():
-	Global.change = "sand_storm_world-node_2d"
-	LoadManager.load_scene("res://Escenas/Dani/node_2d.tscn")
+	Global.change = "sand_storm_world-nivel_Dani"
+	LoadManager.load_scene("res://Escenas/Dani/nivel_Dani_Final.tscn")
