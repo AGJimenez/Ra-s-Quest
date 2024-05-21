@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://csjnejeofyv8y"]
+[gd_scene load_steps=52 format=3 uid="uid://csjnejeofyv8y"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_bnsu1"]
 [ext_resource type="Script" path="res://Escenas/intro.gd" id="1_x8x6h"]
@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://cb0n1ip07qv1v" path="res://Assets/Sprites/tutorial/d_light.png" id="19_3l11r"]
 [ext_resource type="Texture2D" uid="uid://cisnsj0o3adhy" path="res://Assets/Sprites/tutorial/e_light.png" id="20_5ji6m"]
 [ext_resource type="Texture2D" uid="uid://cfueyo7p61rhh" path="res://Assets/Sprites/tutorial/left_mouse_button_light.png" id="22_re76b"]
-[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="24_4ei85"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj6tn"]
 texture = ExtResource("1_bnsu1")
@@ -11079,8 +11078,6 @@ libraries = {
 "": SubResource("AnimationLibrary_4w26r")
 }
 autoplay = "tutorial"
-
-[node name="saving_anim" parent="Personaje/Camera2D" instance=ExtResource("24_4ei85")]
 
 [node name="press_e" parent="Personaje" instance=ExtResource("15_hxlry")]
 visible = false

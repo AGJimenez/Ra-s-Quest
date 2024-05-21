@@ -121,7 +121,7 @@ scale = Vector2(3.00055, 3.00055)
 sprite_frames = SubResource("SpriteFrames_7ew0h")
 animation = &"saving"
 autoplay = "saving"
-frame_progress = 0.123896
+frame_progress = 0.771221
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="skeleton_saving"]
 libraries = {
