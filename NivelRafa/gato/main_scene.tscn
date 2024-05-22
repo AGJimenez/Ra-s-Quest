@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://drxin6ommjpqs"]
+[gd_scene load_steps=14 format=3 uid="uid://drxin6ommjpqs"]
 
 [ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_yoffu"]
 [ext_resource type="PackedScene" uid="uid://chrceqaijdbfm" path="res://objects/_shape_to_fill.tscn" id="2_i82xu"]
@@ -7,7 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cp7fph5yd1ipw" path="res://objects/small_l.tscn" id="4_ung86"]
 [ext_resource type="PackedScene" uid="uid://dx1juha1rke1s" path="res://objects/two_by_one.tscn" id="5_voipt"]
 [ext_resource type="Script" path="res://scripts/Label.gd" id="6_dtig5"]
+[ext_resource type="Material" uid="uid://bt0hh3l1ofh7i" path="res://materials/blue.tres" id="6_v8tgs"]
 [ext_resource type="PackedScene" uid="uid://dum0mtyw1mqxp" path="res://gato/csg_box_3d.tscn" id="7_elr0g"]
+[ext_resource type="Material" uid="uid://b4xmc5m5yn223" path="res://materials/orange.tres" id="10_gk4g8"]
+[ext_resource type="Script" path="res://scripts/move_and_place.gd" id="11_n8nup"]
+[ext_resource type="Material" uid="uid://c4tsuvqotxjd1" path="res://materials/rosa_claro.tres" id="12_txf20"]
+[ext_resource type="Material" uid="uid://dsq6tfa13jd6u" path="res://materials/prueba_2.tres" id="13_llwu5"]
 
 [node name="main_scene" type="Node3D"]
 script = ExtResource("1_yoffu")
@@ -15,13 +20,43 @@ script = ExtResource("1_yoffu")
 [node name="_shapeToFill" parent="." instance=ExtResource("2_i82xu")]
 size = Vector3(1, 1, 1)
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="_shapeToFill"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0.5, 0.5)
-polygon = PackedVector2Array(-2, 0, -2, 1, 1, 1, 1, 0)
+[node name="cabeza_rellenarg" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, -1)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2, 2, 1)
+material = ExtResource("3_fhw2d")
+
+[node name="cuerpo1_rellenarg" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -2, 0.5, 3)
+polygon = PackedVector2Array(0, 1, 1.5, 2, 3, 1)
+material = ExtResource("3_fhw2d")
+
+[node name="cuerpo2_rellenarg" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -5, 0.5, 1)
+polygon = PackedVector2Array(0, 1, 1.5, 0, 3, 1)
+material = ExtResource("3_fhw2d")
+
+[node name="culo_rellenarg" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -4, 0.5, 1)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 1, 0)
+material = ExtResource("3_fhw2d")
+
+[node name="oreja_der_rellenarg" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0.5, -2)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2)
+material = ExtResource("3_fhw2d")
+
+[node name="oreja_izq_rellenarg" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1, 0.5, -2)
+polygon = PackedVector2Array(1, 0, 1, 2, 2, 1)
+material = ExtResource("3_fhw2d")
+
+[node name="cola_rellenarg" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -6, 0.5, -1)
+polygon = PackedVector2Array(1, 0, 0, 2, 1, 2, 2, 0)
 material = ExtResource("3_fhw2d")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.58875, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.571134, 3.15642, 1.95532)
@@ -30,14 +65,18 @@ light_indirect_energy = 6.0
 omni_range = 25.0
 omni_attenuation = 0.007041
 
-[node name="LPiece" parent="." instance=ExtResource("3_oq7t8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+[node name="cuerpo2" parent="." instance=ExtResource("3_oq7t8")]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -5, 0.5, -4)
+polygon = PackedVector2Array(0, 1, 1.5, 0, 3, 1)
 
-[node name="two_by_one" parent="." instance=ExtResource("5_voipt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, -1)
+[node name="culo" parent="." instance=ExtResource("5_voipt")]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -4, 0.5, 4)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 1, 0)
+material = ExtResource("6_v8tgs")
 
-[node name="small_L" parent="." instance=ExtResource("4_ung86")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1, 0)
+[node name="cuerpo1" parent="." instance=ExtResource("4_ung86")]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0.5, 5)
+polygon = PackedVector2Array(0, 1, 1.5, 2, 3, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -57,5 +96,26 @@ theme_override_font_sizes/font_size = 80
 text = "Alma Restaurada"
 script = ExtResource("6_dtig5")
 
-[node name="CSGBox3D" parent="." instance=ExtResource("7_elr0g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+[node name="cabeza" parent="." instance=ExtResource("7_elr0g")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 0.5, -1)
+
+[node name="oreja_der" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0.5, -4)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2)
+material = ExtResource("10_gk4g8")
+script = ExtResource("11_n8nup")
+starting_material = ExtResource("10_gk4g8")
+
+[node name="oreja_izq" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2, 0.5, -2)
+polygon = PackedVector2Array(1, 0, 1, 2, 2, 1)
+material = ExtResource("12_txf20")
+script = ExtResource("11_n8nup")
+starting_material = ExtResource("12_txf20")
+
+[node name="cola" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8, 0.5, -1)
+polygon = PackedVector2Array(1, 0, 0, 2, 1, 2, 2, 0)
+material = ExtResource("13_llwu5")
+script = ExtResource("11_n8nup")
+starting_material = ExtResource("13_llwu5")

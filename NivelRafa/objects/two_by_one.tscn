@@ -3,8 +3,8 @@
 [ext_resource type="Material" uid="uid://bt0hh3l1ofh7i" path="res://materials/blue.tres" id="1_f75r3"]
 [ext_resource type="Script" path="res://scripts/move_and_place.gd" id="2_fvtmm"]
 
-[node name="two_by_one" type="CSGBox3D"]
+[node name="two_by_one" type="CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 material_override = ExtResource("1_f75r3")
-size = Vector3(2, 1, 1)
 script = ExtResource("2_fvtmm")
 starting_material = ExtResource("1_f75r3")

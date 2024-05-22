@@ -24,13 +24,16 @@ omni_range = 25.0
 omni_attenuation = 0.007041
 
 [node name="LPiece" parent="." instance=ExtResource("3_oq7t8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.5, 0.5, 1.5)
+polygon = PackedVector2Array(0, 0, 0, 1, 3, 1, 3, 0)
 
 [node name="two_by_one" parent="." instance=ExtResource("5_voipt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -3)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.5, 0.5, 0.5)
+polygon = PackedVector2Array(0, 0, 0, 1, 3, 1, 3, 0)
 
 [node name="small_L" parent="." instance=ExtResource("4_ung86")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -3)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.5, 0.5, -0.5)
+polygon = PackedVector2Array(0, 0, 0, 1, 3, 1, 3, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

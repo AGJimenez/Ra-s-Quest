@@ -29,7 +29,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
 	if event.is_action_pressed("drop"):
-		self.position.y = 0
+		self.position.y = 0.5
 		Globals.piece_dropped_signal.emit()
 	
 func set_material_and_children():
