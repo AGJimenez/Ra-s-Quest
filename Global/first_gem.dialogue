@@ -1,0 +1,6 @@
+~ cursed_gem_dialog
+set Global.dialogue_state = true
+
+𓂋𓄿: [rainbow]𓂖[/rainbow][color=#FFFF][shake]E[/shake][/color][rainbow]𓂉[/rainbow][color=#FFFF][shake]L[/shake][/color][rainbow]𓀔[/rainbow]  [rainbow]𓀟[/rainbow][color=#FFFF][shake]N[/shake][/color][rainbow]𓁷[/rainbow][color=#FFFF][shake]A[/shake][/color][rainbow]𓂃[/rainbow][color=#FFFF][shake]C[/shake][/color][rainbow]𓃯[/rainbow][color=#FFFF][shake]I[/shake][/color][rainbow]𓃂[/rainbow][color=#FFFF][shake]M[/shake][/color][rainbow]𓂿[/rainbow][color=#FFFF][shake]I[/shake][/color][rainbow]𓂤[/rainbow][color=#FFFF][shake]E[/shake][/color][rainbow]𓄎[/rainbow][color=#FFFF][shake]N[/shake][/color][rainbow]𓉀[/rainbow][color=#FFFF][shake]T[/shake][/color][rainbow]𓉲[/rainbow][color=#FFFF][shake]O[/shake][/color][rainbow]𓏣[/rainbow]
+set Global.dialogue_state = false
+=> END

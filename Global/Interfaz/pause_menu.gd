@@ -3,7 +3,7 @@ extends CanvasLayer
 var pause = false
 var quit = false
 
-func _process(delta):
+func _process(_delta):
 	if(Input.is_action_just_pressed("pausa") && !Global.dialogue_state && !quit):
 		if(!pause):
 			pauseMenu()

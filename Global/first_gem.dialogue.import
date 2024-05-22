@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://rvk6qp2st6bv"
+path="res://.godot/imported/first_gem.dialogue-2ddaee498e52ebf27ed6fb599b6db255.tres"
+
+[deps]
+
+source_file="res://first_gem.dialogue"
+dest_files=["res://.godot/imported/first_gem.dialogue-2ddaee498e52ebf27ed6fb599b6db255.tres"]
+
+[params]
+
+defaults=true

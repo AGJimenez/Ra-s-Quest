@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://day7cwm1ykue7"]
+
+[ext_resource type="Script" path="res://Personaje/Luis/Objects/easter_egg/purple_gem.gd" id="1_xrjnp"]
+[ext_resource type="Texture2D" uid="uid://qfqxcsfkr3jm" path="res://Assets/Sprites/floaty_32.png" id="2_gr5kj"]
+[ext_resource type="Texture2D" uid="uid://dlepqnbs8wrdp" path="res://Assets/Sprites/cursed_gem.png" id="3_w05y8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xuno5"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_wkbja"]
+offsets = PackedFloat32Array(0, 0.306667, 0.526667, 0.753333, 1)
+colors = PackedColorArray(0.4, 0, 0.619608, 1, 0.443137, 0, 0.545098, 1, 0.462745, 0, 0.501961, 1, 0.501961, 0, 0.396078, 1, 0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uicnq"]
+
+[node name="purple_gem" type="Node2D"]
+script = ExtResource("1_xrjnp")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_xuno5")
+position = Vector2(0, 2)
+amount = 80
+lifetime = 0.5
+texture = ExtResource("2_gr5kj")
+emission_shape = 1
+emission_sphere_radius = 16.0
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_max = 1.0
+angle_max = 360.0
+color_ramp = SubResource("Gradient_wkbja")
+
+[node name="cursed" type="Sprite2D" parent="."]
+scale = Vector2(0.189787, 0.189787)
+texture = ExtResource("3_w05y8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2.05102, 2.05102)
+shape = SubResource("CircleShape2D_uicnq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
