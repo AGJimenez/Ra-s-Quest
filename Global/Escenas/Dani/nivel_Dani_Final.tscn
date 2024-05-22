@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://17swny4p8pq3"]
+[gd_scene load_steps=30 format=3 uid="uid://17swny4p8pq3"]
 
 [ext_resource type="Script" path="res://Scripts/Dani/nivel_Dani_Fininsh.gd" id="1_2kvvv"]
 [ext_resource type="PackedScene" uid="uid://dycvn2u110ytr" path="res://Escenas/Dani/balanza_maat.tscn" id="2_7o535"]
@@ -14,8 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="12_jxpuh"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="13_fcclb"]
 [ext_resource type="PackedScene" uid="uid://irpot6b873ed" path="res://Escenas/Dani/panel.tscn" id="14_utlvx"]
-[ext_resource type="PackedScene" path="res://Interfaz/pause_menu.tscn" id="15_snc32"]
-[ext_resource type="PackedScene" path="res://Interfaz/saving_anim.tscn" id="16_xyu8d"]
+[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="15_snc32"]
+[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="16_xyu8d"]
+[ext_resource type="PackedScene" uid="uid://day7cwm1ykue7" path="res://Personaje/Luis/Objects/easter_egg/purple_gem.tscn" id="17_qfqct"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtdwe"]
 texture = ExtResource("3_eyaxc")
@@ -11476,6 +11477,11 @@ position = Vector2(3150, 900)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-13, -310)
 shape = SubResource("CircleShape2D_rhtk7")
+
+[node name="easter_egg" type="Node2D" parent="."]
+position = Vector2(2121, 2058)
+
+[node name="purple_gem" parent="easter_egg" instance=ExtResource("17_qfqct")]
 
 [connection signal="body_entered" from="Balanza_Maat" to="." method="_on_balanza_maat_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

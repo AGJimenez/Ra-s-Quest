@@ -37,7 +37,7 @@ func _ready():
 	print(fraction_green)
 	print(fraction_yellow) 
 
-func _process(delta):
+func _process(_delta):
 	if(Input.is_action_just_pressed("Interact")):
 		Global.change = "wall_puzzle-night"
 		LoadManager.load_scene("res://Escenas/Luis/Rooms/night_room.tscn")

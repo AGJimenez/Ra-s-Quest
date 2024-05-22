@@ -1,15 +1,25 @@
 extends Node2D
 
-#intro
-var tutorial_on = false
-var controls_wasd = false
-var controls_e = false
-var controls_add = false
+
 #dialog
 var dialogue_state = false
 
 #loading_screen
 var change = ""
+
+#intro
+var tutorial_on = false
+var controls_wasd = false
+var controls_e = false
+var controls_add = false
+
+#nivel_mario
+var first_cursed_gem = false
+
+#nivel_dani_final
+var second_cursed_gem = false
+
+
 
 #chest_room
 var chest_puzzle_complete = false
