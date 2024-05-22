@@ -1,0 +1,127 @@
+[gd_scene load_steps=13 format=3 uid="uid://i1r5gjuhymy7"]
+
+[ext_resource type="Script" path="res://scripts/game_controller.gd" id="1_5hi0v"]
+[ext_resource type="Material" uid="uid://bhkiveda5ysgd" path="res://materials/green.tres" id="2_iycyc"]
+[ext_resource type="Script" path="res://scripts/_shape_to_fill.gd" id="3_v31yb"]
+[ext_resource type="Script" path="res://scripts/Label.gd" id="4_up0t1"]
+[ext_resource type="Material" uid="uid://bt0hh3l1ofh7i" path="res://materials/blue.tres" id="5_1rroc"]
+[ext_resource type="Script" path="res://scripts/move_and_place.gd" id="6_njj04"]
+[ext_resource type="Material" uid="uid://bp3v2xehypl67" path="res://materials/cyan.tres" id="7_6vh8u"]
+[ext_resource type="Material" uid="uid://bnr3w4rdr5fgn" path="res://materials/pink.tres" id="8_yg80t"]
+[ext_resource type="Material" uid="uid://b4xmc5m5yn223" path="res://materials/orange.tres" id="9_rwlvl"]
+[ext_resource type="Material" uid="uid://dhij5e6gec1iu" path="res://materials/rojo_oscuro.tres" id="10_e6kju"]
+[ext_resource type="Material" uid="uid://c4tsuvqotxjd1" path="res://materials/rosa_claro.tres" id="11_ub7sm"]
+[ext_resource type="Material" uid="uid://dsq6tfa13jd6u" path="res://materials/prueba_2.tres" id="12_xma2s"]
+
+[node name="main_scene" type="Node3D"]
+script = ExtResource("1_5hi0v")
+
+[node name="_shapeToFill" type="CSGBox3D" parent="."]
+material = ExtResource("2_iycyc")
+script = ExtResource("3_v31yb")
+
+[node name="pata_der_rellenarp" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.765, 0.5, 0.5)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 0.5, 0)
+material = ExtResource("2_iycyc")
+
+[node name="cuerpo_1_rellenarp" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(-0.823136, -0.567844, -2.48212e-08, 0, -4.37114e-08, 1, -0.567844, 0.823136, 3.59804e-08, 1.83, 0.5, -1.324)
+polygon = PackedVector2Array(0, 1, 1.45, 2, 2.5, 0.5)
+material = ExtResource("2_iycyc")
+
+[node name="cuerpo_2_rellenarp" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(0.829038, 0.559193, 2.44431e-08, 0, -4.37114e-08, 1, 0.559193, -0.829038, -3.62384e-08, -0.0898173, 0.5, -0.5)
+polygon = PackedVector2Array(0, 1, 1.45, 2, 2.5, 0.5)
+material = ExtResource("2_iycyc")
+
+[node name="cola_rellenarp" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 2.2, 0.5, -1.85)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 0.5, 0)
+material = ExtResource("2_iycyc")
+
+[node name="cabeza_rellenarp" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, -2.51, 0.5, -2.5)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2)
+material = ExtResource("2_iycyc")
+
+[node name="oreja_rellenarp" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.514, 0.5, -1.51019)
+polygon = PackedVector2Array(0, 1, 0, 2, 1, 0.8, 1, 0)
+material = ExtResource("2_iycyc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.0
+offset_top = -56.5
+offset_right = 307.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Alma Restaurada"
+script = ExtResource("4_up0t1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7, -1.6261)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.571134, 3.15642, 1.95532)
+light_energy = 1.5
+light_indirect_energy = 6.0
+omni_range = 25.0
+omni_attenuation = 0.007041
+
+[node name="pata_izq" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.5, 0.5, 2.5)
+material = ExtResource("5_1rroc")
+script = ExtResource("6_njj04")
+starting_material = ExtResource("5_1rroc")
+
+[node name="pata_der" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.765, 0.5, 2.5)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 0.5, 0)
+material = ExtResource("7_6vh8u")
+script = ExtResource("6_njj04")
+starting_material = ExtResource("7_6vh8u")
+
+[node name="cuerpo_1" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-0.823136, -0.567844, -2.48212e-08, 0, -4.37114e-08, 1, -0.567844, 0.823136, 3.59804e-08, 1.83, 0.5, -5.324)
+polygon = PackedVector2Array(0, 1, 1.45, 2, 2.5, 0.5)
+material = ExtResource("8_yg80t")
+script = ExtResource("6_njj04")
+starting_material = ExtResource("8_yg80t")
+
+[node name="cuerpo_2" type="CSGPolygon3D" parent="."]
+transform = Transform3D(0.829038, 0.559193, 2.44431e-08, 0, -4.37114e-08, 1, 0.559193, -0.829038, -3.62384e-08, -0.09, 0.5, -3.5)
+polygon = PackedVector2Array(0, 1, 1.45, 2, 2.5, 0.5)
+material = ExtResource("9_rwlvl")
+script = ExtResource("6_njj04")
+starting_material = ExtResource("9_rwlvl")
+
+[node name="cola" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 4.2, 0.5, -1.85)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 0.5, 0)
+material = ExtResource("10_e6kju")
+script = ExtResource("6_njj04")
+starting_material = ExtResource("10_e6kju")
+
+[node name="cabeza" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -5.51, 0.5, -2.5)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2)
+material = ExtResource("11_ub7sm")
+script = ExtResource("6_njj04")
+starting_material = ExtResource("11_ub7sm")
+
+[node name="oreja" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.514, 0.5, -4.51)
+polygon = PackedVector2Array(0, 1, 0, 2, 1, 0.8, 1, 0)
+material = ExtResource("12_xma2s")
+script = ExtResource("6_njj04")
+starting_material = ExtResource("12_xma2s")

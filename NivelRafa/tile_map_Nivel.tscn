@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b4dkhcluoery2"]
+[gd_scene load_steps=24 format=3 uid="uid://b4dkhcluoery2"]
 
 [ext_resource type="Texture2D" uid="uid://lj7pwy4d4qm" path="res://Assets/Egyptian_A2.png" id="1_1hg7q"]
 [ext_resource type="Texture2D" uid="uid://mcdh6texv4dp" path="res://Assets/Egyptian_A4.png" id="1_88slb"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://di3fwm40tyjg1" path="res://Interaction/InteractionArea/interaction_area.tscn" id="11_xi467"]
 [ext_resource type="PackedScene" uid="uid://drxin6ommjpqs" path="res://objects/main_scene.tscn" id="13_amcm4"]
 [ext_resource type="PackedScene" uid="uid://csr40v6qr3csw" path="res://tortuga/main_scene.tscn" id="13_ohm2o"]
+[ext_resource type="PackedScene" uid="uid://i1r5gjuhymy7" path="res://perro/main_scene.tscn" id="14_jj5mp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abrps"]
 texture = ExtResource("1_88slb")
@@ -3751,3 +3752,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.710331, 0)
 [node name="Gato" parent="Humano/Tangrams" instance=ExtResource("13_amcm4")]
 
 [node name="Tortuga" parent="Humano/Tangrams" instance=ExtResource("13_ohm2o")]
+
+[node name="Perro" parent="Humano/Tangrams" instance=ExtResource("14_jj5mp")]
