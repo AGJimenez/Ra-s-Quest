@@ -91,8 +91,6 @@ func _on_signal_button_puzle1_pressed():
 func _on_signal_puzle_2():
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_acierto_puzle2.dialogue"), "dialogo_acierto_puzle2");
 	puzle_correcto += 1
-	#if (Global.dialogue_state == false):
-		#puzle_correcto += 1
 
 func number_changed():
 	Save.save_dict["map_number"] = 1

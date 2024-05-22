@@ -1,10 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://chape4vnresul"]
+[gd_scene load_steps=18 format=3 uid="uid://chape4vnresul"]
 
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_3.gd" id="1_brs6h"]
 [ext_resource type="Texture2D" uid="uid://bykah2d03b4sk" path="res://Assets/fondo_puzle2.png" id="1_pl3oo"]
+[ext_resource type="Texture2D" uid="uid://q3geuq7qts3n" path="res://Assets/flecha.png" id="3_0gcog"]
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/CustomButtons.gd" id="3_yu3ro"]
-[ext_resource type="Texture2D" uid="uid://cf8l114ncj1ds" path="res://icon.svg" id="4_fiu5f"]
+[ext_resource type="Texture2D" uid="uid://dlh7u5j4boea8" path="res://Assets/numerosPrimos/primos/13.png" id="4_d8w6t"]
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/TextureButton.gd" id="5_h1maa"]
+[ext_resource type="Texture2D" uid="uid://c7vf7bm4eegqq" path="res://Assets/numerosPrimos/primos/11.png" id="6_83eyh"]
+[ext_resource type="Texture2D" uid="uid://crr2hgfvms87h" path="res://Assets/numerosPrimos/primos/20.png" id="7_ptxro"]
+[ext_resource type="Texture2D" uid="uid://dqiid2j2riku2" path="res://Assets/numerosPrimos/primos/30.png" id="8_14f4i"]
+[ext_resource type="Texture2D" uid="uid://d04an3hylthxy" path="res://Assets/numerosPrimos/primos/32.png" id="9_5ougf"]
+[ext_resource type="Texture2D" uid="uid://cxna3q7rd3h0y" path="res://Assets/numerosPrimos/primos/31.png" id="10_he1cl"]
+[ext_resource type="Texture2D" uid="uid://c5hq33c0nwd13" path="res://Assets/numerosPrimos/no_primos/03.png" id="12_gaid8"]
+[ext_resource type="Texture2D" uid="uid://difcj81kyxl8q" path="res://Assets/numerosPrimos/no_primos/12.png" id="13_wnqdm"]
+[ext_resource type="Texture2D" uid="uid://b4vsedn5lpcdp" path="res://Assets/numerosPrimos/no_primos/21.png" id="14_a8twu"]
+[ext_resource type="Texture2D" uid="uid://0ypb45c51xlm" path="res://Assets/numerosPrimos/no_primos/02.png" id="15_nvxj5"]
+[ext_resource type="Texture2D" uid="uid://dx7aqqd1r67kb" path="res://Assets/numerosPrimos/no_primos/01.png" id="16_0i6o4"]
+[ext_resource type="Texture2D" uid="uid://dosl3wakfrbsh" path="res://Assets/numerosPrimos/no_primos/33.png" id="17_wdx1o"]
 
 [node name="Puzle3" type="Panel"]
 offset_right = 1152.0
@@ -15,41 +27,331 @@ script = ExtResource("1_brs6h")
 position = Vector2(576, 320)
 texture = ExtResource("1_pl3oo")
 
+[node name="Flecha" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.956863)
+position = Vector2(176, 504)
+rotation = 0.719076
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_0gcog")
+
 [node name="Line2D" type="Line2D" parent="."]
 
 [node name="CustomButtons" type="Node" parent="."]
 script = ExtResource("3_yu3ro")
 
 [node name="TextureButton" type="TextureButton" parent="CustomButtons"]
-offset_left = 191.0
-offset_top = 351.0
-offset_right = 319.0
-offset_bottom = 479.0
-texture_normal = ExtResource("4_fiu5f")
+offset_left = 192.0
+offset_top = 456.0
+offset_right = 320.0
+offset_bottom = 584.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_d8w6t")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton2" type="TextureButton" parent="CustomButtons"]
-offset_left = 412.0
-offset_top = 159.0
-offset_right = 540.0
-offset_bottom = 287.0
-texture_normal = ExtResource("4_fiu5f")
+offset_left = 552.0
+offset_top = 456.0
+offset_right = 680.0
+offset_bottom = 584.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("10_he1cl")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton3" type="TextureButton" parent="CustomButtons"]
-offset_left = 584.0
-offset_top = 382.0
-offset_right = 712.0
-offset_bottom = 510.0
-texture_normal = ExtResource("4_fiu5f")
+offset_left = 912.0
+offset_top = 456.0
+offset_right = 1040.0
+offset_bottom = 584.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_d8w6t")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton4" type="TextureButton" parent="CustomButtons"]
-offset_left = 783.0
-offset_top = 237.0
-offset_right = 911.0
-offset_bottom = 365.0
-texture_normal = ExtResource("4_fiu5f")
+offset_left = 312.0
+offset_top = 456.0
+offset_right = 440.0
+offset_bottom = 584.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("6_83eyh")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton5" type="TextureButton" parent="CustomButtons"]
+offset_left = 432.0
+offset_top = 456.0
+offset_right = 560.0
+offset_bottom = 584.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("9_5ougf")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton6" type="TextureButton" parent="CustomButtons"]
+offset_left = 792.0
+offset_top = 456.0
+offset_right = 920.0
+offset_bottom = 584.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ptxro")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton7" type="TextureButton" parent="CustomButtons"]
+offset_left = 672.0
+offset_top = 456.0
+offset_right = 800.0
+offset_bottom = 584.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_14f4i")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton8" type="TextureButton" parent="CustomButtons"]
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 256.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("12_gaid8")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton9" type="TextureButton" parent="CustomButtons"]
+offset_left = 192.0
+offset_top = 296.0
+offset_right = 320.0
+offset_bottom = 424.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ptxro")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton10" type="TextureButton" parent="CustomButtons"]
+offset_left = 192.0
+offset_top = 208.0
+offset_right = 320.0
+offset_bottom = 336.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_14f4i")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton11" type="TextureButton" parent="CustomButtons"]
+offset_left = 192.0
+offset_top = 376.0
+offset_right = 320.0
+offset_bottom = 504.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("13_wnqdm")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton12" type="TextureButton" parent="CustomButtons"]
+offset_left = 312.0
+offset_top = 128.0
+offset_right = 440.0
+offset_bottom = 256.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_d8w6t")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton13" type="TextureButton" parent="CustomButtons"]
+offset_left = 312.0
+offset_top = 296.0
+offset_right = 440.0
+offset_bottom = 424.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("9_5ougf")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton14" type="TextureButton" parent="CustomButtons"]
+offset_left = 312.0
+offset_top = 208.0
+offset_right = 440.0
+offset_bottom = 336.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("14_a8twu")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton15" type="TextureButton" parent="CustomButtons"]
+offset_left = 312.0
+offset_top = 376.0
+offset_right = 440.0
+offset_bottom = 504.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("10_he1cl")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton16" type="TextureButton" parent="CustomButtons"]
+offset_left = 432.0
+offset_top = 128.0
+offset_right = 560.0
+offset_bottom = 256.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("10_he1cl")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton17" type="TextureButton" parent="CustomButtons"]
+offset_left = 432.0
+offset_top = 296.0
+offset_right = 560.0
+offset_bottom = 424.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_14f4i")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton18" type="TextureButton" parent="CustomButtons"]
+offset_left = 432.0
+offset_top = 208.0
+offset_right = 560.0
+offset_bottom = 336.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("6_83eyh")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton19" type="TextureButton" parent="CustomButtons"]
+offset_left = 432.0
+offset_top = 376.0
+offset_right = 560.0
+offset_bottom = 504.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("15_nvxj5")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton20" type="TextureButton" parent="CustomButtons"]
+offset_left = 552.0
+offset_top = 128.0
+offset_right = 680.0
+offset_bottom = 256.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("15_nvxj5")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton21" type="TextureButton" parent="CustomButtons"]
+offset_left = 552.0
+offset_top = 296.0
+offset_right = 680.0
+offset_bottom = 424.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ptxro")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton22" type="TextureButton" parent="CustomButtons"]
+offset_left = 552.0
+offset_top = 208.0
+offset_right = 680.0
+offset_bottom = 336.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("16_0i6o4")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton23" type="TextureButton" parent="CustomButtons"]
+offset_left = 552.0
+offset_top = 376.0
+offset_right = 680.0
+offset_bottom = 504.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("17_wdx1o")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton24" type="TextureButton" parent="CustomButtons"]
+offset_left = 672.0
+offset_top = 128.0
+offset_right = 800.0
+offset_bottom = 256.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("9_5ougf")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton25" type="TextureButton" parent="CustomButtons"]
+offset_left = 672.0
+offset_top = 296.0
+offset_right = 800.0
+offset_bottom = 424.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_d8w6t")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton26" type="TextureButton" parent="CustomButtons"]
+offset_left = 672.0
+offset_top = 208.0
+offset_right = 800.0
+offset_bottom = 336.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ptxro")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton27" type="TextureButton" parent="CustomButtons"]
+offset_left = 672.0
+offset_top = 376.0
+offset_right = 800.0
+offset_bottom = 504.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("14_a8twu")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton28" type="TextureButton" parent="CustomButtons"]
+offset_left = 792.0
+offset_top = 128.0
+offset_right = 920.0
+offset_bottom = 256.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_14f4i")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton29" type="TextureButton" parent="CustomButtons"]
+offset_left = 792.0
+offset_top = 296.0
+offset_right = 920.0
+offset_bottom = 424.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("10_he1cl")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton30" type="TextureButton" parent="CustomButtons"]
+offset_left = 792.0
+offset_top = 208.0
+offset_right = 920.0
+offset_bottom = 336.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("6_83eyh")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton31" type="TextureButton" parent="CustomButtons"]
+offset_left = 792.0
+offset_top = 376.0
+offset_right = 920.0
+offset_bottom = 504.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("16_0i6o4")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton32" type="TextureButton" parent="CustomButtons"]
+offset_left = 912.0
+offset_top = 128.0
+offset_right = 1040.0
+offset_bottom = 256.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_ptxro")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton33" type="TextureButton" parent="CustomButtons"]
+offset_left = 912.0
+offset_top = 296.0
+offset_right = 1040.0
+offset_bottom = 424.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("8_14f4i")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton34" type="TextureButton" parent="CustomButtons"]
+offset_left = 912.0
+offset_top = 208.0
+offset_right = 1040.0
+offset_bottom = 336.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("9_5ougf")
+script = ExtResource("5_h1maa")
+
+[node name="TextureButton35" type="TextureButton" parent="CustomButtons"]
+offset_left = 912.0
+offset_top = 376.0
+offset_right = 1040.0
+offset_bottom = 504.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("6_83eyh")
 script = ExtResource("5_h1maa")
 
 [connection signal="button_down" from="CustomButtons/TextureButton" to="CustomButtons/TextureButton" method="_on_button_down"]
@@ -60,3 +362,65 @@ script = ExtResource("5_h1maa")
 [connection signal="button_up" from="CustomButtons/TextureButton3" to="CustomButtons/TextureButton3" method="_on_button_up"]
 [connection signal="button_down" from="CustomButtons/TextureButton4" to="CustomButtons/TextureButton4" method="_on_button_down"]
 [connection signal="button_up" from="CustomButtons/TextureButton4" to="CustomButtons/TextureButton4" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton5" to="CustomButtons/TextureButton5" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton5" to="CustomButtons/TextureButton5" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton6" to="CustomButtons/TextureButton6" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton6" to="CustomButtons/TextureButton6" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton7" to="CustomButtons/TextureButton7" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton7" to="CustomButtons/TextureButton7" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton8" to="CustomButtons/TextureButton8" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton8" to="CustomButtons/TextureButton8" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton9" to="CustomButtons/TextureButton9" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton9" to="CustomButtons/TextureButton9" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton10" to="CustomButtons/TextureButton10" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton10" to="CustomButtons/TextureButton10" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton11" to="CustomButtons/TextureButton11" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton11" to="CustomButtons/TextureButton11" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton12" to="CustomButtons/TextureButton12" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton12" to="CustomButtons/TextureButton12" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton13" to="CustomButtons/TextureButton13" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton13" to="CustomButtons/TextureButton13" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton14" to="CustomButtons/TextureButton14" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton14" to="CustomButtons/TextureButton14" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton15" to="CustomButtons/TextureButton15" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton15" to="CustomButtons/TextureButton15" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton16" to="CustomButtons/TextureButton16" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton16" to="CustomButtons/TextureButton16" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton17" to="CustomButtons/TextureButton17" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton17" to="CustomButtons/TextureButton17" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton18" to="CustomButtons/TextureButton18" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton18" to="CustomButtons/TextureButton18" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton19" to="CustomButtons/TextureButton19" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton19" to="CustomButtons/TextureButton19" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton20" to="CustomButtons/TextureButton20" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton20" to="CustomButtons/TextureButton20" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton21" to="CustomButtons/TextureButton21" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton21" to="CustomButtons/TextureButton21" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton22" to="CustomButtons/TextureButton22" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton22" to="CustomButtons/TextureButton22" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton23" to="CustomButtons/TextureButton23" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton23" to="CustomButtons/TextureButton23" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton24" to="CustomButtons/TextureButton24" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton24" to="CustomButtons/TextureButton24" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton25" to="CustomButtons/TextureButton25" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton25" to="CustomButtons/TextureButton25" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton26" to="CustomButtons/TextureButton26" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton26" to="CustomButtons/TextureButton26" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton27" to="CustomButtons/TextureButton27" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton27" to="CustomButtons/TextureButton27" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton28" to="CustomButtons/TextureButton28" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton28" to="CustomButtons/TextureButton28" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton29" to="CustomButtons/TextureButton29" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton29" to="CustomButtons/TextureButton29" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton30" to="CustomButtons/TextureButton30" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton30" to="CustomButtons/TextureButton30" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton31" to="CustomButtons/TextureButton31" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton31" to="CustomButtons/TextureButton31" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton32" to="CustomButtons/TextureButton32" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton32" to="CustomButtons/TextureButton32" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton33" to="CustomButtons/TextureButton33" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton33" to="CustomButtons/TextureButton33" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton34" to="CustomButtons/TextureButton34" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton34" to="CustomButtons/TextureButton34" method="_on_button_up"]
+[connection signal="button_down" from="CustomButtons/TextureButton35" to="CustomButtons/TextureButton35" method="_on_button_down"]
+[connection signal="button_up" from="CustomButtons/TextureButton35" to="CustomButtons/TextureButton35" method="_on_button_up"]
