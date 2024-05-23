@@ -3,6 +3,7 @@ extends Node2D
 @onready var player= get_tree().get_first_node_in_group("player")
 @onready var label= $Label
 
+
 const base_text = "E to "
 
 var active_areas = []
@@ -19,8 +20,10 @@ func unregister_area(area:InteractionArea):
 		
 		
 func _process(delta):
+	
 		if active_areas.size()>0 && can_interact:
 			active_areas.sort_custom(_sort_by_distance_to_player)
+	
 			label.text = base_text + active_areas[0].action_name
 			label.global_position=active_areas[0].global_position
 			label.global_position.y -=36
@@ -41,7 +44,7 @@ func _input(event):
 		if active_areas.size()>0:
 			can_interact=false
 			label.hide()
-			LoadManager.load_scene("res://gato/main_scene.tscn")
+			LoadManager.load_scene("res://Escenas/Rafa/tortuga/main_scene.tscn")
 			await active_areas[0].interact.call()
 		
 			can_interact=true

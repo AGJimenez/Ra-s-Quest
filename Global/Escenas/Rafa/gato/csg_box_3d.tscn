@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dum0mtyw1mqxp"]
+
+[ext_resource type="Material" uid="uid://bgd37idlciytq" path="res://Escenas/Rafa/materials/prueba.tres" id="1_54tck"]
+[ext_resource type="Script" path="res://Scripts/Rafa/move_and_place.gd" id="2_u8ol7"]
+
+[node name="cabeza" type="CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2, 2, 1)
+material = ExtResource("1_54tck")
+script = ExtResource("2_u8ol7")
+starting_material = ExtResource("1_54tck")
