@@ -2,6 +2,7 @@ extends Node2D
 
 var wall = false
 var dialog_end = false
+var purple_area = false
 
 func _ready():
 	if(Global.complete):
@@ -26,6 +27,9 @@ func _process(_delta):
 	if(Global.complete && !Global.anubis_dialog_end  && Global.door_disable):
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Luis/night_room/anubis_back.dialogue"), "anubis_dialog")
 		Global.anubis_dialog_end = true
+	if(Input.is_action_just_pressed("Interact") && purple_area && !Global.easter_egg_night):
+		#DialogueManager.show_example_dialogue_balloon(load(), "anubis_dialog")
+		Global.easter_egg_night = true
 	if(Global.dialogue_state == true):
 		$room/Player.velocity = Vector2.ZERO
 		$room/Player.direction = Vector2.ZERO
@@ -55,4 +59,17 @@ func _on_wall_puzzle_body_entered(body):
 func _on_wall_puzzle_body_exited(body):
 	if(body.is_in_group("Player")):
 		wall = false
+		$room/Player/interact.visible = false
+
+
+
+func _on_purple_area_body_entered(body):
+	if(body.is_in_group("Player")):
+		purple_area = true
+		$room/Player/interact.visible = true
+
+
+func _on_purple_area_body_exited(body):
+	if(body.is_in_group("Player")):
+		purple_area = false
 		$room/Player/interact.visible = false

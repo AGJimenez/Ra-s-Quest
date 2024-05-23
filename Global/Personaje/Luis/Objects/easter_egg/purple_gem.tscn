@@ -15,14 +15,15 @@ particles_anim_loop = false
 offsets = PackedFloat32Array(0, 0.306667, 0.526667, 0.753333, 1)
 colors = PackedColorArray(0.4, 0, 0.619608, 1, 0.443137, 0, 0.545098, 1, 0.462745, 0, 0.501961, 1, 0.501961, 0, 0.396078, 1, 0, 0, 0, 1)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uicnq"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_iqfm4"]
 
-[node name="purple_gem" type="Node2D"]
+[node name="purple_gem" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_xrjnp")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_xuno5")
-position = Vector2(0, 2)
+position = Vector2(0, -4)
 amount = 80
 lifetime = 0.5
 texture = ExtResource("2_gr5kj")
@@ -35,13 +36,11 @@ angle_max = 360.0
 color_ramp = SubResource("Gradient_wkbja")
 
 [node name="cursed" type="Sprite2D" parent="."]
+position = Vector2(0, -5.79533)
 scale = Vector2(0.189787, 0.189787)
 texture = ExtResource("3_w05y8")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(2.05102, 2.05102)
-shape = SubResource("CircleShape2D_uicnq")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(0.877465, 0.877465)
+shape = SubResource("CircleShape2D_iqfm4")

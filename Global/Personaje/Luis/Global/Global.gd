@@ -21,6 +21,7 @@ var cofre = false
 
 #nivel_dani_final
 var second_cursed_gem = false
+var easter_egg_dani = false
 
 
 
@@ -34,6 +35,7 @@ var door_disable = false
 var anubis_dialog_end = false
 var pressed = false
 var complete = false
+var easter_egg_night = false
 
 
 #flower
