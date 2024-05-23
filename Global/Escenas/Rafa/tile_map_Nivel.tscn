@@ -3573,9 +3573,18 @@ layer_3/tile_data = PackedInt32Array(-1507332, 983042, 4, -1441796, 983042, 5, -
 layer_4/name = "Miscelaneo 3"
 layer_4/z_index = 3
 layer_4/tile_data = PackedInt32Array(-262154, 655362, 9, -655370, 655362, 9, -1048586, 655362, 9, -1114103, 655362, 9, -720887, 655362, 9, -327671, 655362, 9, 131062, 655362, 9, 524278, 655362, 9, 65545, 655362, 9, 458761, 655362, 9, -1310682, 917506, 13, -1310678, 917506, 13, -65492, 786434, 14, 44, 786434, 15, -196572, 786434, 14, -131036, 786434, 15, -45, 786434, 14, 65491, 786434, 15, -262181, 720898, 14, -196645, 720898, 15, -1114157, 720898, 14, -1048621, 720898, 15, -983077, 786434, 14, -917541, 786434, 15, -1507338, 655362, 9, -1572855, 655362, 9, -1572870, 720898, 11, -1638395, 720898, 11)
+metadata/_edit_vertical_guides_ = [-1630.0, -1606.0, -1606.0, 1286.0, 1286.0]
+metadata/_edit_horizontal_guides_ = [-746.0, 490.0]
 
 [node name="Personaje" parent="." instance=ExtResource("14_mcn85")]
-position = Vector2(8, 20)
+position = Vector2(3, 260)
+
+[node name="Camera2D" type="Camera2D" parent="Personaje"]
+position = Vector2(0, -18)
+limit_left = -1606
+limit_top = -746
+limit_right = 1286
+limit_bottom = 490
 
 [node name="Paredes" type="StaticBody2D" parent="."]
 
