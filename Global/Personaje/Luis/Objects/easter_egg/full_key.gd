@@ -1,14 +1,20 @@
 extends Node2D
 
+@export_group("Sprite")
 @export var SW: Sprite2D
 @export var SE: Sprite2D
 @export var NW: Sprite2D
 @export var NE: Sprite2D
+
+@export_group("AnimationPlayer")
 @export var anim: AnimationPlayer
+
+@export_group("Particles")
 @export var particles_NW: CPUParticles2D
 @export var particles_NE: CPUParticles2D
 @export var particles_SE: CPUParticles2D
 @export var particles_SW: CPUParticles2D
+@export_subgroup("Cursed")
 @export var cursed_particles: Node2D
 
 func _ready():

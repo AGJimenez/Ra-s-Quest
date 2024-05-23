@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://di3fwm40tyjg1"]
+
+[ext_resource type="Script" path="res://Escenas/Rafa/Interaction/InteractionArea/interaction_area.gd" id="1_o8vnl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0ar2"]
+size = Vector2(80, 28)
+
+[node name="InteractionArea" type="Area2D"]
+script = ExtResource("1_o8vnl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, 32)
+shape = SubResource("RectangleShape2D_d0ar2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

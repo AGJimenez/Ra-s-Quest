@@ -16,6 +16,9 @@ var controls_add = false
 #nivel_mario
 var first_cursed_gem = false
 
+#nivel_Dani
+var cofre = false
+
 #nivel_dani_final
 var second_cursed_gem = false
 
@@ -51,6 +54,8 @@ var yellow_flower_dialog = false
 var activated = false
 var dead = false
 var death = false
+
+
 
 @export var decimals = [0.6,1.125,0.5,0.1,3.5,1.3,2.5,1.6,1.2]
 @export var fractions = ["3/5","9/8","2/4","1/9","7/2","4/3","5/2","8/5","6/5"]

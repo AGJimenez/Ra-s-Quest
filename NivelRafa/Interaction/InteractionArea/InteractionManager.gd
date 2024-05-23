@@ -41,7 +41,7 @@ func _input(event):
 		if active_areas.size()>0:
 			can_interact=false
 			label.hide()
-			LoadManager.load_scene("res://perro/main_scene.tscn")
+			LoadManager.load_scene("res://gato/main_scene.tscn")
 			await active_areas[0].interact.call()
 		
 			can_interact=true

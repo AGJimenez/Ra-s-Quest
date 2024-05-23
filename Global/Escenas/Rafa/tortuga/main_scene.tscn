@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=3 uid="uid://csr40v6qr3csw"]
+
+[ext_resource type="Script" path="res://Scripts/Rafa/game_controller.gd" id="1_gi08d"]
+[ext_resource type="Script" path="res://Scripts/Rafa/_shape_to_fill.gd" id="2_2efe0"]
+[ext_resource type="Material" uid="uid://bhkiveda5ysgd" path="res://Escenas/Rafa/materials/green.tres" id="2_4gtcw"]
+[ext_resource type="Script" path="res://Scripts/Rafa/Label.gd" id="3_ow6ix"]
+[ext_resource type="Material" uid="uid://bt0hh3l1ofh7i" path="res://Escenas/Rafa/materials/blue.tres" id="5_7p0hg"]
+[ext_resource type="Script" path="res://Scripts/Rafa/move_and_place.gd" id="6_bnvel"]
+[ext_resource type="Material" uid="uid://bgd37idlciytq" path="res://Escenas/Rafa/materials/prueba.tres" id="7_3ujsy"]
+[ext_resource type="Material" uid="uid://bp3v2xehypl67" path="res://Escenas/Rafa/materials/cyan.tres" id="8_eu7w2"]
+[ext_resource type="Material" uid="uid://b4xmc5m5yn223" path="res://Escenas/Rafa/materials/orange.tres" id="9_hr1qy"]
+[ext_resource type="Material" uid="uid://bnr3w4rdr5fgn" path="res://Escenas/Rafa/materials/pink.tres" id="10_gusuk"]
+[ext_resource type="Material" uid="uid://dhij5e6gec1iu" path="res://Escenas/Rafa/materials/rojo_oscuro.tres" id="11_p6i0q"]
+[ext_resource type="Material" uid="uid://c4tsuvqotxjd1" path="res://Escenas/Rafa/materials/rosa_claro.tres" id="12_2bqgn"]
+
+[node name="main_scene" type="Node3D"]
+script = ExtResource("1_gi08d")
+
+[node name="_shapeToFill" type="CSGBox3D" parent="."]
+material = ExtResource("2_4gtcw")
+script = ExtResource("2_2efe0")
+
+[node name="cabeza_rellenart" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.5, 0.5, 1)
+polygon = PackedVector2Array(1, 0.5, 0.5, 1, 1, 1.5, 1.5, 1)
+material = ExtResource("2_4gtcw")
+
+[node name="cuerpo_der_rellenart" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, -1, 0.5, -1.5)
+polygon = PackedVector2Array(0, 1, 1.5, 2, 3, 1)
+material = ExtResource("2_4gtcw")
+
+[node name="cuerpo_izq_rellenart" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, 1, 0.5, 1.5)
+polygon = PackedVector2Array(0, 1, 1.5, 2, 3, 1)
+material = ExtResource("2_4gtcw")
+
+[node name="pata_arriba_rellenart" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(-0.5, 0.866025, 0, 3.78552e-08, 2.18557e-08, 1, 0.866025, 0.5, -4.37114e-08, -1.81, 0.5, -2.5)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2)
+material = ExtResource("2_4gtcw")
+
+[node name="pata_abajo_rellenart" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(-0.5, -0.866025, -3.78552e-08, 0, -4.37114e-08, 1, -0.866025, 0.5, 2.18557e-08, -0.08, 0.5, 1.5)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2)
+material = ExtResource("2_4gtcw")
+
+[node name="pata_der_abajo_rellenart" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(-0.573576, -0.819152, -3.58063e-08, 0, -4.37114e-08, 1, -0.819152, 0.573576, 2.50718e-08, 1.12, 0.5, 1.5)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 1, 0)
+material = ExtResource("2_4gtcw")
+
+[node name="pata_der_arriba_rellenart" type="CSGPolygon3D" parent="_shapeToFill"]
+transform = Transform3D(-0.222313, -0.6108, -2.66989e-08, 0, -2.84124e-08, 0.65, -0.6108, 0.222313, 9.71761e-09, 1.86, 0.5, -1)
+polygon = PackedVector2Array(1, 0, 0, 2, 1, 2, 2, 0)
+material = ExtResource("2_4gtcw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.0
+offset_top = -56.5
+offset_right = 307.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Alma Restaurada"
+script = ExtResource("3_ow6ix")
+
+[node name="cabeza" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.5, 0.5, -1)
+polygon = PackedVector2Array(1, 0.5, 0.5, 1, 1, 1.5, 1.5, 1)
+material = ExtResource("5_7p0hg")
+script = ExtResource("6_bnvel")
+starting_material = ExtResource("5_7p0hg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.571134, 3.15642, 1.95532)
+light_energy = 1.5
+light_indirect_energy = 6.0
+omni_range = 25.0
+omni_attenuation = 0.007041
+
+[node name="cuerpo_der" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, 1, 1, 4.37114e-08, -4.37114e-08, 3, 0.5, -1.5)
+polygon = PackedVector2Array(0, 1, 1.5, 2, 3, 1)
+material = ExtResource("7_3ujsy")
+script = ExtResource("6_bnvel")
+starting_material = ExtResource("7_3ujsy")
+
+[node name="cuerpo_izq" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, -2, 0.5, 1.5)
+polygon = PackedVector2Array(0, 1, 1.5, 2, 3, 1)
+material = ExtResource("8_eu7w2")
+script = ExtResource("6_bnvel")
+starting_material = ExtResource("8_eu7w2")
+
+[node name="pata_arriba" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-0.5, 0.866025, 3.78552e-08, 0, -4.37114e-08, 1, 0.866025, 0.5, 2.18557e-08, -1.81, 0.5, -4.5)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2)
+material = ExtResource("9_hr1qy")
+script = ExtResource("6_bnvel")
+starting_material = ExtResource("9_hr1qy")
+
+[node name="pata_abajo" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-0.5, -0.866025, -3.78552e-08, 0, -4.37114e-08, 1, -0.866025, 0.5, 2.18557e-08, -2.08, 0.5, 2.5)
+polygon = PackedVector2Array(1, 0, 0, 1, 1, 2)
+material = ExtResource("10_gusuk")
+script = ExtResource("6_bnvel")
+starting_material = ExtResource("10_gusuk")
+
+[node name="pata_der_abajo" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-0.573576, -0.819152, -3.58063e-08, 0, -4.37114e-08, 1, -0.819152, 0.573576, 2.50718e-08, 2.12, 0.5, 3.5)
+polygon = PackedVector2Array(-0.5, 0, -0.5, 1, 1, 0)
+material = ExtResource("11_p6i0q")
+script = ExtResource("6_bnvel")
+starting_material = ExtResource("11_p6i0q")
+
+[node name="pata_der_arriba" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-0.222313, -0.6108, -2.66989e-08, 0, -2.84124e-08, 0.65, -0.6108, 0.222313, 9.71761e-09, 1.86, 0.5, -3)
+polygon = PackedVector2Array(1, 0, 0, 2, 1, 2, 2, 0)
+material = ExtResource("12_2bqgn")
+script = ExtResource("6_bnvel")
+starting_material = ExtResource("12_2bqgn")

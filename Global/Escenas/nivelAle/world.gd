@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name world
+
 var finNivel = false
 var enAreaAltar = false
 var enAreaPlayer = false

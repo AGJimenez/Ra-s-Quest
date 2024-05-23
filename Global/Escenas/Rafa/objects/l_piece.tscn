@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c82ajfadhujaw"]
+
+[ext_resource type="Script" path="res://Scripts/Rafa/move_and_place.gd" id="1_kw7ns"]
+[ext_resource type="Material" uid="uid://b4xmc5m5yn223" path="res://Escenas/Rafa/materials/orange.tres" id="2_qn1ba"]
+
+[node name="LPiece" type="CSGPolygon3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+material = ExtResource("2_qn1ba")
+script = ExtResource("1_kw7ns")
+starting_material = ExtResource("2_qn1ba")

@@ -279,7 +279,13 @@ particles_NW = NodePath("mold/particles/NW_particles")
 particles_NE = NodePath("mold/particles/NE_particles")
 particles_SE = NodePath("mold/particles/SE_particles")
 particles_SW = NodePath("mold/particles/SW_particles")
-cursed_particles = NodePath("mold/purple_fire")
+cursed_particles = NodePath("purple_fire")
+
+[node name="purple_fire" parent="." instance=ExtResource("2_y50pf")]
+visible = false
+show_behind_parent = true
+position = Vector2(-2.00001, 132)
+scale = Vector2(1, 1)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0, 0, 0, 1)
@@ -434,12 +440,6 @@ position = Vector2(-27, -92)
 texture = ExtResource("1_yu3rn")
 region_enabled = true
 region_rect = Rect2(0, 0, 8, 16)
-
-[node name="purple_fire" parent="mold" instance=ExtResource("2_y50pf")]
-visible = false
-show_behind_parent = true
-position = Vector2(-0.658888, 43.4864)
-scale = Vector2(0.329443, 0.329443)
 
 [node name="anim_player" type="AnimationPlayer" parent="."]
 libraries = {
