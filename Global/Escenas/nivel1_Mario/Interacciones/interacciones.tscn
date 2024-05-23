@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3icwgvb0l2e3"]
+[gd_scene load_steps=7 format=3 uid="uid://c3icwgvb0l2e3"]
 
 [ext_resource type="PackedScene" uid="uid://cl6ifn75nogh8" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_papiro_1.tscn" id="1_7wcq4"]
 [ext_resource type="PackedScene" uid="uid://dsaoh1nrvr6sk" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_dialogo_inicial.tscn" id="2_4lr7e"]
 [ext_resource type="PackedScene" uid="uid://8sh5mhn0p2sc" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_papiro_2.tscn" id="3_dnr4l"]
 [ext_resource type="PackedScene" uid="uid://bv33if0li3y4g" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_ojo_horus.tscn" id="4_0xjd7"]
+[ext_resource type="PackedScene" uid="uid://b3w7wk7gq8r5d" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_papiro_3.tscn" id="5_vt5e0"]
+[ext_resource type="PackedScene" uid="uid://dfnkdwegqpad1" path="res://Escenas/nivel1_Mario/Interacciones/puerta_final.tscn" id="6_f3l7s"]
 
 [node name="Interacciones" type="Node2D"]
 
@@ -18,3 +20,9 @@ position = Vector2(540, 2470)
 
 [node name="InteraccionOjoHorus" parent="." instance=ExtResource("4_0xjd7")]
 position = Vector2(2205, 3039)
+
+[node name="InteraccionPapiro3" parent="." instance=ExtResource("5_vt5e0")]
+position = Vector2(1502, 2155)
+
+[node name="PuertaFinal" parent="." instance=ExtResource("6_f3l7s")]
+position = Vector2(1900, 2030)

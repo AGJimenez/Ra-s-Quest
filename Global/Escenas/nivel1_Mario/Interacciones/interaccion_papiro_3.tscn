@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3w7wk7gq8r5d"]
+
+[ext_resource type="Script" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_papiro_3.gd" id="1_sojpd"]
+[ext_resource type="FontFile" uid="uid://yaesjl55ipex" path="res://Assets/fuentes/Pixelme.ttf" id="2_bn1pp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rod7l"]
+size = Vector2(52, 70)
+
+[node name="InteraccionPapiro3" type="StaticBody2D"]
+script = ExtResource("1_sojpd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_rod7l")
+
+[node name="PanelInteraccion3" type="Panel" parent="."]
+visible = false
+z_index = 99
+offset_left = -23.0
+offset_top = -62.0
+offset_right = 23.0
+offset_bottom = -41.0
+
+[node name="Label" type="Label" parent="PanelInteraccion3"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 45.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("2_bn1pp")
+theme_override_font_sizes/font_size = 10
+text = "PRESS [E]"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

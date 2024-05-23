@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://chape4vnresul"]
+[gd_scene load_steps=19 format=3 uid="uid://chape4vnresul"]
 
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_3.gd" id="1_brs6h"]
 [ext_resource type="Texture2D" uid="uid://bykah2d03b4sk" path="res://Assets/fondo_puzle2.png" id="1_pl3oo"]
 [ext_resource type="Texture2D" uid="uid://q3geuq7qts3n" path="res://Assets/flecha.png" id="3_0gcog"]
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/CustomButtons.gd" id="3_yu3ro"]
 [ext_resource type="Texture2D" uid="uid://dlh7u5j4boea8" path="res://Assets/numerosPrimos/primos/13.png" id="4_d8w6t"]
+[ext_resource type="FontFile" uid="uid://yaesjl55ipex" path="res://Assets/fuentes/Pixelme.ttf" id="4_wicf2"]
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/TextureButton.gd" id="5_h1maa"]
 [ext_resource type="Texture2D" uid="uid://c7vf7bm4eegqq" path="res://Assets/numerosPrimos/primos/11.png" id="6_83eyh"]
 [ext_resource type="Texture2D" uid="uid://crr2hgfvms87h" path="res://Assets/numerosPrimos/primos/20.png" id="7_ptxro"]
@@ -36,7 +37,20 @@ texture = ExtResource("3_0gcog")
 
 [node name="Line2D" type="Line2D" parent="."]
 
-[node name="CustomButtons" type="Node" parent="."]
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 525.0
+offset_right = 1056.0
+offset_bottom = 590.0
+theme_override_fonts/font = ExtResource("4_wicf2")
+theme_override_font_sizes/font_size = 25
+text = "Une los números primos con líneas para encontrar la figura de un gato."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CustomButtons" type="Panel" parent="."]
+layout_mode = 0
 script = ExtResource("3_yu3ro")
 
 [node name="TextureButton" type="TextureButton" parent="CustomButtons"]

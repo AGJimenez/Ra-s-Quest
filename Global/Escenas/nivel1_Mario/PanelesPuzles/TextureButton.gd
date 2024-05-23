@@ -9,7 +9,6 @@ var is_backtracking = false
 
 
 func _process(delta):
-	#print("has_exec:", has_exec, ". mouseover:", mouseover, ". is_selected:", is_selected, ". is_backtracking:", is_backtracking)
 	if get_parent().Touching:
 		checkHover()
 

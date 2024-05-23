@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://8sh5mhn0p2sc"]
+[gd_scene load_steps=4 format=3 uid="uid://8sh5mhn0p2sc"]
 
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_papiro_2.gd" id="1_qduo7"]
+[ext_resource type="FontFile" uid="uid://yaesjl55ipex" path="res://Assets/fuentes/Pixelme.ttf" id="2_xoanf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jon42"]
 size = Vector2(42, 52)
@@ -15,6 +16,7 @@ shape = SubResource("RectangleShape2D_jon42")
 
 [node name="PanelInteraccion2" type="Panel" parent="."]
 visible = false
+z_index = 99
 offset_left = -23.0
 offset_top = -55.0
 offset_right = 23.0
@@ -27,6 +29,7 @@ offset_left = 1.0
 offset_top = 3.0
 offset_right = 45.0
 offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("2_xoanf")
 theme_override_font_sizes/font_size = 10
 text = "PRESS [E]"
 

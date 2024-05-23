@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvp670pw5ohwv"]
+[gd_scene load_steps=7 format=3 uid="uid://bvp670pw5ohwv"]
 
 [ext_resource type="Texture2D" uid="uid://d2t3ci67hxp3m" path="res://Assets/puzle_2.png" id="1_7vshc"]
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/panel_puzle_2.gd" id="1_in07k"]
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_2.gd" id="1_q233h"]
 [ext_resource type="Texture2D" uid="uid://bykah2d03b4sk" path="res://Assets/fondo_puzle2.png" id="2_op155"]
+[ext_resource type="FontFile" uid="uid://yaesjl55ipex" path="res://Assets/fuentes/Pixelme.ttf" id="4_0rq6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k33gs"]
 size = Vector2(240, 240)
@@ -23,12 +24,27 @@ position = Vector2(288, 162)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_op155")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.694118)
+position = Vector2(478, 165.125)
+scale = Vector2(0.163634, 0.164916)
+texture = ExtResource("1_7vshc")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D2"]
+offset_left = -266.0
+offset_top = 86.0
+offset_right = -87.0
+offset_bottom = 266.0
+color = Color(0, 0, 0, 1)
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 285.0
 offset_right = 577.0
 offset_bottom = 325.0
+theme_override_fonts/font = ExtResource("4_0rq6i")
+theme_override_font_sizes/font_size = 18
 text = "Desplaza las piezas para descubrir el símbolo correcto"
 horizontal_alignment = 1
 vertical_alignment = 1

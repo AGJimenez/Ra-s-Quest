@@ -4,8 +4,12 @@ class_name nivelMario
 # VARIABLES GENERALES
 @onready var player = get_node("Escenario/TileMap/Personaje")
 @onready var panel = get_node("Escenario/CanvasLayer")
+@onready var puerta_final = get_node("Interacciones/PuertaFinal")
+@onready var puerta_sprite = get_node("Escenario/Puerta")
+var completado = false
+var dialogo_completado = false
 
-var puzles_resueltos = 2
+var puzles_resueltos = 1
 var puzle_correcto = 2
 
 # VARIABLES PUZLE 1
@@ -13,6 +17,7 @@ var puzle_correcto = 2
 @onready var puzle1 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle1")
 @onready var resultadoPuzle1 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle1/TextoPuzle1")
 @onready var botonPuzle1 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle1/BotonPuzle1")
+@onready var papiro2 = get_node("Escenario/Papiro2")
 
 # VARIABLES PUZLE 2
 @onready var interaccionPapiro2 = get_node("Interacciones/InteraccionPapiro2")
@@ -23,12 +28,18 @@ var puzle_correcto = 2
 @onready var panelOjoHorus = get_node("Escenario/CanvasLayer/Panel_Mario/ProblemaOjoHorus")
 @onready var resultadoOjoHorus = get_node("Escenario/CanvasLayer/Panel_Mario/ProblemaOjoHorus/TextoOjoHorus")
 @onready var botonOjoHorus = get_node("Escenario/CanvasLayer/Panel_Mario/ProblemaOjoHorus/BotonOjoHorus")
+@onready var papiro3 = get_node("Escenario/Papiro3")
 
+# VARIABLES PUZLE 3
+@onready var interaccionPapiro3 = get_node("Interacciones/InteraccionPapiro3")
+@onready var puzle3 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle3")
+@onready var papiro4 = get_node("Escenario/Papiro4")
 
 # SEÑALES 
 signal signal_button_pressed
 signal signal_puzle2
 signal signal_problema_ojohorus
+signal signal_puzle3
 
 # MÉTODOS
 func _ready():
@@ -44,6 +55,9 @@ func _process(_delta):
 		player.speed = 0
 	else:
 		player.speed = 100
+	if (puzle_correcto == 3 and puzles_resueltos == 3 and completado == false):
+		puerta_sprite.queue_free()
+		completado = true	
 
 
 func interacciones():
@@ -52,6 +66,7 @@ func interacciones():
 		player.speed = 0
 		panel.show()
 		if (puzle_correcto == 1):
+			papiro2.show()
 			panel.hide()
 			puzle1.hide()
 			interaccionPapiro1.hide()
@@ -71,11 +86,25 @@ func interacciones():
 			player.speed = 100
 			player.has_interacted = false
 # MANEJO PROBLEMA OJO HORUS
-	if(interaccionOjoHorus.areaEntered == true and player.has_interacted == true):
+	if(interaccionOjoHorus.areaEntered == true and player.has_interacted == true && !dialogo_completado):
 		player.speed = 0
 		panel.show()
 		panelOjoHorus.show()
-		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_ojohorus.dialogue"), "dialogo_ojohorus");
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_ojohorus.dialogue"), "dialogo_ojohorus");
+		dialogo_completado = true
+# MANEJO PUZLE 3
+	if (interaccionPapiro3.areaEntered == true and player.has_interacted == true):
+		player.speed = 0
+		panel.show()
+		puzle3.show()
+		if (puzle_correcto == 3):
+			papiro4.show()
+			panel.hide()
+			puzle3.hide()
+			interaccionPapiro3.hide()
+			puzles_resueltos += 1
+			player.speed = 100
+			player.has_interacted = false
 
 
 
@@ -100,6 +129,7 @@ func _on_signal_problema_ojohorus():
 	if(resultadoOjoHorus.get_text() == "26'875" or resultadoOjoHorus.get_text() == "26,875"):
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_acierto_ojohorus.dialogue"), "dialogo_acierto_ojohorus");
 		puzles_resueltos += 1
+		papiro3.show()
 		panel.hide()
 		panelOjoHorus.hide()
 		interaccionOjoHorus.hide()
@@ -108,3 +138,7 @@ func _on_signal_problema_ojohorus():
 	else:
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_error_puzle1.dialogue"), "dialogo_error_puzle1");
 		
+
+
+func _on_signal_puzle_3():
+	puzle_correcto += 1

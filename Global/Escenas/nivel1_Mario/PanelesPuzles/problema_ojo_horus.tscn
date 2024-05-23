@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://s1dv8ojpua58"]
+[gd_scene load_steps=4 format=3 uid="uid://s1dv8ojpua58"]
 
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/problema_ojo_horus.gd" id="1_50kcq"]
 [ext_resource type="Texture2D" uid="uid://ddsoekph60rw6" path="res://Assets/puzle_ojo_horus.png" id="1_niym4"]
+[ext_resource type="FontFile" uid="uid://yaesjl55ipex" path="res://Assets/fuentes/Pixelme.ttf" id="3_5m4gw"]
 
 [node name="ProblemaOjoHorus" type="Panel"]
 offset_right = 576.0
@@ -18,6 +19,7 @@ layout_mode = 0
 offset_top = 254.0
 offset_right = 387.0
 offset_bottom = 324.0
+theme_override_fonts/font = ExtResource("3_5m4gw")
 text = "Calcula el área del escudo en m², sabiendo que está formado por 2 trapecios"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -29,6 +31,7 @@ offset_left = 499.0
 offset_top = 281.0
 offset_right = 566.0
 offset_bottom = 303.0
+theme_override_fonts/font = ExtResource("3_5m4gw")
 theme_override_font_sizes/font_size = 10
 text = "Responder"
 

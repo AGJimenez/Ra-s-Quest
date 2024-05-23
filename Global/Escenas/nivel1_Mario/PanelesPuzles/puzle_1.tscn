@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://beytgj5l451rm"]
+[gd_scene load_steps=4 format=3 uid="uid://beytgj5l451rm"]
 
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/PanelesPuzles/puzle_1.gd" id="1_u1loc"]
 [ext_resource type="Texture2D" uid="uid://dagu1b5ghdg37" path="res://Assets/puzle1.png" id="1_urwxa"]
+[ext_resource type="FontFile" uid="uid://yaesjl55ipex" path="res://Assets/fuentes/Pixelme.ttf" id="3_rygik"]
 
 [node name="Puzle1" type="Panel"]
 offset_left = 173.0
@@ -22,6 +23,7 @@ layout_mode = 0
 offset_top = 254.0
 offset_right = 402.0
 offset_bottom = 324.0
+theme_override_fonts/font = ExtResource("3_rygik")
 text = "¿Cuál es el valor de la incógnita?"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -32,6 +34,7 @@ offset_left = 493.0
 offset_top = 281.375
 offset_right = 560.0
 offset_bottom = 303.375
+theme_override_fonts/font = ExtResource("3_rygik")
 theme_override_font_sizes/font_size = 10
 text = "Responder"
 

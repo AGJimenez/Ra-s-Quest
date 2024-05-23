@@ -1,5 +1,6 @@
 extends Panel
 
+@onready var nivel_Mario = get_tree().get_root().get_node("nivelMario")
 
 var delete_all_line_flag = true
 var arrayPieces:Array = []
@@ -9,7 +10,7 @@ var arraySolution: Array = [&"TextureButton", &"TextureButton15", &"TextureButto
 func _process(delta):
 	lineFunction()
 	if (arrayPieces == arraySolution):
-		print("GANADOR")
+		nivel_Mario.signal_puzle3.emit()
 
 
 func buttonCenter():

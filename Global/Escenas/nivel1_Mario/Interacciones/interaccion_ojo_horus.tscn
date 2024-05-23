@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv33if0li3y4g"]
+[gd_scene load_steps=4 format=3 uid="uid://bv33if0li3y4g"]
 
 [ext_resource type="Script" path="res://Escenas/nivel1_Mario/Interacciones/interaccion_ojo_horus.gd" id="1_qt5wr"]
+[ext_resource type="FontFile" uid="uid://yaesjl55ipex" path="res://Assets/fuentes/Pixelme.ttf" id="2_621d7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpiwh"]
 size = Vector2(65.3125, 59.5938)
@@ -15,6 +16,7 @@ shape = SubResource("RectangleShape2D_kpiwh")
 
 [node name="PanelInteraccionOjo" type="Panel" parent="."]
 visible = false
+z_index = 99
 offset_left = -23.0
 offset_top = -55.0
 offset_right = 23.0
@@ -27,6 +29,7 @@ offset_left = 1.0
 offset_top = 3.0
 offset_right = 45.0
 offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("2_621d7")
 theme_override_font_sizes/font_size = 10
 text = "PRESS [E]"
 
