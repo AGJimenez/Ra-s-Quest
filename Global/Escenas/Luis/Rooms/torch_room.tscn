@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cd4bl7bkrabtx"]
+[gd_scene load_steps=55 format=3 uid="uid://cd4bl7bkrabtx"]
 
 [ext_resource type="Script" path="res://Scripts/Luis/torch_room.gd" id="1_qaml2"]
 [ext_resource type="Texture2D" uid="uid://c38kyyfnmscve" path="res://Assets/Egyptian_D.png" id="2_lyww8"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bnpl3a36jnylw" path="res://Personaje/Luis/Objects/chest.tscn" id="16_t8sgt"]
 [ext_resource type="PackedScene" uid="uid://ngc3d8p4i0gj" path="res://Personaje/Luis/Objects/chest_h.tscn" id="17_nskpn"]
 [ext_resource type="PackedScene" uid="uid://h5bx8q3des28" path="res://Personaje/Luis/Objects/chest_flip_h.tscn" id="18_lgymd"]
+[ext_resource type="PackedScene" uid="uid://drv2m6787xu68" path="res://Personaje/Luis/Objects/easter_egg/full_key.tscn" id="23_pl7cw"]
 
 [sub_resource type="Environment" id="Environment_61mmf"]
 background_mode = 3
@@ -11871,6 +11872,8 @@ size = Vector2(66, 25)
 [node name="torch_room" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_qaml2")
+metadata/_edit_vertical_guides_ = [221.0]
+metadata/_edit_horizontal_guides_ = [427.0]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_61mmf")
@@ -11946,6 +11949,11 @@ script = ExtResource("9_ngvp2")
 one_shot = true
 
 [node name="pause_menu" parent="room/Player/Camera_torch" instance=ExtResource("10_abp2x")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="room/Player/Camera_torch"]
+
+[node name="full_key" parent="room/Player/Camera_torch/CanvasLayer" instance=ExtResource("23_pl7cw")]
+position = Vector2(553, 279)
 
 [node name="talk_to_god" parent="room/Player" instance=ExtResource("10_o1qt3")]
 visible = false

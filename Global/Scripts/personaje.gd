@@ -6,6 +6,7 @@ var direction: Vector2 = Vector2.ZERO
 var input_enabled = true
 var wind_enabled = false
 var wind_force: Vector2 = Vector2.ZERO
+var inmortal = true
 
 @export var speed = 100
 @export var inv: Inv
@@ -21,7 +22,8 @@ func _ready():
 
 func _process(_delta):
 	update_animation()
-	if(Global.dead && !Global.activated):
+	if(Global.dead && !Global.activated && !inmortal):
+		Global.death = true
 		set_physics_process(false)
 		$Sprite2D.visible = false
 		$AnimatedSprite2D.visible = true

@@ -21,11 +21,11 @@ var pickable = false
 var talked = false
 var done = false
 
+
 @onready var left_eye = $particles/left_eye
 @onready var right_eye = $particles/right_eye
 @onready var shadow_red = $"God Statue"/objective/Shadow/AnimationPlayer
 @onready var light_red = $"God Statue"/objective/light_floor/AnimationPlayer
-
 
 func _ready():
 	$room.set_layer_enabled(1,false)
@@ -34,14 +34,15 @@ func _ready():
 
 
 func _process(_delta):
-	if(Global.dialogue_state):
-		$room/Player.animTree["parameters/conditions/idle"] = true
-		$room/Player.animTree["parameters/conditions/is_moving"] = false
-		$room/Player.set_physics_process(false)
-		$room/Player.set_process(false)
-	if(!Global.dialogue_state && !talked):
-		$room/Player.set_physics_process(true)
-		$room/Player.set_process(true)
+	if(!Global.death):
+		if(Global.dialogue_state):
+			$room/Player.animTree["parameters/conditions/idle"] = true
+			$room/Player.animTree["parameters/conditions/is_moving"] = false
+			$room/Player.set_physics_process(false)
+			$room/Player.set_process(false)
+		if(!Global.dialogue_state && !talked):
+			$room/Player.set_physics_process(true)
+			$room/Player.set_process(true)
 	if(!done &&((area_1_movable && area_2_movable && area_3_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_2_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_2_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)) ||(area_1_movable && area_3_movable && area_4_movable && (area_1_player || area_2_player || area_3_player || area_4_player)))):
 		if(!Global.activated):
 			$room/Player.animTree["parameters/conditions/idle"] = true
