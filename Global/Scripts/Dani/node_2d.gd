@@ -32,22 +32,28 @@ func _process(delta):
 		isFinalPuzzleEnabled = true
 	if on_area_cofre == false:
 		player.speed = panel.speedPlayer
-	
+		
+	if Global.cofre:
+		interaccion_con_cofre()
 
 
 func interaccion_con_cofre():
 	if panel.visible:
 		panel.visible = false
 		player.speed = 100
+		Global.cofre=false
 	else:
 		panel.visible = true
 		player.speed = 0
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta.dialogue"),"main")
+		Global.cofre = false
+		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta.dialogue"),"main")
 
 func interaccion():
 	if on_area_cofre ==true and Input.is_action_just_pressed("Interact"):
 		print("DALE A LA E")
-		interaccion_con_cofre()
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Interacción_Con_Cofre.dialogue"),"main")
+		if Global.cofre:
+			interaccion_con_cofre()
 	elif on_area_balanza==true and Input.is_action_just_pressed("Interact"):
 		interaccion_con_balanza()
 
