@@ -21,6 +21,7 @@ func set_state_at_current_index(new_state: bool):
 
 
 func on_level_complete():
+	Globals.completados += 1
 	await get_tree().create_timer(1).timeout
 	LoadManager.load_scene("res://Escenas/Rafa/tile_map_Nivel.tscn")
 
