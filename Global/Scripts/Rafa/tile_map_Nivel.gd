@@ -1,8 +1,18 @@
 extends TileMap
 
 var puerta_hecha = false
+var purple_area: bool = false
+@onready var interact_label: Control = $Personaje/Control
 
 func _process(delta):
+	if(Input.is_action_just_pressed("Interact") && purple_area && !Save.save_dict["gem_rafa"]):
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/easter_egg/third_gem.dialogue"), "cursed_gem_dialog")
+		interact_label.visible = false
+		Save.save_dict["gem_rafa"] = true
+		Save.save_game()
+		$easter_egg.queue_free()
+		
+
 	if(Globals.completados == 4 && !puerta_hecha):
 		pass#quitar cuando este relleno el if
 		#puerta.visible = false
@@ -11,3 +21,15 @@ func _process(delta):
 
 	#if(player entra en area)
 	#loadmanager.load_level("chest_room")
+
+
+func _on_purple_area_body_entered(body):
+	if(body.is_in_group("Player") && !Save.save_dict["gem_rafa"]):
+		purple_area = true
+		interact_label.visible = true
+
+
+func _on_purple_area_body_exited(body):
+	if(body.is_in_group("Player") && !Save.save_dict["gem_rafa"]):
+		purple_area = false
+		interact_label.visible = false

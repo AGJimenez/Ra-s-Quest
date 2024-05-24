@@ -14,15 +14,13 @@ var controls_e = false
 var controls_add = false
 
 #nivel_mario
-var first_cursed_gem = false
 
 #nivel_Dani
 var cofre = false
 
 #nivel_dani_final
-var second_cursed_gem = false
 
-
+#tile_map_Nivel (Rafa)
 
 #chest_room
 var chest_puzzle_complete = false
@@ -54,6 +52,9 @@ var yellow_flower_dialog = false
 var activated = false
 var dead = false
 var death = false
+
+#easter_egg
+var pieces_collected: int = 0
 
 
 

@@ -7,7 +7,7 @@ var input_enabled = true
 var wind_enabled = false
 var wind_force: Vector2 = Vector2.ZERO
 
-@export var speed = 100
+@export var speed: int = 100
 @export var inv: Inv
 
 @onready var animTree: AnimationTree = $AnimationTree
@@ -22,6 +22,8 @@ func _ready():
 func _process(_delta):
 	update_animation()
 	if(Global.dead && !Global.activated):
+		Global.death = true
+		Global.pieces_collected = 0
 		set_physics_process(false)
 		$Sprite2D.visible = false
 		$AnimatedSprite2D.visible = true
@@ -112,4 +114,4 @@ func _on_sand_storm_world_wind_force(vector, wind):
 	velocity = vector
 	wind_force = vector
 	wind_enabled = wind
-	
+

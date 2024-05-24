@@ -4,6 +4,7 @@
 
 [node name="pause_menu" type="CanvasLayer"]
 process_mode = 3
+layer = 99
 visible = false
 script = ExtResource("1_5o6do")
 

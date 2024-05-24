@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cfgpctstjmt0h"]
+[gd_scene load_steps=30 format=3 uid="uid://cfgpctstjmt0h"]
 
 [ext_resource type="Script" path="res://Scripts/Luis/chest_room.gd" id="1_e1gyu"]
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="1_ua8wt"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="11_knfwi"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_q7mc2"]
 [ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="12_iamxw"]
+[ext_resource type="Texture2D" uid="uid://qfqxcsfkr3jm" path="res://Assets/Sprites/floaty_32.png" id="13_qk8jj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avwf6"]
 texture = ExtResource("5_m65vy")
@@ -11531,11 +11532,23 @@ size = Vector2(20, 33.6283)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wleei"]
 size = Vector2(45, 20)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_fdft1"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_tygg1"]
+offsets = PackedFloat32Array(0, 0.306667, 0.526667, 0.753333, 1)
+colors = PackedColorArray(0.4, 0, 0.619608, 1, 0.443137, 0, 0.545098, 1, 0.462745, 0, 0.501961, 1, 0.501961, 0, 0.396078, 1, 0, 0, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1cgb"]
 size = Vector2(60, 32)
 
-[node name="chest_room" type="Node2D"]
+[node name="chest_room" type="Node2D" node_paths=PackedStringArray("cursed_particles")]
 script = ExtResource("1_e1gyu")
+cursed_particles = NodePath("easter_egg_chest/cursed_particles")
 
 [node name="darker" type="CanvasModulate" parent="."]
 color = Color(0.772549, 0.772549, 0.772549, 1)
@@ -11625,6 +11638,22 @@ shape = SubResource("RectangleShape2D_wleei")
 
 [node name="easter_egg_chest" type="Area2D" parent="."]
 position = Vector2(13, 175)
+
+[node name="cursed_particles" type="CPUParticles2D" parent="easter_egg_chest"]
+material = SubResource("CanvasItemMaterial_fdft1")
+position = Vector2(15, -14)
+scale = Vector2(1.7869, 1.7869)
+emitting = false
+amount = 80
+lifetime = 0.5
+texture = ExtResource("13_qk8jj")
+emission_shape = 1
+emission_sphere_radius = 16.0
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_max = 1.0
+angle_max = 360.0
+color_ramp = SubResource("Gradient_tygg1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="easter_egg_chest"]
 position = Vector2(20, -4)
