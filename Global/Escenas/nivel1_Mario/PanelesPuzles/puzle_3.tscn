@@ -54,6 +54,7 @@ layout_mode = 0
 script = ExtResource("3_yu3ro")
 
 [node name="TextureButton" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 456.0
 offset_right = 320.0
@@ -63,6 +64,7 @@ texture_normal = ExtResource("4_d8w6t")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton2" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 552.0
 offset_top = 456.0
 offset_right = 680.0
@@ -72,6 +74,7 @@ texture_normal = ExtResource("10_he1cl")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton3" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 912.0
 offset_top = 456.0
 offset_right = 1040.0
@@ -81,6 +84,7 @@ texture_normal = ExtResource("4_d8w6t")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton4" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 312.0
 offset_top = 456.0
 offset_right = 440.0
@@ -90,6 +94,7 @@ texture_normal = ExtResource("6_83eyh")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton5" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 456.0
 offset_right = 560.0
@@ -99,6 +104,7 @@ texture_normal = ExtResource("9_5ougf")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton6" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 792.0
 offset_top = 456.0
 offset_right = 920.0
@@ -108,6 +114,7 @@ texture_normal = ExtResource("7_ptxro")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton7" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 672.0
 offset_top = 456.0
 offset_right = 800.0
@@ -117,6 +124,7 @@ texture_normal = ExtResource("8_14f4i")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton8" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 128.0
 offset_right = 320.0
@@ -126,6 +134,7 @@ texture_normal = ExtResource("12_gaid8")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton9" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 296.0
 offset_right = 320.0
@@ -135,6 +144,7 @@ texture_normal = ExtResource("7_ptxro")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton10" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 208.0
 offset_right = 320.0
@@ -144,6 +154,7 @@ texture_normal = ExtResource("8_14f4i")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton11" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 376.0
 offset_right = 320.0
@@ -153,6 +164,7 @@ texture_normal = ExtResource("13_wnqdm")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton12" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 312.0
 offset_top = 128.0
 offset_right = 440.0
@@ -162,6 +174,7 @@ texture_normal = ExtResource("4_d8w6t")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton13" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 312.0
 offset_top = 296.0
 offset_right = 440.0
@@ -171,6 +184,7 @@ texture_normal = ExtResource("9_5ougf")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton14" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 312.0
 offset_top = 208.0
 offset_right = 440.0
@@ -180,6 +194,7 @@ texture_normal = ExtResource("14_a8twu")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton15" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 312.0
 offset_top = 376.0
 offset_right = 440.0
@@ -189,6 +204,7 @@ texture_normal = ExtResource("10_he1cl")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton16" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 128.0
 offset_right = 560.0
@@ -198,6 +214,7 @@ texture_normal = ExtResource("10_he1cl")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton17" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 296.0
 offset_right = 560.0
@@ -207,6 +224,7 @@ texture_normal = ExtResource("8_14f4i")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton18" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 208.0
 offset_right = 560.0
@@ -216,6 +234,7 @@ texture_normal = ExtResource("6_83eyh")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton19" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 376.0
 offset_right = 560.0
@@ -225,6 +244,7 @@ texture_normal = ExtResource("15_nvxj5")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton20" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 552.0
 offset_top = 128.0
 offset_right = 680.0
@@ -234,6 +254,7 @@ texture_normal = ExtResource("15_nvxj5")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton21" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 552.0
 offset_top = 296.0
 offset_right = 680.0
@@ -243,6 +264,7 @@ texture_normal = ExtResource("7_ptxro")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton22" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 552.0
 offset_top = 208.0
 offset_right = 680.0
@@ -252,6 +274,7 @@ texture_normal = ExtResource("16_0i6o4")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton23" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 552.0
 offset_top = 376.0
 offset_right = 680.0
@@ -261,6 +284,7 @@ texture_normal = ExtResource("17_wdx1o")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton24" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 672.0
 offset_top = 128.0
 offset_right = 800.0
@@ -270,6 +294,7 @@ texture_normal = ExtResource("9_5ougf")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton25" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 672.0
 offset_top = 296.0
 offset_right = 800.0
@@ -279,6 +304,7 @@ texture_normal = ExtResource("4_d8w6t")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton26" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 672.0
 offset_top = 208.0
 offset_right = 800.0
@@ -288,6 +314,7 @@ texture_normal = ExtResource("7_ptxro")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton27" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 672.0
 offset_top = 376.0
 offset_right = 800.0
@@ -297,6 +324,7 @@ texture_normal = ExtResource("14_a8twu")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton28" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 792.0
 offset_top = 128.0
 offset_right = 920.0
@@ -306,6 +334,7 @@ texture_normal = ExtResource("8_14f4i")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton29" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 792.0
 offset_top = 296.0
 offset_right = 920.0
@@ -315,6 +344,7 @@ texture_normal = ExtResource("10_he1cl")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton30" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 792.0
 offset_top = 208.0
 offset_right = 920.0
@@ -324,6 +354,7 @@ texture_normal = ExtResource("6_83eyh")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton31" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 792.0
 offset_top = 376.0
 offset_right = 920.0
@@ -333,6 +364,7 @@ texture_normal = ExtResource("16_0i6o4")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton32" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 912.0
 offset_top = 128.0
 offset_right = 1040.0
@@ -342,6 +374,7 @@ texture_normal = ExtResource("7_ptxro")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton33" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 912.0
 offset_top = 296.0
 offset_right = 1040.0
@@ -351,6 +384,7 @@ texture_normal = ExtResource("8_14f4i")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton34" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 912.0
 offset_top = 208.0
 offset_right = 1040.0
@@ -360,6 +394,7 @@ texture_normal = ExtResource("9_5ougf")
 script = ExtResource("5_h1maa")
 
 [node name="TextureButton35" type="TextureButton" parent="CustomButtons"]
+layout_mode = 0
 offset_left = 912.0
 offset_top = 376.0
 offset_right = 1040.0

@@ -6,11 +6,15 @@ class_name nivelMario
 @onready var panel = get_node("Escenario/CanvasLayer")
 @onready var puerta_final = get_node("Interacciones/PuertaFinal")
 @onready var puerta_sprite = get_node("Escenario/Puerta")
-var completado = false
 var dialogo_completado = false
 
-var puzles_resueltos = 1
-var puzle_correcto = 2
+var puzles_resueltos = 0
+var puzle_correcto = 0
+
+# VARIABLES FINAL
+var completado = false
+@onready var boton_final = get_node("Escenario/TileMap/BotonFinal")
+@onready var area_boton_final = get_node("Escenario/TileMap/BotonFinal/Area2D")
 
 # VARIABLES PUZLE 1
 @onready var interaccionPapiro1 = get_node("Interacciones/InteraccionPapiro1")
@@ -55,9 +59,10 @@ func _process(_delta):
 		player.speed = 0
 	else:
 		player.speed = 100
-	if (puzle_correcto == 3 and puzles_resueltos == 3 and completado == false):
+# INTERACCION PUERTA FINAL
+	if (completado == true):
 		puerta_sprite.queue_free()
-		completado = true	
+		completado = false
 
 
 func interacciones():
@@ -75,7 +80,7 @@ func interacciones():
 			player.speed = 100
 			player.has_interacted = false
 # MANEJO PUZLE 2
-	if (interaccionPapiro2.areaEntered == true and player.has_interacted == true):
+	elif (interaccionPapiro2.areaEntered == true and player.has_interacted == true):
 		player.speed = 0
 		panel.show()
 		puzle2.show()
@@ -86,14 +91,14 @@ func interacciones():
 			player.speed = 100
 			player.has_interacted = false
 # MANEJO PROBLEMA OJO HORUS
-	if(interaccionOjoHorus.areaEntered == true and player.has_interacted == true && !dialogo_completado):
+	elif(interaccionOjoHorus.areaEntered == true and player.has_interacted == true && !dialogo_completado):
 		player.speed = 0
 		panel.show()
 		panelOjoHorus.show()
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_ojohorus.dialogue"), "dialogo_ojohorus");
 		dialogo_completado = true
 # MANEJO PUZLE 3
-	if (interaccionPapiro3.areaEntered == true and player.has_interacted == true):
+	elif (interaccionPapiro3.areaEntered == true and player.has_interacted == true):
 		player.speed = 0
 		panel.show()
 		puzle3.show()
@@ -102,10 +107,17 @@ func interacciones():
 			panel.hide()
 			puzle3.hide()
 			interaccionPapiro3.hide()
+			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/nivelMario/dialogo_puzle3.dialogue"), "dialogo_puzle3");
 			puzles_resueltos += 1
 			player.speed = 100
 			player.has_interacted = false
-
+			area_boton_final.show()
+# INTERACCION BOTON FINAL
+	elif (boton_final.areaEntered == true and player.has_interacted == true):
+		area_boton_final.queue_free()
+		completado = true
+	else:
+		player.has_interacted = false
 
 
 # METODOS DE SEÑALES

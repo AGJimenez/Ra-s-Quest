@@ -13,7 +13,6 @@ mouse_filter = 1
 script = ExtResource("1_4un72")
 
 [node name="Puzle1" parent="." instance=ExtResource("2_yl75d")]
-visible = false
 layout_mode = 0
 offset_left = 289.0
 offset_top = 160.0
@@ -29,6 +28,7 @@ offset_right = 864.5
 offset_bottom = 484.25
 
 [node name="ProblemaOjoHorus" parent="." instance=ExtResource("4_bjkwm")]
+visible = false
 layout_mode = 0
 offset_left = 116.0
 offset_top = 63.0

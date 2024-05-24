@@ -17,11 +17,12 @@ Jack: ¿¡El mito de Osiris es cierto!?
 Isis: En efecto.
 Jack: Si mal no recuerdo, Seth se quiso hacer con el trono de su hermano Osiris, por lo que lo asesinó y repartió sus miembros por distintas zonas. Y después... ah, sí. Isis buscó los trozos de Osiris, y al encontrarlos consiguió agruparlos y revivir a su esposo.
 Isis: Te veo bien informado. Pues eso tendrás que hacer, tendrás que vivir esa sensación en tu propia piel.
-Isis: En esta sala, la única salida es una puerta sellada con uno de mis conjuros de protección. Para poder abrirla, tendrás que buscar [b]4 papiros[/b], cuya unión abrirá la puerta cuando los coloques sobre los pilares que encontrarás en el centro de la sala.
-Isis: ¿Aceptas el reto?
+Isis: En esta sala, la única salida es una puerta sellada con uno de mis conjuros de protección. Para poder abrirla, tendrás que buscar [b]4 papiros[/b], cuya fusión abrirá la puerta cuando los coloques sobre los pilares que encontrarás en el centro de la sala.
+Isis: Para que veas que soy piadosa, te proporciono el primer papiro. Lo podrás encontrar posicionado en su pilar correspondiente.
+Isis: Bien, ¿aceptas el reto?
 - ¡Por supuesto!
 - Si no queda otra...
-Isis: Perfecto. Para encontrar el [b]primer papiro[/b], deberás buscar el monumento en omenaje a Khepri, el dios escarabajo.
+Isis: Perfecto. Para encontrar el [b]segundo papiro[/b], deberás buscar el monumento en omenaje a Khepri, el dios escarabajo.
 
 set Global.dialogue_state = false
 => END

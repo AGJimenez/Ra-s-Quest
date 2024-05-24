@@ -1,0 +1,8 @@
+~ dialogo_puzle3
+set Global.dialogue_state = true
+
+Isis: ¡Increible, has dado con el orden correcto!. Enhorabuena, acabas de conseguir el [b]cuarto y último papiro[/b].
+Isis: Has demostrado una gran astucia e inteligencia, y como recompensa podrás pasar a la siguiente sala. Ahora dirígete al centro de la sala e interacciona con el monolito central.
+
+set Global.dialogue_state = false
+=> END
