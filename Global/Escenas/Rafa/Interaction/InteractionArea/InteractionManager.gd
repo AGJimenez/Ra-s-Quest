@@ -12,6 +12,10 @@ var can_interact=true
 func register_area (area: InteractionArea):
 	active_areas.push_back(area)
 	
+	var path_completo: String = area.get_path()
+	Globals.area=path_completo.substr(14,-1)
+	print(Globals.area)
+	
 
 func unregister_area(area:InteractionArea):
 	var index = active_areas.find(area)
@@ -44,7 +48,18 @@ func _input(event):
 		if active_areas.size()>0:
 			can_interact=false
 			label.hide()
-			LoadManager.load_scene("res://Escenas/Rafa/tortuga/main_scene.tscn")
+			if(Globals.area=="tortuga"):
+				Global.change = "tortuga-tile_map_Nivel"
+				LoadManager.load_scene("res://Escenas/Rafa/"+Globals.area+"/main_scene.tscn")
+			if(Globals.area=="gato"):
+				Global.change = "gato-tile_map_Nivel"
+				LoadManager.load_scene("res://Escenas/Rafa/"+Globals.area+"/main_scene.tscn")
+			if(Globals.area=="objects"):
+				Global.change = "objects-tile_map_Nivel"
+				LoadManager.load_scene("res://Escenas/Rafa/"+Globals.area+"/main_scene.tscn")
+			if(Globals.area=="perro"):
+				Global.change = "perro-tile_map_Nivel"
+				LoadManager.load_scene("res://Escenas/Rafa/"+Globals.area+"/main_scene.tscn")
 			await active_areas[0].interact.call()
 		
 			can_interact=true
