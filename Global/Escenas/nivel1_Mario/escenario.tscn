@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://cwqd7o7cxh88e"]
+[gd_scene load_steps=37 format=3 uid="uid://cwqd7o7cxh88e"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_8pra0"]
+[ext_resource type="Script" path="res://Escenas/nivel1_Mario/escenario.gd" id="1_tjomm"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="2_khlw3"]
 [ext_resource type="Texture2D" uid="uid://cn3ct3bvcphwp" path="res://Assets/Egyptian_A3.png" id="3_jadsv"]
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="4_muva5"]
@@ -17,9 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="14_rtv16"]
 [ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="15_q8baj"]
 [ext_resource type="Texture2D" uid="uid://b4ug4wbjo6ia8" path="res://Assets/papiro1.png" id="17_nwyq2"]
+[ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="17_ysic2"]
 [ext_resource type="Texture2D" uid="uid://cptekm0s1g4qs" path="res://Assets/papiro2.png" id="18_dcyx5"]
 [ext_resource type="Texture2D" uid="uid://bhmi0w44mcss0" path="res://Assets/papiro3.png" id="19_ehqjg"]
 [ext_resource type="Texture2D" uid="uid://cmkr0n6c8timd" path="res://Assets/papiro4.png" id="20_yykjf"]
+[ext_resource type="PackedScene" uid="uid://day7cwm1ykue7" path="res://Personaje/Luis/Objects/easter_egg/purple_gem.tscn" id="23_nryci"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26sp1"]
 texture = ExtResource("1_8pra0")
@@ -1974,8 +1977,11 @@ sources/18 = SubResource("TileSetAtlasSource_2vy1u")
 sources/19 = SubResource("TileSetAtlasSource_kw2wt")
 sources/20 = SubResource("TileSetAtlasSource_wwqu8")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_trb8c"]
+
 [node name="Escenario" type="Node2D"]
 position = Vector2(66, 30)
+script = ExtResource("1_tjomm")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -2013,6 +2019,12 @@ position_smoothing_enabled = true
 [node name="pause_menu" parent="TileMap/Personaje/Camera2D" instance=ExtResource("14_rtv16")]
 
 [node name="saving_anim" parent="TileMap/Personaje/Camera2D" instance=ExtResource("15_q8baj")]
+
+[node name="Control" parent="TileMap/Personaje" instance=ExtResource("17_ysic2")]
+offset_left = -16.0
+offset_top = -71.0
+offset_right = 24.0
+offset_bottom = -31.0
 
 [node name="Puerta" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -2052,3 +2064,19 @@ z_index = 2
 position = Vector2(2065, 2834)
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("20_yykjf")
+
+[node name="easter_egg" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(977, 2466)
+
+[node name="purple_gem" parent="easter_egg" instance=ExtResource("23_nryci")]
+
+[node name="purple_area" type="Area2D" parent="easter_egg/purple_gem"]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="easter_egg/purple_gem/purple_area"]
+scale = Vector2(2.45556, 2.45556)
+shape = SubResource("CircleShape2D_trb8c")
+
+[connection signal="body_entered" from="easter_egg/purple_gem/purple_area" to="." method="_on_purple_area_body_entered"]
+[connection signal="body_exited" from="easter_egg/purple_gem/purple_area" to="." method="_on_purple_area_body_exited"]

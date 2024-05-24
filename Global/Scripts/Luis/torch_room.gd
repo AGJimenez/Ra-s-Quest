@@ -20,6 +20,13 @@ var talk = false
 var pickable = false
 var talked = false
 var done = false
+var easter_egg_done = false
+
+signal key_complete
+signal mario_piece
+signal dani_piece
+signal rafa_piece
+signal luis_piece
 
 
 @onready var left_eye = $particles/left_eye
@@ -28,12 +35,43 @@ var done = false
 @onready var light_red = $"God Statue"/objective/light_floor/AnimationPlayer
 
 func _ready():
+	Global.death = false
 	$room.set_layer_enabled(1,false)
 	if Global.change == "night-torch":
 		$room/Player.global_position = $"Spawn_points/night-torch".global_position
 
 
 func _process(_delta):
+	if(!chest_complete && chest):
+		if(Input.is_action_just_pressed("Interact")):
+			emit_signal("dani_piece")
+			Global.pieces_collected +=1
+			chest_complete = true 
+			$room/Player/interact.visible = false
+	if(!chest_h_complete && chest_h):
+		if(Input.is_action_just_pressed("Interact")):
+			emit_signal("mario_piece")
+			Global.pieces_collected +=1
+			chest_h_complete = true 
+			$room/Player/interact.visible = false
+	if(!chest_flip_h_complete && chest_flip_h):
+		if(Input.is_action_just_pressed("Interact")):
+			emit_signal("luis_piece")
+			Global.pieces_collected +=1
+			chest_flip_h_complete = true
+			$room/Player/interact.visible = false
+	if(!chest_flip_h2_complete && chest_flip_h2):
+		if(Input.is_action_just_pressed("Interact")):
+			emit_signal("rafa_piece")
+			Global.pieces_collected +=1
+			chest_flip_h2_complete = true
+			$room/Player/interact.visible = false
+	if(Global.pieces_collected == 4 && !easter_egg_done):
+		emit_signal("key_complete")
+		Save.save_dict["key_collected"] = true
+		Save.save_game()
+		easter_egg_done = true
+		
 	if(!Global.death):
 		if(Global.dialogue_state):
 			$room/Player.animTree["parameters/conditions/idle"] = true
@@ -260,7 +298,7 @@ func _on_area_4_player_body_exited(body):
 
 
 func _on_area_chest_body_entered(body):
-	if(body.is_in_group("Player") && !chest_complete):
+	if(body.is_in_group("Player") && !chest_complete && Save.save_dict["gem_dani"] && !Save.save_dict["key_collected"] && !Global.activated):
 		chest = true
 		$room/Player/interact.visible = true
 
@@ -272,7 +310,7 @@ func _on_area_chest_body_exited(body):
 
 
 func _on_area_chest_h_body_entered(body):
-	if(body.is_in_group("Player") && !chest_h_complete):
+	if(body.is_in_group("Player") && !chest_h_complete && Save.save_dict["gem_mario"] && !Save.save_dict["key_collected"] && !Global.activated):
 		chest_h = true
 		$room/Player/interact.visible = true
 
@@ -284,7 +322,7 @@ func _on_area_chest_h_body_exited(body):
 
 
 func _on_area_chest_flip_h_body_entered(body):
-	if(body.is_in_group("Player") && !chest_flip_h_complete):
+	if(body.is_in_group("Player") && !chest_flip_h_complete && Save.save_dict["gem_luis"] && !Save.save_dict["key_collected"] && !Global.activated):
 		chest_flip_h = true
 		$room/Player/interact.visible = true
 
@@ -296,7 +334,7 @@ func _on_area_chest_flip_h_body_exited(body):
 
 
 func _on_area_flip_h_2_body_entered(body):
-	if(body.is_in_group("Player") && !chest_flip_h2_complete):
+	if(body.is_in_group("Player") && !chest_flip_h2_complete && Save.save_dict["gem_rafa"] && !Save.save_dict["key_collected"] && !Global.activated):
 		chest_flip_h2 = true
 		$room/Player/interact.visible = true
 

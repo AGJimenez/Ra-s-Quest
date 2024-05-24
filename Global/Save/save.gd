@@ -6,7 +6,12 @@ var save_dict = {
 	"map": "",
 	"map_number" : 0,
 	"easter_egg_try_save": true,
-	"fullscreen": false
+	"fullscreen": false,
+	"gem_mario": true,
+	"gem_dani": true,
+	"gem_rafa": true,
+	"gem_luis": true,
+	"key_collected": false
 	}
 
 func save():
@@ -34,6 +39,11 @@ func load_game():
 		var parse_result = json.parse(json_string)
 		var node_data = json.get_data()
 		
+		save_dict["gem_mario"] = node_data["gem_mario"]
+		save_dict["gem_dani"] = node_data["gem_dani"]
+		save_dict["gem_rafa"] = node_data["gem_rafa"]
+		save_dict["gem_luis"] = node_data["gem_luis"]
+		save_dict["key_collected"] = node_data["key_collected"]
 		save_dict["easter_egg_try_save"] = node_data["easter_egg_try_save"]
 		save_dict["map"] = node_data["map"]
 		save_dict["map_number"] = node_data["map_number"]

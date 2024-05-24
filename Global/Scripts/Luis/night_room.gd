@@ -2,6 +2,7 @@ extends Node2D
 
 var wall = false
 var dialog_end = false
+var purple_area: bool = false
 
 func _ready():
 	if(Global.complete):
@@ -20,6 +21,13 @@ func _ready():
 		$room/Player.global_position = $"Spawn_points/wall_puzzle-night".global_position
 
 func _process(_delta):
+	if(Input.is_action_just_pressed("Interact") && purple_area && !Save.save_dict["gem_luis"]):
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/easter_egg/second_gem.dialogue"), "cursed_gem_dialog")
+		$room/Player/interact.visible = false
+		Save.save_dict["gem_luis"] = true
+		Save.save_game()
+		$easter_egg.queue_free()
+		
 	if(Input.is_action_just_pressed("Interact") && !Global.door_disable):
 		if(wall):
 			LoadManager.load_scene("res://Escenas/Luis/Puzzles/wall_puzzle.tscn")
@@ -55,4 +63,16 @@ func _on_wall_puzzle_body_entered(body):
 func _on_wall_puzzle_body_exited(body):
 	if(body.is_in_group("Player")):
 		wall = false
+		$room/Player/interact.visible = false
+
+
+func _on_purple_area_body_entered(body):
+	if(body.is_in_group("Player") && !Save.save_dict["gem_luis"]):
+		purple_area = true
+		$room/Player/interact.visible = true
+
+
+func _on_purple_area_body_exited(body):
+	if(body.is_in_group("Player") && !Save.save_dict["gem_luis"]):
+		purple_area = false
 		$room/Player/interact.visible = false

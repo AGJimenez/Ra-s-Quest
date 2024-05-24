@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b4dkhcluoery2"]
+[gd_scene load_steps=30 format=3 uid="uid://b4dkhcluoery2"]
 
 [ext_resource type="Texture2D" uid="uid://lj7pwy4d4qm" path="res://Escenas/Rafa/Assets/Egyptian_A2.png" id="1_1hg7q"]
 [ext_resource type="Texture2D" uid="uid://mcdh6texv4dp" path="res://Escenas/Rafa/Assets/Egyptian_A4.png" id="1_88slb"]
@@ -10,11 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://bp1ini6hjy1l4" path="res://Escenas/Rafa/Assets/non-rm-a2-square.png" id="8_q2sdd"]
 [ext_resource type="Script" path="res://Scripts/Rafa/tile_map_Nivel.gd" id="9_kkali"]
 [ext_resource type="PackedScene" uid="uid://ccj43t50j36f6" path="res://Escenas/Rafa/ColisionCircular.tscn" id="10_nwcwn"]
+[ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="11_2dr1h"]
+[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="11_ey8fn"]
 [ext_resource type="PackedScene" uid="uid://di3fwm40tyjg1" path="res://Escenas/Rafa/Interaction/InteractionArea/interaction_area.tscn" id="11_xi467"]
+[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="12_iwk1g"]
 [ext_resource type="PackedScene" uid="uid://drxin6ommjpqs" path="res://Escenas/Rafa/objects/main_scene.tscn" id="13_amcm4"]
 [ext_resource type="PackedScene" uid="uid://csr40v6qr3csw" path="res://Escenas/Rafa/tortuga/main_scene.tscn" id="13_ohm2o"]
 [ext_resource type="PackedScene" uid="uid://i1r5gjuhymy7" path="res://Escenas/Rafa/perro/main_scene.tscn" id="14_jj5mp"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="14_mcn85"]
+[ext_resource type="PackedScene" uid="uid://day7cwm1ykue7" path="res://Personaje/Luis/Objects/easter_egg/purple_gem.tscn" id="16_ertqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abrps"]
 texture = ExtResource("1_88slb")
@@ -3558,7 +3562,14 @@ sources/2 = SubResource("TileSetAtlasSource_26yth")
 sources/3 = SubResource("TileSetAtlasSource_di0bx")
 sources/7 = SubResource("TileSetAtlasSource_iiyym")
 
+<<<<<<< HEAD
 [node name="TileMap" type="TileMap" node_paths=PackedStringArray("personaje", "marker_perro", "marker_gato", "marker_tortuga", "marker_humano")]
+=======
+[sub_resource type="CircleShape2D" id="CircleShape2D_gr0a7"]
+
+[node name="TileMap" type="TileMap"]
+y_sort_enabled = true
+>>>>>>> 07b1e8e6bd2fdd4a58a6827f8ce2d08ab9dbb997
 position = Vector2(-160, 156)
 tile_set = SubResource("TileSet_ilmt5")
 format = 2
@@ -3593,6 +3604,16 @@ limit_left = -1606
 limit_top = -746
 limit_right = 1286
 limit_bottom = 490
+
+[node name="pause_menu" parent="Personaje/Camera2D" instance=ExtResource("11_ey8fn")]
+
+[node name="saving_anim" parent="Personaje/Camera2D" instance=ExtResource("12_iwk1g")]
+
+[node name="Control" parent="Personaje" instance=ExtResource("11_2dr1h")]
+offset_left = -17.0
+offset_top = -76.0
+offset_right = 23.0
+offset_bottom = -36.0
 
 [node name="Paredes" type="StaticBody2D" parent="."]
 
@@ -3781,6 +3802,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.710331, 0)
 
 [node name="Perro" parent="Humano/Tangrams" instance=ExtResource("14_jj5mp")]
 
+<<<<<<< HEAD
 [node name="spawn_point" type="Node2D" parent="."]
 
 [node name="marker_perro" type="Marker2D" parent="spawn_point"]
@@ -3794,3 +3816,20 @@ position = Vector2(1296, -501)
 
 [node name="marker_humano" type="Marker2D" parent="spawn_point"]
 position = Vector2(1296, -113)
+=======
+[node name="easter_egg" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, 238)
+
+[node name="purple_gem" parent="easter_egg" instance=ExtResource("16_ertqx")]
+
+[node name="purple_area" type="Area2D" parent="easter_egg/purple_gem"]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="easter_egg/purple_gem/purple_area"]
+scale = Vector2(2.45556, 2.45556)
+shape = SubResource("CircleShape2D_gr0a7")
+
+[connection signal="body_entered" from="easter_egg/purple_gem/purple_area" to="." method="_on_purple_area_body_entered"]
+[connection signal="body_exited" from="easter_egg/purple_gem/purple_area" to="." method="_on_purple_area_body_exited"]
+>>>>>>> 07b1e8e6bd2fdd4a58a6827f8ce2d08ab9dbb997

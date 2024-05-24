@@ -102,6 +102,7 @@ _data = {
 }
 
 [node name="saving_anim" type="CanvasLayer"]
+process_mode = 3
 layer = 128
 visible = false
 script = ExtResource("1_whdqw")

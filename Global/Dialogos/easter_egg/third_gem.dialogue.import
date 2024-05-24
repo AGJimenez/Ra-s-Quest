@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bjnro48co825e"
+path="res://.godot/imported/third_gem.dialogue-bdeca01506e73910339bf0c12e764b17.tres"
+
+[deps]
+
+source_file="res://Dialogos/easter_egg/third_gem.dialogue"
+dest_files=["res://.godot/imported/third_gem.dialogue-bdeca01506e73910339bf0c12e764b17.tres"]
+
+[params]
+
+defaults=true

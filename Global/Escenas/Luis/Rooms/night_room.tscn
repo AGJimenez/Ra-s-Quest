@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://d31bvrjh6ekq8"]
+[gd_scene load_steps=39 format=3 uid="uid://d31bvrjh6ekq8"]
 
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="1_0y8jt"]
 [ext_resource type="Script" path="res://Scripts/Luis/night_room.gd" id="1_40c50"]
@@ -13,11 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="11_c4igy"]
 [ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="11_k2qxs"]
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_x4lfw"]
+[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="12_7fvvk"]
 [ext_resource type="Texture2D" uid="uid://dwq87qii5ulu" path="res://Assets/Sprites/light.png" id="13_43yrx"]
 [ext_resource type="PackedScene" uid="uid://sx6hfyddu2qe" path="res://Personaje/Luis/objectives/blue_flower.tscn" id="14_1ntin"]
 [ext_resource type="PackedScene" uid="uid://c81tcmllbpcsp" path="res://Personaje/Luis/objectives/red_flower.tscn" id="15_frtik"]
 [ext_resource type="PackedScene" uid="uid://c8c11t8m3f3fd" path="res://Personaje/Luis/objectives/green_flower.tscn" id="16_1rikp"]
 [ext_resource type="PackedScene" uid="uid://ycbhpb1pb66b" path="res://Personaje/Luis/objectives/yellow_flower.tscn" id="17_icuvp"]
+[ext_resource type="PackedScene" uid="uid://day7cwm1ykue7" path="res://Personaje/Luis/Objects/easter_egg/purple_gem.tscn" id="19_tkhja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa8ju"]
 texture = ExtResource("1_0y8jt")
@@ -17042,6 +17044,8 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxk6f"]
 size = Vector2(23, 42)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_igej2"]
+
 [node name="night_room" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_40c50")
@@ -17093,6 +17097,8 @@ position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
 [node name="pause_menu" parent="room/Player/Camera_night" instance=ExtResource("11_c4igy")]
+
+[node name="saving_anim" parent="room/Player/Camera_night" instance=ExtResource("12_7fvvk")]
 
 [node name="interact" parent="room/Player" instance=ExtResource("11_k2qxs")]
 visible = false
@@ -17178,7 +17184,22 @@ position = Vector2(1519, 726)
 [node name="yellow_flower" parent="flowers" instance=ExtResource("17_icuvp")]
 position = Vector2(466, 760)
 
+[node name="easter_egg" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1006, 771)
+
+[node name="purple_gem" parent="easter_egg" instance=ExtResource("19_tkhja")]
+
+[node name="purple_area" type="Area2D" parent="easter_egg/purple_gem"]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="easter_egg/purple_gem/purple_area"]
+scale = Vector2(2.45556, 2.45556)
+shape = SubResource("CircleShape2D_igej2")
+
 [connection signal="body_entered" from="night_area_chest" to="." method="_on_night_area_chest_body_entered"]
 [connection signal="body_entered" from="night_area_torch" to="." method="_on_night_area_torch_body_entered"]
 [connection signal="body_entered" from="wall_puzzle" to="." method="_on_wall_puzzle_body_entered"]
 [connection signal="body_exited" from="wall_puzzle" to="." method="_on_wall_puzzle_body_exited"]
+[connection signal="body_entered" from="easter_egg/purple_gem/purple_area" to="." method="_on_purple_area_body_entered"]
+[connection signal="body_exited" from="easter_egg/purple_gem/purple_area" to="." method="_on_purple_area_body_exited"]

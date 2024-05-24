@@ -4,7 +4,11 @@ var chest = false
 var easter_egg = false
 var easter_egg_try = true
 
+@export var cursed_particles: CPUParticles2D
+
 func _ready():
+	if(Global.pieces_collected == 4):
+		cursed_particles.emitting = true
 	if(Save.save_dict["map_number"] < 4):
 		number_changed()
 		Save.save_dict["map"] = "res://Escenas/Luis/Rooms/chest_room.tscn"

@@ -43,7 +43,6 @@ func _sort_by_distance_to_player(area1,area2):
 
 func _input(event):
 	if event.is_action_pressed("Interact") && can_interact:
-		print("probando")
 			
 		if active_areas.size()>0:
 			can_interact=false
