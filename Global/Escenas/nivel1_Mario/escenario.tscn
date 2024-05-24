@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=33 format=3 uid="uid://cwqd7o7cxh88e"]
-=======
-[gd_scene load_steps=30 format=3 uid="uid://cwqd7o7cxh88e"]
->>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_8pra0"]
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="2_khlw3"]
@@ -20,14 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://bdo3d1d5jt8tb" path="res://canvas_layer_panel.tscn" id="14_nkr3p"]
 [ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="14_rtv16"]
 [ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="15_q8baj"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://b4ug4wbjo6ia8" path="res://Assets/papiro1.png" id="17_nwyq2"]
 [ext_resource type="Texture2D" uid="uid://cptekm0s1g4qs" path="res://Assets/papiro2.png" id="18_dcyx5"]
 [ext_resource type="Texture2D" uid="uid://bhmi0w44mcss0" path="res://Assets/papiro3.png" id="19_ehqjg"]
 [ext_resource type="Texture2D" uid="uid://cmkr0n6c8timd" path="res://Assets/papiro4.png" id="20_yykjf"]
-=======
-[ext_resource type="PackedScene" uid="uid://day7cwm1ykue7" path="res://Personaje/Luis/Objects/easter_egg/purple_gem.tscn" id="17_08u2g"]
->>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26sp1"]
 texture = ExtResource("1_8pra0")
@@ -1983,7 +1975,6 @@ sources/19 = SubResource("TileSetAtlasSource_kw2wt")
 sources/20 = SubResource("TileSetAtlasSource_wwqu8")
 
 [node name="Escenario" type="Node2D"]
-y_sort_enabled = true
 position = Vector2(66, 30)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2013,11 +2004,7 @@ layer_6/z_index = -1
 layer_6/tile_data = PackedInt32Array(4063291, 655377, 4, 4063292, 655377, 4, 4063293, 655377, 4, 4063294, 655377, 4)
 
 [node name="Personaje" parent="TileMap" instance=ExtResource("12_8g7o8")]
-<<<<<<< Updated upstream
 position = Vector2(1958, 2865)
-=======
-position = Vector2(2288, 3136)
->>>>>>> Stashed changes
 
 [node name="Camera2D" parent="TileMap/Personaje" instance=ExtResource("13_b773v")]
 limit_right = 3432
@@ -2039,7 +2026,6 @@ layer_0/tile_data = PackedInt32Array(-65538, 983056, 4, 65534, 983056, 4, -65537
 [node name="CanvasLayer" parent="." instance=ExtResource("14_nkr3p")]
 visible = false
 
-<<<<<<< Updated upstream
 [node name="Papiro1" type="Sprite2D" parent="."]
 z_index = 2
 position = Vector2(1841, 2606)
@@ -2066,10 +2052,3 @@ z_index = 2
 position = Vector2(2065, 2834)
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("20_yykjf")
-=======
-[node name="easter_egg" type="Node2D" parent="."]
-y_sort_enabled = true
-position = Vector2(977, 2467)
-
-[node name="purple_gem" parent="easter_egg" instance=ExtResource("17_08u2g")]
->>>>>>> Stashed changes

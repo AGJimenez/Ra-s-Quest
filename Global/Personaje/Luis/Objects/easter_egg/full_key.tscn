@@ -285,6 +285,7 @@ cursed_particles = NodePath("purple_fire")
 visible = false
 show_behind_parent = true
 position = Vector2(-2.00001, 132)
+scale = Vector2(1, 1)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0, 0, 0, 1)

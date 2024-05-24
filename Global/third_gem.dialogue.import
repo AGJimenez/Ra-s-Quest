@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bjnro48co825e"
+path="res://.godot/imported/third_gem.dialogue-b284b0e53b7eed504261adb03a2e5652.tres"
+
+[deps]
+
+source_file="res://third_gem.dialogue"
+dest_files=["res://.godot/imported/third_gem.dialogue-b284b0e53b7eed504261adb03a2e5652.tres"]
+
+[params]
+
+defaults=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b4dkhcluoery2"]
+[gd_scene load_steps=25 format=3 uid="uid://b4dkhcluoery2"]
 
 [ext_resource type="Texture2D" uid="uid://lj7pwy4d4qm" path="res://Escenas/Rafa/Assets/Egyptian_A2.png" id="1_1hg7q"]
 [ext_resource type="Texture2D" uid="uid://mcdh6texv4dp" path="res://Escenas/Rafa/Assets/Egyptian_A4.png" id="1_88slb"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://csr40v6qr3csw" path="res://Escenas/Rafa/tortuga/main_scene.tscn" id="13_ohm2o"]
 [ext_resource type="PackedScene" uid="uid://i1r5gjuhymy7" path="res://Escenas/Rafa/perro/main_scene.tscn" id="14_jj5mp"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="14_mcn85"]
-[ext_resource type="PackedScene" uid="uid://day7cwm1ykue7" path="res://Personaje/Luis/Objects/easter_egg/purple_gem.tscn" id="16_ertqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abrps"]
 texture = ExtResource("1_88slb")
@@ -3560,7 +3559,6 @@ sources/3 = SubResource("TileSetAtlasSource_di0bx")
 sources/7 = SubResource("TileSetAtlasSource_iiyym")
 
 [node name="TileMap" type="TileMap"]
-y_sort_enabled = true
 position = Vector2(-160, 156)
 tile_set = SubResource("TileSet_ilmt5")
 format = 2
@@ -3767,9 +3765,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.710331, 0)
 [node name="Tortuga" parent="Humano/Tangrams" instance=ExtResource("13_ohm2o")]
 
 [node name="Perro" parent="Humano/Tangrams" instance=ExtResource("14_jj5mp")]
-
-[node name="easter_egg" type="Node2D" parent="."]
-y_sort_enabled = true
-position = Vector2(2, 232)
-
-[node name="purple_gem" parent="easter_egg" instance=ExtResource("16_ertqx")]
