@@ -47,16 +47,16 @@ func _input(event):
 		if active_areas.size()>0:
 			can_interact=false
 			label.hide()
-			if(Globals.area=="tortuga"):
+			if(Globals.area=="tortuga" && Globals.tortugaDone==false):
 				Global.change = "tortuga-tile_map_Nivel"
 				LoadManager.load_scene("res://Escenas/Rafa/"+Globals.area+"/main_scene.tscn")
-			if(Globals.area=="gato"):
+			if(Globals.area=="gato" && Globals.gatoDone==false):
 				Global.change = "gato-tile_map_Nivel"
 				LoadManager.load_scene("res://Escenas/Rafa/"+Globals.area+"/main_scene.tscn")
-			if(Globals.area=="objects"):
+			if(Globals.area=="objects" && Globals.objectsDone==false):
 				Global.change = "objects-tile_map_Nivel"
 				LoadManager.load_scene("res://Escenas/Rafa/"+Globals.area+"/main_scene.tscn")
-			if(Globals.area=="perro"):
+			if(Globals.area=="perro" && Globals.perroDone==false):
 				Global.change = "perro-tile_map_Nivel"
 				LoadManager.load_scene("res://Escenas/Rafa/"+Globals.area+"/main_scene.tscn")
 			await active_areas[0].interact.call()

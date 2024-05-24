@@ -7,3 +7,7 @@ signal put_back_shapes
 
 var completados: int = 0
 var area: String = "area"
+var tortugaDone: bool = false
+var gatoDone: bool = false
+var objectsDone: bool = false
+var perroDone: bool = false

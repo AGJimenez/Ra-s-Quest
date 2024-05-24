@@ -24,6 +24,15 @@ func on_level_complete():
 	#if(self.get_node().name):
 	Globals.completados += 1
 	print(Globals.completados)
+	
+	if(Globals.area=="gato"):
+		Globals.gatoDone=true
+	if(Globals.area=="perro"):
+		Globals.perroDone=true
+	if(Globals.area=="objects"):
+		Globals.objectsDone=true
+	if(Globals.area=="tortuga"):
+		Globals.tortugaDone=true
 	await get_tree().create_timer(1).timeout
 	LoadManager.load_scene("res://Escenas/Rafa/tile_map_Nivel.tscn")
 
