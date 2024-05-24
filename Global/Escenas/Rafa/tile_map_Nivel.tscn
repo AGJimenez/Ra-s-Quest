@@ -6011,16 +6011,16 @@ position = Vector2(1277, -542)
 position = Vector2(1282, -542)
 
 [node name="tortuga" parent="." instance=ExtResource("11_xi467")]
-position = Vector2(1259, -529)
+position = Vector2(1265, -530)
 
 [node name="gato" parent="." instance=ExtResource("11_xi467")]
-position = Vector2(-1330, -532)
+position = Vector2(-1329, -529)
 
 [node name="perro" parent="." instance=ExtResource("11_xi467")]
-position = Vector2(-1327, -146)
+position = Vector2(-1331, -150)
 
 [node name="objects" parent="." instance=ExtResource("11_xi467")]
-position = Vector2(1261, -148)
+position = Vector2(1260, -142)
 
 [node name="Humano" type="SubViewport" parent="."]
 
@@ -6049,7 +6049,7 @@ position = Vector2(1296, -501)
 [node name="marker_humano" type="Marker2D" parent="spawn_point"]
 position = Vector2(1296, -113)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="puerta" type="TileMap" parent="."]
 position = Vector2(0, -768)
 tile_set = SubResource("TileSet_cbim6")
 format = 2

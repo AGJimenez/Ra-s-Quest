@@ -11,3 +11,4 @@ var tortugaDone: bool = false
 var gatoDone: bool = false
 var objectsDone: bool = false
 var perroDone: bool = false
+var puerta_hecha: bool = false

@@ -16,6 +16,9 @@ func register_area (area: InteractionArea):
 	Globals.area=path_completo.substr(14,-1)
 	print(Globals.area)
 	
+	if(Globals.puerta_hecha==true && Globals.area=="puertaFinal"):
+		LoadManager.load_level("chest_room")
+	
 
 func unregister_area(area:InteractionArea):
 	var index = active_areas.find(area)

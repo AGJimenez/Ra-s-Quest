@@ -1,6 +1,6 @@
 extends TileMap
 
-var puerta_hecha = false
+
 
 @export_group("Personaje")
 @export var personaje: CharacterBody2D
@@ -33,14 +33,14 @@ func _process(delta):
 		$easter_egg.queue_free()
 		
 
-	if(Globals.completados == 4 && !puerta_hecha):
-		pass#quitar cuando este relleno el if
-		#puerta.visible = false
-		#puerta/collision.disabled = true
-		#puerta_hecha = true
-
-	#if(player entra en area)
-	#loadmanager.load_level("chest_room")
+	if(Globals.completados == 4 && Globals.puerta_hecha==false):
+		
+		$puerta.visible = false
+		#$puerta.collision.disabled = true
+		Globals.puerta_hecha = true
+		print(Globals.puerta_hecha)
+		#if(player entra en area):
+		#loadmanager.load_level("chest_room")
 
 
 func _on_purple_area_body_entered(body):
