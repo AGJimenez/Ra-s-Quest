@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b4dkhcluoery2"]
+[gd_scene load_steps=30 format=3 uid="uid://b4dkhcluoery2"]
 
 [ext_resource type="Texture2D" uid="uid://lj7pwy4d4qm" path="res://Escenas/Rafa/Assets/Egyptian_A2.png" id="1_1hg7q"]
 [ext_resource type="Texture2D" uid="uid://mcdh6texv4dp" path="res://Escenas/Rafa/Assets/Egyptian_A4.png" id="1_88slb"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://i1r5gjuhymy7" path="res://Escenas/Rafa/perro/main_scene.tscn" id="14_jj5mp"]
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="14_mcn85"]
 [ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="16_shd41"]
+[ext_resource type="Script" path="res://Escenas/Rafa/Interaction/InteractionArea/interaction_area.gd" id="17_1esm3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abrps"]
 texture = ExtResource("1_88slb")
@@ -5812,6 +5813,9 @@ texture = ExtResource("16_shd41")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_x8efr")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jobih"]
+size = Vector2(214, 15)
+
 [node name="TileMap" type="TileMap" node_paths=PackedStringArray("personaje", "marker_perro", "marker_gato", "marker_tortuga", "marker_humano")]
 position = Vector2(-160, 156)
 tile_set = SubResource("TileSet_ilmt5")
@@ -6055,3 +6059,14 @@ tile_set = SubResource("TileSet_cbim6")
 format = 2
 layer_0/z_index = -6
 layer_0/tile_data = PackedInt32Array(65529, 1966080, 8, 131065, 1966080, 9, 196601, 1966080, 10, 262137, 1966080, 11, 65530, 2031616, 8, 131066, 2031616, 9, 196602, 2031616, 10, 262138, 2031616, 11, 65531, 1966080, 8, 131067, 1966080, 9, 196603, 1966080, 10, 262139, 1966080, 11, 65532, 2031616, 8, 131068, 2031616, 9, 196604, 2031616, 10, 262140, 2031616, 11, 65533, 1966080, 8, 131069, 1966080, 9, 196605, 1966080, 10, 262141, 1966080, 11, 65534, 2031616, 8, 131070, 2031616, 9, 196606, 2031616, 10, 262142, 2031616, 11, 65535, 1966080, 8, 131071, 1966080, 9, 196607, 1966080, 10, 262143, 1966080, 11, 0, 2031616, 8, 65536, 2031616, 9, 131072, 2031616, 10, 196608, 2031616, 11, 1, 1966080, 8, 65537, 1966080, 9, 131073, 1966080, 10, 196609, 1966080, 11, 2, 2031616, 8, 65538, 2031616, 9, 131074, 2031616, 10, 196610, 2031616, 11, 3, 1966080, 8, 65539, 1966080, 9, 131075, 1966080, 10, 196611, 1966080, 11, 4, 2031616, 8, 65540, 2031616, 9, 131076, 2031616, 10, 196612, 2031616, 11, 5, 1966080, 8, 65541, 1966080, 9, 131077, 1966080, 10, 196613, 1966080, 11, 6, 2031616, 8, 65542, 2031616, 9, 131078, 2031616, 10, 196614, 2031616, 11, -262139, 1966080, 8, -196603, 1966080, 9, -131067, 1966080, 10, -65531, 1966080, 11, -262138, 2031616, 8, -196602, 2031616, 9, -131066, 2031616, 10, -65530, 2031616, 11, -262141, 1966080, 8, -196605, 1966080, 9, -131069, 1966080, 10, -65533, 1966080, 11, -262140, 2031616, 8, -196604, 2031616, 9, -131068, 2031616, 10, -65532, 2031616, 11, -262143, 1966080, 8, -196607, 1966080, 9, -131071, 1966080, 10, -65535, 1966080, 11, -262142, 2031616, 8, -196606, 2031616, 9, -131070, 2031616, 10, -65534, 2031616, 11, -196609, 1966080, 8, -131073, 1966080, 9, -65537, 1966080, 10, -1, 1966080, 11, -262144, 2031616, 8, -196608, 2031616, 9, -131072, 2031616, 10, -65536, 2031616, 11, -196611, 1966080, 8, -131075, 1966080, 9, -65539, 1966080, 10, -3, 1966080, 11, -196610, 2031616, 8, -131074, 2031616, 9, -65538, 2031616, 10, -2, 2031616, 11, -196613, 1966080, 8, -131077, 1966080, 9, -65541, 1966080, 10, -5, 1966080, 11, -196612, 2031616, 8, -131076, 2031616, 9, -65540, 2031616, 10, -4, 2031616, 11, -196615, 1966080, 8, -131079, 1966080, 9, -65543, 1966080, 10, -7, 1966080, 11, -196614, 2031616, 8, -131078, 2031616, 9, -65542, 2031616, 10, -6, 2031616, 11)
+
+[node name="puertaFinal" type="Area2D" parent="."]
+script = ExtResource("17_1esm3")
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puertaFinal"]
+position = Vector2(1, -696)
+shape = SubResource("RectangleShape2D_jobih")
+
+[connection signal="body_entered" from="puertaFinal" to="puertaFinal" method="_on_body_entered"]
+[connection signal="body_exited" from="puertaFinal" to="puertaFinal" method="_on_body_exited"]

@@ -4,7 +4,7 @@ extends Node2D
 @onready var label= $Label
 
 
-const base_text = "E to "
+var base_text = "E to "
 
 var active_areas = []
 var can_interact=true
@@ -17,7 +17,7 @@ func register_area (area: InteractionArea):
 	print(Globals.area)
 	
 	if(Globals.puerta_hecha==true && Globals.area=="puertaFinal"):
-		LoadManager.load_level("chest_room")
+		LoadManager.load_scene("res://Escenas/Luis/Rooms/chest_room.tscn")
 	
 
 func unregister_area(area:InteractionArea):
@@ -30,7 +30,12 @@ func _process(delta):
 	
 		if active_areas.size()>0 && can_interact:
 			active_areas.sort_custom(_sort_by_distance_to_player)
-	
+			
+			if(Globals.area=="puertaFinal"):
+				base_text = ""
+			else:
+				base_text = "E to "
+			
 			label.text = base_text + active_areas[0].action_name
 			label.global_position=active_areas[0].global_position
 			label.global_position.y -=36
