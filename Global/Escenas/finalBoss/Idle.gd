@@ -1,6 +1,6 @@
 extends State
  
-@onready var collision = $"../../CollisionShape2D"
+@onready var collision = $"../../PlayerDetection/CollisionShape2D"
 @onready var progress_bar = $"../../UI/ProgressBar"
  
 var player_entered: bool = false:
@@ -11,7 +11,8 @@ var player_entered: bool = false:
  
  
 func _on_player_entered(_body):
-	player_entered = true
+	if _body.name == "ship":
+		player_entered = true
  
  
 func transition():

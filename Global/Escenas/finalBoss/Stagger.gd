@@ -1,5 +1,5 @@
 extends State
- 
+
 var can_transition
  
 func enter():
@@ -15,4 +15,3 @@ func enter():
 func transition():
 	if can_transition:
 		get_parent().change_state("Summon")
- 

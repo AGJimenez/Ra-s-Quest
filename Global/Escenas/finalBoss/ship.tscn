@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnpg5tfohroy7"]
+
+[ext_resource type="Script" path="res://ship.gd" id="1_xfsne"]
+[ext_resource type="Texture2D" uid="uid://bkr4fy56h6ptw" path="res://Assets/nave.png" id="2_bqjer"]
+[ext_resource type="PackedScene" uid="uid://bdaxe3rgfr1ce" path="res://Escenas/finalBoss/bullet.tscn" id="2_gqvsh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvsr3"]
+atlas = ExtResource("2_bqjer")
+region = Rect2(607.35, 45.5085, 153.947, 158.612)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agks5"]
+size = Vector2(149, 156)
+
+[node name="ship" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_mask = 0
+script = ExtResource("1_xfsne")
+bullet_node = ExtResource("2_gqvsh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57196
+texture = SubResource("AtlasTexture_tvsr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_agks5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

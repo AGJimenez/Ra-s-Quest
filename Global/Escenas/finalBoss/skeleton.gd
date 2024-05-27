@@ -1,12 +1,12 @@
 extends CharacterBody2D
  
-@onready var player = get_parent().find_child("player")
+@onready var player = get_parent().find_child("ship")
 @onready var sprite = $Sprite2D
 @onready var progress_bar = $ProgressBar
  
 var direction : Vector2
  
-var health = 30:
+var health = 100:
 	set(value):
 		health = value
 		progress_bar.value = value

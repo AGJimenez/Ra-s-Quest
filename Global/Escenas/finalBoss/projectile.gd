@@ -5,7 +5,7 @@ var direction
 var speed = 250
  
 func _ready():
-	player = get_parent().find_child("player")
+	player = get_parent().find_child("ship")
 	direction = (player.position - position).normalized()
  
  

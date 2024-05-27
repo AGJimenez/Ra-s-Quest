@@ -1,12 +1,12 @@
 extends CharacterBody2D
  
-@onready var player = get_parent().find_child("player")
+@onready var player = get_parent().find_child("ship")
 @onready var sprite = $Sprite2D
 @onready var progress_bar = $UI/ProgressBar
  
 var direction : Vector2
  
-var health = 100:
+var health = 1000:
 	set(value):
 		if value < health:
 			find_child("FiniteStateMachine").change_state("Stagger")
@@ -28,4 +28,4 @@ func _process(_delta):
 		sprite.flip_h = false
  
 func take_damage():
-	health -= 10
+	health -= 5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctmxgdylpglfg"]
+[gd_scene load_steps=15 format=3 uid="uid://chefdy0erq4xg"]
 
 [ext_resource type="Texture2D" uid="uid://dl5lkq4fyuraq" path="res://Assets/Skeleton enemy/Skeleton enemy.png" id="1_h3avk"]
 [ext_resource type="Script" path="res://Escenas/finalBoss/skeleton.gd" id="1_j5d34"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Escenas/finalBoss/AttackSkeleton.gd" id="5_or2dm"]
 [ext_resource type="Script" path="res://Escenas/finalBoss/DeathSkeleton.gd" id="6_18gnl"]
 
-[sub_resource type="Animation" id="Animation_q8afd"]
+[sub_resource type="Animation" id="Animation_vdtx0"]
 resource_name = "attack"
 length = 1.62501
 loop_mode = 1
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 }
 
-[sub_resource type="Animation" id="Animation_rleuo"]
+[sub_resource type="Animation" id="Animation_1qrxd"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -39,8 +39,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(1, 4)]
+}
 
-[sub_resource type="Animation" id="Animation_yh6k6"]
+[sub_resource type="Animation" id="Animation_ejgcb"]
 resource_name = "death"
 length = 1.62501
 step = 0.125
@@ -71,7 +83,7 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_asagb"]
+[sub_resource type="Animation" id="Animation_2ddba"]
 resource_name = "follow"
 length = 1.50001
 loop_mode = 1
@@ -89,7 +101,7 @@ tracks/0/keys = {
 "values": [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37]
 }
 
-[sub_resource type="Animation" id="Animation_cnvup"]
+[sub_resource type="Animation" id="Animation_iceik"]
 resource_name = "idle"
 length = 0.500013
 loop_mode = 1
@@ -107,74 +119,72 @@ tracks/0/keys = {
 "values": [39, 40, 41, 42]
 }
 
-[sub_resource type="Animation" id="Animation_q61vd"]
+[sub_resource type="Animation" id="Animation_558kl"]
 resource_name = "stagger"
 length = 0.375012
 step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [52, 53, 54]
+"values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tjvqr"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4xykr"]
 _data = {
-"RESET": SubResource("Animation_rleuo"),
-"attack": SubResource("Animation_q8afd"),
-"death": SubResource("Animation_yh6k6"),
-"follow": SubResource("Animation_asagb"),
-"idle": SubResource("Animation_cnvup"),
-"stagger": SubResource("Animation_q61vd")
+"RESET": SubResource("Animation_1qrxd"),
+"attack": SubResource("Animation_vdtx0"),
+"death": SubResource("Animation_ejgcb"),
+"follow": SubResource("Animation_2ddba"),
+"idle": SubResource("Animation_iceik"),
+"stagger": SubResource("Animation_558kl")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m3dm0"]
-radius = 6.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wloyg"]
 
 [node name="skeleton" type="CharacterBody2D"]
-y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_j5d34")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-y_sort_enabled = true
+scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_h3avk")
 hframes = 13
 vframes = 5
+frame = 53
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_tjvqr")
+"": SubResource("AnimationLibrary_4xykr")
 }
 autoplay = "idle"
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-y_sort_enabled = true
-custom_minimum_size = Vector2(100, 0)
-offset_left = -24.0
-offset_top = -32.0
-offset_right = 76.0
-offset_bottom = -5.0
-scale = Vector2(0.490588, 0.362494)
-max_value = 30.0
-value = 30.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_m3dm0")
+shape = SubResource("CapsuleShape2D_wloyg")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = -20.0
+offset_top = -27.0
+offset_right = 80.0
+scale = Vector2(0.402773, 0.316371)
+value = 100.0
 
 [node name="debug" type="Label" parent="."]
-offset_left = -24.0
-offset_top = -54.0
-offset_right = 25.0
-offset_bottom = -31.0
-text = "debug
-"
+visible = false
+offset_left = -23.0
+offset_top = -51.0
+offset_right = 26.0
+offset_bottom = -28.0
+text = "debug"
 
 [node name="FiniteStateMachine" type="Node2D" parent="."]
 script = ExtResource("2_8knph")

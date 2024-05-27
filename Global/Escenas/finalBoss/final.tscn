@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dv3raw61wxtqq"]
+[gd_scene load_steps=41 format=3 uid="uid://dv3raw61wxtqq"]
 
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="1_h4igp"]
 [ext_resource type="Script" path="res://Escenas/finalBoss/final.gd" id="1_imnqr"]
@@ -13,10 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://dmgiky41xvdry" path="res://Assets/non-rm-a4-square.png" id="9_oontm"]
 [ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="10_utilq"]
 [ext_resource type="PackedScene" uid="uid://b20eu864hbfkc" path="res://Escenas/nivelAle/fuego.tscn" id="12_ccjsd"]
-[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="13_bau7i"]
-[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="14_m340o"]
+[ext_resource type="PackedScene" uid="uid://cnpg5tfohroy7" path="res://Escenas/finalBoss/ship.tscn" id="15_mdqd1"]
 [ext_resource type="PackedScene" uid="uid://ofjxdx60myit" path="res://Escenas/nivelAle/estatua_masiva.tscn" id="15_rky87"]
-[ext_resource type="PackedScene" uid="uid://y02dyak1ylxp" path="res://Escenas/finalBoss/necromancer.tscn" id="16_qmu6b"]
+[ext_resource type="PackedScene" uid="uid://d4nbkjqsalw7p" path="res://Escenas/finalBoss/necromancer.tscn" id="16_qmu6b"]
+[ext_resource type="PackedScene" uid="uid://r1i7cj56hh7f" path="res://Escenas/nivelAle/puzzle_dioses.tscn" id="17_pk3ci"]
+[ext_resource type="PackedScene" uid="uid://di5otpdw5wae6" path="res://Escenas/nivelAle/PuzzleAngulos.tscn" id="18_rbyvb"]
+[ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="19_jpqvu"]
+[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="20_kc8ba"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3y04"]
 texture = ExtResource("1_h4igp")
@@ -12002,6 +12005,49 @@ region = Rect2(255.739, 63.3496, 95.8525, 39.8741)
 atlas = ExtResource("7_lgp2w")
 region = Rect2(32.055, 371.646, 31.5445, 125.859)
 
+[sub_resource type="Animation" id="Animation_xjcv4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(144, -321)]
+}
+
+[sub_resource type="Animation" id="Animation_d6pbu"]
+resource_name = "new_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(144, -321), Vector2(98, 1), Vector2(1587, -10)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ksrll"]
+_data = {
+"RESET": SubResource("Animation_xjcv4"),
+"new_animation": SubResource("Animation_d6pbu")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyt6a"]
+size = Vector2(59, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntsiy"]
+size = Vector2(1221, 20)
+
 [node name="final" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_imnqr")
@@ -12040,124 +12086,6 @@ format = 2
 layer_0/name = "0"
 layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(0, 720896, 5)
-
-[node name="StaticBody2D" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-112, -197)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(16, -197)
-
-[node name="StaticBody2D5" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(400, -198)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(145, -198)
-
-[node name="StaticBody2D4" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(273, -198)
-
-[node name="StaticBody2D6" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(-112, 93)
-
-[node name="StaticBody2D7" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(16, 93)
-
-[node name="StaticBody2D8" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(400, 92)
-
-[node name="StaticBody2D9" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(145, 92)
-
-[node name="StaticBody2D20" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(269, 94)
-
-[node name="StaticBody2D11" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(495, -34)
-
-[node name="StaticBody2D12" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(623, -34)
-
-[node name="StaticBody2D13" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(1007, -35)
-
-[node name="StaticBody2D14" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(752, -35)
-
-[node name="StaticBody2D15" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(880, -35)
-
-[node name="StaticBody2D16" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(1137, -32)
-
-[node name="StaticBody2D17" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(1265, -32)
-
-[node name="StaticBody2D18" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(1649, -33)
-
-[node name="StaticBody2D19" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(1392, -33)
-
-[node name="StaticBody2D10" parent="." instance=ExtResource("12_ccjsd")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(1519, -33)
-
-[node name="player" parent="." instance=ExtResource("9_2sk5l")]
-y_sort_enabled = true
-position = Vector2(1679, -13)
-scale = Vector2(0.75, 0.75)
-collision_layer = 1
-collision_mask = 1
-
-[node name="CollisionShape2D" parent="player" index="4"]
-position = Vector2(2.38419e-07, 5.83337)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(2.25, 2.25)
-limit_smoothed = true
-
-[node name="pause_menu" parent="player/Camera2D" instance=ExtResource("13_bau7i")]
-
-[node name="saving_anim" parent="player/Camera2D" instance=ExtResource("14_m340o")]
 
 [node name="paredFrontal" type="Node2D" parent="."]
 visible = false
@@ -12485,47 +12413,207 @@ position = Vector2(270.625, -462)
 scale = Vector2(1.02368, 1)
 texture = SubResource("AtlasTexture_p5vkv")
 
-[node name="estatuaMasiva" parent="." instance=ExtResource("15_rky87")]
+[node name="Necromancer" parent="." instance=ExtResource("16_qmu6b")]
+position = Vector2(129, -55)
+
+[node name="ship" parent="." instance=ExtResource("15_mdqd1")]
+visible = false
+position = Vector2(944, 108)
+
+[node name="Camera2D" type="Camera2D" parent="ship"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(144, -321)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ksrll")
+}
+
+[node name="Estatuas" type="Node2D" parent="."]
+
+[node name="estatuaMasiva" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(1664, -139)
 scale = Vector2(2, 2)
 
-[node name="estatuaMasiva2" parent="." instance=ExtResource("15_rky87")]
+[node name="estatuaMasiva2" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(1542, -138)
 scale = Vector2(2, 2)
 
-[node name="estatuaMasiva3" parent="." instance=ExtResource("15_rky87")]
+[node name="estatuaMasiva3" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(1421, -139)
 scale = Vector2(2, 2)
 
-[node name="estatuaMasiva4" parent="." instance=ExtResource("15_rky87")]
+[node name="estatuaMasiva4" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(1299, -138)
 scale = Vector2(2, 2)
 
-[node name="estatuaMasiva5" parent="." instance=ExtResource("15_rky87")]
+[node name="estatuaMasiva5" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(1178, -140)
 scale = Vector2(2, 2)
 
-[node name="estatuaMasiva6" parent="." instance=ExtResource("15_rky87")]
+[node name="estatuaMasiva6" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(1056, -139)
 scale = Vector2(2, 2)
 
-[node name="estatuaMasiva7" parent="." instance=ExtResource("15_rky87")]
+[node name="estatuaMasiva7" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(935, -140)
 scale = Vector2(2, 2)
 
-[node name="estatuaMasiva8" parent="." instance=ExtResource("15_rky87")]
+[node name="estatuaMasiva8" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(813, -139)
 scale = Vector2(2, 2)
 
-[node name="estatuaMasiva9" parent="." instance=ExtResource("15_rky87")]
+[node name="estatuaMasiva9" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(690, -138)
 scale = Vector2(2, 2)
 
-[node name="estatuaMasiva10" parent="." instance=ExtResource("15_rky87")]
+[node name="estatuaMasiva10" parent="Estatuas" instance=ExtResource("15_rky87")]
 position = Vector2(568, -137)
 scale = Vector2(2, 2)
 
-[node name="Necromancer" parent="." instance=ExtResource("16_qmu6b")]
-position = Vector2(153, -140)
+[node name="Fueguitos" type="Node2D" parent="."]
 
-[editable path="player"]
+[node name="StaticBody2D" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-112, -197)
+
+[node name="StaticBody2D2" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(16, -197)
+
+[node name="StaticBody2D5" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(400, -198)
+
+[node name="StaticBody2D3" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(145, -198)
+
+[node name="StaticBody2D4" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(273, -198)
+
+[node name="StaticBody2D6" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-112, 93)
+
+[node name="StaticBody2D7" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(16, 93)
+
+[node name="StaticBody2D8" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(400, 92)
+
+[node name="StaticBody2D9" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(145, 92)
+
+[node name="StaticBody2D20" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(269, 94)
+
+[node name="StaticBody2D11" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(495, -34)
+
+[node name="StaticBody2D12" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(623, -34)
+
+[node name="StaticBody2D13" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1007, -35)
+
+[node name="StaticBody2D14" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(752, -35)
+
+[node name="StaticBody2D15" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(880, -35)
+
+[node name="StaticBody2D16" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1137, -32)
+
+[node name="StaticBody2D17" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1265, -32)
+
+[node name="StaticBody2D18" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1649, -33)
+
+[node name="StaticBody2D19" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1392, -33)
+
+[node name="StaticBody2D10" parent="Fueguitos" instance=ExtResource("12_ccjsd")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1519, -33)
+
+[node name="Conversacion" type="Area2D" parent="."]
+position = Vector2(1241, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conversacion"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_vyt6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1086.5, 42)
+shape = SubResource("RectangleShape2D_ntsiy")
+
+[node name="Personaje" parent="." instance=ExtResource("9_2sk5l")]
+y_sort_enabled = true
+position = Vector2(1613, -8)
+scale = Vector2(0.75, 0.75)
+collision_layer = 1
+collision_mask = 1
+
+[node name="CollisionShape2D" parent="Personaje" index="4"]
+position = Vector2(2.38419e-07, 5.83337)
+
+[node name="Camera2D" type="Camera2D" parent="Personaje"]
+zoom = Vector2(2.25, 2.25)
+limit_smoothed = true
+
+[node name="puzzleDioses" type="CanvasLayer" parent="Personaje/Camera2D"]
+visible = false
+
+[node name="PuzzleDioses" parent="Personaje/Camera2D/puzzleDioses" instance=ExtResource("17_pk3ci")]
+
+[node name="puzzleAngulos" type="CanvasLayer" parent="Personaje/Camera2D"]
+visible = false
+
+[node name="Control" parent="Personaje/Camera2D/puzzleAngulos" instance=ExtResource("18_rbyvb")]
+
+[node name="pause_menu" parent="Personaje/Camera2D" instance=ExtResource("19_jpqvu")]
+
+[node name="saving_anim" parent="Personaje/Camera2D" instance=ExtResource("20_kc8ba")]
+
+[editable path="Estatuas/estatuaMasiva"]
+[editable path="Personaje"]
