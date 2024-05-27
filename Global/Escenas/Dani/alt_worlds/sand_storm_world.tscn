@@ -6963,7 +6963,7 @@ metadata/_edit_lock_ = true
 
 [node name="Personaje" parent="TileMap" instance=ExtResource("5_6meiw")]
 y_sort_enabled = true
-position = Vector2(1044, 292)
+position = Vector2(1047, 294)
 
 [node name="Camera2D" type="Camera2D" parent="TileMap/Personaje"]
 zoom = Vector2(1.5, 1.5)

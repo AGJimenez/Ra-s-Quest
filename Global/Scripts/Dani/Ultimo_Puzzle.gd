@@ -41,14 +41,12 @@ func correctPlacement():
 				isBalanzaIzqCorrect = true
 				var cont = 0
 				if cont == 0:
-					print("BALANZA IZQUIERDA COMPLETADA")
 					cont = 1
 			
 			if isAltruimoPositionCorrect && isCaridadPositionCorrect && isHumildadPositionCorrect && isPurezaPositionCorrect && isEsfuerzoPositionCorrect:
 				isBalanzaDerCorrect = true
 				var cont = 0
 				if cont == 0:
-					print("BALANZA DERECHA COMPLETADA")
 					cont = 1
 			
 			if isBalanzaDerCorrect && isBalanzaIzqCorrect:

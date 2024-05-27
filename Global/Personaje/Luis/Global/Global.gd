@@ -18,6 +18,9 @@ var controls_add = false
 #nivel_Dani
 var cofre = false
 
+#sand_storm_world
+var sand_complete = false
+
 #nivel_dani_final
 
 #tile_map_Nivel (Rafa)

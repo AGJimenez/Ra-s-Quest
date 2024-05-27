@@ -7,10 +7,10 @@ var save_dict = {
 	"map_number" : 0,
 	"easter_egg_try_save": true,
 	"fullscreen": false,
-	"gem_mario": true,
-	"gem_dani": true,
-	"gem_rafa": true,
-	"gem_luis": true,
+	"gem_mario": false,
+	"gem_dani": false,
+	"gem_rafa": false,
+	"gem_luis": false,
 	"key_collected": false
 	}
 

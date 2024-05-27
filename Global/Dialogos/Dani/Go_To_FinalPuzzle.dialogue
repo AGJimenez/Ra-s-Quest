@@ -1,6 +1,8 @@
 ~ main
+set Global.dialogue_state = true
 
 Anubis: No puedo negarlo, estoy impresionado...
-Maat: Ehnorabuena Jack!, Ahora solo te queda un puzzle final, ve a la primera sala.
+Maat: Ehnorabuena Jack!, Ahora solo te queda un puzle final, ve a la primera sala.
 
+set Global.dialogue_state = false
 => END

@@ -10,10 +10,9 @@ var first_time = true
 @onready var additional = $Personaje/Camera2D/tutorial/tutorial_keys/additional
 
 func _ready():
-	if(Save.save_dict["map_number"] < 0):
-		number_changed()
-		Save.save_dict["map"] = "res://Escenas/Luis/Rooms/chest_room.tscn"
-		Save.save_game()
+	number_changed()
+	Save.save_dict["map"] = "res://Escenas/intro.tscn"
+	Save.save_game()
 	$Personaje.set_process(false)
 	$Personaje.set_physics_process(false)
 	$AnimationPlayer.play("new_animation")

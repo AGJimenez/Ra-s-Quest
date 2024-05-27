@@ -1,8 +1,10 @@
 ~ main
+set Global.dialogue_state = true
 Jack: Que extraño... Parece que hay algo en este cofre.
 - Abrir
 	Jack: Voy a ver que hay dentro
 	set Global.cofre = true
 - No abrir
 	Jack: En otro momento veré que hago con él
+set Global.dialogue_state = false
 => END

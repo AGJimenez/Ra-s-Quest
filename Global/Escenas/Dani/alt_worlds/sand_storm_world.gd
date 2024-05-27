@@ -6,10 +6,11 @@ signal wind_force(vector: Vector2, wind: bool)
 @onready var wind_force_vector: Vector2 = Vector2(160,0)
 var zona_safe = 0
 var isBalanzaPuzzleVisible = false
+var done = false
 
 func _ready():
 	$timers/stop_sand.start(3.25)
-	$timers/start_transition.wait_time = 10.0
+	$timers/start_transition.wait_time = 2.0
 	$timers/start_transition.one_shot = true
 	if(Global.change == "node_2d-sand_storm_world"):
 		$TileMap/Personaje.global_position = $"spawn_point/node_2d-sand_storm_world".global_position
@@ -17,6 +18,9 @@ func _ready():
 	emit_signal("wind_force", wind_force_vector, false)
 
 func _process(_delta):
+	if(Global.sand_complete && !done):
+		$timers/start_transition.start()
+		done = true
 	if(Global.dialogue_state == true):
 		$TileMap/Personaje.velocity = Vector2.ZERO
 		$TileMap/Personaje.direction = Vector2.ZERO
@@ -135,7 +139,7 @@ func _on_area_2d_balanza_body_exited(body):
 func _on_control_resultado_correcto():
 	$TileMap/Personaje/Camera2D/CanvasLayer.visible = false
 	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Ultimo_DIalogo.dialogue"),"main")
-	$timers/start_transition.start()
+	
 
 
 func _on_start_transition_timeout():

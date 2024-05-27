@@ -22,16 +22,18 @@ func _ready():
 
 func _process(_delta):
 	if(Input.is_action_just_pressed("Interact") && purple_area && !Save.save_dict["gem_luis"]):
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/easter_egg/second_gem.dialogue"), "cursed_gem_dialog")
-		$room/Player/interact.visible = false
-		Save.save_dict["gem_luis"] = true
-		Save.save_game()
-		$easter_egg.queue_free()
+		if($easter_egg.visible):
+			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/easter_egg/fourth_gem.dialogue"), "cursed_gem_dialog")
+			$room/Player/interact.visible = false
+			Save.save_dict["gem_luis"] = true
+			Save.save_game()
+			$easter_egg.queue_free()
 		
 	if(Input.is_action_just_pressed("Interact") && !Global.door_disable):
 		if(wall):
 			LoadManager.load_scene("res://Escenas/Luis/Puzzles/wall_puzzle.tscn")
 	if(Global.complete && !Global.anubis_dialog_end  && Global.door_disable):
+		$easter_egg.visible = true
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Luis/night_room/anubis_back.dialogue"), "anubis_dialog")
 		Global.anubis_dialog_end = true
 	if(Global.dialogue_state == true):
@@ -68,11 +70,13 @@ func _on_wall_puzzle_body_exited(body):
 
 func _on_purple_area_body_entered(body):
 	if(body.is_in_group("Player") && !Save.save_dict["gem_luis"]):
-		purple_area = true
-		$room/Player/interact.visible = true
+		if($easter_egg.visible):
+			purple_area = true
+			$room/Player/interact.visible = true
 
 
 func _on_purple_area_body_exited(body):
 	if(body.is_in_group("Player") && !Save.save_dict["gem_luis"]):
-		purple_area = false
-		$room/Player/interact.visible = false
+		if($easter_egg.visible):
+			purple_area = false
+			$room/Player/interact.visible = false

@@ -6,9 +6,6 @@ var ultima_Area=null
 var speedPlayer = 100
 
 
-func _ready():
-	print("HOLAAAAAAAAAAAAAAAAA")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	showTileMap()
 	

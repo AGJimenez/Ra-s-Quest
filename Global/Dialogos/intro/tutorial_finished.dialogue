@@ -6,7 +6,7 @@ Frèderic: Así se hace!
 
 set Global.controls_add = true
 
-Frèderic: Escuché de algunos exploradores que tambien te van a servir las teclas "Barra espaciadora" y "Click izquierdo", me pregunto para que servirán.
+Frèderic: Escuché de algunos exploradores que tambien te van a servir las teclas "Barra espaciadora", "Tabulador" y "Click izquierdo", me pregunto para que servirán.
 Frèderic: Bueno eso no importa ahora mismo, entra en la pirámide Jack, no hay tiempo que perder.
 
 set Global.controls_add = false

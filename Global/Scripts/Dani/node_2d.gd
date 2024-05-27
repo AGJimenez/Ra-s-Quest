@@ -15,7 +15,7 @@ func _ready():
 		number_changed()
 		Save.save_dict["map"] = "res://Escenas/Dani/node_2d.tscn"
 		Save.save_game()
-	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Conversacion_Principal.dialogue"),"main")
+	#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Conversacion_Principal.dialogue"),"main")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -26,34 +26,31 @@ func _process(delta):
 	if(Global.dialogue_state == false):
 		$Personaje.set_physics_process(true)
 	interaccion()
+	interaccion_con_cofre()
 	if panel.numeroDePanelesSuperados == 4:
 		quit_Espinas()
 	elif panel.numeroDePanelesSuperados == 12:
 		isFinalPuzzleEnabled = true
 	if on_area_cofre == false:
 		player.speed = panel.speedPlayer
-		
-	if Global.cofre:
-		interaccion_con_cofre()
+
 
 
 func interaccion_con_cofre():
-	if panel.visible:
+	if !Global.cofre:
 		panel.visible = false
 		player.speed = 100
-		Global.cofre=false
 	else:
 		panel.visible = true
 		player.speed = 0
-		Global.cofre = false
 		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta.dialogue"),"main")
 
 func interaccion():
-	if on_area_cofre ==true and Input.is_action_just_pressed("Interact"):
-		print("DALE A LA E")
-		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Interacción_Con_Cofre.dialogue"),"main")
+	if on_area_cofre == true and Input.is_action_just_pressed("Interact"):
+		if(!Global.dialogue_state && !panel.visible):
+			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Interacción_Con_Cofre.dialogue"),"main")
 		if Global.cofre:
-			interaccion_con_cofre()
+			Global.cofre = false
 	elif on_area_balanza==true and Input.is_action_just_pressed("Interact"):
 		interaccion_con_balanza()
 
@@ -65,7 +62,6 @@ func _on_area_cofres_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_body_exited(body):
@@ -77,7 +73,6 @@ func _on_area_cofres_2_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres2
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_2_body_exited(body):
@@ -89,7 +84,6 @@ func _on_area_cofres_3_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres3
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_3_body_exited(body):
@@ -101,7 +95,6 @@ func _on_area_cofres_4_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres4
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_4_body_exited(body):
@@ -113,7 +106,6 @@ func _on_area_cofres_vertical_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres_vertical
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_vertical_body_exited(body):
@@ -125,7 +117,6 @@ func _on_area_cofres_vertical_2_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres_vertical2
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_vertical_2_body_exited(body):
@@ -137,7 +128,6 @@ func _on_area_cofres_vertical_3_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area = $Cofres/area_cofres_vertical3
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_vertical_3_body_exited(body):
@@ -149,7 +139,6 @@ func _on_area_cofres_vertical_4_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres_vertical4
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_vertical_4_body_exited(body):
@@ -161,7 +150,6 @@ func _on_area_cofres_vertical_5_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres_vertical5
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_vertical_5_body_exited(body):
@@ -173,7 +161,6 @@ func _on_area_cofres_vertical_6_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres_vertical6
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_vertical_6_body_exited(body):
@@ -185,7 +172,6 @@ func _on_area_cofres_vertical_7_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres_vertical7
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_vertical_7_body_exited(body):
@@ -197,7 +183,6 @@ func _on_area_cofres_vertical_8_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres_vertical8
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_vertical_8_body_exited(body):
@@ -209,7 +194,6 @@ func _on_area_cofres_vertical_9_body_entered(body):
 	if(body.is_in_group("Personaje")):
 		on_area_cofre=true
 		panel.ultima_Area=$Cofres/area_cofres_vertical9
-		print("TUS MUERTOS")
 
 
 func _on_area_cofres_vertical_9_body_exited(body):

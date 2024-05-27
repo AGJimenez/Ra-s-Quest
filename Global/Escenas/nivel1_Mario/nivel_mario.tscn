@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c3icwgvb0l2e3" path="res://Escenas/nivel1_Mario/Interacciones/interacciones.tscn" id="3_p6jtr"]
 
 [node name="nivelMario" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_drflq")
 
 [node name="Escenario" parent="." instance=ExtResource("2_ou1fc")]

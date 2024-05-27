@@ -39,6 +39,9 @@ var completado = false
 @onready var puzle3 = get_node("Escenario/CanvasLayer/Panel_Mario/Puzle3")
 @onready var papiro4 = get_node("Escenario/Papiro4")
 
+#Easter egg
+@onready var purple_gem = get_node("Escenario/easter_egg")
+
 # SEÑALES 
 signal signal_button_pressed
 signal signal_puzle2
@@ -62,6 +65,8 @@ func _process(_delta):
 # INTERACCION PUERTA FINAL
 	if (completado == true):
 		puerta_sprite.queue_free()
+		if(!Save.save_dict["gem_mario"]):
+			purple_gem.visible = true
 		completado = false
 
 

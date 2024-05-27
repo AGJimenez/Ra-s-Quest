@@ -17,6 +17,7 @@ func _process(delta):
 
 
 func _on_new_game_pressed():
+	Save.delete_save()
 	Save.save_dict["map"] = "res://Escenas/intro.tscn"
 	Save.save_game()
 	LoadManager.load_scene("res://Escenas/intro.tscn")
@@ -50,6 +51,7 @@ func _on_no_pressed():
 	
 func _on_yes_pressed():
 	resumeGame()
+	Save.save_dict["map"] = ""
 	Save.delete_save()
 	$Control/delete_container.visible = false
 

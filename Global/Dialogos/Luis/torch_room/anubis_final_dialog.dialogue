@@ -7,7 +7,7 @@ Anubis: [shake] [color=red] EL PRIMER FARAON DEBE PERMANECER OCULTO PARA TODA VI
 Jack: [speed=0.35] Muy oculto no puede estar si [next=auto[speed=1]]
 Anubis: [shake rate=20 level=20] [color=red] NO SE TE OCURRA INTERRUMPIRME
 Anubis: [shake] [color=red] SI TANTO QUIERES ESE TESORO VAS A TENER QUE GANARTELO
-Anubis: [shake] [color=red] PADRE NUNCA DEJA A NADIE EN PIE, LO DIRÉ UNA VEZ MÁS
+Anubis: [shake] [color=red] PADRE NUNCA DEJA A NADIE EN PIE. LO DIRÉ UNA VEZ MÁS
 Anubis: [shake] [color=red] NOS VEMOS EN EL DUAT
 
 set Global.dialogue_state = false

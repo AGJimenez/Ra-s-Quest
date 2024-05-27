@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://csjnejeofyv8y"]
+[gd_scene load_steps=54 format=3 uid="uid://csjnejeofyv8y"]
 
 [ext_resource type="Texture2D" uid="uid://3vrl6oauoqbb" path="res://Assets/!$Fire_Animation.png" id="1_bnsu1"]
 [ext_resource type="Script" path="res://Escenas/intro.gd" id="1_x8x6h"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dqcboi3mvw4co" path="res://Interfaz/pause_menu.tscn" id="15_8uagc"]
 [ext_resource type="PackedScene" uid="uid://c8h5qpwf0y876" path="res://Escenas/nivelAle/pressE.tscn" id="15_hxlry"]
 [ext_resource type="Texture2D" uid="uid://d325iqae4dv8m" path="res://Assets/Sprites/tutorial/w_light.png" id="16_55bvw"]
+[ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="16_68mm7"]
 [ext_resource type="PackedScene" uid="uid://73jm5qjy52vq" path="res://addons/dialogue_manager/example_balloon/example_balloon.tscn" id="16_cnf1g"]
 [ext_resource type="Texture2D" uid="uid://bign2ish5xvsh" path="res://Assets/Sprites/tutorial/space_light.png" id="16_paek1"]
 [ext_resource type="Texture2D" uid="uid://6kl8podfckom" path="res://Assets/Sprites/tutorial/a_key_light.png" id="17_m6wnb"]
@@ -24,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cb0n1ip07qv1v" path="res://Assets/Sprites/tutorial/d_light.png" id="19_3l11r"]
 [ext_resource type="Texture2D" uid="uid://cisnsj0o3adhy" path="res://Assets/Sprites/tutorial/e_light.png" id="20_5ji6m"]
 [ext_resource type="Texture2D" uid="uid://cfueyo7p61rhh" path="res://Assets/Sprites/tutorial/left_mouse_button_light.png" id="22_re76b"]
+[ext_resource type="Texture2D" uid="uid://78cc7dl5v0xh" path="res://Assets/Sprites/tutorial/tab_light.png" id="25_bnf5l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj6tn"]
 texture = ExtResource("1_bnsu1")
@@ -10797,6 +10799,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../tab_key:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_beswb"]
 resource_name = "tutorial"
@@ -10886,6 +10900,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1), Color(1, 1, 1, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../tab_key:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.384314, 0.384314, 0.384314, 1), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4w26r"]
 _data = {
@@ -10965,6 +10991,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = 2
 offset_left = -271.0
 offset_top = -439.0
@@ -11010,6 +11037,8 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="pause_menu" parent="Personaje/Camera2D" instance=ExtResource("15_8uagc")]
+
+[node name="saving_anim" parent="Personaje/Camera2D" instance=ExtResource("16_68mm7")]
 
 [node name="ExampleBalloon" parent="Personaje/Camera2D" instance=ExtResource("16_cnf1g")]
 visible = false
@@ -11070,6 +11099,10 @@ texture = ExtResource("16_paek1")
 modulate = Color(0.384314, 0.384314, 0.384314, 1)
 position = Vector2(111, 16)
 texture = ExtResource("22_re76b")
+
+[node name="tab_key" type="Sprite2D" parent="Personaje/Camera2D/tutorial/tutorial_keys/additional"]
+position = Vector2(-40, -31)
+texture = ExtResource("25_bnf5l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Personaje/Camera2D/tutorial/tutorial_keys"]
 root_node = NodePath("../additional/space_bar")

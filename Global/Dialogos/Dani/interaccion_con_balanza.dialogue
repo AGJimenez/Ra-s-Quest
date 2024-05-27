@@ -1,4 +1,5 @@
 ~ main
+set Global.dialogue_state = true
 Maat: Ya estas listo para resolver el acertijo de mi balanza?
 - Aceptar reto
 	Jack: Si, estoy listo para el reto.
@@ -8,4 +9,5 @@ Maat: Ya estas listo para resolver el acertijo de mi balanza?
 	Jack: Todavia no.
 	
 	Maat: Lo entiendo, cuando estes listo, ven aquí y acepta el reto... Si es que te ves capaz.
+set Global.dialogue_state = false
 => END
