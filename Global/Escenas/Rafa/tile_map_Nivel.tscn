@@ -5859,7 +5859,6 @@ metadata/_edit_horizontal_guides_ = [-746.0, 490.0]
 
 [node name="Personaje" parent="." instance=ExtResource("14_mcn85")]
 position = Vector2(3, 260)
-speed = 400
 
 [node name="Camera2D" type="Camera2D" parent="Personaje"]
 position = Vector2(-1, -18)

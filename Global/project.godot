@@ -15,7 +15,8 @@ run/main_scene="res://Interfaz/menu_ppal.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="save_data"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="res://Assets/ras.png"
+config/icon="res://Assets/ras.png"
 
 [autoload]
 
