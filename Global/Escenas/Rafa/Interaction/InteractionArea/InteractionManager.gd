@@ -4,7 +4,7 @@ extends Node2D
 @onready var label= $Label
 
 
-var base_text = "E to "
+var base_text = "[E]"
 
 var active_areas = []
 var can_interact=true
@@ -33,9 +33,9 @@ func _process(delta):
 			if(Globals.area=="puertaFinal"):
 				base_text = ""
 			else:
-				base_text = "E to "
+				base_text = "[E]"
 			
-			label.text = base_text + active_areas[0].action_name
+			label.text = base_text
 			label.global_position=active_areas[0].global_position
 			label.global_position.y -=36
 			label.global_position.x -= label.size.x / 2

@@ -1,7 +1,7 @@
 extends Area2D
 class_name InteractionArea
 signal area1
-@export var action_name: String = "interact"
+@export var action_name: String = ""
 
 var interact: Callable = func():
 	pass
