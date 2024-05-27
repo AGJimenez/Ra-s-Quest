@@ -9,7 +9,7 @@ func _ready():
 		$settings_menu/MarginContainer/VFlowContainer/act_deact.button_pressed = true
 		$settings_menu/MarginContainer/VFlowContainer/act_deact.text = "Activado"
 
-func _process(delta):
+func _process(_delta):
 	if(Save.save_dict["map"] == ""):
 		$Continue.disabled = true
 	else:

@@ -37,6 +37,7 @@ func _on_torch_room_key_complete():
 	await get_tree().create_timer(4).timeout
 	self.visible = false
 	get_tree().paused = false
+	Global.not_prepared = false
 
 
 func _on_torch_room_mario_piece():

@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=3 uid="uid://c4emyoeotwabp"]
+
+[ext_resource type="Texture2D" uid="uid://w25ehaqfuu14" path="res://Assets/Sprites/Triangle Padlock - GOLD - Spritesheet.png" id="1_g154i"]
+[ext_resource type="Texture2D" uid="uid://qfqxcsfkr3jm" path="res://Assets/Sprites/floaty_32.png" id="1_qg1ci"]
+[ext_resource type="Script" path="res://Escenas/easter_egg_scene/prueba_cursed_lock.gd" id="1_u446j"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c6678"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_vx6qo"]
+offsets = PackedFloat32Array(0, 0.306667, 0.526667, 0.753333, 1)
+colors = PackedColorArray(0.4, 0, 0.619608, 1, 0.443137, 0, 0.545098, 1, 0.462745, 0, 0.501961, 1, 0.501961, 0, 0.396078, 1, 0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kve4c"]
+atlas = ExtResource("1_g154i")
+region = Rect2(300, 0, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53xnq"]
+atlas = ExtResource("1_g154i")
+region = Rect2(280, 0, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tae8"]
+atlas = ExtResource("1_g154i")
+region = Rect2(260, 0, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20km6"]
+atlas = ExtResource("1_g154i")
+region = Rect2(240, 0, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx3t8"]
+atlas = ExtResource("1_g154i")
+region = Rect2(220, 0, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow3j3"]
+atlas = ExtResource("1_g154i")
+region = Rect2(200, 0, 20, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61o1g"]
+atlas = ExtResource("1_g154i")
+region = Rect2(180, 0, 20, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lg2ft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kve4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53xnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tae8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20km6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx3t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow3j3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61o1g")
+}],
+"loop": false,
+"name": &"lock",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vuemo"]
+
+[node name="cursed_lock" type="Node2D"]
+script = ExtResource("1_u446j")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_c6678")
+position = Vector2(0, 2)
+amount = 80
+lifetime = 0.5
+texture = ExtResource("1_qg1ci")
+emission_shape = 1
+emission_sphere_radius = 16.0
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_max = 1.0
+angle_max = 360.0
+color_ramp = SubResource("Gradient_vx6qo")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lg2ft")
+animation = &"lock"
+offset = Vector2(0, -5)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.228764, 0.403681)
+shape = SubResource("CircleShape2D_vuemo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

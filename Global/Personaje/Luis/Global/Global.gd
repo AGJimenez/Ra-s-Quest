@@ -28,7 +28,6 @@ var sand_complete = false
 #chest_room
 var chest_puzzle_complete = false
 var gain_torch_end = false
-var not_prepared = true
 
 #night_room
 var door_disable = false
@@ -57,7 +56,10 @@ var dead = false
 var death = false
 
 #easter_egg
+var not_prepared:bool = false
 var pieces_collected: int = 0
+var doom_bool: bool = false
+
 
 
 

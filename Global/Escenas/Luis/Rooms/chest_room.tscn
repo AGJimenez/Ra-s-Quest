@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cfgpctstjmt0h"]
+[gd_scene load_steps=38 format=3 uid="uid://cfgpctstjmt0h"]
 
 [ext_resource type="Script" path="res://Scripts/Luis/chest_room.gd" id="1_e1gyu"]
 [ext_resource type="Texture2D" uid="uid://41lwebdcf05e" path="res://Assets/non-rm-a2-square.png" id="1_ua8wt"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://eav1u8daqpcg" path="res://Personaje/Luis/Fire/little_torch.tscn" id="11_q7mc2"]
 [ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="12_iamxw"]
 [ext_resource type="Texture2D" uid="uid://qfqxcsfkr3jm" path="res://Assets/Sprites/floaty_32.png" id="13_qk8jj"]
+[ext_resource type="PackedScene" uid="uid://cnp1gq5n1s4bo" path="res://Personaje/Luis/particulas/purple_fire.tscn" id="15_k7fvp"]
+[ext_resource type="Texture2D" uid="uid://k8u3xfcxqocv" path="res://Assets/Sprites/Skeleton.png" id="16_bgkxc"]
+[ext_resource type="Texture2D" uid="uid://cn3ct3bvcphwp" path="res://Assets/Egyptian_A3.png" id="17_y2m21"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avwf6"]
 texture = ExtResource("5_m65vy")
@@ -11548,6 +11551,27 @@ colors = PackedColorArray(0.4, 0, 0.619608, 1, 0.443137, 0, 0.545098, 1, 0.46274
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1cgb"]
 size = Vector2(60, 32)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xhf1d"]
+blend_mode = 2
+
+[sub_resource type="Curve" id="Curve_yfkmk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.67033), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_oah6r"]
+offsets = PackedFloat32Array(0, 0.266667, 0.58, 0.806667, 1)
+colors = PackedColorArray(0.875698, 0.000826116, 0.909602, 1, 0.720236, 0.302388, 0.0884621, 1, 0.599197, 0.408916, 2.88785e-07, 1, 1, 1, 1, 1, 0.576471, 0.576471, 0.576471, 0)
+
+[sub_resource type="Curve" id="Curve_6ncmu"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, -1242.66, 0, 0, Vector2(0.202247, -32.967), -1564.83, -1564.83, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ur16i"]
+offsets = PackedFloat32Array(0, 0.593333, 1)
+colors = PackedColorArray(0.938631, 0, 0.100945, 1, 0.658824, 0.419608, 0.972549, 0.752941, 0, 0, 0, 0)
+
 [node name="chest_room" type="Node2D" node_paths=PackedStringArray("cursed_particles")]
 script = ExtResource("1_e1gyu")
 cursed_particles = NodePath("easter_egg_chest/cursed_particles")
@@ -11630,6 +11654,9 @@ position = Vector2(112, 21)
 [node name="chest_puzzle-chest" type="Marker2D" parent="Spawn_points"]
 position = Vector2(231, 110)
 
+[node name="easter_egg-chest" type="Marker2D" parent="Spawn_points"]
+position = Vector2(51, 169)
+
 [node name="chest_puzzle" type="Area2D" parent="."]
 position = Vector2(268, 108)
 
@@ -11671,6 +11698,482 @@ range_item_cull_mask = 0
 
 [node name="light_floor" parent="little torch/Light" index="1"]
 range_item_cull_mask = 0
+
+[node name="particles" type="Node2D" parent="."]
+z_index = 99
+
+[node name="plague" type="CPUParticles2D" parent="particles"]
+material = SubResource("CanvasItemMaterial_xhf1d")
+position = Vector2(1, -35)
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_yfkmk")
+color_ramp = SubResource("Gradient_oah6r")
+
+[node name="plague2" type="CPUParticles2D" parent="particles"]
+material = SubResource("CanvasItemMaterial_xhf1d")
+position = Vector2(288, -43)
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_yfkmk")
+color_ramp = SubResource("Gradient_oah6r")
+
+[node name="plague3" type="CPUParticles2D" parent="particles"]
+material = SubResource("CanvasItemMaterial_xhf1d")
+position = Vector2(121, 119)
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_yfkmk")
+color_ramp = SubResource("Gradient_oah6r")
+
+[node name="plague4" type="CPUParticles2D" parent="particles"]
+material = SubResource("CanvasItemMaterial_xhf1d")
+position = Vector2(239, 87)
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_yfkmk")
+color_ramp = SubResource("Gradient_oah6r")
+
+[node name="plague5" type="CPUParticles2D" parent="particles"]
+material = SubResource("CanvasItemMaterial_xhf1d")
+position = Vector2(60, -53)
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_yfkmk")
+color_ramp = SubResource("Gradient_oah6r")
+
+[node name="plague6" type="CPUParticles2D" parent="particles"]
+material = SubResource("CanvasItemMaterial_xhf1d")
+position = Vector2(207, -78)
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_yfkmk")
+color_ramp = SubResource("Gradient_oah6r")
+
+[node name="plague7" type="CPUParticles2D" parent="particles"]
+material = SubResource("CanvasItemMaterial_xhf1d")
+position = Vector2(3, 122)
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_yfkmk")
+color_ramp = SubResource("Gradient_oah6r")
+
+[node name="plague8" type="CPUParticles2D" parent="particles"]
+material = SubResource("CanvasItemMaterial_xhf1d")
+position = Vector2(170, 206)
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_yfkmk")
+color_ramp = SubResource("Gradient_oah6r")
+
+[node name="explosion" type="CPUParticles2D" parent="particles"]
+position = Vector2(16, 168)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion2" type="CPUParticles2D" parent="particles"]
+position = Vector2(270, 106)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion3" type="CPUParticles2D" parent="particles"]
+position = Vector2(255, 29)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion4" type="CPUParticles2D" parent="particles"]
+position = Vector2(46, 69)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion5" type="CPUParticles2D" parent="particles"]
+position = Vector2(115, -29)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion6" type="CPUParticles2D" parent="particles"]
+position = Vector2(19, 14)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion7" type="CPUParticles2D" parent="particles"]
+position = Vector2(-275, -153)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion8" type="CPUParticles2D" parent="particles"]
+position = Vector2(532, -130)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion9" type="CPUParticles2D" parent="particles"]
+position = Vector2(-287, -7)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion10" type="CPUParticles2D" parent="particles"]
+position = Vector2(-182, 185)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion11" type="CPUParticles2D" parent="particles"]
+position = Vector2(523, 60)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion12" type="CPUParticles2D" parent="particles"]
+position = Vector2(-15, 288)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion13" type="CPUParticles2D" parent="particles"]
+position = Vector2(438, 308)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion14" type="CPUParticles2D" parent="particles"]
+position = Vector2(138, -188)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="explosion15" type="CPUParticles2D" parent="particles"]
+position = Vector2(195, 314)
+emitting = false
+amount = 400
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_6ncmu")
+angle_max = 360.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_ur16i")
+
+[node name="first_line" type="Node2D" parent="particles"]
+visible = false
+
+[node name="purple_fire" parent="particles/first_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(-333, 412)
+
+[node name="purple_fire2" parent="particles/first_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(-105, 412)
+
+[node name="purple_fire3" parent="particles/first_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(143, 412)
+
+[node name="purple_fire4" parent="particles/first_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(370, 412)
+
+[node name="purple_fire5" parent="particles/first_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(599, 412)
+
+[node name="second_line" type="Node2D" parent="particles"]
+visible = false
+
+[node name="purple_fire11" parent="particles/second_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(-333, 210)
+
+[node name="purple_fire12" parent="particles/second_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(-105, 210)
+
+[node name="purple_fire13" parent="particles/second_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(143, 210)
+
+[node name="purple_fire14" parent="particles/second_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(370, 210)
+
+[node name="purple_fire15" parent="particles/second_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(599, 210)
+
+[node name="third_line" type="Node2D" parent="particles"]
+visible = false
+
+[node name="purple_fire6" parent="particles/third_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(-333, 0)
+
+[node name="purple_fire7" parent="particles/third_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(-105, 0)
+
+[node name="purple_fire8" parent="particles/third_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(143, 0)
+
+[node name="purple_fire9" parent="particles/third_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(370, 0)
+
+[node name="purple_fire10" parent="particles/third_line" instance=ExtResource("15_k7fvp")]
+position = Vector2(599, 0)
+
+[node name="madness" type="CPUParticles2D" parent="particles"]
+position = Vector2(439, -131)
+emitting = false
+amount = 1
+texture = ExtResource("4_utu5d")
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_max = 218.18
+orbit_velocity_max = 20.0
+
+[node name="madness2" type="CPUParticles2D" parent="particles"]
+position = Vector2(-220, -180)
+emitting = false
+amount = 1
+texture = ExtResource("7_kkkem")
+direction = Vector2(-1, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -218.18
+angular_velocity_max = -218.18
+orbit_velocity_min = -20.0
+orbit_velocity_max = -20.0
+
+[node name="madness3" type="CPUParticles2D" parent="particles"]
+position = Vector2(146, 78)
+emitting = false
+amount = 1
+texture = ExtResource("16_bgkxc")
+direction = Vector2(-1, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -218.18
+angular_velocity_max = -218.18
+orbit_velocity_min = -20.0
+orbit_velocity_max = -20.0
+
+[node name="madness4" type="CPUParticles2D" parent="particles"]
+position = Vector2(687, 408)
+emitting = false
+amount = 1
+texture = ExtResource("1_ua8wt")
+direction = Vector2(-1, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -218.18
+angular_velocity_max = -218.18
+orbit_velocity_min = -20.0
+orbit_velocity_max = -20.0
+
+[node name="madness5" type="CPUParticles2D" parent="particles"]
+position = Vector2(-250, 168)
+emitting = false
+amount = 1
+texture = ExtResource("17_y2m21")
+direction = Vector2(-1, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -218.18
+angular_velocity_max = -218.18
+orbit_velocity_min = -20.0
+orbit_velocity_max = -20.0
 
 [connection signal="body_entered" from="night_entrance/chest_area_night" to="." method="_on_chest_area_night_body_entered"]
 [connection signal="body_entered" from="night_entrance/not_torch_area" to="." method="_on_not_torch_area_body_entered"]

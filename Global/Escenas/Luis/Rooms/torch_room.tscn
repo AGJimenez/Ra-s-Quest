@@ -12117,13 +12117,13 @@ shape = SubResource("RectangleShape2D_1w3mb")
 y_sort_enabled = true
 
 [node name="movable_torch" parent="Torches" instance=ExtResource("8_v6n8k")]
-position = Vector2(430, 399)
+position = Vector2(128, 459)
 
 [node name="movable_torch2" parent="Torches" instance=ExtResource("8_v6n8k")]
-position = Vector2(402, 170)
+position = Vector2(64, 73)
 
 [node name="movable_torch3" parent="Torches" instance=ExtResource("8_v6n8k")]
-position = Vector2(689, 176)
+position = Vector2(1001, 108)
 
 [node name="Statues" type="Node2D" parent="."]
 y_sort_enabled = true

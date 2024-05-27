@@ -1,0 +1,222 @@
+[gd_scene load_steps=21 format=3 uid="uid://d1j3ph8uvikha"]
+
+[ext_resource type="PackedScene" uid="uid://fqejlttey2vl" path="res://Escenas/easter_egg_scene/master_cursed_key.tscn" id="1_fm8ce"]
+[ext_resource type="Script" path="res://Escenas/easter_egg_scene/prueba.gd" id="1_wmahe"]
+[ext_resource type="PackedScene" uid="uid://c4emyoeotwabp" path="res://Escenas/easter_egg_scene/cursed_lock.tscn" id="2_1kur6"]
+[ext_resource type="Script" path="res://Escenas/easter_egg_scene/prueba_camera.gd" id="3_n7xw2"]
+[ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="5_r3jpf"]
+[ext_resource type="Texture2D" uid="uid://qfqxcsfkr3jm" path="res://Assets/Sprites/floaty_32.png" id="6_8crh8"]
+[ext_resource type="PackedScene" uid="uid://c6d6x475xvrht" path="res://Personaje/Luis/particulas/eyes.tscn" id="6_sby1d"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4mg0f"]
+blend_mode = 2
+
+[sub_resource type="Curve" id="Curve_ixycm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.67033), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_x2l3b"]
+offsets = PackedFloat32Array(0, 0.266667, 0.58, 0.806667, 1)
+colors = PackedColorArray(0.875698, 0.000826116, 0.909602, 1, 0.720236, 0.302388, 0.0884621, 1, 0.599197, 0.408916, 2.88785e-07, 1, 1, 1, 1, 1, 0.576471, 0.576471, 0.576471, 0)
+
+[sub_resource type="Curve" id="Curve_sc0dc"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, -1242.66, 0, 0, Vector2(0.202247, -32.967), -1564.83, -1564.83, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_wa7ns"]
+offsets = PackedFloat32Array(0, 0.593333, 1)
+colors = PackedColorArray(0.938631, 0, 0.100945, 1, 0.658824, 0.419608, 0.972549, 0.752941, 0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_dpu6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_64m7j"]
+resource_name = "smthg"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(100, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(100, 100, 100, 1), Color(100, 100, 100, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ynqod"]
+_data = {
+"RESET": SubResource("Animation_dpu6r"),
+"smthg": SubResource("Animation_64m7j")
+}
+
+[sub_resource type="Animation" id="Animation_x3hld"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2dqsk"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_esmie"]
+_data = {
+"RESET": SubResource("Animation_x3hld"),
+"fade": SubResource("Animation_2dqsk")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5mifi"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_dp1ih"]
+offsets = PackedFloat32Array(0, 0.753333, 0.9, 1)
+colors = PackedColorArray(0.375199, 0, 0.0611731, 1, 0.7087, 2.40172e-05, 0.126969, 1, 0.605274, 0.605274, 0.605274, 1, 1, 1, 1, 0)
+
+[node name="prueba" type="Node2D" node_paths=PackedStringArray("anim_player")]
+script = ExtResource("1_wmahe")
+anim_player = NodePath("master_cursed_key/AnimationPlayer")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_4mg0f")
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_curve = SubResource("Curve_ixycm")
+color_ramp = SubResource("Gradient_x2l3b")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 400
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_sc0dc")
+angle_max = 360.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_wa7ns")
+
+[node name="cursed_lock" parent="." instance=ExtResource("2_1kur6")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cursed_lock"]
+libraries = {
+"": SubResource("AnimationLibrary_ynqod")
+}
+
+[node name="master_cursed_key" parent="." instance=ExtResource("1_fm8ce")]
+position = Vector2(-155, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="master_cursed_key"]
+libraries = {
+"": SubResource("AnimationLibrary_esmie")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+script = ExtResource("3_n7xw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-66, -35)
+texture = ExtResource("5_r3jpf")
+region_enabled = true
+region_rect = Rect2(254.803, 0.400266, 33.8907, 95.2996)
+
+[node name="eyes" parent="." instance=ExtResource("6_sby1d")]
+visible = false
+
+[node name="eyes2" type="CPUParticles2D" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_5mifi")
+position = Vector2(-64, -67)
+amount = 10
+lifetime = 0.5
+texture = ExtResource("6_8crh8")
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_max = 1.0
+angle_max = 360.0
+color_ramp = SubResource("Gradient_dp1ih")
+
+[connection signal="unlock" from="cursed_lock" to="." method="_on_cursed_lock_unlock"]
+[connection signal="unlock" from="cursed_lock" to="master_cursed_key" method="_on_cursed_lock_unlock"]
+[connection signal="unlock" from="cursed_lock" to="Camera2D" method="_on_cursed_lock_unlock"]
+
+[editable path="cursed_lock"]
+[editable path="master_cursed_key"]

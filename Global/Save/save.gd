@@ -11,7 +11,8 @@ var save_dict = {
 	"gem_dani": false,
 	"gem_rafa": false,
 	"gem_luis": false,
-	"key_collected": false
+	"key_collected": false,
+	"ended": false
 	}
 
 func save():
@@ -38,7 +39,7 @@ func load_game():
 		var json = JSON.new()
 		var parse_result = json.parse(json_string)
 		var node_data = json.get_data()
-		
+		save_dict["ended"] = node_data["ended"]
 		save_dict["gem_mario"] = node_data["gem_mario"]
 		save_dict["gem_dani"] = node_data["gem_dani"]
 		save_dict["gem_rafa"] = node_data["gem_rafa"]

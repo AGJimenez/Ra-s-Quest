@@ -10,7 +10,7 @@ func _ready():
 		$pause_control/settings_menu/MarginContainer/VFlowContainer/act_deact.text = "Activado"
 
 func _process(_delta):
-	if(Input.is_action_just_pressed("pausa") && !Global.dialogue_state && !quit):
+	if(Input.is_action_just_pressed("pausa") && !Global.dialogue_state && !quit && !Global.doom_bool):
 		if(!pause):
 			pauseMenu()
 		else:

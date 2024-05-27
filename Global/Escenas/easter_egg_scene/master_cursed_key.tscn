@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://fqejlttey2vl"]
+
+[ext_resource type="Script" path="res://Escenas/easter_egg_scene/prueba_cursed_key.gd" id="1_hnqol"]
+[ext_resource type="Texture2D" uid="uid://qfqxcsfkr3jm" path="res://Assets/Sprites/floaty_32.png" id="2_2aux2"]
+[ext_resource type="Texture2D" uid="uid://dviwbdb2ppt6d" path="res://Assets/Sprites/Key 6 - GOLD - frame0008.png" id="2_etisu"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eq073"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_gk1h0"]
+offsets = PackedFloat32Array(0, 0.306667, 0.526667, 0.753333, 1)
+colors = PackedColorArray(0.4, 0, 0.619608, 1, 0.443137, 0, 0.545098, 1, 0.462745, 0, 0.501961, 1, 0.501961, 0, 0.396078, 1, 0, 0, 0, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_puu5b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_be22c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cf42q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e1lba"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_20feh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kiylf"]
+
+[node name="master_cursed_key" type="CharacterBody2D" groups=["Key"]]
+script = ExtResource("1_hnqol")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_eq073")
+position = Vector2(0, 2)
+amount = 80
+lifetime = 0.5
+texture = ExtResource("2_2aux2")
+emission_shape = 1
+emission_sphere_radius = 25.0
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector2(0, -100)
+initial_velocity_max = 1.0
+angle_max = 360.0
+color_ramp = SubResource("Gradient_gk1h0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_etisu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 14)
+rotation = -3.14159
+scale = Vector2(0.364911, -0.434853)
+shape = SubResource("CircleShape2D_puu5b")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -4.0
+offset_top = -13.0
+offset_right = 4.0
+offset_bottom = -5.0
+scale = Vector2(0.971365, 0.971365)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_be22c")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cf42q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e1lba")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_20feh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kiylf")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -1,0 +1,209 @@
+[gd_scene load_steps=18 format=3 uid="uid://wa2nrfp64sv5"]
+
+[ext_resource type="Script" path="res://Escenas/Luis/Puzzles/easter_egg_puzzle.gd" id="1_uftop"]
+[ext_resource type="Texture2D" uid="uid://cj10ejgr8eyuj" path="res://Assets/non-rm-a3.png" id="2_uqaih"]
+[ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="3_soxsv"]
+[ext_resource type="PackedScene" uid="uid://c4emyoeotwabp" path="res://Escenas/easter_egg_scene/cursed_lock.tscn" id="3_svt38"]
+[ext_resource type="PackedScene" uid="uid://fqejlttey2vl" path="res://Escenas/easter_egg_scene/master_cursed_key.tscn" id="4_43e8r"]
+[ext_resource type="Script" path="res://Escenas/easter_egg_scene/prueba_camera.gd" id="5_uckwu"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gb73h"]
+blend_mode = 2
+
+[sub_resource type="Curve" id="Curve_4o4wh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.67033), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ocbvb"]
+offsets = PackedFloat32Array(0, 0.266667, 0.58, 0.806667, 1)
+colors = PackedColorArray(0.875698, 0.000826116, 0.909602, 1, 0.720236, 0.302388, 0.0884621, 1, 0.599197, 0.408916, 2.88785e-07, 1, 1, 1, 1, 1, 0.576471, 0.576471, 0.576471, 0)
+
+[sub_resource type="Curve" id="Curve_c02im"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, -1242.66, 0, 0, Vector2(0.202247, -32.967), -1564.83, -1564.83, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_r123r"]
+offsets = PackedFloat32Array(0, 0.593333, 1)
+colors = PackedColorArray(0.938631, 0, 0.100945, 1, 0.658824, 0.419608, 0.972549, 0.752941, 0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_dpu6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_64m7j"]
+resource_name = "smthg"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(100, 100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.45, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(100, 100, 100, 1), Color(100, 100, 100, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ynqod"]
+_data = {
+"RESET": SubResource("Animation_dpu6r"),
+"smthg": SubResource("Animation_64m7j")
+}
+
+[sub_resource type="Animation" id="Animation_x3hld"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2dqsk"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_esmie"]
+_data = {
+"RESET": SubResource("Animation_x3hld"),
+"fade": SubResource("Animation_2dqsk")
+}
+
+[node name="easter_egg_puzzle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_uftop")
+
+[node name="plague" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_gb73h")
+emitting = false
+amount = 500
+lifetime = 4.0
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 60.0
+orbit_velocity_max = 1.0
+scale_amount_curve = SubResource("Curve_4o4wh")
+color_ramp = SubResource("Gradient_ocbvb")
+
+[node name="explosion" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 400
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 100.0
+linear_accel_max = 50.0
+linear_accel_curve = SubResource("Curve_c02im")
+angle_max = 360.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_r123r")
+
+[node name="darker" type="CanvasModulate" parent="."]
+color = Color(0.772549, 0.772549, 0.772549, 1)
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(6.50001, -82)
+scale = Vector2(3.73418, 2.72258)
+texture = ExtResource("2_uqaih")
+region_enabled = true
+region_rect = Rect2(1263.87, 223.54, 79.8716, 96.4088)
+
+[node name="frontground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1, -15)
+scale = Vector2(4.7067, 4.7067)
+texture = ExtResource("3_soxsv")
+region_enabled = true
+region_rect = Rect2(479.836, 416.053, 32.5664, 28.3774)
+
+[node name="cursed_lock" parent="." instance=ExtResource("3_svt38")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="cursed_lock"]
+libraries = {
+"": SubResource("AnimationLibrary_ynqod")
+}
+
+[node name="master_cursed_key" parent="." instance=ExtResource("4_43e8r")]
+position = Vector2(-115, -11)
+
+[node name="Button" parent="master_cursed_key" index="3"]
+mouse_default_cursor_shape = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="master_cursed_key"]
+libraries = {
+"": SubResource("AnimationLibrary_esmie")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5, -35)
+scale = Vector2(2, 2)
+zoom = Vector2(4, 4)
+script = ExtResource("5_uckwu")
+
+[connection signal="unlock" from="cursed_lock" to="." method="_on_cursed_lock_unlock"]
+[connection signal="unlock" from="cursed_lock" to="master_cursed_key" method="_on_cursed_lock_unlock"]
+[connection signal="unlock" from="cursed_lock" to="Camera2D" method="_on_cursed_lock_unlock"]
+
+[editable path="cursed_lock"]
+[editable path="master_cursed_key"]

@@ -11492,7 +11492,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_ircx3")
 
 [node name="Personaje" parent="." groups=["Personaje"] instance=ExtResource("15_2j1o6")]
-position = Vector2(3174, 1131)
+position = Vector2(2130, 2071)
 
 [node name="CollisionShape2D" parent="Personaje" index="4"]
 position = Vector2(0, -13)
