@@ -34,22 +34,21 @@ func _process(delta):
 		
 
 	if(Globals.completados == 4 && Globals.puerta_hecha==false):
-		
+		$easter_egg.visible = true
 		$puerta.visible = false
-		#$puerta.collision.disabled = true
+		$puerta_collision/CollisionShape2D.disabled = true
 		Globals.puerta_hecha = true
-		print(Globals.puerta_hecha)
-		#if(player entra en area):
-		#loadmanager.load_level("chest_room")
 
 
 func _on_purple_area_body_entered(body):
 	if(body.is_in_group("Player") && !Save.save_dict["gem_rafa"]):
-		purple_area = true
-		interact_label.visible = true
+		if($easter_egg.visible):
+			purple_area = true
+			interact_label.visible = true
 
 
 func _on_purple_area_body_exited(body):
 	if(body.is_in_group("Player") && !Save.save_dict["gem_rafa"]):
-		purple_area = false
-		interact_label.visible = false
+		if($easter_egg.visible):
+			purple_area = false
+			interact_label.visible = false

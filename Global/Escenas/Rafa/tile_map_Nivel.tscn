@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b4dkhcluoery2"]
+[gd_scene load_steps=34 format=3 uid="uid://b4dkhcluoery2"]
 
 [ext_resource type="Texture2D" uid="uid://lj7pwy4d4qm" path="res://Escenas/Rafa/Assets/Egyptian_A2.png" id="1_1hg7q"]
 [ext_resource type="Texture2D" uid="uid://mcdh6texv4dp" path="res://Escenas/Rafa/Assets/Egyptian_A4.png" id="1_88slb"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://youdt3f7onux" path="res://Personaje/personaje.tscn" id="14_mcn85"]
 [ext_resource type="Texture2D" uid="uid://ds3k4qthdft0e" path="res://Assets/Egyptian_C.png" id="16_shd41"]
 [ext_resource type="Script" path="res://Escenas/Rafa/Interaction/InteractionArea/interaction_area.gd" id="17_1esm3"]
+[ext_resource type="PackedScene" uid="uid://day7cwm1ykue7" path="res://Personaje/Luis/Objects/easter_egg/purple_gem.tscn" id="18_felak"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_abrps"]
 texture = ExtResource("1_88slb")
@@ -3563,6 +3564,9 @@ sources/7 = SubResource("TileSetAtlasSource_iiyym")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tj42v"]
 size = Vector2(21, 49)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk0bh"]
+size = Vector2(79.3754, 48.9301)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x8efr"]
 texture = ExtResource("16_shd41")
 2:0/0 = 0
@@ -5819,6 +5823,8 @@ sources/0 = SubResource("TileSetAtlasSource_x8efr")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jobih"]
 size = Vector2(214, 15)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pjy1e"]
+
 [node name="TileMap" type="TileMap" node_paths=PackedStringArray("personaje", "marker_perro", "marker_gato", "marker_tortuga", "marker_humano")]
 position = Vector2(-160, 156)
 tile_set = SubResource("TileSet_ilmt5")
@@ -6060,6 +6066,14 @@ position = Vector2(1298, -486)
 [node name="marker_humano" type="Marker2D" parent="spawn_point"]
 position = Vector2(1297, -105)
 
+[node name="puerta_collision" type="StaticBody2D" parent="."]
+position = Vector2(-5, -742)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puerta_collision"]
+position = Vector2(4.5, -29.5)
+scale = Vector2(2.75904, 2.75904)
+shape = SubResource("RectangleShape2D_gk0bh")
+
 [node name="puerta" type="TileMap" parent="."]
 position = Vector2(0, -768)
 tile_set = SubResource("TileSet_cbim6")
@@ -6075,5 +6089,21 @@ action_name = ""
 position = Vector2(1, -696)
 shape = SubResource("RectangleShape2D_jobih")
 
+[node name="easter_egg" type="Node2D" parent="."]
+visible = false
+y_sort_enabled = true
+position = Vector2(115, 136)
+
+[node name="purple_gem" parent="easter_egg" instance=ExtResource("18_felak")]
+
+[node name="purple_area" type="Area2D" parent="easter_egg/purple_gem"]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="easter_egg/purple_gem/purple_area"]
+scale = Vector2(2.45556, 2.45556)
+shape = SubResource("CircleShape2D_pjy1e")
+
 [connection signal="body_entered" from="puertaFinal" to="puertaFinal" method="_on_body_entered"]
 [connection signal="body_exited" from="puertaFinal" to="puertaFinal" method="_on_body_exited"]
+[connection signal="body_entered" from="easter_egg/purple_gem/purple_area" to="." method="_on_purple_area_body_entered"]
+[connection signal="body_exited" from="easter_egg/purple_gem/purple_area" to="." method="_on_purple_area_body_exited"]
