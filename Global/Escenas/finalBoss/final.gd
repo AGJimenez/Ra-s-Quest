@@ -2,6 +2,7 @@ extends Node2D
 
 var conversacionNave = false
 var primeraVez = false
+var naveAparece = false
 
 @export_group("Player")
 @export var player: CharacterBody2D
@@ -60,5 +61,9 @@ func _on_ship_area_body_entered(body):
 		player.set_physics_process(false)
 		$desaparecer.play("desaparecerEstatua")
 		await $desaparecer.animation_finished
-		player.set_physics_process(true)
-		
+		$Personaje/Camera2D.enabled = false
+		$Personaje.visible = false
+		$ship/Camera2D.enabled = true
+		$ship.set_physics_process(true)
+		$ship.set_process(true)
+		$ship.visible = true

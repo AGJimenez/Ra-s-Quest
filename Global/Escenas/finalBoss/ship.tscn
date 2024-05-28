@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnpg5tfohroy7"]
+[gd_scene load_steps=7 format=3 uid="uid://cnpg5tfohroy7"]
 
 [ext_resource type="Script" path="res://ship.gd" id="1_xfsne"]
 [ext_resource type="Texture2D" uid="uid://bkr4fy56h6ptw" path="res://Assets/nave.png" id="2_bqjer"]
@@ -9,7 +9,10 @@ atlas = ExtResource("2_bqjer")
 region = Rect2(607.35, 45.5085, 153.947, 158.612)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agks5"]
-size = Vector2(149, 156)
+size = Vector2(121, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m46uy"]
+size = Vector2(146, 120)
 
 [node name="ship" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
@@ -22,7 +25,7 @@ rotation = 1.57196
 texture = SubResource("AtlasTexture_tvsr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(-14.5, -3)
 shape = SubResource("RectangleShape2D_agks5")
 
 [node name="Timer" type="Timer" parent="."]
@@ -36,4 +39,12 @@ offset_right = 46.0
 offset_bottom = -121.0
 value = 100.0
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 4)
+shape = SubResource("RectangleShape2D_m46uy")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

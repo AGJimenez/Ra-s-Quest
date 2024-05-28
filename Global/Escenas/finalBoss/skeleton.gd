@@ -27,3 +27,5 @@ func _physics_process(delta):
  
 func take_damage():
 	health -= 10
+
+
