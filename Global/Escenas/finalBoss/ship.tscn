@@ -28,4 +28,12 @@ shape = SubResource("RectangleShape2D_agks5")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(100, 0)
+offset_left = -54.0
+offset_top = -148.0
+offset_right = 46.0
+offset_bottom = -121.0
+value = 100.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

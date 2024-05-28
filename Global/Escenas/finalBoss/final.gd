@@ -1,5 +1,8 @@
 extends Node2D
 
+var conversacionNave = false
+var primeraVez = false
+
 func _ready():
 	$Camera2D.enabled = true
 	$Personaje.set_process(false)
@@ -19,4 +22,13 @@ func _ready():
 	$paredFrontal.visible = false
 	
 func _process(delta):
-	pass
+	if conversacionNave == true && !Global.dialogue_state == true && primeraVez == false:
+		primeraVez = true
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/finalBoss/nave.dialogue"), "start")
+		#HACER INVISIBLE AL PIBE
+
+func _on_conversacion_body_entered(body):
+	if conversacionNave == false:
+		if body.name == "Personaje":
+			$raAparecer.play("raAparecer")
+			conversacionNave = true

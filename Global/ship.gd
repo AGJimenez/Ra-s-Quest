@@ -3,8 +3,18 @@ extends CharacterBody2D
 @export var bullet_node: PackedScene
 var mouse_position = Vector2.ZERO
 var direction = Vector2.ZERO
+@onready var progress_bar = $ProgressBar
+
+var health = 100:
+	set(value):
+		health = value
+		progress_bar.value = value
+		if health <= 0:
+			die()
+
 
 func _physics_process(_delta):
+	
 	velocity = Input.get_vector("Left","Right","Up","Down") * 250
 	mouse_position = get_global_mouse_position()
 	direction = (mouse_position - global_position).normalized()
@@ -19,5 +29,11 @@ func shoot():
 	get_tree().current_scene.call_deferred("add_child",bullet)
  
 func _input(event):
-	if event.is_action("LeftClick"):
+	if event.is_action("RightClick"):
 		shoot()	
+
+func take_damage():
+	health -= 10
+
+func die():
+	print("Muelto")

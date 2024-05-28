@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://co6te3gvmoj6c"
+path="res://.godot/imported/nave.dialogue-2019b870115c20afce6031c3fae90a69.tres"
+
+[deps]
+
+source_file="res://Dialogos/finalBoss/nave.dialogue"
+dest_files=["res://.godot/imported/nave.dialogue-2019b870115c20afce6031c3fae90a69.tres"]
+
+[params]
+
+defaults=true

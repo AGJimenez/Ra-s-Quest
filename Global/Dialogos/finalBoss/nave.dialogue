@@ -1,0 +1,23 @@
+~ start
+set Global.dialogue_state = true
+
+
+Ra: (Apareciendo en un destello de luz dorada) Aventurero, has demostrado gran valentía al llegar hasta aquí.
+
+Jack: (Sorprendido y reverente) ¿Ra? ¿Eres tú, el dios del sol?
+
+Ra: Así es, mortal. Has ingresado en un lugar sagrado. Tu destino está entrelazado con el mío.
+
+Jack: ¡GUAU! ¡No creía poder ver tu forma corpórea!
+
+Ra: Escucha con antención, Jack. Seth, el dios del caos, es poderoso y astuto. Pero no temas, pues hay un objeto que puede ayudarte en tu misión. Este artefacto, conocido como el Ojo de Ra, te dará la fuerza y la protección que necesitarás.
+
+Jack: ¿Cómo uso este poder?
+
+Ra: El Ojo de Ra canaliza mi poder. Úsalo sabiamente, el click derecho es tu mayor aliado. Su luz disipará las sombras y debilitará a Seth. Recuerda, el verdadero poder reside en tu corazón y tu determinación.
+
+Jack: No te fallaré, Ra. Prometo usar este artefacto para restaurar el equilibrio.
+
+Ra: Confío en ti, Jack. Ve ahora, y enfrenta tu destino con valentía. La luz del sol siempre estará contigo.
+set Global.dialogue_state = false
+=> END
