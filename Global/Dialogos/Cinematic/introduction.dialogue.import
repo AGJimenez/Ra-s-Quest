@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dv67goimft1c8"
+path="res://.godot/imported/introduction.dialogue-1048d3cc6f57b214ae15434be9d82a7d.tres"
+
+[deps]
+
+source_file="res://Dialogos/Cinematic/introduction.dialogue"
+dest_files=["res://.godot/imported/introduction.dialogue-1048d3cc6f57b214ae15434be9d82a7d.tres"]
+
+[params]
+
+defaults=true

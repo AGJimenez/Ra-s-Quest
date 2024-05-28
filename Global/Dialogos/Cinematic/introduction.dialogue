@@ -1,0 +1,10 @@
+~ introduction
+set Global.dialogue_state = true
+
+Frèderic: Así que ya has llegado Jack. El equipo de excavación estaba como loco esperándote, pero ahora no se atreven a entrar en la pirámide, por lo que piensan que es mejor que entres tú, por llegar tarde. ¿Necesitas que te recuerde como moverte? Pareces un poco desorientado del vuelo
+- Sí
+
+- No
+	Frèderic: Vaya parece que ya eres todo un experto, bueno no hay mas tiempo que perder, entra en esa pirámide y encuentra el tesoro Jack.
+	=> END
+=> END
