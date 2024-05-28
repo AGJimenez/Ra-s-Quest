@@ -66,4 +66,6 @@ func _on_ship_area_body_entered(body):
 		$ship/Camera2D.enabled = true
 		$ship.set_physics_process(true)
 		$ship.set_process(true)
+		$StaticBody2D/Sprite2D.visible = false
 		$ship.visible = true
+		

@@ -12620,6 +12620,7 @@ visible = false
 position = Vector2(826, -20)
 
 [node name="Camera2D" type="Camera2D" parent="ship"]
+zoom = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(144, -321)
@@ -12883,4 +12884,5 @@ shape = SubResource("RectangleShape2D_vyt6a")
 [connection signal="body_entered" from="ship_area" to="." method="_on_ship_area_body_entered"]
 
 [editable path="Estatuas/estatuaMasiva"]
+[editable path="Estatuas/estatuaMasiva7"]
 [editable path="Personaje"]

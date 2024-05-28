@@ -1,0 +1,137 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq1aeuvnoopk5"]
+
+[ext_resource type="Script" path="res://gameover.gd" id="1_jyo7u"]
+[ext_resource type="Theme" uid="uid://dtngmjro2nr1c" path="res://Assets/defaultButton.tres" id="2_yfd7k"]
+[ext_resource type="FontFile" uid="uid://yaesjl55ipex" path="res://Assets/fuentes/Pixelme.ttf" id="3_ybkym"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5oyo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tetid"]
+
+[sub_resource type="FontVariation" id="FontVariation_126dw"]
+base_font = ExtResource("3_ybkym")
+
+[node name="gameover" type="CanvasLayer"]
+process_mode = 3
+layer = 99
+script = ExtResource("1_jyo7u")
+
+[node name="pause_control" type="Control" parent="."]
+process_mode = 3
+z_index = 2
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="darker" type="ColorRect" parent="pause_control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.811765)
+metadata/_edit_use_anchors_ = true
+
+[node name="reload" type="Button" parent="pause_control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -3.0
+offset_right = 42.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "REINICIAR"
+
+[node name="quit" type="Button" parent="pause_control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 47.0
+offset_right = 37.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SALIR"
+
+[node name="settings" type="Button" parent="pause_control"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 559.0
+offset_right = 46.0
+offset_bottom = 587.0
+scale = Vector2(2.23824, 2.23824)
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_yfd7k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i5oyo")
+text = "⚙️"
+
+[node name="settings_menu" type="Control" parent="pause_control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 24.0
+offset_top = 498.0
+offset_right = 262.0
+offset_bottom = 542.0
+
+[node name="MarginContainer" type="MarginContainer" parent="pause_control/settings_menu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="settings_color" type="ColorRect" parent="pause_control/settings_menu/MarginContainer"]
+layout_mode = 2
+color = Color(0.0431373, 0, 0.176471, 1)
+
+[node name="VFlowContainer" type="HBoxContainer" parent="pause_control/settings_menu/MarginContainer"]
+layout_mode = 2
+
+[node name="full_screen" type="Label" parent="pause_control/settings_menu/MarginContainer/VFlowContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ybkym")
+text = "Pantalla completa:"
+
+[node name="act_deact" type="CheckButton" parent="pause_control/settings_menu/MarginContainer/VFlowContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_ybkym")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tetid")
+text = "Desactivado"
+
+[node name="Label" type="Label" parent="pause_control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -442.0
+offset_top = -91.0
+offset_right = 595.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_126dw")
+theme_override_font_sizes/font_size = 40
+text = "HAS SIDO DERROTADO POR EL PODER DEL MAL"
+
+[connection signal="pressed" from="pause_control/reload" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="pause_control/quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="pause_control/quit" to="." method="_on_quit_toggled"]
+[connection signal="pressed" from="pause_control/settings" to="." method="_on_settings_pressed"]
+[connection signal="toggled" from="pause_control/settings_menu/MarginContainer/VFlowContainer/act_deact" to="." method="_on_act_deact_toggled"]

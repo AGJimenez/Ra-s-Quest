@@ -37,7 +37,7 @@ func take_damage():
 
 func die():
 	print("Muelto")
-
+	$gameover.visible = true
 
 func _on_area_2d_body_entered(body):
 	if body.name == "skeleton":
