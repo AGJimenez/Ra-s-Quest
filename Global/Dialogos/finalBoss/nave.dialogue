@@ -2,22 +2,28 @@
 set Global.dialogue_state = true
 
 
-Ra: (Apareciendo en un destello de luz dorada) Aventurero, has demostrado gran valentía al llegar hasta aquí.
+𓂋𓄿: (Apareciendo en un destello de luz dorada) 
+	[rainbow]𓄿[/rainbow][color=#FFFF][shake]Aventurero, has demostrado gran valentía al llegar hasta aquí[/shake][/color][rainbow]𓄿[/rainbow]
 
-Jack: (Sorprendido y reverente) ¿Ra? ¿Eres tú, el dios del sol?
+Jack: (Sorprendido y reverente)
+	¿Ra? ¿Eres tú, el dios del sol?
 
-Ra: Así es, mortal. Has ingresado en un lugar sagrado. Tu destino está entrelazado con el mío.
+𓂋𓄿: [rainbow]𓄿[/rainbow][color=#FFFF][shake]Así es, mortal. Has ingresado en un lugar sagrado. Tu destino está entrelazado con el mío[/shake][/color][rainbow]𓄿[/rainbow]
 
 Jack: ¡GUAU! ¡No creía poder ver tu forma corpórea!
 
-Ra: Escucha con antención, Jack. Seth, el dios del caos, es poderoso y astuto. Pero no temas, pues hay un objeto que puede ayudarte en tu misión. Este artefacto, conocido como el Ojo de Ra, te dará la fuerza y la protección que necesitarás.
+𓂋𓄿: [rainbow]𓄿[/rainbow][color=#FFFF][shake]Escucha con antención, Jack. Seth, el dios del caos, es poderoso y astuto. Pero no temas, pues hay un objeto que puede ayudarte en tu misión. Este artefacto, conocido como el Ojo de Ra, te dará la fuerza y la protección que necesitarás[/shake][/color][rainbow]𓄿[/rainbow]
 
 Jack: ¿Cómo uso este poder?
 
-Ra: El Ojo de Ra canaliza mi poder. Úsalo sabiamente, el click derecho es tu mayor aliado. Su luz disipará las sombras y debilitará a Seth. Recuerda, el verdadero poder reside en tu corazón y tu determinación.
+set Global.controls_right_click = true
+𓂋𓄿: [rainbow]𓄿[/rainbow][color=#FFFF][shake]El Ojo de Ra canaliza mi poder. Úsalo sabiamente, el click derecho es tu mayor aliado. Su luz disipará las sombras y debilitará a Seth. Recuerda, el verdadero poder reside en tu corazón y tu determinación[/shake][/color][rainbow]𓄿[/rainbow]
+
+set Global.controls_right_click = false
 
 Jack: No te fallaré, Ra. Prometo usar este artefacto para restaurar el equilibrio.
 
-Ra: Confío en ti, Jack. Ve ahora, y enfrenta tu destino con valentía. La luz del sol siempre estará contigo.
+𓂋𓄿: [rainbow]𓄿[/rainbow][color=#FFFF][shake]Confío en ti, Jack. Ve ahora, y enfrenta tu destino con valentía. La luz del sol siempre estará contigo.[/shake][/color][rainbow]𓄿[/rainbow]
+set Global.ra_fade = true
 set Global.dialogue_state = false
 => END

@@ -55,6 +55,10 @@ var activated = false
 var dead = false
 var death = false
 
+#final_boss
+var ra_fade: bool = false
+var controls_right_click: bool = false
+
 #easter_egg
 var not_prepared:bool = false
 var pieces_collected: int = 0

@@ -3,6 +3,9 @@ extends Node2D
 var conversacionNave = false
 var primeraVez = false
 
+@export_group("Player")
+@export var player: CharacterBody2D
+
 func _ready():
 	$Camera2D.enabled = true
 	$Personaje.set_process(false)
@@ -22,13 +25,40 @@ func _ready():
 	$paredFrontal.visible = false
 	
 func _process(delta):
-	if conversacionNave == true && !Global.dialogue_state == true && primeraVez == false:
+	if(Global.controls_right_click):
+		$Personaje/Camera2D/right_click.visible = true
+	else:
+		$Personaje/Camera2D/right_click.visible = false
+
+	if(Global.dialogue_state):
+		player.velocity = Vector2.ZERO
+		player.direction = Vector2.ZERO
+		player.set_physics_process(false)
+
+	if(Global.ra_fade):
+		$raAparecer.play("raDesaparecer")
+		await $raAparecer.animation_finished
+		player.set_physics_process(true)
+		Global.ra_fade = false
+	
+	if conversacionNave == true && primeraVez == false:
 		primeraVez = true
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/finalBoss/nave.dialogue"), "start")
-		#HACER INVISIBLE AL PIBE
+
 
 func _on_conversacion_body_entered(body):
 	if conversacionNave == false:
 		if body.name == "Personaje":
 			$raAparecer.play("raAparecer")
 			conversacionNave = true
+
+
+func _on_ship_area_body_entered(body):
+	if(body.is_in_group("Player")):
+		player.velocity = Vector2.ZERO
+		player.direction = Vector2.ZERO
+		player.set_physics_process(false)
+		$desaparecer.play("desaparecerEstatua")
+		await $desaparecer.animation_finished
+		player.set_physics_process(true)
+		
