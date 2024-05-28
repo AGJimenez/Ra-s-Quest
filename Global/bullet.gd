@@ -9,8 +9,9 @@ func _physics_process(delta):
  
  
 func _on_body_entered(body):
-	body.take_damage()
- 
+	if body.has_method("take_damage") and body.name != "ship":
+		body.take_damage()
+
  
 func _on_screen_exited():
 	queue_free()

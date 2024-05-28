@@ -264,12 +264,10 @@ base_font = ExtResource("2_c7s0v")
 base_font = ExtResource("2_c7s0v")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5kdwr"]
-radius = 100.0
+radius = 115.706
 
 [node name="Necromancer" type="CharacterBody2D"]
 scale = Vector2(3, 3)
-collision_layer = 2
-collision_mask = 0
 script = ExtResource("1_p5xq8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

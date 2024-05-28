@@ -7,8 +7,6 @@
 
 [node name="projectile" type="Area2D"]
 y_sort_enabled = true
-collision_layer = 0
-collision_mask = 2
 script = ExtResource("1_eplia")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

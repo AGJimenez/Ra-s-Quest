@@ -15,10 +15,8 @@ func enter():
  
 func spawn():
 	var skeleton = skeleton_node.instantiate()
- 
-	skeleton.position = global_position + Vector2(40,40)
- 
-	get_tree().current_scene.call_deferred("add_child",skeleton)
+	skeleton.position = global_position + Vector2(40, 40)
+	get_tree().current_scene.call_deferred("add_child", skeleton)
  
 func transition():
 	if can_transition:

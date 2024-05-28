@@ -16,7 +16,6 @@ size = Vector2(146, 120)
 
 [node name="ship" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
-collision_mask = 0
 script = ExtResource("1_xfsne")
 bullet_node = ExtResource("2_gqvsh")
 
@@ -48,3 +47,4 @@ shape = SubResource("RectangleShape2D_m46uy")
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
