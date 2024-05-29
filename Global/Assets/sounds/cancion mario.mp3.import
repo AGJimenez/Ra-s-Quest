@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbjn0033ngdgx"
+path="res://.godot/imported/cancion mario.mp3-b8e131389980f42394c97017433b13c4.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/cancion mario.mp3"
+dest_files=["res://.godot/imported/cancion mario.mp3-b8e131389980f42394c97017433b13c4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

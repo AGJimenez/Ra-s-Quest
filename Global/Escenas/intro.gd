@@ -3,13 +3,16 @@ extends Node2D
 var intro_finished = false
 var tree = false
 var first_time = true
-
+var cancion = preload("res://Assets/sounds/Desert Dreams.mp3")
 @onready var pause_menu = $Personaje/Camera2D/pause_menu
 @onready var wasd = $Personaje/Camera2D/tutorial/tutorial_keys/wasd
 @onready var e = $Personaje/Camera2D/tutorial/tutorial_keys/e
 @onready var additional = $Personaje/Camera2D/tutorial/tutorial_keys/additional
 
 func _ready():
+	if !MusicGlobal.is_playing:
+		MusicGlobal.play_music_level(cancion)
+		
 	number_changed()
 	Save.save_dict["map"] = "res://Escenas/intro.tscn"
 	Save.save_game()

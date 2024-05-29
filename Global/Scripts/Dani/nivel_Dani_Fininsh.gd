@@ -2,7 +2,10 @@ extends Node2D
 
 var purple_area: bool = false
 @onready var interact_label: Control = $Personaje/Control
+var cancion = preload("res://Assets/sounds/puzzle dani.mp3")
 
+func _ready():
+	MusicGlobal.play_music_level(cancion)
 
 func _process(delta):
 	if(Input.is_action_just_pressed("Interact") && purple_area && !Save.save_dict["gem_dani"]):

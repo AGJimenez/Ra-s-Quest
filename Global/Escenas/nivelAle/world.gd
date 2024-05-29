@@ -1,6 +1,6 @@
 extends Node2D
 
-
+var cancion = preload("res://Assets/sounds/puzzle ale.mp3")
 var finNivel = false
 var enAreaAltar = false
 var enAreaPlayer = false
@@ -10,7 +10,9 @@ var transComplete = false
 var segundoPuzzleActivado = false
 var espejosAcabados = false
 var animacionAltar = false
+var tiempo = false
 func _ready():
+	MusicGlobal.play_music_level(cancion)
 	if(Save.save_dict["map_number"] < 5):
 		number_changed()
 		Save.save_dict["map"] = "res://Escenas/nivelAle/world.tscn"
@@ -101,6 +103,14 @@ func _process(_delta):
 		if(Global.dialogue_state == false):
 			$player.set_physics_process(true)
 
+		if tiempo == true:
+			$player/Camera2D/Label.text = str($tiempoRestante.time_left)
+		
+		if tiempo == true and $tiempoRestante.time_left == 0:
+			print("GAMEOVER")
+			$player/Camera2D/gameover.visible = true
+			$player.set_physics_process(false)
+			
 func _on_area_2d_body_entered(body):
 	if body.name == "player":
 		enAreaPlayer = true
@@ -153,3 +163,17 @@ func number_changed():
 
 func _on_control_correct_position_set():
 	finNivel = true
+
+
+func _on_final_body_entered(body):
+	if body.name == "player":
+		Global.change = "reloj-final"
+		LoadManager.load_scene("res://Escenas/finalBoss/final.tscn")
+
+
+func _on_timer_aera_body_entered(body):
+	if body.name == "player" and tiempo == false:
+		$tiempoRestante.start()
+		tiempo = true
+		$player/Camera2D/Label.visible = true
+		print("Tiempo: ", $tiempoRestante.time_left)

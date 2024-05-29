@@ -1,5 +1,6 @@
 extends Node2D
 
+var cancion = preload("res://Assets/sounds/puzzle dani.mp3")
 var on_area_cofre=false
 var on_area_balanza=false
 var isFinalPuzzleEnabled = false
@@ -11,6 +12,7 @@ var isFinalPuzzleEnabled = false
 var nivelesSuperados = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MusicGlobal.play_music_level(cancion)
 	if(Save.save_dict["map_number"] < 2):
 		number_changed()
 		Save.save_dict["map"] = "res://Escenas/Dani/node_2d.tscn"

@@ -7,7 +7,7 @@ class_name nivelMario
 @onready var puerta_final = get_node("Interacciones/PuertaFinal")
 @onready var puerta_sprite = get_node("Escenario/Puerta")
 var dialogo_completado = false
-
+var cancion = preload("res://Assets/sounds/cancion mario.mp3")
 var puzles_resueltos = 0
 var puzle_correcto = 0
 
@@ -50,6 +50,7 @@ signal signal_puzle3
 
 # MÉTODOS
 func _ready():
+	MusicGlobal.play_music_level(cancion)
 	if(Save.save_dict["map_number"] < 1):
 		number_changed()
 		Save.save_dict["map"] = "res://Escenas/nivel1_Mario/nivel_mario.tscn"

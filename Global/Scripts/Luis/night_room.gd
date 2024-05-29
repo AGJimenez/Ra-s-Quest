@@ -3,8 +3,9 @@ extends Node2D
 var wall = false
 var dialog_end = false
 var purple_area: bool = false
-
+var cancion = preload("res://Assets/sounds/night luis.mp3")
 func _ready():
+	MusicGlobal.play_music_level(cancion)
 	if(Global.complete):
 		$wall_puzzle/PointLight2D/AnimationPlayer.play("change")
 		$door.visible = false

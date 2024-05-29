@@ -9,8 +9,10 @@ extends TileMap
 @export var marker_gato: Marker2D
 @export var marker_tortuga: Marker2D
 @export var marker_humano: Marker2D
+var cancion = preload("res://Assets/sounds/Desert Dreams rafa.mp3")
 
 func _ready():
+	MusicGlobal.play_music_level(cancion)
 	if(Global.change == "perro-tile_map_Nivel"):
 		personaje.global_position = marker_perro.global_position
 	if(Global.change == "gato-tile_map_Nivel"):

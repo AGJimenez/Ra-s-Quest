@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://276uutptuj65"]
+[gd_scene load_steps=95 format=3 uid="uid://276uutptuj65"]
 
 [ext_resource type="Script" path="res://Escenas/nivelAle/world.gd" id="1_ao47j"]
 [ext_resource type="Texture2D" uid="uid://d0utm0amnkr6a" path="res://Assets/Egyptian_A4.png" id="1_ue6xu"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dpnbpnkeikcyk" path="res://Interfaz/saving_anim.tscn" id="18_ex3hk"]
 [ext_resource type="PackedScene" uid="uid://d06deaw0tipjn" path="res://Escenas/nivelAle/cruzArrastrar.tscn" id="18_o7tfn"]
 [ext_resource type="PackedScene" uid="uid://dkomrelai5dxv" path="res://Escenas/nivelAle/CruzColumna.tscn" id="19_v57ys"]
+[ext_resource type="PackedScene" uid="uid://bq1aeuvnoopk5" path="res://Interfaz/gameover.tscn" id="19_x6uym"]
 [ext_resource type="PackedScene" uid="uid://c1gfh8ec2eqwr" path="res://Escenas/nivelAle/altar.tscn" id="20_g0u12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7obs0"]
@@ -23226,7 +23227,13 @@ region = Rect2(255.87, 130.198, 64.4182, 60.7185)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1btpf"]
 size = Vector2(79, 37)
 
-[node name="World" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csbf3"]
+size = Vector2(60, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61vy0"]
+size = Vector2(54, 34)
+
+[node name="reloj" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_ao47j")
 metadata/_edit_horizontal_guides_ = [-218.0, -168.0]
@@ -23313,6 +23320,24 @@ visible = false
 [node name="pause_menu" parent="player/Camera2D" instance=ExtResource("17_vbfoq")]
 
 [node name="saving_anim" parent="player/Camera2D" instance=ExtResource("18_ex3hk")]
+
+[node name="gameover" parent="player/Camera2D" instance=ExtResource("19_x6uym")]
+visible = false
+
+[node name="Label" parent="player/Camera2D/gameover/pause_control" index="5"]
+offset_left = -335.0
+offset_top = -84.0
+offset_right = 315.0
+offset_bottom = -33.0
+text = "HAS SIDO SEPULTADO EN LA ARENA"
+
+[node name="Label" type="Label" parent="player/Camera2D"]
+visible = false
+offset_left = 268.0
+offset_top = -166.667
+offset_right = 309.0
+offset_bottom = -143.667
+text = "00:00"
 
 [node name="colision" type="StaticBody2D" parent="."]
 
@@ -23648,6 +23673,24 @@ position = Vector2(-2, -179)
 position = Vector2(0.5, 26.5)
 shape = SubResource("RectangleShape2D_1btpf")
 
+[node name="final" type="Area2D" parent="."]
+position = Vector2(0, -322)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="final"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_csbf3")
+
+[node name="timerAera" type="Area2D" parent="."]
+position = Vector2(0, 312)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="timerAera"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_61vy0")
+
+[node name="tiempoRestante" type="Timer" parent="."]
+wait_time = 245.0
+one_shot = true
+
 [connection signal="resultadoCorrecto" from="player/Camera2D/puzzleDioses/PuzzleDioses" to="." method="_on_puzzle_dioses_resultado_correcto"]
 [connection signal="correct_position_set" from="player/Camera2D/puzzleAngulos/Control" to="." method="_on_control_correct_position_set"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
@@ -23657,6 +23700,9 @@ shape = SubResource("RectangleShape2D_1btpf")
 [connection signal="body_entered" from="areaEspejo" to="." method="_on_area_espejo_body_entered"]
 [connection signal="body_entered" from="areaAltar" to="." method="_on_area_altar_body_entered"]
 [connection signal="body_exited" from="areaAltar" to="." method="_on_area_altar_body_exited"]
+[connection signal="body_entered" from="final" to="." method="_on_final_body_entered"]
+[connection signal="body_entered" from="timerAera" to="." method="_on_timer_aera_body_entered"]
 
 [editable path="player"]
+[editable path="player/Camera2D/gameover"]
 [editable path="altar"]

@@ -7,8 +7,10 @@ signal wind_force(vector: Vector2, wind: bool)
 var zona_safe = 0
 var isBalanzaPuzzleVisible = false
 var done = false
+var cancion = preload("res://Assets/sounds/sandstorm dani.mp3")
 
 func _ready():
+	MusicGlobal.play_music_level(cancion)
 	$timers/stop_sand.start(3.25)
 	$timers/start_transition.wait_time = 2.0
 	$timers/start_transition.one_shot = true

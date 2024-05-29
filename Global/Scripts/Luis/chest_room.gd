@@ -3,10 +3,11 @@ extends Node2D
 var chest = false
 var easter_egg = false
 var easter_egg_try = true
-
+var cancion = preload("res://Assets/sounds/mario2.mp3")
 @export var cursed_particles: CPUParticles2D
 
 func _ready():
+	MusicGlobal.play_music_level(cancion)
 	if(Global.doom_bool):
 		end()
 	if(Global.pieces_collected == 4 && !Global.doom_bool):

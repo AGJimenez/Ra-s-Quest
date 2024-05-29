@@ -21,7 +21,7 @@ var pickable = false
 var talked = false
 var done = false
 var easter_egg_done = false
-
+var cancion = preload("res://Assets/sounds/skeltetios.mp3")
 signal key_complete
 signal mario_piece
 signal dani_piece
@@ -35,6 +35,7 @@ signal luis_piece
 @onready var light_red = $"God Statue"/objective/light_floor/AnimationPlayer
 
 func _ready():
+	MusicGlobal.play_music_level(cancion)
 	Global.death = false
 	$room.set_layer_enabled(1,false)
 	if Global.change == "night-torch":
