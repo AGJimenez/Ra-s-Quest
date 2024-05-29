@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7lch11h6l42k"
+path="res://.godot/imported/Sandstorm Battle.mp3-e2584854c0b74f7d0780abd9f929b213.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/Sandstorm Battle.mp3"
+dest_files=["res://.godot/imported/Sandstorm Battle.mp3-e2584854c0b74f7d0780abd9f929b213.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1gsdtj4n4dfs"
+path="res://.godot/imported/Ra's Sun - Creditos.mp3-3004b2d47b1377b19d4a304aef2df674.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/Ra's Sun - Creditos.mp3"
+dest_files=["res://.godot/imported/Ra's Sun - Creditos.mp3-3004b2d47b1377b19d4a304aef2df674.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

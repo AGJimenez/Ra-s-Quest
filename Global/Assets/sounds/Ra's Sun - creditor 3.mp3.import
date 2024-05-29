@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcu5bmrvgngwt"
+path="res://.godot/imported/Ra's Sun - creditor 3.mp3-bb987051f0ab212127fb4509c421f842.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/Ra's Sun - creditor 3.mp3"
+dest_files=["res://.godot/imported/Ra's Sun - creditor 3.mp3-bb987051f0ab212127fb4509c421f842.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -3,6 +3,7 @@ extends Node2D
 var conversacionNave = false
 var primeraVez = false
 var naveAparece = false
+var sethMuerto = false
 
 @export_group("Player")
 @export var player: CharacterBody2D
@@ -46,6 +47,9 @@ func _process(delta):
 		primeraVez = true
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/finalBoss/nave.dialogue"), "start")
 
+	if sethMuerto == true:
+		#$Necromancer.queue_free()
+		pass
 
 func _on_conversacion_body_entered(body):
 	if conversacionNave == false:
@@ -69,3 +73,7 @@ func _on_ship_area_body_entered(body):
 		$StaticBody2D/Sprite2D.visible = false
 		$ship.visible = true
 		
+
+
+func _on_death_muerto():
+	sethMuerto = true

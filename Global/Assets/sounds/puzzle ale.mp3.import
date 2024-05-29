@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7w07v44maveq"
+path="res://.godot/imported/puzzle ale.mp3-91fa0b0259c61822d8ff2ac66ca60939.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/puzzle ale.mp3"
+dest_files=["res://.godot/imported/puzzle ale.mp3-91fa0b0259c61822d8ff2ac66ca60939.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
