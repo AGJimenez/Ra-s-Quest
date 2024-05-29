@@ -39,20 +39,30 @@ func load_game():
 		var json = JSON.new()
 		var parse_result = json.parse(json_string)
 		var node_data = json.get_data()
-		save_dict["ended"] = node_data["ended"]
-		save_dict["gem_mario"] = node_data["gem_mario"]
-		save_dict["gem_dani"] = node_data["gem_dani"]
-		save_dict["gem_rafa"] = node_data["gem_rafa"]
-		save_dict["gem_luis"] = node_data["gem_luis"]
-		save_dict["key_collected"] = node_data["key_collected"]
-		save_dict["easter_egg_try_save"] = node_data["easter_egg_try_save"]
-		save_dict["map"] = node_data["map"]
-		save_dict["map_number"] = node_data["map_number"]
-		save_dict["fullscreen"] = node_data["fullscreen"]
-		if(save_dict["fullscreen"]):
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		else:
-			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		if("ended" in node_data):
+			save_dict["ended"] = node_data["ended"]
+		if("gem_mario" in node_data):
+			save_dict["gem_mario"] = node_data["gem_mario"]
+		if("gem_dani" in node_data):
+			save_dict["gem_dani"] = node_data["gem_dani"]
+		if("gem_rafa" in node_data):
+			save_dict["gem_rafa"] = node_data["gem_rafa"]
+		if("gem_luis" in node_data):
+			save_dict["gem_luis"] = node_data["gem_luis"]
+		if("key_collected" in node_data):
+			save_dict["key_collected"] = node_data["key_collected"]
+		if("easter_egg_try_save" in node_data):
+			save_dict["easter_egg_try_save"] = node_data["easter_egg_try_save"]
+		if("map" in node_data):
+			save_dict["map"] = node_data["map"]
+		if("map_number" in node_data):
+			save_dict["map_number"] = node_data["map_number"]
+		if("fullscreen" in node_data):
+			save_dict["fullscreen"] = node_data["fullscreen"]
+			if(save_dict["fullscreen"]):
+				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			else:
+				DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func delete_save():
 	DirAccess.remove_absolute("user://savegame.save")
