@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dv3raw61wxtqq"]
+[gd_scene load_steps=63 format=3 uid="uid://dv3raw61wxtqq"]
 
 [ext_resource type="Texture2D" uid="uid://baq33cka45v76" path="res://Assets/Egyptian_A2.png" id="1_h4igp"]
 [ext_resource type="Script" path="res://Escenas/finalBoss/final.gd" id="1_imnqr"]
@@ -12246,6 +12246,52 @@ _data = {
 "desaparecerEstatua": SubResource("Animation_llk0p")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejkyt"]
+size = Vector2(62, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7n1w7"]
+size = Vector2(48.5714, 49.9999)
+
+[sub_resource type="Animation" id="Animation_w8ivc"]
+resource_name = "salir"
+step = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(214, -61), Vector2(214, -800)]
+}
+
+[sub_resource type="Animation" id="Animation_sovon"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(214, -61)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_60gla"]
+_data = {
+"RESET": SubResource("Animation_sovon"),
+"salir": SubResource("Animation_w8ivc")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wip4n"]
+size = Vector2(142, 117)
+
 [node name="final" type="Node2D" node_paths=PackedStringArray("player")]
 y_sort_enabled = true
 script = ExtResource("1_imnqr")
@@ -12853,7 +12899,7 @@ libraries = {
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -10
 offset_left = -948.0
-offset_top = -885.0
+offset_top = -1451.0
 offset_right = 3176.0
 offset_bottom = 952.0
 color = Color(0, 0, 0, 1)
@@ -12880,9 +12926,50 @@ position = Vector2(933, -18)
 position = Vector2(4.5, 0)
 shape = SubResource("RectangleShape2D_vyt6a")
 
+[node name="Seth" type="Area2D" parent="."]
+position = Vector2(553, -17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seth"]
+position = Vector2(-6, 0.5)
+shape = SubResource("RectangleShape2D_ejkyt")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(214, -61)
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+y_sort_enabled = true
+position = Vector2(8.39233e-05, 1.42858)
+texture = SubResource("AtlasTexture_yvesr")
+
+[node name="Camera2D" type="Camera2D" parent="StaticBody2D2/Sprite2D"]
+zoom = Vector2(2, 2)
+
+[node name="final" type="Area2D" parent="StaticBody2D2/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/Sprite2D/final"]
+position = Vector2(1.4285, 9.28564)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7n1w7")
+
+[node name="salir" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_60gla")
+}
+
+[node name="fin" type="Area2D" parent="."]
+position = Vector2(211, -792)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fin"]
+position = Vector2(-2, -6.5)
+shape = SubResource("RectangleShape2D_wip4n")
+
 [connection signal="muerto" from="Necromancer/FiniteStateMachine/Death" to="." method="_on_death_muerto"]
 [connection signal="body_entered" from="Conversacion" to="." method="_on_conversacion_body_entered"]
 [connection signal="body_entered" from="ship_area" to="." method="_on_ship_area_body_entered"]
+[connection signal="body_entered" from="Seth" to="." method="_on_seth_body_entered"]
+[connection signal="area_entered" from="fin" to="." method="_on_fin_area_entered"]
 
 [editable path="Necromancer"]
 [editable path="Estatuas/estatuaMasiva"]

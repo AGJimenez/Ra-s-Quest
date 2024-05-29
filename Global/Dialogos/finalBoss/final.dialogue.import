@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dkcv76j4hs2gk"
+path="res://.godot/imported/final.dialogue-2de31a961b882eaa09a0fdc25aa57ae5.tres"
+
+[deps]
+
+source_file="res://Dialogos/finalBoss/final.dialogue"
+dest_files=["res://.godot/imported/final.dialogue-2de31a961b882eaa09a0fdc25aa57ae5.tres"]
+
+[params]
+
+defaults=true

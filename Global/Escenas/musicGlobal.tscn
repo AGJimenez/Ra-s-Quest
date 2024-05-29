@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl81mq7jfiof5"]
+
+[ext_resource type="Script" path="res://Escenas/musicGlobal.gd" id="1_kqfvc"]
+
+[node name="MusicGlobal" type="AudioStreamPlayer"]
+script = ExtResource("1_kqfvc")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

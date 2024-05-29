@@ -1,0 +1,6 @@
+~ start
+set Global.dialogue_state = true
+
+Jack: Esto se está viniendo abajo, tengo que salir de aquí... ¡¡¡Hay una abertura en el techo, saldré con la nave!!!
+set Global.dialogue_state = false
+=> END
