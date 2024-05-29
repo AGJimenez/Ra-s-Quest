@@ -17,7 +17,7 @@ func _ready():
 		number_changed()
 		Save.save_dict["map"] = "res://Escenas/Dani/node_2d.tscn"
 		Save.save_game()
-	#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Conversacion_Principal.dialogue"),"main")
+	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Conversacion_Principal.dialogue"),"main")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,32 +27,34 @@ func _process(delta):
 		$Personaje.set_physics_process(false)
 	if(Global.dialogue_state == false):
 		$Personaje.set_physics_process(true)
-	interaccion()
-	interaccion_con_cofre()
+	if(!panel.visible):
+		interaccion()
 	if panel.numeroDePanelesSuperados == 4:
 		quit_Espinas()
 	elif panel.numeroDePanelesSuperados == 12:
 		isFinalPuzzleEnabled = true
 	if on_area_cofre == false:
 		player.speed = panel.speedPlayer
+	
+	if Global.cofre:
+		interaccion_con_cofre()
 
 
 
 func interaccion_con_cofre():
-	if !Global.cofre:
+	if panel.visible:
 		panel.visible = false
 		player.speed = 100
 	else:
 		panel.visible = true
 		player.speed = 0
+		Global.cofre = false
 		#DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/panel_respuesta.dialogue"),"main")
 
 func interaccion():
-	if on_area_cofre == true and Input.is_action_just_pressed("Interact"):
-		if(!Global.dialogue_state && !panel.visible):
-			DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Interacción_Con_Cofre.dialogue"),"main")
-		if Global.cofre:
-			Global.cofre = false
+	if on_area_cofre ==true and Input.is_action_just_pressed("Interact") && !Global.dialogue_state:
+		print("DALE A LA E")
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Interacción_Con_Cofre.dialogue"),"main")
 	elif on_area_balanza==true and Input.is_action_just_pressed("Interact"):
 		interaccion_con_balanza()
 
