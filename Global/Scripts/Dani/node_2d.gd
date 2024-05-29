@@ -55,11 +55,14 @@ func interaccion():
 	if on_area_cofre ==true and Input.is_action_just_pressed("Interact") && !Global.dialogue_state:
 		print("DALE A LA E")
 		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/Interacción_Con_Cofre.dialogue"),"main")
-	elif on_area_balanza==true and Input.is_action_just_pressed("Interact"):
-		interaccion_con_balanza()
+	elif isFinalPuzzleEnabled==true and Input.is_action_just_pressed("Interact"):
+		DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/interaccion_con_balanza.dialogue"),"main")
 
 func interaccion_con_balanza():
-	DialogueManager.show_example_dialogue_balloon(load("res://Dialogos/Dani/interaccion_con_balanza.dialogue"),"main")
+	if on_area_balanza and nivelesSuperados == 12:
+		if Global.sand_storm:
+			Global.change = "node_2d-sand_storm_world"
+			LoadManager.load_scene("res://Escenas/Dani/alt_worlds/sand_storm_world.tscn")
 
 
 func _on_area_cofres_body_entered(body):
@@ -207,10 +210,7 @@ func _on_area_cofres_vertical_9_body_exited(body):
 
 func _on_balanza_maat_body_entered(body):
 	if(body.is_in_group("Personaje")):
-		if(panel.numeroDePanelesSuperados >= 12):
-			on_area_balanza=true
-			Global.change = "node_2d-sand_storm_world"
-			LoadManager.load_scene("res://Escenas/Dani/alt_worlds/sand_storm_world.tscn")
+		interaccion_con_balanza()
 
 
 func _on_introduccion_area_body_entered(body):

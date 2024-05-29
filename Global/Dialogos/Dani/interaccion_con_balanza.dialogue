@@ -3,8 +3,8 @@ set Global.dialogue_state = true
 Maat: Ya estas listo para resolver el acertijo de mi balanza?
 - Aceptar reto
 	Jack: Si, estoy listo para el reto.
-	
 	Maat: Perfecto, ¡pues allá vamos!
+	set Global.sand_storm = true
 - Rechazar reto
 	Jack: Todavia no.
 	

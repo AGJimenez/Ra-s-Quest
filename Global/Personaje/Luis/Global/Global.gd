@@ -17,7 +17,7 @@ var controls_add = false
 
 #nivel_Dani
 var cofre = false
-
+var sand_storm = false
 #sand_storm_world
 var sand_complete = false
 
@@ -60,7 +60,7 @@ var ra_fade: bool = false
 var controls_right_click: bool = false
 
 #easter_egg
-var not_prepared:bool = false
+var not_prepared:bool = true
 var pieces_collected: int = 0
 var doom_bool: bool = false
 
