@@ -4,6 +4,7 @@ var cancion = preload("res://Assets/sounds/puzzle dani.mp3")
 var on_area_cofre=false
 var on_area_balanza=false
 var isFinalPuzzleEnabled = false
+var done = false
 @onready var panel = get_node("Personaje/Camera2D/Panel")
 @onready var camera = get_node("Personaje/Camera2D")
 @onready var player = get_node("Personaje")
@@ -38,6 +39,11 @@ func _process(delta):
 	
 	if Global.cofre:
 		interaccion_con_cofre()
+	if(Global.sand_storm && !done):
+		done = true
+		Global.change = "node_2d-sand_storm_world"
+		LoadManager.load_scene("res://Escenas/Dani/alt_worlds/sand_storm_world.tscn")
+		
 
 
 
@@ -61,8 +67,7 @@ func interaccion():
 func interaccion_con_balanza():
 	if on_area_balanza and nivelesSuperados == 12:
 		if Global.sand_storm:
-			Global.change = "node_2d-sand_storm_world"
-			LoadManager.load_scene("res://Escenas/Dani/alt_worlds/sand_storm_world.tscn")
+			pass
 
 
 func _on_area_cofres_body_entered(body):
